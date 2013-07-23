@@ -7,7 +7,7 @@ development:
   username: buala
   password: buala
 
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: buala_test
@@ -24,3 +24,5 @@ production:
   pool: 5
   username: buala
   password: buala
+cucumber:
+  <<: *test

@@ -2,13 +2,122 @@
 <html>
 <head>
   <title>Buala</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application", rel: 'favicon', type: 'image/ico', href: '/img/favicon.ico' %>
+  <%= stylesheet_link_tag "application", media: "all", href: "http://fonts.googleapis.com/css?family=Titillium+Web" %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--[if IE 7]> <html class="ie7 oldie"> <![endif]-->
+  <!--[if IE 8]> <html class="ie8 oldie"> <![endif]-->
+  <!--[if IE 9]> <html class="ie9 oldie"> <![endif]-->
+  <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
 </head>
+
 <body>
+<div class="header_wrapper">
+  <div class="header"><!--header-start-->
+    <div class="logo fltleft"><a href="<%= home_index_url %>"><img src="/img/logo.jpg" alt=""></a></div>
+    <div class="menu fltleft">
+        <ul>
+            <li><%= link_to 'HOME', home_index_url %></li>
+            <li><%= link_to 'BUSCAR', '#' %></li>
+            <li><%= link_to 'QUIENES SOMOS', '#' %></li>
+            <li><%= link_to 'CONTACTO', '#' %></li>
+        </ul>
+    </div>
+		<div class="header_right fltright">
+      <% unless user_signed_in? %>
+      	<%= link_to new_user_session_path, class: "auth_btn login fltright" do %>
+      		<span class="login">LOGIN</span>
+      	<% end %>
+      	<%= link_to new_user_registration_path, class: "auth_btn register fltright" do %>
+      		<span class="register">REGISTRO</span>
+        	<small></small>
+      	<% end %>
+		    <div class="clear"></div>
+		    <%= link_to '#', class: "menu_big_btn universities fltright" do %>
+		    	<img src="/img/top_icon3.png" alt=""> <span>UNIVERSIDADES</span>
+		    <% end %>
+		    <%= link_to '#', class: "menu_big_btn companies fltright" do %>
+		    	<img src="/img/top_icon2.png" alt=""> <span>EMPRESAS</span></a>
+		    <% end %>
+		    <%= link_to '#', class: "menu_big_btn students fltright" do %>
+		    	<img src="/img/top_icon1.png" alt=""> <span>ESTUDIANTES</span> <small></small>
+		    <% end %>
+      <% else %>
+		    <div>
+		    	<%= link_to destroy_user_session_path, method: :delete, class: "auth_btn logout fltright" do %>
+		    		<span class="login">CERRAR SESIÓN</span>
+		    	<% end %>
+		    	<%= link_to '#', class: "auth_btn profile fltright" do %>
+		    		<span class="login">MI PERFIL</span>
+		    	<% end %>
+		    </div>
+		    <div class="logged_user_info fltright">
+	        <span class="display_name fltright">Hola, <%= current_user.email %></span>
+		    </div>
+      <% end %>
+	    <div class="clear"></div>
+		</div>
+    <div class="clear"></div>
+  </div><!--header-end-->
+</div>
 
 <%= yield %>
+
+<div class="block4_wrapper"><!--block4-start-->
+  <div class="block4">
+    <div class="block4_box1 fltleft">
+      <img src="/img/pic4.jpg" alt="">
+      <div class="box1_text">
+        <h2>Estudiantes</h2>
+        <ul>
+          <li><%= link_to "Iniciar sesión", new_user_session_path %></li>
+          <li><%= link_to "Registro", new_user_registration_path %></li>
+          <li><%= link_to "Buscar", '#' %></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <strong><%= link_to 'estudiantes@bualajobs.com', 'mailto:estudiantes@bualajobs.com' %></strong>
+    </div>
+    <div class="block4_box1 block4_box2 fltleft">
+      <img src="/img/pic5.jpg" alt="">
+      <div class="box1_text">
+        <h2>Empresas</h2>
+        <ul>
+          <li><%= link_to 'Por qué Bualá', '#' %></li>
+          <li><%= link_to 'Precios', '#' %></li>
+          <li><%= link_to 'Contáctenos', '#' %></li>
+        </ul>
+    	</div>
+      <div class="clear"></div>
+    </div>
+    <div class="block4_box1 block4_box2 fltleft">
+      <img src="/img/pic6.jpg" alt="">
+      <div class="box1_text">
+        <h2>Universidades</h2>
+        <ul>
+          <li><%= link_to 'Por qué Bualá', '#' %></li>
+          <li><%= link_to 'Contáctenos', '#' %></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="social">
+      <a href="#" class="icon1 fltleft"></a>
+      <a href="#" class="icon2 fltleft"></a>
+      <a href="#" class="icon3 fltleft"></a>
+      <a href="#" class="icon4 fltleft"></a>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div><!--block4-end-->
+
+<div class="footer_wrapper">
+  <div class="footer">Bualá! Jobs. Pasantías y Jóvenes Profesionales &copy; Copyright 2013. All Rights Reserved.</div>
+</div>
 
 </body>
 </html>

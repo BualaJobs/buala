@@ -9,6 +9,13 @@ ActiveAdmin.register Advertisement do
 		selectable_column
 		column :title, :sortable => 'title'
 		column :company
+		column :published do |advertisement|
+			if advertisement.published 
+				status_tag("Published", :ok)
+			else
+				status_tag("Not published", :error)
+			end
+		end
 		default_actions
 	end
 

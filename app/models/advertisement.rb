@@ -1,5 +1,7 @@
 class Advertisement < ActiveRecord::Base
-  attr_accessible :description, :title
+  validates :title, :company, presence: true
+
+  attr_accessible :description, :title, :company_id
 
   belongs_to :company
 end

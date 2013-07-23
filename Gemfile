@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'pg'
 gem 'devise'
+gem 'activeadmin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -24,4 +25,4 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 3.2.0'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'

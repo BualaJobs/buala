@@ -10,7 +10,7 @@
 			<%= @advertisement.title %>
 		</h3>
 		<p>
-			<%= @advertisement.description %>
+			<%= truncate @advertisement.description, length: 500 %>
 		</p>
 		<div class="details_nav fltleft">
 			<ul>

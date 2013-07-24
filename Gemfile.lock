@@ -246,6 +246,7 @@ DEPENDENCIES
   guard
   guard-cucumber
   guard-rspec
+  inherited_resources
   jquery-rails (= 2.3.0)
   pg
   pry-rails (~> 0.3.0)

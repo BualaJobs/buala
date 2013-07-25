@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 AdminUser.create email: 'admin@bualajobs.com', password: '123123123', password_confirmation: '123123123'
 
 Category.create name: 'Derecho'
@@ -7,4 +9,3 @@ Category.create name: 'Arquitectura'
 Category.create name: 'Arte'
 Category.create name: 'Biotecnología y Farmacéutica'
 Category.create name: 'Negocios y Finanzas'
-# Poner todas...

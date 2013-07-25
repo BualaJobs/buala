@@ -4,6 +4,6 @@ class Company < ActiveRecord::Base
   belongs_to :category
   belongs_to :company_type
 
-  validates :name, :description, :category, :presence => true
+  validates :name, :description, :category, :company_type, :presence => true
 
 end

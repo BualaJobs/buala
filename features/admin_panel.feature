@@ -11,6 +11,7 @@ Feature: Admin Panel
 		And I am on the admin_companies page
 		And I follow "New Company"
 		And I fill in "Name" with "Test Company"
+		And I select "Empresa" from "Company type"
 		And I select "Test Category 1" from "Category"
 		And I fill in "Website" with "www.testcompany.com"
 		And I fill in "Location" with "Test Location, Test Country"

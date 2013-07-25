@@ -36,6 +36,7 @@ ActiveAdmin.register Advertisement do
       f.input :category_1
       f.input :category_2
       f.input :description
+      f.input :published
     end
     f.actions
   end

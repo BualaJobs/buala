@@ -22,9 +22,23 @@ ActiveAdmin.register Advertisement do
 	show do
 		attributes_table do
 			row :title
-			row :description
 			row :company
+			row :category_1
+			row :category_2
+			row :description
 		end
 	end
+
+	form do |f|
+    f.inputs do
+      f.input :title
+      f.input :company
+      f.input :category_1
+      f.input :category_2
+      f.input :description
+      f.input :published
+    end
+    f.actions
+  end
   
 end

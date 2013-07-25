@@ -1,3 +1,9 @@
 <h1><%= @advertisement.title %></h1>
 <h2><%= @advertisement.company.name %></h2>
+<ul>
+	<li><%= @advertisement.category_1.name %></li>
+	<% if @advertisement.category_2 %>
+	<li><%= @advertisement.category_2.name %></li>
+	<% end %>
+</ul>
 <p><%= @advertisement.description %></p>

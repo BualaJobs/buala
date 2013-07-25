@@ -7,9 +7,11 @@ Feature: Admin Panel
 
 	Scenario: Create companies
 		Given I am logged in as an Administrator
+		And there are categories
 		And I am on the admin_companies page
 		And I follow "New Company"
 		And I fill in "Name" with "Test Company"
+		And I select "Test Category 1" from "Category"
 		And I fill in "Website" with "www.testcompany.com"
 		And I fill in "Location" with "Test Location, Test Country"
 		And I fill in "Description" with "Test Description"
@@ -18,7 +20,8 @@ Feature: Admin Panel
 
 	Scenario: Create advertisements
 		Given I am logged in as an Administrator
-		And there is a compnay
+		And there are categories
+		And there is a company
 		And I am on the admin_advertisements page
 		And I follow "New Advertisement"
 		And I select "Test Company" from "Company"

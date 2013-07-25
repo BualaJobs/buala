@@ -13,6 +13,7 @@ ActiveAdmin.register Company do
   show do
     attributes_table do
       row :name
+      row :company_type
       row :category
       row :website
       row :location
@@ -23,6 +24,7 @@ ActiveAdmin.register Company do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :company_type
       f.input :category
       f.input :website
       f.input :location

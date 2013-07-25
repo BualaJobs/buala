@@ -5,7 +5,7 @@ class Advertisement < ActiveRecord::Base
   belongs_to :category_1, :class_name => 'Category'
   belongs_to :category_2, :class_name => 'Category'
 
-  validates :title, :company, presence: true
+  validates :title, :company, :category_1, presence: true
   validates_length_of :title, :maximum => 45
   validate :different_categories
 

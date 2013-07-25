@@ -9,3 +9,7 @@ Category.create name: 'Arquitectura'
 Category.create name: 'Arte'
 Category.create name: 'Biotecnología y Farmacéutica'
 Category.create name: 'Negocios y Finanzas'
+
+CompanyType.create name: 'Empresa'
+CompanyType.create name: 'Startup'
+CompanyType.create name: 'ONG'

@@ -24,8 +24,10 @@ Feature: Admin Panel
 		And there is a company
 		And I am on the admin_advertisements page
 		And I follow "New Advertisement"
-		And I select "Test Company" from "Company"
 		And I fill in "Title" with "Test Advertisement"
+		And I select "Test Company" from "Company"
+		And I select "Test Category 1" from "Category 1"
+		And I select "Test Category 2" from "Category 2"
 		And I fill in "Description" with "Test Description"
 		And I check "Published"
 		And I press "Create Advertisement"

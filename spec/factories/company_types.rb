@@ -1,7 +1,5 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :company_type do
-    name "MyString"
+    name "Test company type"
   end
 end

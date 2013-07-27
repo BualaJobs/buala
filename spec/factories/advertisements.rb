@@ -1,8 +1,10 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :advertisement do
-    title "MyString"
-    description "MyText"
+    title "Test advertisement"
+    description "Test description"
+    company
+    published true
+    association :category_1, factory: :category
+    association :category_2, factory: :category
   end
 end

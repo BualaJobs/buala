@@ -32,6 +32,31 @@ def create_company_without value
   create_company company_data
 end
 
+def get_advertisement_data
+  @advertisement_data ||= { title: 'Test advertisement', company: @created_company.name, 
+    category_1: @categories.first.name, category_2: @categories.second.name, description: 'Test description',
+    published: true }
+end
+
+def create_advertisement advertisement_data
+  visit '/admin/advertisements'
+  click_link 'New Advertisement'
+  fill_in 'Title', with: advertisement_data[:title]
+  select advertisement_data[:company], from: 'Company'
+  select advertisement_data[:category_1], from: 'Category 1'
+  select advertisement_data[:category_2], from: 'Category 2'
+  fill_in 'Description', with: advertisement_data[:description]
+  check 'Published' if advertisement_data[:published]
+  uncheck 'Published' unless advertisement_data[:published]
+  click_button 'Create Advertisement'
+end
+
+def create_advertisement_without value
+  advertisement_data = get_advertisement_data
+  advertisement_data[value] = ''
+  create_advertisement advertisement_data
+end
+
 # Background
 
 Given(/^there exist a company type$/) do
@@ -40,6 +65,12 @@ end
 
 Given(/^there exist a category$/) do
   @category ||= FactoryGirl.create(:category)
+end
+
+# Utils
+
+Then(/^debugging$/) do
+  binding.pry
 end
 
 # Admin authentication
@@ -80,4 +111,44 @@ end
 
 Given(/^I create a company without a description$/) do
   create_company_without :description
+end
+
+# Create advertisement
+
+Given(/^there exist a company$/) do
+  @created_company = FactoryGirl.create(:company)
+end
+
+Given(/^there are two different categories$/) do
+  @categories = FactoryGirl.create_list(:category, 2)
+end
+
+Given(/^I create an advertisement with valid data$/) do
+  create_advertisement get_advertisement_data
+end
+
+Then(/^I should see a successful created advertisement message$/) do
+  page.should have_content 'Advertisement was successfully created.'
+end
+
+Given(/^I create an advertisement without a title$/) do
+  create_advertisement_without :title
+end
+
+Given(/^I create an advertisement without a company$/) do
+  create_advertisement_without :company
+end
+
+Given(/^I create an advertisement with repeated categories$/) do
+  advertisement_data = get_advertisement_data
+  advertisement_data[:category_2] = advertisement_data[:category_1]
+  create_advertisement advertisement_data
+end
+
+Then(/^I should see an invalid categories selection message$/) do
+  page.should have_content 'Categories should be different'
+end
+
+Given(/^I create an advertisement without a description$/) do
+  create_advertisement_without :description
 end

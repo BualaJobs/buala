@@ -32,6 +32,7 @@ ActiveAdmin.register Advertisement do
 	form do |f|
     f.inputs do
       f.input :title
+      f.input :advertisement_type
       f.input :company
       f.input :category_1
       f.input :category_2

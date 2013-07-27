@@ -18,3 +18,19 @@ AdvertisementType.create name: 'Internship'
 AdvertisementType.create name: 'Part-time 4hs'
 AdvertisementType.create name: 'Part-time 5hs'
 AdvertisementType.create name: 'Part-time 6hs'
+
+itba = University.create name: 'ITBA'
+University.create name: 'UCA'
+University.create name: 'UCEMA'
+University.create name: 'USAL'
+
+Degree.create name: 'Licenciatura En Administración Y Sistemas', university: itba
+Degree.create name: 'Ingeniería Industrial', university: itba
+Degree.create name: 'Ingeniería Informática', university: itba
+Degree.create name: 'Ingeniería Mecánica', university: itba
+Degree.create name: 'Ingeniería Electrónica', university: itba
+Degree.create name: 'Ingeniería Química', university: itba
+Degree.create name: 'Ingeniería en Petróleo', university: itba
+Degree.create name: 'Ingeniería Naval', university: itba
+Degree.create name: 'Bioingeniería', university: itba
+Degree.create name: 'Ingeniería Eléctrica', university: itba

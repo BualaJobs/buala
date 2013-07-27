@@ -1,10 +1,10 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :company do
-    name "MyString"
-    website "MyString"
-    location "MyString"
-    description "MyText"
+    name "Test company"
+    website "http://www.testcompany.com"
+    location "Test Location, Test Country"
+    description "Test description"
+    category
+    company_type
   end
 end

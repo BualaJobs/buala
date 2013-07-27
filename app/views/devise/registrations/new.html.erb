@@ -21,6 +21,7 @@
 
   <div><%= f.label :degree_id %><br />
   <%= f.collection_select(:degree_id, Degree.all, :id, :name, include_blank: true) %>
+  </div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

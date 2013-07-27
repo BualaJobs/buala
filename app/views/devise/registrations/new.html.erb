@@ -13,10 +13,11 @@
   <%= f.password_field :password_confirmation %></div>
 
   <div><%= f.label :university_id %><br />
-  <%= f.select :university_id, options_for_select(University.all.collect {|u| [u.name, u.id]}), include_blank: true %></div>
+  <%= f.collection_select(:university_id, University.all, :id, :name, include_blank: true) %>
+  </div>
 
   <div><%= f.label :degree_id %><br />
-  <%= f.select :degree_id, options_for_select(Degree.all.collect {|d| [d.name, d.id]}), include_blank: true %></div>
+  <%= f.collection_select(:degree_id, Degree.all, :id, :name, include_blank: true) %>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

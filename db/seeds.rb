@@ -13,3 +13,8 @@ Category.create name: 'Negocios y Finanzas'
 CompanyType.create name: 'Empresa'
 CompanyType.create name: 'Startup'
 CompanyType.create name: 'ONG'
+
+AdvertisementType.create name: 'Internship'
+AdvertisementType.create name: 'Part-time 4hs'
+AdvertisementType.create name: 'Part-time 5hs'
+AdvertisementType.create name: 'Part-time 6hs'

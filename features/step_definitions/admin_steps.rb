@@ -33,15 +33,16 @@ def create_company_without value
 end
 
 def get_advertisement_data
-  @advertisement_data ||= { title: 'Test advertisement', company: @created_company.name, 
-    category_1: @categories.first.name, category_2: @categories.second.name, description: 'Test description',
-    published: true }
+  @advertisement_data ||= { title: 'Test advertisement', advertisement_type: @advertisement_type.name, 
+    company: @created_company.name, category_1: @categories.first.name, category_2: @categories.second.name, 
+    description: 'Test description', published: true }
 end
 
 def create_advertisement advertisement_data
   visit '/admin/advertisements'
   click_link 'New Advertisement'
   fill_in 'Title', with: advertisement_data[:title]
+  select advertisement_data[:advertisement_type], from: 'Advertisement type'
   select advertisement_data[:company], from: 'Company'
   select advertisement_data[:category_1], from: 'Category 1'
   select advertisement_data[:category_2], from: 'Category 2'
@@ -65,6 +66,14 @@ end
 
 Given(/^there exist a category$/) do
   @category ||= FactoryGirl.create(:category)
+end
+
+Given(/^there are two different categories$/) do
+  @categories = FactoryGirl.create_list(:category, 2)
+end
+
+Given(/^there is an advertisement type$/) do
+  @advertisement_type = FactoryGirl.create(:advertisement_type)
 end
 
 # Utils
@@ -117,10 +126,6 @@ end
 
 Given(/^there exist a company$/) do
   @created_company = FactoryGirl.create(:company)
-end
-
-Given(/^there are two different categories$/) do
-  @categories = FactoryGirl.create_list(:category, 2)
 end
 
 Given(/^I create an advertisement with valid data$/) do

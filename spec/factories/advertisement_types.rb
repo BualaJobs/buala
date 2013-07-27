@@ -1,7 +1,10 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
+
+  sequence :advertisement_type_name do |n|
+    "Test advertisement type #{n}"
+  end
+
   factory :advertisement_type do
-    name "MyString"
+    name { generate(:advertisement_type_name) }
   end
 end

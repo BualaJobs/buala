@@ -1,10 +1,10 @@
 FactoryGirl.define do
 
-  sequence :name do |n|
+  sequence :category_name do |n|
     "Test category #{n}"
   end
   
   factory :category do
-    name
+    name { generate(:category_name) }
   end
 end

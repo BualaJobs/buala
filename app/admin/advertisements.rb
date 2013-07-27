@@ -9,6 +9,7 @@ ActiveAdmin.register Advertisement do
 		selectable_column
 		column :title, :sortable => 'title'
 		column :company
+		column :advertisement_type
 		column :published do |advertisement|
 			if advertisement.published 
 				status_tag("Published", :ok)
@@ -23,6 +24,7 @@ ActiveAdmin.register Advertisement do
 		attributes_table do
 			row :title
 			row :company
+			row :advertisement_type
 			row :category_1
 			row :category_2
 			row :description

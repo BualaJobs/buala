@@ -50,7 +50,7 @@
 		    	<%= link_to destroy_user_session_path, method: :delete, class: "auth_btn logout fltright" do %>
 		    		<span class="login">CERRAR SESIÓN</span>
 		    	<% end %>
-		    	<%= link_to '#', class: "auth_btn profile fltright" do %>
+		    	<%= link_to user_path(current_user), class: "auth_btn profile fltright" do %>
 		    		<span class="login">MI PERFIL</span>
 		    	<% end %>
 		    </div>

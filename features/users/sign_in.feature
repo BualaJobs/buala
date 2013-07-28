@@ -1,7 +1,7 @@
-Feature: Sign up
+Feature: Sign in
   In order to have access to protected sections of the site
   As a guest user
-  I want to be able to sign in with previous regitered account
+  I want to be able to sign in with a previous regitered account
 
   Background:
     Given I have a registered account
@@ -22,4 +22,8 @@ Feature: Sign up
   Scenario: Sign in with invalid credentials
     Given I sign in with invalid credentials
     Then I should see an invalid sign in message
-  
+
+  Scenario: Sign out
+    Given I sign in with valid data
+    And I sign out
+    Then I should see a successful sign out message

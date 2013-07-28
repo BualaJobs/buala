@@ -128,3 +128,14 @@ end
 Given(/^I sign in with invalid credentials$/) do
   sign_in_replacing :password, get_user_data[:password].reverse
 end
+
+# Sign out
+
+Given(/^I sign out$/) do
+  page.driver.submit :delete, '/users/sign_out', {}
+end
+
+Then(/^I should see a successful sign out message$/) do
+  page.should have_content 'Signed out successfully.'
+end
+

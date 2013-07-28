@@ -5,5 +5,4 @@ class UsersController < ApplicationController
 		render status: :forbidden, text: 'Forbidden'
 	end
   end
-  
 end

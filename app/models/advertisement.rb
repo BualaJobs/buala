@@ -11,6 +11,8 @@ class Advertisement < ActiveRecord::Base
   validates_length_of :title, :maximum => 45
   validate :different_categories
 
+  scope :published, -> { where(published: true) }
+
   private
   def different_categories
     if category_1 && category_2 && category_1 == category_2

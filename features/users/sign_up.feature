@@ -4,7 +4,9 @@ Feature: Sign up
   I want to be able to sign up
 
   Background:
-    Given I am not logged in
+    Given there is a university
+    And there is a degree
+    And I am not logged in
 
   Scenario: User signs up with valid data
     When I sign up with valid user data
@@ -19,7 +21,7 @@ Feature: Sign up
     Then I should see a missing password message
 
   Scenario: User signs up without password confirmation
-    When I sign up without a passwork confirmation
+    When I sign up without a password confirmation
     Then I should see a missing password confirmation message
 
   Scenario: User signs up with mismatched password and confirmation

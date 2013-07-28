@@ -12,12 +12,12 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
- 
+    when /^the published advertisement detail page$/
+      '/advertisements/' + Advertisement.published.all.first.id.to_s
+
+    when /^the not published advertisement detail page$/
+      '/advertisements/' + Advertisement.where(published: false).first.id.to_s
+
     else
       begin
         page_name =~ /^the (.*) page$/

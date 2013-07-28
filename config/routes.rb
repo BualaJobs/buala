@@ -9,5 +9,6 @@ Buala::Application.routes.draw do
   devise_for :users
 
   resources :advertisements, only: [:show]
+  resources :users, only: [:show]
 
 end

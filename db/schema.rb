@@ -113,9 +113,9 @@ ActiveRecord::Schema.define(:version => 20130727215854) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "name"
     t.integer  "university_id"
     t.integer  "degree_id"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

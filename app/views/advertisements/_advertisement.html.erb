@@ -20,8 +20,13 @@
 						<span><%= @advertisement.advertisement_type.name %></span>
 					</a>
 				</li>
-				<li><a href="#"><img src="/img/nav_icon2.jpg" alt=""> <span><%= @advertisement.company.company_type.name %></span>
-				</a></li>
+				<% if @advertisement.company.company_type.name != 'Empresa' %>
+				<li>
+					<a href="#"><img src="/img/nav_icon2.jpg" alt=""> 
+						<span><%= @advertisement.company.company_type.name %></span>
+					</a>
+				</li>
+				<% end %>
 				<li>
 					<a href="#">
 						<img src="/img/nav_icon3.jpg" alt=""> 

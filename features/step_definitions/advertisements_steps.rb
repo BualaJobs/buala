@@ -16,6 +16,14 @@ def create_business_advertisement
   @business_advertisement ||= FactoryGirl.create(:advertisement, :business_company)
 end
 
+def create_paid_advertisement
+  @paid_advertisement ||= FactoryGirl.create(:advertisement, :paid)
+end
+
+def create_not_paid_advertisement
+  @not_paid_advertisement ||= FactoryGirl.create(:advertisement, :not_paid)
+end
+
 def visit_advertisement_detail advertisement
   visit advertisement_path advertisement
 end
@@ -41,6 +49,11 @@ end
 Given(/^there are a startup and a business advertisements$/) do
   create_startup_advertisement
   create_business_advertisement
+end
+
+Given(/^there are a paid and a not paid advertisements$/) do
+  create_paid_advertisement
+  create_not_paid_advertisement
 end
 
 # Published
@@ -71,3 +84,20 @@ end
 Then(/^I should not see a badge for the company type$/) do
   page.should have_no_badge '/img/nav_icon4.jpg'
 end
+
+Given(/^I visit the paid advertisement detail page$/) do
+  visit_advertisement_detail @paid_advertisement
+end
+
+Given(/^I visit the not paid advertisement detail page$/) do
+  visit_advertisement_detail @not_paid_advertisement
+end
+
+Then(/^I should see the paid badge$/) do
+  page.should have_content 'Remunerada'
+end
+
+Then(/^I should see the not paid badge$/) do
+  page.should have_content 'No remunerada'
+end
+

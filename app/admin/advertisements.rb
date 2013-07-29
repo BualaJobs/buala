@@ -28,6 +28,8 @@ ActiveAdmin.register Advertisement do
 			row :category_1
 			row :category_2
 			row :description
+			row :published
+			row :is_paid
 		end
 	end
 
@@ -40,6 +42,7 @@ ActiveAdmin.register Advertisement do
       f.input :category_2
       f.input :description
       f.input :published
+      f.input :is_paid
     end
     f.actions
   end

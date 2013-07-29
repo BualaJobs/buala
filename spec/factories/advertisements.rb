@@ -18,6 +18,14 @@ FactoryGirl.define do
     company { FactoryGirl.create(:company, :business) }
   end
 
+  trait :paid do
+    is_paid true
+  end
+
+  trait :not_paid do
+    is_paid false
+  end
+
   factory :advertisement do
     title "Test advertisement"
     description "Test description"
@@ -26,6 +34,7 @@ FactoryGirl.define do
     association :category_1, factory: :category
     association :category_2, factory: :category
     association :advertisement_type, factory: :advertisement_type
+    is_paid true
   end
 
 end

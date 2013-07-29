@@ -13,36 +13,7 @@
 			<%= truncate @advertisement.description, length: 500 %>
 		</p>
 		<div class="details_nav fltleft">
-			<ul>
-				<li>
-					<a href="#">
-						<img src="/img/nav_icon1.jpg" alt=""> 
-						<span><%= @advertisement.advertisement_type.name %></span>
-					</a>
-				</li>
-				<% if @advertisement.company.company_type.name != 'Empresa' %>
-				<li>
-					<a href="#"><img src="/img/nav_icon2.jpg" alt=""> 
-						<span><%= @advertisement.company.company_type.name %></span>
-					</a>
-				</li>
-				<% end %>
-				<li>
-					<a href="#">
-						<img src="/img/nav_icon3.jpg" alt=""> 
-						<span>
-							Starting date!
-						</span>
-					</a>
-				</li>
-				<li class="li1"><a href="#"><img src="img/nav_icon4.jpg" alt=""> <span>Ong</span>
-				</a></li>
-				<li><a href="#"><img src="/img/nav_icon5.jpg" alt=""> <span>Remunerada</span>
-				</a></li>
-				<li><a href="#"><img src="/img/nav_icon6.jpg" alt=""> <span>5 días</span>
-				</a></li>
-				<li><a href="#"><img src="/img/nav_icon7.jpg" alt=""> <span>2 vacantes</span> </a></li>
-			</ul>
+			<%= render partial: "advertisements/badges", locals: { advertisement: @advertisement } %>
 		</div>
 		<%= link_to "Más Detalles", (advertisement_path @advertisement), class: 'more pie fltright' %>
 		<div class="clear"></div>

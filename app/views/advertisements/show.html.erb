@@ -1,10 +1,11 @@
 <h1><%= @advertisement.title %></h1>
 <p><%= @advertisement.advertisement_type.name %></p>
-<h2><%= @advertisement.company.name %> (<%= @advertisement.company.company_type.name %>)</h2>
+<h2><%= @advertisement.company.name %></h2>
 <ul>
 	<li><%= @advertisement.category_1.name %></li>
 	<% if @advertisement.category_2 %>
 	<li><%= @advertisement.category_2.name %></li>
 	<% end %>
 </ul>
+<%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
 <p><%= @advertisement.description %></p>

@@ -12,12 +12,6 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
-    when /^the published advertisement detail page$/
-      '/advertisements/' + Advertisement.published.all.first.id.to_s
-
-    when /^the not published advertisement detail page$/
-      '/advertisements/' + Advertisement.where(published: false).first.id.to_s
-
     else
       begin
         page_name =~ /^the (.*) page$/

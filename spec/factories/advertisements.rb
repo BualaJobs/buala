@@ -10,6 +10,14 @@ FactoryGirl.define do
     published false
   end
 
+  trait :startup_company do
+    company { FactoryGirl.create(:company, :startup) }
+  end
+
+  trait :business_company do
+    company { FactoryGirl.create(:company, :business) }
+  end
+
   factory :advertisement do
     title "Test advertisement"
     description "Test description"

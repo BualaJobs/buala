@@ -12,9 +12,9 @@ Feature: Published events
     And I should not see "Not published advertisement"
 
   Scenario: Access to published advertisements
-    Given I am on the published advertisement detail page
+    Given I visit the published advertisement detail page
     Then I should see "Published advertisement"
 
-  Scenario: No access to published advertisements
-    Given I am on the not published advertisement detail page
+  Scenario: No access to not published advertisements
+    Given I visit the not published advertisement detail page
     Then I should obtain a 404 error

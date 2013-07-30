@@ -9,7 +9,7 @@ class Advertisement < ActiveRecord::Base
   belongs_to :advertisement_type
   belongs_to :working_turn
 
-  validates :title, :company, :category_1, :advertisement_type, :description, presence: true
+  validates :title, :company, :category_1, :advertisement_type, :description, :working_turn, presence: true
   validates_length_of :title, :maximum => 45
   validate :different_categories
 

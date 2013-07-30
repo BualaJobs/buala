@@ -26,6 +26,22 @@ FactoryGirl.define do
     is_paid false
   end
 
+  trait :morning do
+    working_turn { FactoryGirl.create(:working_turn, :morning_working_turn) }
+  end
+
+  trait :afternoon do
+    working_turn { FactoryGirl.create(:working_turn, :afternoon_working_turn) }
+  end
+
+  trait :night do
+    working_turn { FactoryGirl.create(:working_turn, :night_working_turn) }
+  end
+
+  trait :flexible do
+    working_turn { FactoryGirl.create(:working_turn, :flexible_working_turn) }
+  end
+
   factory :advertisement do
     title "Test advertisement"
     description "Test description"
@@ -35,6 +51,7 @@ FactoryGirl.define do
     association :category_2, factory: :category
     association :advertisement_type, factory: :advertisement_type
     is_paid true
+    working_turn
   end
 
 end

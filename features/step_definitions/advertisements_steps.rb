@@ -24,6 +24,22 @@ def create_not_paid_advertisement
   @not_paid_advertisement ||= FactoryGirl.create(:advertisement, :not_paid)
 end
 
+def create_morning_advertisement
+  @morning_advertisement ||= FactoryGirl.create(:advertisement, :morning)
+end
+
+def create_afternoon_advertisement
+  @afternoon_advertisement ||= FactoryGirl.create(:advertisement, :afternoon)
+end
+
+def create_night_advertisement
+  @night_advertisement ||= FactoryGirl.create(:advertisement, :night)
+end
+
+def create_flexible_advertisement
+  @flexible_advertisement ||= FactoryGirl.create(:advertisement, :flexible)
+end
+
 def visit_advertisement_detail advertisement
   visit advertisement_path advertisement
 end
@@ -54,6 +70,13 @@ end
 Given(/^there are a paid and a not paid advertisements$/) do
   create_paid_advertisement
   create_not_paid_advertisement
+end
+
+Given(/^there are advertisements with all the working turns$/) do
+  create_morning_advertisement
+  create_afternoon_advertisement
+  create_night_advertisement
+  create_flexible_advertisement
 end
 
 # Published
@@ -99,5 +122,41 @@ end
 
 Then(/^I should see the not paid badge$/) do
   page.should have_content 'No remunerada'
+end
+
+Given(/^I visit the morning working turn advertisement detail page$/) do
+  visit_advertisement_detail @morning_advertisement
+end
+
+Then(/^I should see the morning working turn badge$/) do
+  page.should have_badge '/img/nav_icon6.jpg'
+  page.should have_content @morning_advertisement.working_turn.name
+end
+
+Given(/^I visit the afternoon working turn advertisement detail page$/) do
+  visit_advertisement_detail @afternoon_advertisement
+end
+
+Then(/^I should see the afternoon working turn badge$/) do
+  page.should have_badge '/img/nav_icon6.jpg'
+  page.should have_content @afternoon_advertisement.working_turn.name
+end
+
+Given(/^I visit the night working turn advertisement detail page$/) do
+  visit_advertisement_detail @night_advertisement
+end
+
+Then(/^I should see the night working turn badge$/) do
+  page.should have_badge '/img/nav_icon6.jpg'
+  page.should have_content @night_advertisement.working_turn.name
+end
+
+Given(/^I visit the flexible working turn advertisement detail page$/) do
+  visit_advertisement_detail @flexible_advertisement
+end
+
+Then(/^I should see the flexible turn badge$/) do
+  page.should have_badge '/img/nav_icon6.jpg'
+  page.should have_content @flexible_advertisement.working_turn.name
 end
 

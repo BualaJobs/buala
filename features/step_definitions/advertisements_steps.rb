@@ -100,4 +100,3 @@ end
 Then(/^I should see the not paid badge$/) do
   page.should have_content 'No remunerada'
 end
-

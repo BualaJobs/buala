@@ -30,6 +30,7 @@ ActiveAdmin.register Advertisement do
 			row :description
 			row :published
 			row :is_paid
+			row :working_turn
 		end
 	end
 
@@ -43,6 +44,7 @@ ActiveAdmin.register Advertisement do
       f.input :description
       f.input :published
       f.input :is_paid
+      f.input :working_turn
     end
     f.actions
   end

@@ -35,7 +35,7 @@ end
 def get_advertisement_data
   @advertisement_data ||= { title: 'Test advertisement', advertisement_type: @advertisement_type.name, 
     company: @created_company.name, category_1: @categories.first.name, category_2: @categories.second.name, 
-    description: 'Test description', published: true }
+    description: 'Test description', published: true, is_paid: true, working_turn: @working_turn.name }
 end
 
 def create_advertisement advertisement_data
@@ -49,6 +49,8 @@ def create_advertisement advertisement_data
   fill_in 'Description', with: advertisement_data[:description]
   check 'Published' if advertisement_data[:published]
   uncheck 'Published' unless advertisement_data[:published]
+  check 'Is paid' if advertisement_data[:is_paid]
+  select advertisement_data[:working_turn], from: 'Working turn'
   click_button 'Create Advertisement'
 end
 
@@ -69,11 +71,15 @@ Given(/^there exist a category$/) do
 end
 
 Given(/^there are two different categories$/) do
-  @categories = FactoryGirl.create_list(:category, 2)
+  @categories ||= FactoryGirl.create_list(:category, 2)
 end
 
 Given(/^there is an advertisement type$/) do
-  @advertisement_type = FactoryGirl.create(:advertisement_type)
+  @advertisement_type ||= FactoryGirl.create(:advertisement_type)
+end
+
+Given(/^there is a working turn$/) do
+  @working_turn ||= FactoryGirl.create(:working_turn)
 end
 
 # Utils

@@ -8,6 +8,7 @@ Feature: Administrating advertisements
     Given there exist a company
     And there are two different categories
     And there is an advertisement type
+    And there is a working turn
     And I am logged in as an Administrator
 
   Scenario: Create an advertisement with valid data

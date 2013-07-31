@@ -16,7 +16,11 @@
 		<a href="#">
 			<img src="/img/nav_icon3.jpg" alt=""> 
 			<span>
-				Starting date!
+				<% if advertisement.start_date && Date.today + 1.months < advertisement.start_date %>
+					<%= (l advertisement.start_date, format: '%B, %Y').humanize %>
+				<% else %>
+					Inmediata
+				<% end %>
 			</span>
 		</a>
 	</li>

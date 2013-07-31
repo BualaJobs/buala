@@ -42,6 +42,18 @@ FactoryGirl.define do
     working_turn { FactoryGirl.create(:working_turn, :flexible_working_turn) }
   end
 
+  trait :starting_tomorrow do
+    start_date { Date.today + 1.days }
+  end
+
+  trait :starting_month do
+    start_date { Date.today + 1.months + 1.days }
+  end
+
+  trait :no_starting_date do
+    start_date { nil }
+  end
+
   factory :advertisement do
     title "Test advertisement"
     description "Test description"
@@ -52,6 +64,7 @@ FactoryGirl.define do
     association :advertisement_type, factory: :advertisement_type
     is_paid true
     working_turn
+    start_date { Date.today + 5.days }
   end
 
 end

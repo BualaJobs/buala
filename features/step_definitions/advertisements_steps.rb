@@ -52,6 +52,18 @@ def have_no_badge badge_img
   have_no_xpath("//img[@src=\"#{badge_img}\"]")
 end
 
+def create_advertisement_starting_tomorrow
+  @starting_tomorrow_advertisement ||= FactoryGirl.create(:advertisement, :starting_tomorrow)
+end
+
+def create_advertisement_starting_in_one_month
+  @starting_month_advertisement ||= FactoryGirl.create(:advertisement, :starting_month)
+end
+
+def create_advertisement_without_start_date
+  @no_start_advertisement ||= FactoryGirl.create(:advertisement, :no_starting_date)
+end
+
 # Background
 
 Given(/^there is a published advertisment$/) do
@@ -77,6 +89,12 @@ Given(/^there are advertisements with all the working turns$/) do
   create_afternoon_advertisement
   create_night_advertisement
   create_flexible_advertisement
+end
+
+Given(/^there are advertisement with all the possible start dates$/) do
+  create_advertisement_starting_tomorrow
+  create_advertisement_starting_in_one_month
+  create_advertisement_without_start_date
 end
 
 # Published
@@ -160,3 +178,24 @@ Then(/^I should see the flexible turn badge$/) do
   page.should have_content @flexible_advertisement.working_turn.name
 end
 
+Given(/^I visit the inmediate start advertisement detail page$/) do
+  visit_advertisement_detail @starting_tomorrow_advertisement
+end
+
+Then(/^I should see the inmediate start badge$/) do
+  page.should have_badge '/img/nav_icon3.jpg'
+  page.should have_content 'Inmediata'
+end
+
+Given(/^I visit the more than one month advertisement detail page$/) do
+  visit_advertisement_detail @starting_month_advertisement
+end
+
+Then(/^I should see the month start badge$/) do
+  page.should have_badge '/img/nav_icon3.jpg'
+  page.should have_content (I18n.l @starting_month_advertisement.start_date, format: '%B, %Y').humanize
+end
+
+Given(/^I visit the detail page of an advertisement without a start date$/) do
+  visit_advertisement_detail @no_start_advertisement
+end

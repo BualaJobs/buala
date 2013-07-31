@@ -6,7 +6,8 @@ Feature: Badges
     Given there are a startup and a business advertisements
     And there are a paid and a not paid advertisements
     And there are advertisements with all the working turns
-    And there are advertisement with all the possible start dates
+    And there are advertisements with all the possible start dates
+    And there are advertisements with and without vacancies
 
   Scenario: Startup advertisement
     Given I visit the startup advertisement detail page
@@ -51,3 +52,11 @@ Feature: Badges
   Scenario: Advertisement with no start date
     Given I visit the detail page of an advertisement without a start date
     Then I should see the inmediate start badge
+
+  Scenario: Advertisement with vacancies
+    Given I visit the detail page of an advertisement with vacancies
+    Then I should see the vacancies badge
+
+  Scenario: Advertisement with no vacancies specified
+    Given I visit the detail page of an advertisement with no vacancies specified
+    Then I should not see the vacancies badge

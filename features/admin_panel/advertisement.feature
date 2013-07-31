@@ -13,7 +13,7 @@ Feature: Administrating advertisements
 
   Scenario: Create an advertisement with valid data
     Given I create an advertisement with valid data
-    Then I should see a successful created advertisement message
+    Then I should see the created advertisement
 
   Scenario: Create an advertisement without a title
     Given I create an advertisement without a title

@@ -64,6 +64,14 @@ def create_advertisement_without_start_date
   @no_start_advertisement ||= FactoryGirl.create(:advertisement, :no_starting_date)
 end
 
+def create_advertisement_with_vacancies
+  @advertisement_with_vacancies ||= FactoryGirl.create(:advertisement, :with_vacancies)
+end
+
+def create_advertisement_without_vacancies
+  @advertisement_without_vacancies ||= FactoryGirl.create(:advertisement, :without_vacancies)
+end
+
 # Background
 
 Given(/^there is a published advertisment$/) do
@@ -91,10 +99,15 @@ Given(/^there are advertisements with all the working turns$/) do
   create_flexible_advertisement
 end
 
-Given(/^there are advertisement with all the possible start dates$/) do
+Given(/^there are advertisements with all the possible start dates$/) do
   create_advertisement_starting_tomorrow
   create_advertisement_starting_in_one_month
   create_advertisement_without_start_date
+end
+
+Given(/^there are advertisements with and without vacancies$/) do
+  create_advertisement_with_vacancies
+  create_advertisement_without_vacancies
 end
 
 # Published
@@ -198,4 +211,21 @@ end
 
 Given(/^I visit the detail page of an advertisement without a start date$/) do
   visit_advertisement_detail @no_start_advertisement
+end
+
+Given(/^I visit the detail page of an advertisement with vacancies$/) do
+  visit_advertisement_detail @advertisement_with_vacancies
+end
+
+Then(/^I should see the vacancies badge$/) do
+  page.should have_badge '/img/nav_icon7.jpg'
+  page.should have_content (@advertisement_with_vacancies.vacancies.to_s + ' vacantes')
+end
+
+Given(/^I visit the detail page of an advertisement with no vacancies specified$/) do
+  visit_advertisement_detail @advertisement_without_vacancies
+end
+
+Then(/^I should not see the vacancies badge$/) do
+  page.should have_no_badge '/img/nav_icon7.jpg'
 end

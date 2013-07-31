@@ -138,8 +138,9 @@ Given(/^I create an advertisement with valid data$/) do
   create_advertisement get_advertisement_data
 end
 
-Then(/^I should see a successful created advertisement message$/) do
-  page.should have_content 'Advertisement was successfully created.'
+Then(/^I should see the created advertisement$/) do
+  page.should have_no_content 'Guardar Advertisement'
+  page.should have_content @advertisement_data[:title]
 end
 
 Given(/^I create an advertisement without a title$/) do

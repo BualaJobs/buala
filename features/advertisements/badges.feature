@@ -6,6 +6,7 @@ Feature: Badges
     Given there are a startup and a business advertisements
     And there are a paid and a not paid advertisements
     And there are advertisements with all the working turns
+    And there are advertisement with all the possible start dates
 
   Scenario: Startup advertisement
     Given I visit the startup advertisement detail page
@@ -38,3 +39,15 @@ Feature: Badges
   Scenario: Flexible working turn advertisement
     Given I visit the flexible working turn advertisement detail page
     Then I should see the flexible turn badge
+
+  Scenario: Inmediate start advertisement
+    Given I visit the inmediate start advertisement detail page
+    Then I should see the inmediate start badge
+
+  Scenario: Start in more than one month advertisement
+    Given I visit the more than one month advertisement detail page
+    Then I should see the month start badge
+
+  Scenario: Advertisement with no start date
+    Given I visit the detail page of an advertisement without a start date
+    Then I should see the inmediate start badge

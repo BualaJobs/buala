@@ -54,6 +54,14 @@ FactoryGirl.define do
     start_date { nil }
   end
 
+  trait :with_vacancies do
+    vacancies 10
+  end
+
+  trait :without_vacancies do
+    vacancies 0
+  end
+
   factory :advertisement do
     title "Test advertisement"
     description "Test description"
@@ -65,6 +73,7 @@ FactoryGirl.define do
     is_paid true
     working_turn
     start_date { Date.today + 5.days }
+    vacancies 2
   end
 
 end

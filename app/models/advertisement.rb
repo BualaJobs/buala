@@ -12,7 +12,7 @@ class Advertisement < ActiveRecord::Base
   validates :title, :company, :category_1, :advertisement_type, :description, :working_turn, presence: true
   validates_length_of :title, :maximum => 45
   validate :different_categories
-  validates :vacancies, numericality: { greater_than: 0 }
+  validates :vacancies, numericality: { greater_than_or_equal_to: 0 }
 
   scope :published, -> { where(published: true) }
 

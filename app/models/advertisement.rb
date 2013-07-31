@@ -1,7 +1,7 @@
 class Advertisement < ActiveRecord::Base
   attr_accessible :description, :title, :company, :company_id, :published, :category_1_id, :category_1, 
   	:category_2_id, :category_2, :advertisement_type, :advertisement_type_id, :is_paid,
-    :working_turn, :working_turn_id
+    :working_turn, :working_turn_id, :start_date
 
   belongs_to :company
   belongs_to :category_1, :class_name => 'Category'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731005006) do
+ActiveRecord::Schema.define(:version => 20130731023029) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130731005006) do
     t.boolean  "is_paid"
     t.integer  "working_turn_id"
     t.date     "start_date"
+    t.integer  "vacancies"
   end
 
   create_table "categories", :force => true do |t|

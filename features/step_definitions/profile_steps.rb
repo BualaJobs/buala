@@ -33,5 +33,8 @@ Given(/^I navigate to my profile page$/) do
 end
 
 Then(/^I should see my profile$/) do
+  user_data = get_user_data
   page.should have_content 'Mi Perfil'
+  page.should have_content user_data[:name]
+  page.should have_content user_data[:email]
 end

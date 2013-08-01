@@ -37,4 +37,6 @@ Then(/^I should see my profile$/) do
   page.should have_content 'Mi Perfil'
   page.should have_content user_data[:name]
   page.should have_content user_data[:email]
+  page.should have_content user_data[:university]
+  page.should have_content user_data[:degre]
 end

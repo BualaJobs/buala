@@ -1,7 +1,11 @@
 class Advertisement < ActiveRecord::Base
   attr_accessible :description, :title, :company, :company_id, :published, :category_1_id, :category_1, 
   	:category_2_id, :category_2, :advertisement_type, :advertisement_type_id, :is_paid,
+<<<<<<< HEAD
     :working_turn, :working_turn_id, :start_date, :vacancies, :requirements, :zoho_form_url
+=======
+    :working_turn, :working_turn_id, :start_date, :vacancies, :requirements
+>>>>>>> Adding advertisement requirements field
 
   belongs_to :company
   belongs_to :category_1, :class_name => 'Category'

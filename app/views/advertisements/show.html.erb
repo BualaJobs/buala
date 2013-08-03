@@ -1,11 +1,68 @@
-<h1><%= @advertisement.title %></h1>
-<p><%= @advertisement.advertisement_type.name %></p>
-<h2><%= @advertisement.company.name %></h2>
-<ul>
-	<li><%= @advertisement.category_1.name %></li>
-	<% if @advertisement.category_2 %>
-	<li><%= @advertisement.category_2.name %></li>
-	<% end %>
-</ul>
-<%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
-<p><%= @advertisement.description %></p>
+<div class="banner">
+  <div class="bnrtop">
+    <h1><%= @advertisement.title %> <strong>en <%= @advertisement.company.name %></strong></h1>
+    <% # <a href="#" class="toapply">¡Postularme!</a> %>
+  </div>
+  <div class="map">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center=av%20madero%20399,%20buenos%20aires,%20argentina&zoom=15&size=700x220&sensor=true" width="943" height="300" alt="">
+  </div>
+</div>
+
+<div class="contentblock">
+  <div class="columnleft flt_Lt">
+    <strong class="categories">
+      Categorías: 
+      <a href="#" class="link1 link2"><%= @advertisement.category_1.name %></a>
+      <% if @advertisement.category_2 %>
+      <a href="#" class="link1 link2"><%= @advertisement.category_2.name %></a>
+      <% end %>
+    </strong>
+    <span class="mappin"><%= @advertisement.company.location %></span>
+    <%
+    # <span class="date">Finaliza en 6 días</span>
+    %>
+
+    <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
+
+    <h2>Descripcion del puesto</h2>
+    <p><%= @advertisement.description %></p>
+
+    <%
+    # <h2>Requisitos</h2>
+    # <p>tLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor erat, ultricies vel metus vitae, interdum venenatis nisl. Sed non faucibus est. Mauris risus ante, suscipit ac suscipit ut, congue pellentesque purus. Vestibulum eget urna at libero semper blandit. Aenean lacinia, erat sed tempus vehicula, libero neque pulvinar ligula, in dictum odio felis vitae diam.</p>
+    # <a href="#" class="toapply toapply2">¡Postularme!</a>
+    %>
+  </div>
+  
+  <%
+  # <div class="columnright flt_Rt">
+  #   <h2>Ofertas similares</h2>
+  #   <ul>
+  #     <li>
+  #       <span class="playlogo"><img src="/images/playstation-logo.png" width="50" height="37" alt=""></span>
+  #       <div class="palyinfo">
+  #         <h4>Analista de Video Juegos ...</h4>
+  #           <p>en Playstation Argentina SA</p>
+  #           <strong class="btmlinks"><span><a href="#"><img src="/images/badge-sml-1.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-2.png" width="15" height="10" alt=""></a><a href="#"><img src="/images/badge-sml-3.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-4.png" width="13" height="13" alt=""></a></span><a href="#" class="masdetails">Mas Detalles</a></strong>
+  #       </div>
+  #     </li>
+  #     <li>
+  #       <span class="playlogo"><img src="/images/playstation-logo.png" width="50" height="37" alt=""></span>
+  #       <div class="palyinfo">
+  #           <h4>Analista de Video Juegos ...</h4>
+  #             <p>en Playstation Argentina SA</p>
+  #           <strong class="btmlinks"><span><a href="#"><img src="/images/badge-sml-1.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-2.png" width="15" height="10" alt=""></a><a href="#"><img src="/images/badge-sml-3.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-4.png" width="13" height="13" alt=""></a></span><a href="#" class="masdetails">Mas Detalles</a></strong>
+  #       </div>
+  #     </li>
+  #     <li>
+  #       <span class="playlogo"><img src="/images/playstation-logo.png" width="50" height="37" alt=""></span>
+  #       <div class="palyinfo">
+  #           <h4>Analista de Video Juegos ...</h4>
+  #             <p>en Playstation Argentina SA</p>
+  #           <strong class="btmlinks"><span><a href="#"><img src="/images/badge-sml-1.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-2.png" width="15" height="10" alt=""></a><a href="#"><img src="/images/badge-sml-3.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-4.png" width="13" height="13" alt=""></a></span><a href="#" class="masdetails">Mas Detalles</a></strong>
+  #       </div>
+  #     </li>
+  #   </ul>
+  # </div>
+  %>
+</div>

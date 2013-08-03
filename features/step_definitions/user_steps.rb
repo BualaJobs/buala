@@ -5,6 +5,8 @@ def get_user_data
   @degree ||= FactoryGirl.create(:degree) 
   @user_data ||= { name: 'Test user', email: 'example@example.com', password: '123123123',
     password_confirmation: '123123123', university: @university.name, degree: @degree.name }
+  @another_user_data ||= { name: 'Test user 2', email: 'example2@example.com', password: '123123123',
+    password_confirmation: '123123123', university: @university.name, degree: @degree.name }
 end
 
 def replace_user_data_value key, value
@@ -139,3 +141,53 @@ Then(/^I should see a successful sign out message$/) do
   page.should have_content 'Signed out successfully.'
 end
 
+def visit_profile user
+  visit '/users/' + user[:id].to_s
+end
+
+def create_user user_data
+  new_user ||= FactoryGirl.create(:user, name: user_data[:name], email: user_data[:email], 
+    password: user_data[:password], university: @university, degree: @degree)
+end
+
+Given(/^I navigate to my profile page$/) do
+  visit_profile @logged_user
+end
+
+Given(/^I navigate to someone's profile page$/) do
+  visit_profile @not_logged_user
+end
+
+Given(/^There are two registered accounts$/) do
+  get_user_data
+  @logged_user = create_user @user_data
+  @not_logged_user = create_user @another_user_data
+end
+
+Given(/^One of them is logged in$/) do
+  sign_in @user_data
+end
+
+Then(/^I should see a forbidden message$/) do
+  page.should have_content 'Forbidden'
+end
+
+Then(/^I should see my profile$/) do
+  page.should have_content 'Mi Perfil'
+end
+
+Then(/^I should see my name$/) do
+  page.should have_content @user_data[:name]
+end
+
+Then(/^I should see my email$/) do
+  page.should have_content @user_data[:email]
+end
+
+Then(/^I should see my university$/) do
+  page.should have_content @user_data[:university]
+end
+
+Then(/^I should see my degree$/) do
+  page.should have_content @user_data[:degree]
+end

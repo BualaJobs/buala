@@ -7,7 +7,11 @@
     <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply'}%>
   </div>
   <div class="map">
+<<<<<<< HEAD
     <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @advertisement.company.location %>&zoom=15&size=700x230&sensor=true&markers=<%= @advertisement.company.location %>" width="943" height="300" alt="">
+=======
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @advertisement.company.location %>&zoom=14&size=700x230&sensor=true&markers=color:blue%7label:A" width="943" height="300" alt="">
+>>>>>>> Adding advertisement requirements field
   </div>
 </div>
 
@@ -30,12 +34,18 @@
     <h2>Descripción del puesto</h2>
     <p><%= @advertisement.description %></p>
 
+<<<<<<< HEAD
     <% unless @advertisement.requirements.blank? %>
     <h2>Requisitos</h2>
     <p><%= @advertisement.requirements %></p>
     <% end %>
 
     <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply toapply2'} %>
+=======
+    <h2>Requisitos</h2>
+    <p><%= @advertisement.requirements %></p>
+    <a href="#" class="toapply toapply2">¡Postularme!</a>
+>>>>>>> Adding advertisement requirements field
   </div>
   
   <%

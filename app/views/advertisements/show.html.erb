@@ -4,7 +4,7 @@
     <% # <a href="#" class="toapply">¡Postularme!</a> %>
   </div>
   <div class="map">
-    <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @advertisement.company.location %>&zoom=16&size=700x230&sensor=true&markers=color:blue%7label:A" width="943" height="300" alt="">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @advertisement.company.location %>&zoom=14&size=700x230&sensor=true&markers=color:blue%7label:A" width="943" height="300" alt="">
   </div>
 </div>
 
@@ -24,14 +24,12 @@
 
     <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
 
-    <h2>Descripcion del puesto</h2>
+    <h2>Descripción del puesto</h2>
     <p><%= @advertisement.description %></p>
 
-    <%
-    # <h2>Requisitos</h2>
-    # <p>tLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor erat, ultricies vel metus vitae, interdum venenatis nisl. Sed non faucibus est. Mauris risus ante, suscipit ac suscipit ut, congue pellentesque purus. Vestibulum eget urna at libero semper blandit. Aenean lacinia, erat sed tempus vehicula, libero neque pulvinar ligula, in dictum odio felis vitae diam.</p>
-    # <a href="#" class="toapply toapply2">¡Postularme!</a>
-    %>
+    <h2>Requisitos</h2>
+    <p><%= @advertisement.requirements %></p>
+    <a href="#" class="toapply toapply2">¡Postularme!</a>
   </div>
   
   <%

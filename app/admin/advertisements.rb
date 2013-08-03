@@ -29,6 +29,7 @@ ActiveAdmin.register Advertisement do
 			row :category_2
 			row :start_date
 			row :description
+			row :requirements
 			row :published
 			row :is_paid
 			row :working_turn
@@ -45,6 +46,7 @@ ActiveAdmin.register Advertisement do
       f.input :category_2
       f.input :start_date, as: :datepicker
       f.input :description
+      f.input :requirements
       f.input :published
       f.input :is_paid
       f.input :working_turn

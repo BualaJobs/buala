@@ -6,10 +6,16 @@ Buala::Application.routes.draw do
 
   # devise_for :users
 
-  resources :advertisements, only: [:show]
+  resources :advertisements, only: [:show] do
+  	member do
+  		get 'apply'
+  	end
+  end
+
   resources :users, only: [:show]
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
 
 end

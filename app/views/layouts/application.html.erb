@@ -9,6 +9,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+  <%= analytics_init if Rails.env.production? %>
   <div class="wrapper">
 
     <div id="header">

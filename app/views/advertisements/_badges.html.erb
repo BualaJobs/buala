@@ -1,32 +1,36 @@
 <ul class="badges">
 
   <li>
-    <a href="#">
-      <span><img src="/images/badge-1.gif" width="15" height="16" alt=""></span>
-      <strong><%= advertisement.advertisement_type.name %></strong>
-    </a>
+    <img src="/images/badges/advertisement-type.png" alt="">
+    <strong><%= advertisement.advertisement_type.name %></strong>
   </li>
 
-  <% if advertisement.company.company_type.name != 'Empresa' %>
+  <% if advertisement.is_paid %>
   <li>
-    <a href="#">
-      <span><img src="/images/badge-2.gif" width="15" height="15" alt=""></span>
-      <strong><%= advertisement.company.company_type.name %></strong>
-    </a>
+    <img src="/images/badges/ispaid.png" alt="">
+    <strong>Remunerada</strong>
+  </li>
+  <% else %>
+  <li>
+    <img src="/images/badges/isnotpaid.png" alt="">
+    <strong>No remunerada</strong>
   </li>
   <% end %>
 
   <li>
-    <a href="#">
-      <span><img src="/images/badge-3.gif" width="16" height="13" alt=""></span>
-      <strong>
-      <% if advertisement.start_date && Date.today + 1.months < advertisement.start_date %>
-        <%= (l advertisement.start_date, format: '%B, %Y').humanize %>
-      <% else %>
-        Inmediata
-      <% end %>
-      </strong>
-    </a>
+    <img src="/images/badge-2.gif" alt="">
+    <strong><%= advertisement.company.company_type.name %></strong>
+  </li>
+
+  <li>
+    <img src="/images/badge-3.gif" alt="">
+    <strong>
+    <% if advertisement.start_date && Date.today + 1.months < advertisement.start_date %>
+      Contratación: <%= (l advertisement.start_date, format: '%B, %Y').humanize %>
+    <% else %>
+      Contratación Inmediata
+    <% end %>
+    </strong>
   </li>
 
   <%
@@ -38,35 +42,15 @@
   # </li>
   %>
 
-  <% if advertisement.is_paid %>
   <li>
-    <a href="#">
-      <span><img src="/images/badge-5.gif" width="19" height="13" alt=""></span>
-      <strong>Remunerada</strong>
-    </a>
-  </li>
-  <% else %>
-  <li>
-    <a href="#">
-      <span><img src="/images/badge-5.gif" width="19" height="13" alt=""></span>
-      <strong>No remunerada</strong>
-    </a>
-  </li>
-  <% end %>
-
-  <li>
-    <a href="#">
-      <span><img src="/images/badge-6.gif" width="16" height="18" alt=""></span>
-      <strong><%= advertisement.working_turn.name %></strong>
-    </a>
+    <img src="/images/badge-6.gif" alt="">
+    <strong><%= advertisement.working_turn.name %></strong>
   </li>
 
   <% if advertisement.vacancies > 0 %>
   <li>
-    <a href="#">
-      <span><img src="/images/badge-7.gif" width="16" height="16" alt=""></span>
-      <strong><%= advertisement.vacancies %> vacantes</strong>
-    </a>
+    <img src="/images/badge-7.gif" alt="">
+    <strong><%= advertisement.vacancies %> vacantes</strong>
   </li>
   <% end %>
       

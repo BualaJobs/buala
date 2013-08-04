@@ -1,10 +1,13 @@
 <div class="banner">
   <div class="bnrtop">
-    <h1><%= @advertisement.title %> <strong>en <%= @advertisement.company.name %></strong></h1>
-    <% # <a href="#" class="toapply">¡Postularme!</a> %>
+    <% unless @advertisement.company.company_logo.blank? %>
+    <img src="<%= @advertisement.company.company_logo_url %>" />
+    <% end %>
+    <h1><%= @advertisement.title %> <strong>en <a href="<%= @advertisement.company.website %>" target="_blank"><%= @advertisement.company.name %></a></strong></h1>
+    <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply'}%>
   </div>
   <div class="map">
-    <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @advertisement.company.location %>&zoom=14&size=700x230&sensor=true&markers=color:blue%7label:A" width="943" height="300" alt="">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @advertisement.company.location %>&zoom=15&size=700x230&sensor=true&markers=<%= @advertisement.company.location %>" width="943" height="300" alt="">
   </div>
 </div>
 
@@ -27,9 +30,12 @@
     <h2>Descripción del puesto</h2>
     <p><%= @advertisement.description %></p>
 
+    <% unless @advertisement.requirements.blank? %>
     <h2>Requisitos</h2>
     <p><%= @advertisement.requirements %></p>
-    <a href="#" class="toapply toapply2">¡Postularme!</a>
+    <% end %>
+
+    <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply toapply2'} %>
   </div>
   
   <%

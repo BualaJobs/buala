@@ -67,10 +67,7 @@ ActiveRecord::Schema.define(:version => 20130804001716) do
     t.date     "start_date"
     t.integer  "vacancies"
     t.text     "requirements"
-<<<<<<< HEAD
     t.text     "zoho_form_url"
-=======
->>>>>>> Adding advertisement requirements field
   end
 
   create_table "categories", :force => true do |t|

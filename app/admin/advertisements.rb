@@ -34,6 +34,7 @@ ActiveAdmin.register Advertisement do
 			row :is_paid
 			row :working_turn
 			row :vacancies
+			row :zoho_form_url
 		end
 	end
 
@@ -51,6 +52,7 @@ ActiveAdmin.register Advertisement do
       f.input :is_paid
       f.input :working_turn
       f.input :vacancies
+      f.input :zoho_form_url
     end
     f.actions
   end

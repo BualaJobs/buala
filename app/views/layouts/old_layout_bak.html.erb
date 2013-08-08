@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bualá - Pensado por y para estudiantes</title>
+  <%= stylesheet_link_tag "application", rel: 'favicon', type: 'image/ico', href: '/favicon.ico' %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
 <div class="header_wrapper">
   <div class="header"><!--header-start-->
     <div class="logo fltleft"><a href="<%= home_index_url %>"><img src="/img/logo.jpg" alt=""></a></div>

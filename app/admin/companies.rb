@@ -13,6 +13,11 @@ ActiveAdmin.register Company do
   show do
     attributes_table do
       row :name
+      unless company.company_logo.blank?
+        row :company_logo do |company|
+          image_tag company.company_logo_url     
+        end
+      end
       row :company_type
       row :category
       row :website
@@ -24,6 +29,7 @@ ActiveAdmin.register Company do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :company_logo
       f.input :company_type
       f.input :category
       f.input :website

@@ -5,6 +5,8 @@ gem 'pg'
 gem 'devise'
 gem 'activeadmin'
 gem 'inherited_resources'
+gem 'carrierwave'
+gem 'cloudinary'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

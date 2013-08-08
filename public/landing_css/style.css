@@ -47,7 +47,6 @@ body {
 }
 
 .fb-button {
-  width: 321px; 
   height: 65px; 
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
@@ -57,9 +56,9 @@ body {
   color: #fff;
   text-decoration: none;
   display: block;
-  padding: 5px;
-  margin-top: 15px;
-  margin-left: 55px;
+  padding: 5px 10px 5px 5px;
+  margin: 15px 0 0  55px;
+  float:left;
 }
 
 .fb-button:hover {
@@ -82,8 +81,9 @@ body {
   height: 48px;
   font-size: 20px; 
   color: #858484;
-  width:720px;
+  width:960px;
   margin: 28px auto;
+  text-align: center;
 }
 
 .social a {
@@ -94,15 +94,15 @@ body {
   padding: 9px 0 0 5px;
 }
 
+.social li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
 .social li img {
   float: left;
   width: 43px;
   height: 43px;
-}
-
-.social li {
-  float:left;
-  margin-right: 15px;
 }
 
 .footer{

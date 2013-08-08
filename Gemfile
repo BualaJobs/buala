@@ -8,6 +8,7 @@ gem 'inherited_resources'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'google-analytics-rails'
+gem 'meta-tags', :require => 'meta_tags'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

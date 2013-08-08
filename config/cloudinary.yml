@@ -1,0 +1,20 @@
+development:
+  cloud_name: huujs2tw0
+  api_key: '751523631323291'
+  api_secret: 9wPwQTRdRE6DGillexcnBLokiN0
+  enhance_image_tag: true
+  static_image_support: false
+
+production:
+  cloud_name: huujs2tw0
+  api_key: '751523631323291'
+  api_secret: 9wPwQTRdRE6DGillexcnBLokiN0
+  enhance_image_tag: true
+  static_image_support: true
+
+test:
+  cloud_name: huujs2tw0
+  api_key: '751523631323291'
+  api_secret: 9wPwQTRdRE6DGillexcnBLokiN0
+  enhance_image_tag: true
+  static_image_support: false

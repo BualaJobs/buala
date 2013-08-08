@@ -1,0 +1,1359 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@charset "utf-8";
+/* CSS Document */
+/**************************************************************************************/
+
+/*====================================== reset.css is here ========================================*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset, img {
+  border:0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:400;
+}
+ol, ul {
+  list-style:none;
+}
+caption, th {
+  text-align:left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size:100%;
+  font-weight:700;
+}
+q:before, q:after {
+  content:'';
+}
+abbr, acronym {
+  border:0;
+}
+.clear_0 {
+  clear:both;
+  font-size:0px;
+  line-height:0px;
+  display:block;
+}
+.last {
+  margin:0 !important;
+}
+.pad_last {
+  padding:0 !important;
+}
+.no_bg {
+  background:none !important;
+}
+/**************************************************************************************/
+a {
+  color:#000;
+  text-decoration:none;
+  outline:0 none;
+}
+a:hover {
+  color:#000;
+  text-decoration:none;
+}
+h1 {
+  font-size:24px;
+}
+h2 {
+  font-size:22px;
+}
+h3 {
+  font-size:18px;
+}
+h4 {
+  font-size:16px;
+}
+h5 {
+  font-size:14px;
+}
+h6 {
+  font-size:12px;
+}
+/*----------------------------------------------------------------------------------*/
+html {
+}
+body {
+  color:#b1b1b1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:12px;
+  background: #fff;
+}
+.flt_Lt {
+  float:left;
+  display:inline;
+}
+.flt_Rt {
+  float:right;
+  display:inline;
+}
+/* ---------------------------------------------------------------------------------*/
+@font-face {
+    font-family: 'titillium_webregular';
+    src: url('../fonts/titilliumweb-regular-webfont.eot');
+    src: url('../fonts/titilliumweb-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/titilliumweb-regular-webfont.woff') format('woff'),
+         url('../fonts/titilliumweb-regular-webfont.ttf') format('truetype'),
+         url('../fonts/titilliumweb-regular-webfont.svg#titillium_webregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'titillium_websemibold';
+    src: url('../fonts/titilliumweb-semibold-webfont.eot');
+    src: url('../fonts/titilliumweb-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/titilliumweb-semibold-webfont.woff') format('woff'),
+         url('../fonts/titilliumweb-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/titilliumweb-semibold-webfont.svg#titillium_websemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'titillium_webbold';
+    src: url('../fonts/titilliumweb-bold-webfont.eot');
+    src: url('../fonts/titilliumweb-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/titilliumweb-bold-webfont.woff') format('woff'),
+         url('../fonts/titilliumweb-bold-webfont.ttf') format('truetype'),
+         url('../fonts/titilliumweb-bold-webfont.svg#titillium_webbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* ----------------------- layout ----------*/
+.wrapper {
+  margin:0 auto;
+}
+.container {
+  width:943px;
+  margin:0 auto;
+}
+.main_content {
+  background: url(../images/blue-bg.gif) repeat-x center top;
+}
+#header {
+  height: 73px;
+}
+/*-------------------------------------------*/
+
+/* ------------------------- HEADER HERE -------------------*/
+#logo {
+  width: 133px;
+  height: 53px;
+  float: left;
+  padding-top: 12px;
+}
+.search {
+  width: 466px;
+  height: 37px;
+  float: left;
+  background: #fff;
+  border: 2px solid #bdc2c5;
+  border-right: 3px solid #bdc2c5;
+  border-radius: 6px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  margin: 16px 0 0 22px;  
+}
+.search:hover {
+  border: 2px solid #3791bf;
+  border-right: 3px solid #3791bf;  
+}
+.search span {
+  display:block;
+}
+.searchinput {
+  width: 386px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000;
+  float: left;
+  background: none;
+  border: none;
+  outline: none;
+  padding:5px 10px;
+  height:27px;
+}
+.searchbtn {
+  width: 44px;
+  height: 37px;
+  float: right;
+  outline: none;
+  border: none;
+  background: url(../images/searchbtn.png) no-repeat left top;
+  cursor: pointer;
+  margin-right: -1px;
+}
+.searchbtn:hover {
+  background: url(../images/searchbtn-hr.png) no-repeat left top;
+}
+.searchbtn:active {
+  background: url(../images/searchbtn-click.png) no-repeat left top;
+}
+.reg-login {
+  float: left;
+  height: 33px;
+  padding: 22px 0 0 13px;
+}
+.reg-login a {
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  color: #8ba0b7;
+  line-height: 33px;
+}
+.reg-login .registered {
+  background: url(../images/reg.gif) no-repeat left 4px;
+  border-right: 1px solid #aebfd2;
+  padding: 5px 6px 4px 24px;
+  margin: 0 0 0 9px;
+}
+.reg-login .registered:hover {
+  color: #2d82ba;
+  background: url(../images/reg-hr.gif) no-repeat left 4px; 
+}
+.reg-login .registered:active {
+  color: #2c3e50;
+  background: url(../images/reg-click.gif) no-repeat left 4px;  
+}
+.reg-login .login {
+  background: url(../images/login.gif) no-repeat left 4px;
+  padding: 5px 0 0 24px;
+  margin: 0 0 0 9px;  
+}
+.reg-login .login:hover {
+  color: #2d82ba;
+  background: url(../images/login-hr.gif) no-repeat left 4px;
+}
+.reg-login .login:active {
+  color: #2c3e50;
+  background: url(../images/login-click.gif) no-repeat left 4px;
+}
+.empanduni {
+  width: 84px;
+  height: 73px;
+  float: right;
+  background: #0099de;  
+}
+.empanduni a {
+  width: 42px;
+  height: 73px;
+  float: left;
+}
+.empanduni a:hover,.empanduni a.active {
+  background: #2980b9;
+}
+.empanduni a.btn1 {
+  height: 51px;
+  width: 30px;
+  padding: 22px 0 0 12px;
+}
+.empanduni a.btn2 {
+  height: 49px;
+  width: 37px;
+  padding: 24px 0 0 5px;
+}
+/* ---------------------------------------------------------*/
+
+/* ------------------------- NAVIGATION HERE ---------------*/
+#nav {
+}
+#nav ul {
+}
+#nav ul li {
+}
+#nav ul li a {
+}
+#nav ul li a span {
+}
+#nav ul li a:hover {
+}
+/* ---------------------------------------------------------*/
+
+/* ------------------------ MIAN CONTENT HERE --------------*/
+.banner {
+  padding: 8px 0 4px 0; 
+}
+.bnrtop {
+  width: 943px;
+  min-height: 88px;
+  background: #fff;
+  padding: 18px 0 0;  
+}
+.bnrtop h1 {
+  font-family: 'titillium_webbold';
+  font-size: 30px;
+  color: #424242;
+  line-height: 32px;
+  font-weight: 400;
+  width: 480px;
+  float: left;
+  margin: 0 0 0 10px;
+}
+.bnrtop img {
+  float:left;
+  padding-left: 10px;
+  margin-top:5px;
+}
+.bnrtop h1 strong {
+  display: block; 
+  font-family: 'titillium_websemibold';
+  font-size: 24px;
+  color: #424242;
+  line-height: 25px;
+  padding-top: 5px;
+}
+.bnrtop h1 strong a {
+  text-decoration: underline;
+  font-family: 'titillium_websemibold';
+  color: #3791bf;
+}
+.toapply {
+  width: 200px;
+  height: 45px;
+  font-family: 'titillium_webbold';
+  font-size: 17px;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  float: right;
+  background: #1cb095;
+  border-radius: 6px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  margin: 11px 12px 0 0;  
+}
+.toapply:hover {
+  color: #fff;
+  background: #0d826d;  
+}
+.toapply:active {
+  color: #fff;
+  background: #84b3aa;  
+}
+.map {
+  width: 943px;
+  height: 300px;
+  display: block;
+  margin-top: 1px;  
+}
+.contentblock {
+  clear: both;
+  overflow: hidden; 
+  padding: 0 0 42px 0;
+}
+.columnleft {
+  width: 543px;
+  padding: 23px 0 0 20px;
+}
+.categories {
+  width: 543px;
+  font-family: 'titillium_webbold';
+  font-size: 20px;
+  color: #4b4b4b;
+  line-height: 22px;
+  float: left;
+  padding: 0 0 0 0; 
+}
+.categories a {
+  font-family: 'latoregular';
+  font-size: 13px;
+  color: #fff;
+  line-height: 22px;
+  text-align: center;
+  background: #5f97d8;
+  border-radius: 2px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  display: inline-block;
+  height: 22px;
+  padding: 0 15px;
+}
+.categories a:hover {
+  color: #fff;
+  background: #3595a9;  
+}
+.categories a.link1 {
+  /*width: 60px;*/
+  margin-left: 3px;
+}
+.categories a.link2 {
+  /*width: 90px;*/
+  margin-left: 0;
+}
+.mappin {
+  font-family: 'titillium_websemibold';
+  font-size: 16px;
+  color: #717171;
+  line-height: 36px;
+  font-style: italic;
+  float: left;
+  background: url(../images/map-pin.png) no-repeat left top;
+  padding: 0 0 0 41px;
+  margin: 18px 0 0;
+}
+.date {
+  font-family: 'titillium_websemibold';
+  font-size: 16px;
+  color: #717171;
+  line-height: 36px;
+  font-style: italic;
+  float: right;
+  background: url(../images/clock.png) no-repeat left top;
+  padding: 0 0 0 38px;
+  margin: 18px 0 0;
+}
+.badges {
+  width: 543px;
+  display: inline-block;
+  padding: 11px 0 9px 0;
+}
+.badges li {
+  float: left;
+  margin: 10px 12px 0 0;
+}
+.badges li img {
+  width: 16px;
+  height: 16px;
+  padding-top:2px;
+}
+.badges li strong {
+  font-family: 'titillium_webregular';
+  font-size: 15px;
+  color: #717171;
+  line-height: 15px;
+  font-style: italic;
+  margin: 0 0 0 3px;  
+}
+.columnleft h2 {
+  font-family: 'titillium_websemibold';
+  font-size: 19px;
+  color: #4b4b4b;
+  line-height: 21px;
+  font-weight: 700;
+  padding: 30px 0 0;  
+}
+.columnleft p {
+  font-family: 'titillium_webregular';
+  font-size: 16px;
+  color: #4b4b4b;
+  line-height: 20px;
+  text-align: justify;
+  padding: 22px 0 0;  
+}
+.toapply2{
+  float: left;
+  margin: 42px 0 0 4px; 
+}
+.columnright {
+  width: 361px;
+  padding: 14px 0 0;  
+}
+.columnright h2 {
+  font-family: 'titillium_webbold';
+  font-size: 19px;
+  color: #fff;
+  line-height: 51px;
+  background: #859ab1;
+  border-radius: 1px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  padding: 0 0 0 17px;
+}
+.columnright ul li {
+  width: 361px;
+  min-height: 94px;
+  display: inline;
+  float: left;
+  background: #f7f7f1;
+  border-radius: 1px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  margin: 16px 0 0;
+}
+.playlogo {
+  width: 50px;
+  height: 37px;
+  float: left;
+  margin: 26px 0 0 16px;  
+}
+.palyinfo {
+  float: right;
+  width: 257px;
+  padding: 0 14px 0 0;  
+}
+.palyinfo h4 {
+  font-family: 'titillium_webbold';
+  font-size: 18px;
+  color: #424242;
+  line-height: 20px;
+  font-weight: 400;
+  background: url(../images/heart-off.png) no-repeat right 3px;
+  margin-top: 10px;
+}
+.columnright ul li:hover .palyinfo h4 {
+  background: url(../images/heart-on.png) no-repeat right 3px;
+}
+.palyinfo p {
+  font-family: 'titillium_websemibold';
+  font-size: 16px;
+  color: #424242;
+  line-height: 20px;
+  padding: 0 0 4px 0; 
+}
+.btmlinks {
+  display: block;
+  width: 257px;
+  background: url(../images/line1.png) no-repeat center top;
+  padding: 6px 0 0 0; 
+}
+.btmlinks span {
+  float: left;
+  padding: 5px 0 0; 
+}
+.btmlinks span a {
+  width: 15px;
+  height: 13px;
+  margin-right: 15px;
+}
+.masdetails {
+  width: 77px;
+  height: 26px;
+  font-family: 'titillium_webbold';
+  font-size: 10px;
+  color: #fff;
+  line-height: 26px;
+  text-align: center;
+  float: right;
+  background: #859ab1;
+  border-radius: 3px;
+  behavior: url(js/css3-pie.htc);
+  position: relative; 
+}
+.masdetails:hover {
+  color: #fff;
+  background: #5f97d8;  
+}
+.masdetails:active {
+  color: #fff;
+  background: #3595a9;  
+}
+
+/* ---------------------------------------------------------*/
+
+/* ------------------ FOOTER HERE --------------------------*/
+#footer {
+  width: 100%;
+  height: 322px;
+  float: left;
+  background: url(../images/footerbg.gif) repeat-x left top #244155;
+  padding-top: 89px;
+}
+#footer ul {
+  padding: 0 0 20px 111px;
+  float: left;
+}
+#footer ul li {
+  padding-right: 20px;
+  float: left;
+}
+.column1 {
+  width: 200px;
+  float: left;
+  padding-right: 26px;
+}
+.column1 .image1 {
+  float: left;
+  width: 94px;
+  padding-left: 3px;
+}
+.column1 h3 {
+  font-family: 'titillium_websemibold';
+  font-size: 18px;
+  color: #1abc9c;
+  line-height: 18px;
+  font-weight: 400;
+  padding-bottom: 1px;
+}
+#footer .column1 ul {
+  padding: 0;
+  float: none;
+}
+.column1 ul li {
+  float: none;
+  width: 83px;
+}
+.column1 ul li a {
+  font-family: 'titillium_webregular';
+  font-size: 13px;
+  color: #fff;
+  line-height: 20px;
+}
+.column1 ul li a:hover {
+  color: #78afa5;
+}
+.column1 ul li a:active {
+  color: #aed1cb;
+}
+#footer .column1 p a {
+  font-family: 'titillium_websemibold';
+  font-size: 16px;
+  line-height: 35px;
+  color: #1abc9c;
+  display: block;
+}
+#footer .column1 p a:hover {
+  text-decoration: underline;
+}
+#footer ul li.second {
+  padding-right: 0;
+}
+#footer ul li.second .column1{
+  padding-right: 14px;
+}
+.column1 .image2 {
+  float: left;
+  width: 83px;
+  padding: 2px 0 0 0;
+}
+.column2 {
+  width: 223px;
+}
+.column2 .image3 {
+  width: 84px;
+  padding: 4px 12px 0 12px;
+}
+.column2 p a {
+  line-height: 42px !important;
+}
+.social {
+  width: 409px;
+  margin: 0 auto;
+}
+#footer .social ul li {
+  float: left;
+  padding-right: 8px;
+}
+#footer .social ul li .facebook {
+  width: 28px;
+  height: 28px;
+  float: left;
+  background: url(../images/fb.png) no-repeat left top;
+}
+#footer .social ul li .twitter {
+  background: url(../images/tweet.png) no-repeat left top;
+}
+#footer .social ul li .gplus {
+  background: url(../images/google.png) no-repeat left top;
+}
+#footer .social ul li .last {
+  background: url(../images/in.png) no-repeat left top;
+}
+#footer .social ul li .facebook:hover {
+  background: url(../images/fb1.png) no-repeat left top;
+}
+#footer .social ul li .twitter:hover {
+  background: url(../images/tweet1.png) no-repeat left top;
+}
+#footer .social ul li .gplus:hover {
+  background: url(../images/google1.png) no-repeat left top;
+}
+#footer .social ul li .last:hover {
+  background: url(../images/in1.png) no-repeat left top;
+}
+.footerblock {
+  width: 100%;
+  height: 106px;
+  margin-top: 30px;
+  background: #1d2936;
+  border-top: 1px solid #253444;
+  float: left;
+}
+.footerblock span {
+  width: 943px;
+  display: block;
+  font-family: 'titillium_webregular';
+  font-size: 18px;
+  line-height: 106px;
+  text-align: center;
+  color: #fff;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+/* ---------------------------------------------------------*/
+
+/* ------------------ INNER 1 HERE -------------------------*/
+.contentblock2 {
+  padding: 8px 0 26px 0;  
+}
+.columnleft2 {
+  width: 261px;
+  min-height: 320px;
+  background: #ecf0f1;
+  padding: 0; 
+}
+.columnleft2 h3 {
+  width: 261px;
+  height: 53px;
+  font-family: 'titillium_webbold';
+  font-size: 17px;
+  color: #fff;
+  line-height: 43px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  background: url(../images/actions-bg.gif) no-repeat left top;
+  display: block; 
+}
+.columnleft2 ul li {
+  float: left;
+  width: 234px;
+  height: 45px;
+  margin: 15px 0 0 11px;
+}
+.columnleft2 ul li:first-child {
+  margin-top: 7px;  
+}
+.columnleft2 ul li a {
+  display: block;
+  font-family: 'titillium_webbold';
+  font-size: 17px;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  background: #5f97d8;
+  border-radius: 5px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;   
+}
+.columnleft2 ul li a:hover {
+  color: #fff;
+  background: #6fbbd6;  
+}
+.columnleft2 ul li a:active {
+  color: #fff;
+  background: #2c3e50;  
+}
+.columnright2 {
+  width: 674px;
+  background: #f4f4f4;
+  padding: 0;
+  min-height: 1000px; 
+}
+.innertop {
+  min-height: 34px;
+  font-size: 17px;
+  color: #687382; 
+  line-height: 34px;
+  font-style: italic;
+  background: #e1e1e1;  
+}
+.innertop strong {
+  font-family: 'titillium_websemibold';
+  float: left;
+  font-style: italic;
+  padding-left: 44px;
+}
+.innertop span {
+  font-family: 'titillium_webregular';
+  float: right;
+  padding-right: 39px;
+}
+.info-personal {
+  width: 596px;
+  display: inline-block;
+  border-bottom: 1px solid #7f7f7f;
+  padding: 33px 0 29px 0;
+  margin: 0 0 0 44px; 
+}
+.info-personal h1 {
+  font-family: 'titillium_webbold';
+  font-size: 24px;
+  color: #3d4a5d;
+  line-height: 26px;
+  padding: 0 0 23px 0;
+}
+.info-personal .edit h1,.info-personal .edit2 h1 {
+  text-align: right;  
+}
+.info-personal strong {
+  float: left;
+  width: 165px; 
+}
+.photo {
+  width: 134px;
+  height: 134px;
+  display: block;
+  margin-left: 2px; 
+}
+.changephoto {
+  width: 142px;
+  height: 28px;
+  font-family: 'titillium_webbold';
+  font-size: 13px;
+  color: #fff;
+  line-height: 28px;
+  text-align: center;
+  background: #5f97d8;
+  border-radius: 3px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;   
+  display: inline-block;
+  margin: 16px 0 0; 
+}
+.changephoto:hover {
+  color: #fff;
+  background: #5f97d8;
+  border-bottom: 3px solid #59789e;
+}
+.changephoto:active {
+  color: #fff;
+  background: #345479;
+  border-bottom: 3px solid #283c5a;
+}
+.info-personal p {
+  width: 220px;
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  color: #354050;
+  line-height: 37px;
+  float: left;
+  padding: 0; 
+}
+.info-personal p a {
+  color: #354050;
+}
+.info-personal p a:hover {
+  color: #354050;
+  text-decoration: underline; 
+}
+.edit {
+  width: 81px;
+  padding: 0; 
+}
+.edit2 {
+  width: 81px;
+  position: absolute;
+  right: 0;
+  top: 21px;
+  z-index: 101; 
+}
+.squaredbtn {
+  width: 80px;
+  height: 29px;
+  display: block;
+  background: url(../images/squared-off.png) no-repeat left top;
+  margin-top: 10px; 
+}
+.squaredbtn:hover {
+  background: url(../images/squared-on.png) no-repeat left top; 
+}
+.squaredbtn:active {
+  background: url(../images/squared-on.png) no-repeat left top; 
+}
+
+.education {
+  padding: 22px 0 18px 0; 
+}
+.education .flt_Lt,.intereses .flt_Lt {
+  width: 355px; 
+}
+.education .flt_Lt h1 {
+  padding-bottom: 30px; 
+}
+.education p {
+  width: 343px;
+  line-height: normal;
+  margin: 10px 0 0 12px;  
+}
+.info-personal label {
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  color: #354050;
+  line-height: 16px;
+  float: left;
+}
+.education p label {
+  width: 98px;
+}
+.education p.last2 label {
+  line-height: 32px;  
+}
+.education p.date2 label {
+  width: 130px; 
+}
+.education p.date2 span {
+  float: right;
+}
+.select1 {
+  width: 245px;
+  float: left;  
+}
+.select2 {
+  width: 100px;
+  margin-left: 3px;
+}
+.txtfield {
+  width: 185px;
+  height: 32px;
+  float: left;
+  background: #fafafa;
+  border: 2px solid #bdc2c5;
+  border-radius: 5px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  padding: 0 10px;      
+}
+.txtfield:hover {
+  border: 2px solid #5f97d8;  
+}
+.txtfield .input2 {
+  width: 185px;
+  height: 32px;
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  color: #3d4a5d;
+  font-style: italic;
+  line-height: 32px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  outline: none;
+}
+.intereses {
+    padding: 22px 0 28px;
+}
+.intereses h1 {
+  padding-bottom: 30px; 
+}
+.intereses p {
+  width: 343px;
+  line-height: normal;
+  margin: 13px 0 0 12px;  
+}
+.intereses p label {
+  width: 87px;  
+}
+.txtfield2 {
+  width: 225px;
+  height: 56px; 
+}
+.txtfield2 .input2 {
+  width: 225px;
+  height: 56px;
+  font-style: normal;
+  color: #333;
+  line-height: normal;
+}
+.coverletter {
+  position: relative;
+  padding: 20px 0 36px 0; 
+}
+.txtareabox {
+  width: 596px;
+  padding: 60px 0 0;  
+}
+.mailicon {
+  width: 96px;
+  height: 100px;
+  margin: 5px 0 0 5px;  
+}
+.txtareabox div {
+  width: 441px;
+  height: 191px;
+  background: url(../images/textarea-bg.png) no-repeat left top;
+  padding: 10px 10px 10px 33px; 
+}
+.txtareabox div:hover {
+  background: url(../images/textarea-bg2.png) no-repeat left top;
+}
+.textarea1 {
+  width: 441px;
+  height: 191px;
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  color: #333;
+  float: left;
+  background: none;
+  border: none;
+  outline: none;
+}
+.coverletter p {
+  width: 593px;
+  text-align: right;
+  line-height: 16px;
+  padding: 10px 3px 7px 0;  
+}
+.carga {
+  padding-top: 30px;
+  border-bottom: none;
+}
+.carga h1 {
+  padding-bottom: 30px;
+}
+.cvimg {
+  width: 107px;
+  height: 96px;
+  float: left;
+  padding-right: 16px;
+}
+.cargablock {
+  width: 465px;
+  float: left;
+  padding-left: 6px;
+  padding-top: 9px;
+}
+.carga .cargablock label {
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  line-height: 18px;
+  color: #354050;
+  padding: 0 12px 0 3px;
+}
+.carga .cargablock .brunito {
+  width: 157px;
+  height: 22px;
+  float: left;
+  font-family: 'titillium_webregular';
+  font-size: 11px;
+  line-height: 22px;
+  color: #fff;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  background: url(../images/close.png) no-repeat 158px center #5f97d8;
+  border-radius: 2px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+}
+.cargabox {
+  float: left;
+  padding-top: 7px;
+}
+.cargabox span {
+  width: 292px;
+  height: 42px;
+  float: left;
+  border: 2px solid #bdc2c5; 
+  background: #fff;
+  border-radius: 8px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  padding: 0 10px;  
+}
+.cargabox span:hover {
+  border: 2px solid #5f97d8;  
+}
+.cargatextbox {
+  width: 292px;
+  height: 42px;
+  float: left;
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  color: #333;
+  line-height: 42px;
+  outline: none;
+  background: none;
+  border: none;
+  
+}
+.cargabutton {
+  width: 134px;
+  height: 43px;
+  font-family: 'titillium_webbold';
+  font-size: 15px;
+  color: #fff;
+  line-height: 43px;
+  text-align: center;
+  float: left;
+  background: #5f97d8;
+  padding-bottom: 3px;
+  margin: 2px 0 0 13px;
+  border: 0;
+  border-radius: 5px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  cursor: pointer;
+}
+.cargabutton:hover {
+  background: #5f97d8;
+  border-bottom: 3px solid #637994; 
+}
+.cargabutton:active {
+  background: #345479;
+  border-bottom: 3px solid #637994; 
+}
+.cargabox p {
+  width: 314px;
+  font-family: 'titillium_webregular';
+  font-size: 13px;
+  line-height: 16px;
+  color: #354050;
+  padding: 11px 0 0 2px;
+}
+.cargabutton1 {
+  background: #bbb;
+}
+/* ---------------------------------------------------------*/
+
+/* ------------------ INNER 2 HERE -------------------------*/
+.main_content2 {
+  background: url(../images/blue-bg2.gif) repeat-x left top;  
+}
+.contentblock3 {
+  padding: 8px 0 26px 0;  
+}
+.formblock {
+  width: 943px;
+  float: left;
+  padding: 34px 0 40px 2px;
+}
+.studentblock {
+  width: 456px;
+  float: left;
+  padding-right: 33px;
+}
+.studentbox {
+  width: 424px;
+  min-height: 164px;
+  float: left;
+  background: url(../images/studentboxbg.png) no-repeat left top;
+  padding: 12px 0 0 32px;
+}
+.studentbox2 {
+  margin-top: 32px; 
+}
+.studentbox span {
+  padding: 14px 20px 0 0;
+  float: left;
+}
+.studentbox p {
+  font-family: 'titillium_webregular';
+  font-size: 30px;
+  line-height: 37px;
+  color: #fff;
+}
+.studentbox a {
+  font-family: 'titillium_webregular';
+  color: #fff;
+  font-size: 19px;
+  line-height: 20px;
+}
+.studentbox a:hover {
+  text-decoration: underline;
+}
+.loginblock {
+  float: left;
+  width: 376px;
+  margin: 7px 0 0 23px;
+}
+.loginblock h3 {
+  width: 345px;
+  background: #3791bf;
+  padding: 11px 0 10px 30px;
+  clear: both;
+  overflow: hidden;
+  border-radius: 2px 2px 0 0;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+}
+.loginblock h3 span {
+  padding-right: 14px;
+  float: left;
+}
+.loginblock h3 strong {
+  font-family: 'titillium_webregular';
+  font-size: 28px;
+  line-height: 47px;
+  color: #fff;
+}
+.loginbox {
+  width: 317px;
+  min-height: 233px;
+  background: #f7f7f1;
+  border-radius: 0 0 2px 2px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  padding: 21px 30px 8px 29px;
+  float: right;
+}
+.loginbox a {
+  font-family: 'titillium_webregular';
+  font-size: 17px;
+  line-height: 18px;
+  color: #3791bf;
+  text-decoration: underline;
+  text-align: right;
+  margin-bottom: 21px;
+  float: left;
+  width: 317px;
+}
+.loginbox a:hover {
+  color: #1a6487;
+  text-decoration: none;
+}
+.textbox { 
+  width: 289px;
+  height: 29px;
+  float: left;
+  background: url(../images/textbox.gif) no-repeat left top;
+  padding: 6px 13px;
+  margin-bottom: 10px;
+}
+.textfield {
+  width: 262px;
+  height: 28px;
+  float: left;
+  background: none;
+  border: 0;
+  font-family: 'titillium_webregular';
+  font-size: 20px;
+  line-height: 28px;
+  color: #b6bcc4;
+  font-style: italic;
+  outline: none;
+}
+.textbox1 {
+  background: url(../images/textbox1.gif) no-repeat left top;
+}
+.textbox:hover {
+  background: url(../images/textbox3.gif) no-repeat left top;
+}
+.textbox1:hover {
+  background: url(../images/textbox2.gif) no-repeat left top;
+}
+.buttonBox {
+  width: 233px;
+  height: 45px;
+  font-family: 'titillium_webregular';
+  font-size: 24px;
+  line-height: 27px;
+  color: #f7f7f1;
+  float: right;
+  cursor: pointer;
+  border: 0;
+  background: url(../images/buttonbg.png) no-repeat left top #3791bf;
+  border-radius: 4px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  margin: 0 2px 12px 0;
+  padding: 0 0 2px 45px;
+}
+.buttonBox:hover {
+  background: url(../images/buttonbg.png) no-repeat left top #1a6487;
+}
+.buttonBox:focus {
+  background: url(../images/buttonbg.png) no-repeat left top #2c3e50;
+}
+/* ---------------------------------------------------------*/
+
+/* ------------------ INNER 3 HERE -------------------------*/
+.formblock2 {
+  padding-bottom: 0;  
+}
+.formblock2 .studentbox p {
+  line-height: 31px;
+  padding-bottom: 4px;
+}
+.formblock2 .studentbox a {
+  font-size: 21px;
+  color: #d7d8dd;
+  line-height: 24px;
+  display: block;
+}
+.formblock2 .studentbox a:hover {
+  color: #d7d8dd;
+  text-decoration: underline; 
+}
+.loginblock1 h3 {
+  padding: 9px 0 8px 30px;
+}
+.loginblock1 h3 span {
+  padding-right: 11px;
+}
+.loginblock1 h3 strong {
+  line-height: 51px;
+}
+.loginbox1 {
+  padding: 21px 29px 8px;
+}
+.textbox2 {
+  background: url(../images/textbox4.gif) no-repeat left top;
+}
+.textbox2:hover {
+  background: url(../images/textbox5.gif) no-repeat left top;
+}
+.selectbox {
+  width: 314px;
+  float: left;
+  border: 0;
+  font-size: 20px;
+  color: #b6bcc4;
+  line-height: 39px;
+  font-weight: 400;
+  padding: 0 0 0 12px;
+  margin-bottom: 11px;
+}
+.checkblock {
+  position: relative;
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  line-height: 20px;
+  color: #354050;
+  padding-bottom: 17px;
+  float: left;
+}
+.checkblock em {
+  padding-left: 8px;  
+}
+.checkblock strong {
+  font-family: 'titillium_webregular';
+  font-size: 14px;
+  line-height: 20px;
+  color: #6fbbd7;
+}
+.checkblock strong a {
+  font-size: 14px !important;
+  color: #6fbbd7;
+  float: none;
+  text-decoration: underline; 
+}
+.checkblock strong a:hover {
+  color: #6fbbd7;
+  text-decoration: none;  
+}
+/* ---------------------------------------------------------*/
+
+.apply-form {
+  margin: 25px 0 0 200px;
+}

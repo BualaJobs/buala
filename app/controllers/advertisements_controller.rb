@@ -6,4 +6,8 @@ class AdvertisementsController < ApplicationController
     @advertisement = Advertisement.published.find(params[:id])
   end
 
+  def apply
+  	@advertisement = Advertisement.published.find(params[:id])
+  end
+
 end

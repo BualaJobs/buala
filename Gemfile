@@ -7,6 +7,7 @@ gem 'activeadmin'
 gem 'inherited_resources'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'google-analytics-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -150,6 +150,8 @@ def create_user user_data
     password: user_data[:password], university: @university, degree: @degree)
 end
 
+# User profile
+
 Given(/^I navigate to my profile page$/) do
   visit_profile @logged_user
 end

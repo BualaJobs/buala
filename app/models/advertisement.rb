@@ -19,7 +19,7 @@ class Advertisement < ActiveRecord::Base
 
   scope :published, -> { where(published: true) }
 
-  friendly_id :title, use: :scoped, scope: :company
+  friendly_id :title, use: :slugged
 
   private
   def different_categories

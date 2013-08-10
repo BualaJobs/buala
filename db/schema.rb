@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809024311) do
+ActiveRecord::Schema.define(:version => 20130810184815) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(:version => 20130809024311) do
     t.integer  "category_id"
     t.integer  "company_type_id"
     t.string   "company_logo"
-    t.string   "slug"
   end
 
   create_table "company_types", :force => true do |t|

@@ -481,15 +481,17 @@ body {
   padding: 14px 0 0;  
 }
 .columnright h2 {
-  font-family: 'titillium_webbold';
+  font-family: 'titillium_websemibold';
   font-size: 19px;
   color: #fff;
   line-height: 51px;
-  background: #859ab1;
+  background: #d1e9f1;
+  color: #0092c2;
   border-radius: 1px;
   behavior: url(js/css3-pie.htc);
   position: relative;
-  padding: 0 0 0 17px;
+  padding: 0 17px 0 17px;
+  text-align: right;
 }
 .columnright ul li {
   width: 361px;
@@ -500,32 +502,32 @@ body {
   border-radius: 1px;
   behavior: url(js/css3-pie.htc);
   position: relative;
-  margin: 16px 0 0;
+  margin: 5px 0 0;
 }
 .playlogo {
-  width: 50px;
-  height: 37px;
+  width: 70px;
+  max-height: 30px;
   float: left;
-  margin: 26px 0 0 16px;  
+  margin: 20px 0 0 10px;  
 }
-.palyinfo {
+.playinfo {
   float: right;
   width: 257px;
-  padding: 0 14px 0 0;  
+  padding: 0 5px 5px 0;
 }
-.palyinfo h4 {
+.playinfo h4 {
   font-family: 'titillium_webbold';
   font-size: 18px;
   color: #424242;
   line-height: 20px;
   font-weight: 400;
-  background: url(../images/heart-off.png) no-repeat right 3px;
+  /*background: url(../images/heart-off.png) no-repeat right 3px;*/
   margin-top: 10px;
 }
-.columnright ul li:hover .palyinfo h4 {
-  background: url(../images/heart-on.png) no-repeat right 3px;
+.columnright ul li:hover .playinfo h4 {
+  /*background: url(../images/heart-on.png) no-repeat right 3px;*/
 }
-.palyinfo p {
+.playinfo p {
   font-family: 'titillium_websemibold';
   font-size: 16px;
   color: #424242;
@@ -535,8 +537,8 @@ body {
 .btmlinks {
   display: block;
   width: 257px;
-  background: url(../images/line1.png) no-repeat center top;
-  padding: 6px 0 0 0; 
+  /*background: url(../images/line1.png) no-repeat center top;*/
+  padding: 3px 0px 0 0; 
 }
 .btmlinks span {
   float: left;
@@ -548,22 +550,23 @@ body {
   margin-right: 15px;
 }
 .masdetails {
-  width: 77px;
-  height: 26px;
+  padding: 0 15px;
+  margin:0 5px 0 0;
+  height: 30px;
   font-family: 'titillium_webbold';
-  font-size: 10px;
-  color: #fff;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 28px;
   text-align: center;
   float: right;
-  background: #859ab1;
+  background: #d1e9f1;
+  color: #0092c2;
   border-radius: 3px;
   behavior: url(js/css3-pie.htc);
   position: relative; 
 }
 .masdetails:hover {
-  color: #fff;
-  background: #5f97d8;  
+  color: #d1e9f1;
+  background: #0092c2;  
 }
 .masdetails:active {
   color: #fff;

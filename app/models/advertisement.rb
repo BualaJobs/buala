@@ -21,6 +21,10 @@ class Advertisement < ActiveRecord::Base
 
   friendly_id :title, use: :slugged
 
+  def recommended
+    Advertisement.published.where("id != ?", id).sample(3)
+  end
+
   private
   def different_categories
     if category_1 && category_2 && category_1 == category_2

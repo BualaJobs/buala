@@ -10,6 +10,7 @@ class AdvertisementsController < ApplicationController
     if request.path != advertisement_path(@advertisement)
       redirect_to @advertisement, status: :moved_permanently
     else
+
       set_meta_tags :og => {
         site: "Bualá Jobs",
         title: @advertisement.title,

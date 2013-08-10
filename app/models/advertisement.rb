@@ -1,4 +1,6 @@
 class Advertisement < ActiveRecord::Base
+  extend FriendlyId
+
   attr_accessible :description, :title, :company, :company_id, :published, :category_1_id, :category_1, 
   	:category_2_id, :category_2, :advertisement_type, :advertisement_type_id, :is_paid,
     :working_turn, :working_turn_id, :start_date, :vacancies, :requirements, :zoho_form_url
@@ -16,6 +18,8 @@ class Advertisement < ActiveRecord::Base
   validates :vacancies, numericality: { greater_than_or_equal_to: 0 }
 
   scope :published, -> { where(published: true) }
+
+  friendly_id :title, use: :slugged
 
   private
   def different_categories

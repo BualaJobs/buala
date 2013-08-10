@@ -6,6 +6,11 @@ class AdvertisementsController < ApplicationController
 
   def show 
     @advertisement = Advertisement.published.find(params[:id])
+
+    if request.path != advertisement_path(@advertisement)
+      redirect_to @advertisement, status: :moved_permanently
+    end
+
     set_meta_tags :og => {
       site: "Bualá Jobs",
       title: @advertisement.title,
@@ -25,6 +30,7 @@ class AdvertisementsController < ApplicationController
         image: @advertisement.company.company_logo_url
       }
     end
+
   end
 
   def apply

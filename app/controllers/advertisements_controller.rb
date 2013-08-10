@@ -9,26 +9,26 @@ class AdvertisementsController < ApplicationController
 
     if request.path != advertisement_path(@advertisement)
       redirect_to @advertisement, status: :moved_permanently
-    end
-
-    set_meta_tags :og => {
-      site: "Bualá Jobs",
-      title: @advertisement.title,
-      url: (advertisement_url @advertisement)
-    }
-    if @advertisement.description.length > 250
-      set_meta_tags :og => {
-        description: @advertisement.description[0..250],
-      }
     else
       set_meta_tags :og => {
-        description: @advertisement.description,
+        site: "Bualá Jobs",
+        title: @advertisement.title,
+        url: (advertisement_url @advertisement)
       }
-    end
-    unless @advertisement.company.company_logo.blank?
-      set_meta_tags :og => {
-        image: @advertisement.company.company_logo_url
-      }
+      if @advertisement.description.length > 250
+        set_meta_tags :og => {
+          description: @advertisement.description[0..250],
+        }
+      else
+        set_meta_tags :og => {
+          description: @advertisement.description,
+        }
+      end
+      unless @advertisement.company.company_logo.blank?
+        set_meta_tags :og => {
+          image: @advertisement.company.company_logo_url
+        }
+      end
     end
 
   end

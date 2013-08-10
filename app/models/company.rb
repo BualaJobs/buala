@@ -1,4 +1,5 @@
 class Company < ActiveRecord::Base
+  
   attr_accessible :description, :location, :name, :website, :category, :category_id, :company_type, 
     :company_type_id, :company_logo
   belongs_to :category

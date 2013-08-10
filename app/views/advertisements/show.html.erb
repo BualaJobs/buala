@@ -38,35 +38,15 @@
     <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply toapply2'} %>
   </div>
   
-  <%
-  # <div class="columnright flt_Rt">
-  #   <h2>Ofertas similares</h2>
-  #   <ul>
-  #     <li>
-  #       <span class="playlogo"><img src="/images/playstation-logo.png" width="50" height="37" alt=""></span>
-  #       <div class="palyinfo">
-  #         <h4>Analista de Video Juegos ...</h4>
-  #           <p>en Playstation Argentina SA</p>
-  #           <strong class="btmlinks"><span><a href="#"><img src="/images/badge-sml-1.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-2.png" width="15" height="10" alt=""></a><a href="#"><img src="/images/badge-sml-3.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-4.png" width="13" height="13" alt=""></a></span><a href="#" class="masdetails">Mas Detalles</a></strong>
-  #       </div>
-  #     </li>
-  #     <li>
-  #       <span class="playlogo"><img src="/images/playstation-logo.png" width="50" height="37" alt=""></span>
-  #       <div class="palyinfo">
-  #           <h4>Analista de Video Juegos ...</h4>
-  #             <p>en Playstation Argentina SA</p>
-  #           <strong class="btmlinks"><span><a href="#"><img src="/images/badge-sml-1.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-2.png" width="15" height="10" alt=""></a><a href="#"><img src="/images/badge-sml-3.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-4.png" width="13" height="13" alt=""></a></span><a href="#" class="masdetails">Mas Detalles</a></strong>
-  #       </div>
-  #     </li>
-  #     <li>
-  #       <span class="playlogo"><img src="/images/playstation-logo.png" width="50" height="37" alt=""></span>
-  #       <div class="palyinfo">
-  #           <h4>Analista de Video Juegos ...</h4>
-  #             <p>en Playstation Argentina SA</p>
-  #           <strong class="btmlinks"><span><a href="#"><img src="/images/badge-sml-1.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-2.png" width="15" height="10" alt=""></a><a href="#"><img src="/images/badge-sml-3.png" width="12" height="12" alt=""></a><a href="#"><img src="/images/badge-sml-4.png" width="13" height="13" alt=""></a></span><a href="#" class="masdetails">Mas Detalles</a></strong>
-  #       </div>
-  #     </li>
-  #   </ul>
-  # </div>
-  %>
+  <div class="columnright flt_Rt">
+    <h2>Otras Ofertas</h2>
+    <ul>
+      <% @advertisement.recommended.each do |recommended| %>
+      <li>
+        <%= render partial: 'advertisements/recommended', locals: { advertisement: recommended } %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>

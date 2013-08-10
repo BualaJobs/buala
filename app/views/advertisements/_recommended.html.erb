@@ -1,0 +1,20 @@
+<% unless @advertisement.company.company_logo.blank? %>
+<span class="playlogo">
+  <img src="<%= advertisement.company.company_logo_url %>" width="70" alt="">
+</span>
+<% end %>
+<div class="playinfo">
+  <h4><%= advertisement.title %></h4>
+    <p>en <%= advertisement.company.name %></p>
+    <strong class="btmlinks">
+      <%
+      # <span>
+      #   <a href="#"><img src="/images/badge-sml-1.png" width="12" height="12" alt=""></a>
+      #   <a href="#"><img src="/images/badge-sml-2.png" width="15" height="10" alt=""></a>
+      #   <a href="#"><img src="/images/badge-sml-3.png" width="12" height="12" alt=""></a>
+      #   <a href="#"><img src="/images/badge-sml-4.png" width="13" height="13" alt=""></a>
+      # </span>
+      %>
+      <%= link_to "Ver aviso", advertisement_path(advertisement), {class: 'masdetails'}%>
+    </strong>
+</div>

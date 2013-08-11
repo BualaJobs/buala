@@ -34,7 +34,7 @@
     <% unless @advertisement.requirements.blank? %>
     <h2>Requisitos</h2>
     <div class="safe-html">
-      <p><%= @advertisement.requirements %></p>
+      <p><%= @advertisement.requirements.html_safe %></p>
     </div>
     <% end %>
 

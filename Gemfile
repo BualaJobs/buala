@@ -10,6 +10,7 @@ gem 'cloudinary'
 gem 'google-analytics-rails'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'friendly_id'
+gem 'active_admin_editor'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

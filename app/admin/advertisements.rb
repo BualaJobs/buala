@@ -46,8 +46,8 @@ ActiveAdmin.register Advertisement do
       f.input :category_1
       f.input :category_2
       f.input :start_date, as: :datepicker
-      f.input :description
-      f.input :requirements
+      f.input :description, as: :html_editor
+      f.input :requirements, as: :html_editor
       f.input :published
       f.input :is_paid
       f.input :working_turn

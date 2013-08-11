@@ -28,11 +28,14 @@
     <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
 
     <h2>Descripción del puesto</h2>
-    <p><%= @advertisement.description %></p>
-
+    <div class="safe-html">
+      <p><%= @advertisement.description.html_safe %></p>
+    </div>
     <% unless @advertisement.requirements.blank? %>
     <h2>Requisitos</h2>
-    <p><%= @advertisement.requirements %></p>
+    <div class="safe-html">
+      <p><%= @advertisement.requirements %></p>
+    </div>
     <% end %>
 
     <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply toapply2'} %>

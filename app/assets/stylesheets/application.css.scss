@@ -476,6 +476,44 @@ body {
   float: left;
   margin: 42px 0 0 4px; 
 }
+.safe-html {
+  font-family: 'titillium_webregular';
+  font-size: 16px;
+  color: #4b4b4b;
+  line-height: 20px;
+  text-align: justify;
+}
+.safe-html ul li {
+  list-style-type: square;
+  margin-left: 20px;
+  padding:2px 0;
+}
+.safe-html ol li {
+  list-style-type: decimal;
+  margin-left: 20px;
+  padding:2px 0;
+}
+.safe-html h1 {
+  margin:0;
+  padding:15px 0 8px 0;
+  font-size:18px;
+  font-family: 'titillium_websemibold';
+}
+.safe-html h2 {
+  margin:0;
+  padding:10px 0 5px 0;
+  font-size:16px;
+  font-family: 'titillium_websemibold';
+}
+.safe-html h3 {
+  margin:0;
+  padding:5px 0 2px 0;
+  font-size:14px;
+  font-family: 'titillium_websemibold';
+}
+.safe-html a {
+  color:#06aae2;
+}
 .columnright {
   width: 361px;
   padding: 14px 0 0;  

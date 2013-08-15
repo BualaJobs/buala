@@ -25,6 +25,14 @@ class Advertisement < ActiveRecord::Base
     Advertisement.published.where("id != ?", id).sample(3)
   end
 
+  def truncated_description
+    if description.length > 250
+      description[0..250]
+    else
+      description
+    end
+  end
+
   private
   def different_categories
     if category_1 && category_2 && category_1 == category_2

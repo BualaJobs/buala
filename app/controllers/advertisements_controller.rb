@@ -11,6 +11,9 @@ class AdvertisementsController < ApplicationController
       redirect_to @advertisement, status: :moved_permanently
     else
 
+      set_meta_tags :title => "Bualá! Jobs - #{@advertisement.title} en #{@advertisement.company.name}"
+      set_meta_tags :description => @advertisement.truncated_description
+
       set_meta_tags :og => {
         site: "Bualá Jobs",
         title: @advertisement.title,
@@ -18,7 +21,7 @@ class AdvertisementsController < ApplicationController
       }
       if @advertisement.description.length > 250
         set_meta_tags :og => {
-          description: @advertisement.description[0..250],
+          description: @advertisement.truncated_description,
         }
       else
         set_meta_tags :og => {

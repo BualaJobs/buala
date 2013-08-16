@@ -11,6 +11,10 @@ class AdvertisementsController < ApplicationController
       redirect_to @advertisement, status: :moved_permanently
     else
 
+      @json = @advertisement.company.to_gmaps4rails do |advertisement, marker|
+        marker.title @advertisement.company.name
+      end
+
       set_meta_tags :title => "Bualá! Jobs - #{@advertisement.title} en #{@advertisement.company.name}"
       set_meta_tags :description => @advertisement.truncated_description
 

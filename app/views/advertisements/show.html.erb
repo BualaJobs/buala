@@ -7,7 +7,11 @@
     <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply'}%>
   </div>
   <div class="map">
-    <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @advertisement.company.location %>&zoom=15&size=700x230&sensor=true&markers=<%= @advertisement.company.location %>" width="943" height="300" alt="">
+    <%= gmaps({
+      "map_options" => {"auto_zoom" => false, "zoom" => 15 },
+      "markers" => {"data" => @json }
+    })
+    %>
   </div>
 </div>
 

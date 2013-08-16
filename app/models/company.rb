@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
 
   validates :name, :description, :category, :company_type, :presence => true
 
-  acts_as_gmappable
+  acts_as_gmappable :check_process => false
 
   def gmaps4rails_address
     location 

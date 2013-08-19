@@ -43,6 +43,19 @@ class AdvertisementsController < ApplicationController
 
   def apply
     @advertisement = Advertisement.published.find(params[:id])
+    if request.post?
+      @application = Application.create request.params[:application]
+      if @application.valid?
+        redirect_to thanks_advertisement_path(@advertisement)
+        return
+      end
+    end
+    @application ||= Application.new advertisement: @advertisement
+    @application.accept_terms_and_conditions = '0'
+  end
+
+  def thanks
+    @advertisement = Advertisement.published.find(params[:id])
   end
 
 end

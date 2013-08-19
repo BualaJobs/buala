@@ -1,0 +1,10 @@
+<div class="banner">
+  <%= render partial: 'advertisements/advertisement_header', locals: { advertisement: @advertisement, is_application: true } %>
+</div>
+<div id="thanks-section">
+  Gracias por haberte postulado en este puesto!
+  <div><%= image_tag '/images/logo_def.png' %></div>
+  te desea mucha suerte en el proceso de selección.
+  <div class="bualatips">No te olvides de tener en cuenta los <%= link_to '#BualáTips', 'http://blog.bualajobs.com', target: '_blank' %> para la entrevista, podés encontrarlos
+  en nuestro blog: <%= link_to 'blog.bualajobs.com', 'http://blog.bualajobs.com', target: '_blank' %></div>
+</div>

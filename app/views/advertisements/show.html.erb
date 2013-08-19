@@ -1,11 +1,5 @@
 <div class="banner">
-  <div class="bnrtop">
-    <% unless @advertisement.company.company_logo.blank? %>
-    <img src="<%= @advertisement.company.company_logo_url %>" />
-    <% end %>
-    <h1><%= @advertisement.title %> <strong>en <a href="<%= @advertisement.company.website %>" target="_blank"><%= @advertisement.company.name %></a></strong></h1>
-    <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply'}%>
-  </div>
+  <%= render partial: 'advertisements/advertisement_header', locals: { advertisement: @advertisement, is_application: false } %>
   <div class="map">
     <%= gmaps({
       "map_options" => {"auto_zoom" => false, "zoom" => 15 },

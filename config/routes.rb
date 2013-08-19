@@ -8,6 +8,8 @@ Buala::Application.routes.draw do
   resources :advertisements, only: [:show] do
   	member do
   		get 'apply'
+      post 'apply'
+      get 'thanks'
   	end
   end
 

@@ -10,7 +10,7 @@
         <%= f.input :email, input_html: {size: 45} %>
         <%= f.input :university, as: :select, collection: University.all, label: 'Universidad' %>
         <%= f.input :degree, label: 'Carrera', input_html: {size: 45} %>
-        <%= f.input :resume, as: :file, label: 'Cargá tu CV', hint: 'Se aceptan solo archivos *.doc y *.pdf, con un tamaño menor a 500kb' %>
+        <%= f.input :resume, as: :file, label: 'Cargá tu CV', hint: 'Se aceptan solo archivos *.doc y *.pdf, con un tamaño menor a 1024kb' %>
         <%= f.input :accept_terms_and_conditions, as: :boolean, label: 'Acepto los <a href="https://docs.google.com/file/d/0Byia_sX-BnvkZnhaSnhaWXJrR1k" target="_blank">Términos y Condiciones de Bualá! Jobs.</a>'.html_safe %>
       <% end %>
       <%= f.actions do %>

@@ -15,11 +15,11 @@ class AdvertisementsController < ApplicationController
         marker.title @advertisement.company.name
       end
 
-      title = "Bualá! Jobs - #{@advertisement.title} en #{@advertisement.company.name}"
-      description = "#{@advertisement.company.name} busca #{advertisement.title}, postulate a través
+      title = "#{@advertisement.title} en #{@advertisement.company.name}"
+      description = "#{@advertisement.company.name} busca #{@advertisement.title}, postulate a través
       de Bualá! Jobs"
 
-      set_meta_tags title: title
+      set_meta_tags title: "Bualá! Jobs - #{title}"
       set_meta_tags description: description
 
       set_meta_tags :og => {

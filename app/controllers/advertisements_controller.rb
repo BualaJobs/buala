@@ -3,10 +3,9 @@
 class AdvertisementsController < ApplicationController
 
   respond_to :html
+  before_filter :set_advertisement
 
-  def show 
-    @advertisement = Advertisement.published.find(params[:id])
-
+  def show
     if request.path != advertisement_path(@advertisement)
       redirect_to @advertisement, status: :moved_permanently
     else
@@ -14,7 +13,29 @@ class AdvertisementsController < ApplicationController
       @json = @advertisement.company.to_gmaps4rails do |advertisement, marker|
         marker.title @advertisement.company.name
       end
+    end
+  end
 
+  def apply
+    if request.post?
+      @application = Application.create request.params[:application]
+      if @application.valid?
+        redirect_to thanks_advertisement_path(@advertisement)
+        return
+      end
+    end
+    @application ||= Application.new advertisement: @advertisement
+    @application.accept_terms_and_conditions = '0'
+  end
+
+  def thanks
+  end
+
+  private
+  def set_advertisement
+    @advertisement = Advertisement.published.find(params[:id])
+
+    if @advertisement
       title = "#{@advertisement.title} en #{@advertisement.company.name}"
       description = "#{@advertisement.company.name} busca #{@advertisement.title}, postulate a través
       de Bualá! Jobs"
@@ -29,24 +50,6 @@ class AdvertisementsController < ApplicationController
         url: (advertisement_url @advertisement)
       }
     end
-
-  end
-
-  def apply
-    @advertisement = Advertisement.published.find(params[:id])
-    if request.post?
-      @application = Application.create request.params[:application]
-      if @application.valid?
-        redirect_to thanks_advertisement_path(@advertisement)
-        return
-      end
-    end
-    @application ||= Application.new advertisement: @advertisement
-    @application.accept_terms_and_conditions = '0'
-  end
-
-  def thanks
-    @advertisement = Advertisement.published.find(params[:id])
   end
 
 end

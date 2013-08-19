@@ -12,6 +12,9 @@ gem 'meta-tags', :require => 'meta_tags'
 gem 'friendly_id'
 gem 'active_admin_editor'
 gem 'gmaps4rails'
+gem 'formtastic'
+gem 'paperclip', '~> 3.0'
+gem 'paperclip-dropbox', '>= 1'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -31,6 +34,7 @@ group :development, :test do
   gem 'guard-cucumber'
   gem 'guard-rspec'
   gem 'factory_girl_rails', '~> 3.2.0'
+  gem 'better_errors'
 end
 
 gem 'jquery-rails', '2.3.0'

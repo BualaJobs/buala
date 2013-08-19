@@ -98,24 +98,24 @@ es:
   errors: &errors
     format: ! '%{attribute} %{message}'
     messages:
-      accepted: debe ser aceptado
-      blank: no puede estar en blanco
+      accepted: Este campo debe ser aceptado
+      blank: Campo requerido
       confirmation: no coincide con la confirmación
-      empty: no puede estar vacío
+      empty: Este campo no puede estar vacío
       equal_to: debe ser igual a %{count}
       even: debe ser un número par
       exclusion: está reservado
       greater_than: debe ser mayor que %{count}
       greater_than_or_equal_to: debe ser mayor o igual que %{count}
       inclusion: no está incluído en la lista
-      invalid: es inválido
+      invalid: El valor provisto es inválido
       less_than: debe ser menor que %{count}
       less_than_or_equal_to: debe ser menor o igual que %{count}
       not_a_number: no es un número
       not_an_integer: debe ser un entero
       odd: debe ser un número non
       record_invalid: ! 'La validación falló: %{errors}'
-      taken: ya ha sido tomado
+      taken: El email provisto ya ha sido utilizado
       too_long:
         one: es demasiado largo (máximo 1 caracter)
         other: es demasiado largo (máximo %{count} caracteres)
@@ -125,6 +125,7 @@ es:
       wrong_length:
         one: longitud errónea (debe ser de 1 caracter)
         other: longitud errónea (debe ser de %{count} caracteres)
+      in_between: Archivo inválido
     template:
       body: ! 'Revise que los siguientes campos sean válidos:'
       header:

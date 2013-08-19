@@ -47,7 +47,7 @@ class AdvertisementsController < ApplicationController
         title: title,
         description: description,
         url: (advertisement_url @advertisement),
-        image: (Cloudinary::Utils.cloudinary_url @advertisement.company.company_logo, width: 200, height: 200, crop: :lpad)
+        image: (Cloudinary::Utils.cloudinary_url @advertisement.company.company_logo, width: 200, height: 200, crop: :pad)
       }
     end
   end

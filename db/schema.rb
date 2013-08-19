@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130819033842) do
+ActiveRecord::Schema.define(:version => 20130819173336) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20130819033842) do
     t.date     "start_date"
     t.integer  "vacancies"
     t.text     "requirements"
-    t.text     "zoho_form_url"
     t.string   "slug"
   end
 

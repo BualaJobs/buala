@@ -44,7 +44,6 @@ class AdvertisementsController < ApplicationController
       set_meta_tags description: description
 
       set_meta_tags :og => {
-        site: "Bualá! Jobs",
         title: title,
         description: description,
         url: (advertisement_url @advertisement)

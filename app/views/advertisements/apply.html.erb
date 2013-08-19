@@ -1,1 +1,21 @@
-<iframe class="apply-form" height='500px' width='100%' name='zoho-Prueba' frameborder='0' allowTransparency='true' scrolling='auto' src='<%= @advertisement.zoho_form_url %>'></iframe>
+<div class="banner">
+  <%= render partial: 'advertisements/advertisement_header', locals: { advertisement: @advertisement, is_application: true } %>
+</div>
+<div id="application-section">
+  <div class="form">
+    <%= semantic_form_for @application, url: apply_advertisement_path(@advertisement) do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :advertisement_id, as: :hidden %>
+        <%= f.input :name, label: 'Nombre completo', input_html: {size: 35} %>
+        <%= f.input :email, input_html: {size: 45} %>
+        <%= f.input :university, as: :select, collection: University.all, label: 'Universidad' %>
+        <%= f.input :degree, label: 'Carrera', input_html: {size: 45} %>
+        <%= f.input :resume, as: :file, label: 'Cargá tu CV', hint: 'Se aceptan solo archivos *.doc y *.pdf, con un tamaño menor a 500kb' %>
+        <%= f.input :accept_terms_and_conditions, as: :boolean, label: 'Acepto los <a href="https://docs.google.com/file/d/0Byia_sX-BnvkZnhaSnhaWXJrR1k" target="_blank">Términos y Condiciones de Bualá! Jobs.</a>'.html_safe %>
+      <% end %>
+      <%= f.actions do %>
+        <%= f.action :submit, label: '¡Postularme!', button_html: { class: 'success'}  %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+/*----------------------------- Bualá! Form styles ------------------------- */
+.form a {
+	color:#00f;
+	text-decoration: underline;
+}
+
+.form li.input input, .form li.input select {
+	padding: 0px 5px;
+	font-family: 'titillium_webregular';
+	font-size: 20px;
+	height:34px;
+	line-height: 22px;
+	font-weight: 400;
+	cursor: auto;
+	vertical-align: middle;
+	border: 2px solid #cccccc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #3791bf;
+	background: #fff;
+	outline: none;
+}
+
+.form li.input input:hover, .form li.input select:hover {
+	border: 2px solid #aaa;
+	outline: none;
+}
+
+.form li.input input:focus, .form li.input select:focus {
+	border: 2px solid #3791bf;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	outline: none;
+}
+
+.form li.input .label, .form li.boolean label {
+	font-family: 'titillium_webregular';
+	color:#555;
+}
+
+.form li.input .label {
+	font-size: 16px;
+}
+
+.form li.boolean label {
+	font-size: 13px;
+}
+
+.form li.input abbr {
+	color:#f00;
+	padding-left:2px;
+}
+
+form li.input input[type="file"], form li.input input[type="file"]:hover, form li.input input[type="file"]:focus {
+	border:0;
+	font-size: 14px;
+	color:#555;
+}
+
+.form li.action input.success {
+	height:45px;
+	padding:0 30px;
+	font-family:'titillium_webbold'; 
+	font-size:17px;
+	color:#fff;
+	line-height:45px;
+	text-align:center;
+	background: #1cb095;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border: 0;
+	cursor:pointer;
+}
+
+.form li.action input.success:hover {
+	background:#0d826d;
+}

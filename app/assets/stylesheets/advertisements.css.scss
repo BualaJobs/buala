@@ -1,3 +1,101 @@
-// Place all the styles related to the Advertisements controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.banner {
+  padding-top: 8px;
+}
+.bnrtop {
+  width: 943px;
+  min-height: 88px;
+  background: #fff;
+  padding: 18px 0 0;
+  border-bottom: 1px solid #2cbed9;
+}
+.bnrtop h1 {
+  font-family: 'titillium_webbold';
+  font-size: 27px;
+  color: #424242;
+  line-height: 32px;
+  font-weight: 400;
+  width: 500px;
+  float: left;
+  margin: 0 0 0 10px;
+}
+.bnrtop img {
+  float:left;
+  padding-left: 10px;
+  margin-top:5px;
+}
+.bnrtop h1 strong {
+  display: block; 
+  font-family: 'titillium_websemibold';
+  font-size: 24px;
+  color: #424242;
+  line-height: 25px;
+  padding-top: 5px;
+}
+.bnrtop h1 strong a {
+  text-decoration: underline;
+  font-family: 'titillium_websemibold';
+  color: #3791bf;
+}
+.toapply {
+  width: 160px;
+  height: 45px;
+  font-family: 'titillium_webbold';
+  font-size: 17px;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  float: right;
+  background: #1cb095;
+  border-radius: 6px;
+  behavior: url(js/css3-pie.htc);
+  position: relative;
+  margin: 11px 12px 0 0;  
+}
+.toapply:hover {
+  color: #fff;
+  background: #0d826d;  
+}
+.toapply:active {
+  color: #fff;
+  background: #84b3aa;  
+}
+.map {
+  width: 943px;
+  height: 300px;
+  display: block;
+  background: #fff; 
+}
+.contentblock {
+  clear: both;
+  overflow: hidden; 
+  padding: 0 0 42px 0;
+}
+
+#application-section {
+    background: #fff;
+    margin:0;
+    padding:25px 150px 100px 35px;
+}
+
+#application-section li.boolean label[for="application_accept_terms_and_conditions"] {
+  width:300px;
+}
+
+#thanks-section {
+  background: #fff;
+  font-size:22px;
+  color:#555;
+  text-align: center;
+  padding: 35px 0;
+  line-height: 40px;
+}
+
+#thanks-section .bualatips {
+  padding-top: 25px;
+  font-size:14px;
+}
+
+#thanks-section a {
+  color: #3791bf;
+  text-decoration: underline;
+}

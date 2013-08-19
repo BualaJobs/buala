@@ -3,10 +3,9 @@
 class AdvertisementsController < ApplicationController
 
   respond_to :html
+  before_filter :set_advertisement
 
-  def show 
-    @advertisement = Advertisement.published.find(params[:id])
-
+  def show
     if request.path != advertisement_path(@advertisement)
       redirect_to @advertisement, status: :moved_permanently
     else
@@ -14,35 +13,10 @@ class AdvertisementsController < ApplicationController
       @json = @advertisement.company.to_gmaps4rails do |advertisement, marker|
         marker.title @advertisement.company.name
       end
-
-      set_meta_tags :title => "Bualá! Jobs - #{@advertisement.title} en #{@advertisement.company.name}"
-      set_meta_tags :description => @advertisement.truncated_description
-
-      set_meta_tags :og => {
-        site: "Bualá Jobs",
-        title: @advertisement.title,
-        url: (advertisement_url @advertisement)
-      }
-      if @advertisement.description.length > 250
-        set_meta_tags :og => {
-          description: @advertisement.truncated_description,
-        }
-      else
-        set_meta_tags :og => {
-          description: @advertisement.description,
-        }
-      end
-      unless @advertisement.company.company_logo.blank?
-        set_meta_tags :og => {
-          image: @advertisement.company.company_logo_url
-        }
-      end
     end
-
   end
 
   def apply
-    @advertisement = Advertisement.published.find(params[:id])
     if request.post?
       @application = Application.create request.params[:application]
       if @application.valid?
@@ -55,7 +29,27 @@ class AdvertisementsController < ApplicationController
   end
 
   def thanks
+  end
+
+  private
+  def set_advertisement
     @advertisement = Advertisement.published.find(params[:id])
+
+    if @advertisement
+      title = "#{@advertisement.title} en #{@advertisement.company.name}"
+      description = "#{@advertisement.company.name} busca #{@advertisement.title}, postulate a través
+      de Bualá! Jobs"
+
+      set_meta_tags title: "Bualá! Jobs - #{title}"
+      set_meta_tags description: description
+
+      set_meta_tags :og => {
+        title: title,
+        description: description,
+        url: (advertisement_url @advertisement),
+        image: (Cloudinary::Utils.cloudinary_url @advertisement.company.company_logo, width: 200, height: 200, crop: :lpad)
+      }
+    end
   end
 
 end

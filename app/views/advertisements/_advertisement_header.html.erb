@@ -4,6 +4,6 @@
   <% end %>
   <h1><%= advertisement.title %> <strong>en <a href="<%= advertisement.company.website %>" target="_blank"><%= advertisement.company.name %></a></strong></h1>
   <% unless is_application %>
-  <%= link_to "¡Postularme!", (apply_advertisement_path advertisement), {class: 'toapply'}%>
+  <%= link_to "¡Postularme!", (apply_advertisement_path advertisement), {class: 'success header-apply'}%>
   <% end %>
 </div>

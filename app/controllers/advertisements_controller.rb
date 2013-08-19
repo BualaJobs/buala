@@ -15,28 +15,19 @@ class AdvertisementsController < ApplicationController
         marker.title @advertisement.company.name
       end
 
-      set_meta_tags :title => "Bualá! Jobs - #{@advertisement.title} en #{@advertisement.company.name}"
-      set_meta_tags :description => @advertisement.truncated_description
+      title = "Bualá! Jobs - #{@advertisement.title} en #{@advertisement.company.name}"
+      description = "#{@advertisement.company.name} busca #{advertisement.title}, postulate a través
+      de Bualá! Jobs"
+
+      set_meta_tags title: title
+      set_meta_tags description: description
 
       set_meta_tags :og => {
-        site: "Bualá Jobs",
-        title: @advertisement.title,
+        site: "Bualá! Jobs",
+        title: title,
+        description: description,
         url: (advertisement_url @advertisement)
       }
-      if @advertisement.description.length > 250
-        set_meta_tags :og => {
-          description: @advertisement.truncated_description,
-        }
-      else
-        set_meta_tags :og => {
-          description: @advertisement.description,
-        }
-      end
-      unless @advertisement.company.company_logo.blank?
-        set_meta_tags :og => {
-          image: @advertisement.company.company_logo_url
-        }
-      end
     end
 
   end

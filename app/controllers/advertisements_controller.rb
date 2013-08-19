@@ -46,7 +46,8 @@ class AdvertisementsController < ApplicationController
       set_meta_tags :og => {
         title: title,
         description: description,
-        url: (advertisement_url @advertisement)
+        url: (advertisement_url @advertisement),
+        image: (Cloudinary::Utils.cloudinary_url @advertisement.company.company_logo, width: 200, height: 200, crop: :lpad)
       }
     end
   end

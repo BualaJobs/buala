@@ -4,8 +4,7 @@
     <%= gmaps({
       "map_options" => {"auto_zoom" => false, "zoom" => 15 },
       "markers" => {"data" => @json }
-    })
-    %>
+    }) %>
   </div>
 </div>
 
@@ -36,7 +35,7 @@
     </div>
     <% end %>
 
-    <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'toapply toapply2'} %>
+    <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'success bottom-apply'} %>
   </div>
   
   <div class="columnright flt_Rt">

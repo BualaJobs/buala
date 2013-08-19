@@ -36,34 +36,21 @@
   font-family: 'titillium_websemibold';
   color: #3791bf;
 }
-.toapply {
-  width: 160px;
-  height: 45px;
-  font-family: 'titillium_webbold';
-  font-size: 17px;
-  color: #fff;
-  line-height: 45px;
-  text-align: center;
-  float: right;
-  background: #1cb095;
-  border-radius: 6px;
-  behavior: url(js/css3-pie.htc);
+
+a.header-apply {
+  float:right;
+  margin:11px 12px 0 0;
   position: relative;
-  margin: 11px 12px 0 0;  
 }
-.toapply:hover {
-  color: #fff;
-  background: #0d826d;  
-}
-.toapply:active {
-  color: #fff;
-  background: #84b3aa;  
+a.bottom-apply {
+  margin-top:20px;
+  display: block;
 }
 .map {
   width: 943px;
   height: 300px;
   display: block;
-  background: #fff; 
+  background: #fff;
 }
 .contentblock {
   clear: both;

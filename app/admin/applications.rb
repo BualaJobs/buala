@@ -15,16 +15,8 @@ ActiveAdmin.register Application do
     column :email
     column :university
     column :advertisement
-    default_actions
-  end
-
-  show do
-    attributes_table do
-      row :name
-      row :email
-      row :university
-      row :advertisement
-      row :resume
+    column :CV do |application|
+      link_to "Descargar CV", application.resume.url
     end
   end
 

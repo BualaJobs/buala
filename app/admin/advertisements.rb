@@ -28,6 +28,7 @@ ActiveAdmin.register Advertisement do
 			row :category_1
 			row :category_2
 			row :start_date
+			row :short_description
 			row :description
 			row :requirements
 			row :published
@@ -45,6 +46,7 @@ ActiveAdmin.register Advertisement do
       f.input :category_1
       f.input :category_2
       f.input :start_date, as: :datepicker
+      f.input :short_description, input_html: {rows: 2}
       f.input :description, as: :html_editor
       f.input :requirements, as: :html_editor
       f.input :published

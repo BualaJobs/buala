@@ -1,0 +1,15 @@
+<div class="advertisement-box">
+	<div class="box-left left">
+		<%= image_tag advertisement.company.company_logo_url, alt: advertisement.company.name %>
+	</div>
+	<div class="box-right right">
+		<h1><%= link_to advertisement.title, advertisement_path(advertisement) %></h1>
+		<h2><%= advertisement.company.name %></h2>
+		<p class="left">
+			<%= advertisement.short_description %>
+		</p>
+		<%= link_to "Más detalles", advertisement_path(advertisement), class: 'success right' %>
+	</div>
+	<div class="clear"></div>
+	<div class="location"><%= advertisement.company.location %></div>
+</div>

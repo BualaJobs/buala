@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   
   def index
-  	@top_ads = Advertisement.published.sample(3)
+  	@advertisements = Advertisement.published_random_order
   end
 
 end

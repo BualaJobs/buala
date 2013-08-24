@@ -3,7 +3,7 @@ class Advertisement < ActiveRecord::Base
 
   attr_accessible :description, :title, :company, :company_id, :published, :category_1_id, :category_1, 
   	:category_2_id, :category_2, :advertisement_type, :advertisement_type_id, :is_paid,
-    :working_turn, :working_turn_id, :start_date, :vacancies, :requirements
+    :working_turn, :working_turn_id, :start_date, :vacancies, :requirements, :short_description
 
   belongs_to :company
   belongs_to :category_1, :class_name => 'Category'
@@ -11,25 +11,21 @@ class Advertisement < ActiveRecord::Base
   belongs_to :advertisement_type
   belongs_to :working_turn
 
-  validates :title, :company, :category_1, :advertisement_type, :description, :working_turn, presence: true
+  validates :title, :company, :category_1, :advertisement_type, :description, 
+    :working_turn, :short_description, presence: true
   validates_length_of :title, :maximum => 45
   validate :different_categories
   validates :vacancies, numericality: { greater_than_or_equal_to: 0 }
+  validates_length_of :short_description, :maximum => 250
 
   scope :published, -> { where(published: true) }
+
+  scope :published_random_order, -> { where(published: true).order('random()')}
 
   friendly_id :title, use: :slugged
 
   def recommended
     Advertisement.published.where("id != ?", id).sample(3)
-  end
-
-  def truncated_description
-    if description.length > 250
-      description[0..250]
-    else
-      description
-    end
   end
 
   private

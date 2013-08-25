@@ -107,8 +107,6 @@ GEM
     dropbox-sdk (1.6.1)
       json
     ejs (1.1.1)
-    email_preview (1.5.3)
-      rails (>= 3.0)
     erubis (2.7.0)
     excon (0.25.3)
     execjs (1.4.0)
@@ -289,7 +287,6 @@ DEPENDENCIES
   cucumber-websteps
   database_cleaner
   devise
-  email_preview
   factory_girl_rails (~> 3.2.0)
   formtastic
   friendly_id

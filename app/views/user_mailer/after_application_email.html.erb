@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="font-family: Arial, Helvetica; color: #555, font-size: 12px">
+    <div style="text-align:center">
+      <%= image_tag "#{root_url}landing_img/logo.png" %>
+    </div>
+    <h1 style="font-size: 20px; font-weight: bold;color:#27b5d3;">Hola, <%= @application.name %>!</h1>
+    <h2 style="font-size: 14px; margin-top: 15px; font-weight:normal;">
+      Tu postulación para "<strong><%= @application.advertisement.title %></strong> en 
+      <strong><%= @application.advertisement.company.name %>" se ha realizado con éxito!</strong>
+    </h2>
+    <p style="margin:15px 0;font-size:12px;color:#333;">
+      Te deseamos mucha suerte en el proceso de selección, y te recomendamos que tengas en cuenta
+      los <a href="http://blog.bualajobs.com/">#BualaTips</a> que vamos dejando en nuestro
+      blog: <%= link_to "blog.bualajobs.com", "http://blog.bualajobs.com" %>
+    </p>
+    
+    <h3 style="font-size:20px; font-weight: bold;margin-top:35px;color:#27b5d3;">También pueden interesarte los siguientes puestos:</h3>
+    <div class="recommended">
+      <% @application.advertisement.recommended.each do |recommended| %>
+        <div class="advertisement-box" style="margin:10px 0 10px 0;border:1px solid #f3f3f3;border-top:5px solid #27b5d3;padding:15px;">
+          <h1 style="font-size:14px;font-weight:bold;margin:0;padding:0;"><%= recommended.title %></h1>
+          <h2 style="font-size:12px;color:#444;font-weight:bold;margin:0;padding:0;">en <strong><%= recommended.company.name %></strong>
+          </h2>
+          <table>
+            <tr>
+              <td>
+                <div style="line-height:75px; float:left;">
+                  <%= image_tag @application.advertisement.company.company_logo.url, style: "width:150px;vertical-align:middle;" %>
+                </div>
+              </td>
+              <td>
+                <p style="margin:0;padding:5px;font-size:12px;">
+                  <%= recommended.short_description %>
+                </p>
+              </td>
+              <td style="width:200px;">
+                <%= link_to "Más detalles", advertisement_path(recommended), style: "height:45px;line-height:45px;padding:0 30px;font-weight:bold;background:#1cb095;display:inline-block;color:#fff;text-decoration:none;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;" %>
+              </td>
+            </tr>
+          </table>
+          
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div style="font-size:12px; margin-bottom:30px;">
+      <h1 style="font-size:20px;font-weight:bold;margin-top:35px;color:#27b5d3;">Mantenete al tanto de nuestros últimos avisos:</h1>
+      <div>
+        En nuestra página de Facebook <%= link_to "facebook.com/bualajobs", "http://www.facebook.com/bualajobs", class: "facebook" %>
+      </div>
+      <div>
+      En nuestro Twitter <%= link_to "twitter.com/bualajobs", "http://www.twitter.com/bualajobs", class: "twitter" %>
+      </div>
+    </div>
+  </body>
+</html>

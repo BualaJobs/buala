@@ -1,0 +1,24 @@
+Hola, <%= @application.name %>!
+
+Tu postulación para <%= @application.advertisement.title %> en 
+<%= @application.advertisement.company.name %> se ha realizado con éxito!
+
+Te deseamos mucha suerte en el proceso de selección, y te recomendamos que tengas en cuenta
+los #BualaTips para la entrevista!
+
+
+También pueden interesarte los siguientes puestos:
+    
+<% @application.advertisement.recommended.each do |recommended| %>
+  - <%= recommended.title %> en <%= recommended.company.name %>,
+    
+    "<%= recommended.short_description %>"
+
+    Para más detalles: <%= advertisement_url(recommended) %>
+
+<% end %>
+
+
+Mantenete al tanto de nuestros últimos avisos:
+  Facebook: http://www.facebook.com/bualajobs
+  Twitter: http://www.twitter.com/bualajobs

@@ -35,6 +35,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails', '~> 3.2.0'
   gem 'better_errors'
+  gem 'email_preview'
 end
 
 gem 'jquery-rails', '2.3.0'

@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
 
   def after_application_email(application)
   	@application = application
-  	mail to: 'example@bualajobs.com', subject: 'Bualá! Jobs - Tu postulación se ha llevado a cabo con éxito'
+  	mail to: @application.email, subject: 'Bualá! Jobs - Tu postulación se ha llevado a cabo con éxito!'
   end
 
 end

@@ -20,6 +20,7 @@ class AdvertisementsController < ApplicationController
     if request.post?
       @application = Application.create request.params[:application]
       if @application.valid?
+        UserMailer.after_application_email(@application)
         redirect_to thanks_advertisement_path(@advertisement)
         return
       end

@@ -32,6 +32,7 @@ ActiveAdmin.register Advertisement do
 			row :description
 			row :requirements
 			row :published
+			row :recommendable
 			row :is_paid
 			row :working_turn
 			row :vacancies
@@ -50,6 +51,7 @@ ActiveAdmin.register Advertisement do
       f.input :description, as: :html_editor
       f.input :requirements, as: :html_editor
       f.input :published
+      f.input :recommendable
       f.input :is_paid
       f.input :working_turn
       f.input :vacancies

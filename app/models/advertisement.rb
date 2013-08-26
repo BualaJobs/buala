@@ -39,7 +39,7 @@ class Advertisement < ActiveRecord::Base
 
   private
   def if_is_recommendable_it_should_be_published
-    if recommended && !published
+    if recommendable && !published
       errors.add :recommendable, 'To be a recommendable advertisement, first it should be published'
     end
   end

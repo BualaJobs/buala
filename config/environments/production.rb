@@ -54,7 +54,7 @@ Buala::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.mandrillapp.com",
     port: 587,
-    domain: "bualajobs.com"
+    domain: "bualajobs.com",
     authentication: "plain",
     domain: ENV['MANDRILL_DOMAIN'],
     user_name: ENV['MANDRILL_USERNAME'],

@@ -15,6 +15,7 @@ gem 'gmaps4rails'
 gem 'formtastic'
 gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1'
+gem 'mandrill-api'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -10,7 +10,7 @@ class Application < ActiveRecord::Base
 
   validates :name, :email, :university, :advertisement, :resume, :degree, presence: true
   validates_attachment :resume, presence: true, content_type: { content_type: ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/pdf'] },
-    size: { in: 0..1024.kilobytes }
+    size: { in: 0..2048.kilobytes }
   validates :email, uniqueness: {scope: :advertisement_id}
   validates_acceptance_of :accept_terms_and_conditions, accept: '1'
 

@@ -19,6 +19,7 @@ class Application < ActiveRecord::Base
     if !resume_url || resume_url.empty?
       resume_url = resume.url
       write_attribute(:resume_url, resume_url)
+      self.save
     end
     resume_url
   end

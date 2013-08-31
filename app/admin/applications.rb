@@ -11,18 +11,20 @@ ActiveAdmin.register Application do
   filter :sent
 
   batch_action :mark_as_sent do |selection|
-    Application.find(selection) do |application|
-      application.sent = true
-      application.save
-    end
+    logger.info "\n\n\nMarking as sent: " + selection.to_s + "\n\n\n"
+    # Application.find(selection) do |application|
+    #   application.sent = true
+    #   application.save
+    # end
     redirect_to :back
   end
 
   batch_action :mark_as_not_sent do |selection|
-    Application.find(selection) do |application|
-      application.sent = false
-      application.save
-    end
+    logger.info "\n\n\nMarking as not sent: " + selection.to_s + "\n\n\n"
+    # Application.find(selection) do |application|
+    #   application.sent = false
+    #   application.save
+    # end
     redirect_to :back
   end
 
@@ -34,10 +36,12 @@ ActiveAdmin.register Application do
     column :degree
     column :advertisement
     column :status do |application|
-      if application.sent
-        status_tag('SENT', :ok)
-      else
-        status_tag('NOT SENT', :error)
+      div style: "font-size:1.6em;color:#b3bcc1;" do
+        if application.sent
+          icon(:check_alt)
+        else
+          "..."
+        end
       end
     end
     column :CV do |application|

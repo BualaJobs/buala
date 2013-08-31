@@ -14,4 +14,13 @@ class Application < ActiveRecord::Base
   validates :email, uniqueness: {scope: :advertisement_id}
   validates_acceptance_of :accept_terms_and_conditions, accept: '1'
 
+  def resume_url
+    resume_url = read_attribute(:resume_url)
+    if !resume_url || resume_url.empty?
+      resume_url = resume.url
+      write_attribute(:resume_url, resume_url)
+    end
+    resume_url
+  end
+
 end

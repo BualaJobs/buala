@@ -12,19 +12,19 @@ ActiveAdmin.register Application do
 
   batch_action :mark_as_sent do |selection|
     logger.info "\n\n\nMarking as sent: " + selection.to_s + "\n\n\n"
-    # Application.find(selection) do |application|
-    #   application.sent = true
-    #   application.save
-    # end
+    Application.find(selection).each do |application|
+      application.sent = true
+      application.save
+    end
     redirect_to :back
   end
 
   batch_action :mark_as_not_sent do |selection|
     logger.info "\n\n\nMarking as not sent: " + selection.to_s + "\n\n\n"
-    # Application.find(selection) do |application|
-    #   application.sent = false
-    #   application.save
-    # end
+    Application.find(selection).each do |application|
+      application.sent = false
+      application.save
+    end
     redirect_to :back
   end
 

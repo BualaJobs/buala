@@ -43,7 +43,7 @@ ActiveAdmin.register Application do
       end
     end
     column :CV do |application|
-      link_to "Descargar CV", application.resume_url
+      link_to "Descargar CV", application.resume.url
     end
   end
 

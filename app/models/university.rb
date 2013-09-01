@@ -3,4 +3,12 @@ class University < ActiveRecord::Base
 
   validates :name, presence: true
   validates_uniqueness_of :name
+
+
+  def self.ordered
+  	collection = University.where('name != ?', 'Otra').order('name ASC')
+  	other = University.where(name: 'Otra')
+  	collection + other
+  end
+
 end

@@ -1,4 +1,7 @@
 class Application < ActiveRecord::Base
+
+  after_create :update_dropbox_url
+
   attr_accessor :accept_terms_and_conditions
   attr_accessible :degree, :email, :name, :university, :university_id, :advertisement, :advertisement_id, 
     :resume, :accept_terms_and_conditions
@@ -13,5 +16,16 @@ class Application < ActiveRecord::Base
     size: { in: 0..2048.kilobytes }
   validates :email, uniqueness: {scope: :advertisement_id}
   validates_acceptance_of :accept_terms_and_conditions, accept: '1'
+
+  def update_dropbox_url
+    write_attribute(:resume_url, resume.url)
+    self.save
+  end
+
+  def self.update_dropbox_urls
+    Application.all.each do |application|
+      application.update_dropbox_url
+    end
+  end
 
 end

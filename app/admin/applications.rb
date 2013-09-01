@@ -11,7 +11,6 @@ ActiveAdmin.register Application do
   filter :sent
 
   batch_action :mark_as_sent do |selection|
-    logger.info "\n\n\nMarking as sent: " + selection.to_s + "\n\n\n"
     Application.find(selection).each do |application|
       application.sent = true
       application.save
@@ -20,7 +19,6 @@ ActiveAdmin.register Application do
   end
 
   batch_action :mark_as_not_sent do |selection|
-    logger.info "\n\n\nMarking as not sent: " + selection.to_s + "\n\n\n"
     Application.find(selection).each do |application|
       application.sent = false
       application.save

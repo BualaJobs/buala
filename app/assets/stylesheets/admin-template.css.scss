@@ -1,0 +1,25 @@
+.b-table {
+  color:#555;
+  font-family: 'titillium_webregular';
+  font-size:16px;
+  border: 1px solid #f3f3f3;
+  margin-top:10px;
+}
+
+.b-table thead tr th {
+  padding:5px;
+  text-align: center;
+  font-family: 'titillium_websemibold';
+  color:#999;
+}
+
+.b-table tbody tr td {
+  padding: 3px;
+  text-align:center;
+  font-size:14px;
+  border-top: 1px solid #f3f3f3;
+}
+
+.b-table {
+  width:100%;
+}

@@ -1,0 +1,40 @@
+#company-admin-panel {
+  padding-top:8px;
+}
+
+#company-admin-panel .admin-wrapper {
+  background: #fff;
+  padding:10px;
+  font-family: 'titillium_webregular';
+  min-height: 450px;
+}
+
+#company-admin-panel h1 {
+  color:#777;
+  font-family: 'titillium_webregular';
+  font-size:23px;
+}
+
+#company-admin-panel h1 strong {
+  color:#27b5d3;
+  font-family: 'titillium_webbold';
+  font-size: 27px;
+}
+
+#company-admin-panel h2 {
+  color:#777;
+  font-family: 'titillium_webregular';
+  font-size:18px;
+  border-top:1px solid #f3f3f3;
+}
+
+#company-admin-panel h2 strong {
+  color:#27b5d3;
+  font-family: 'titillium_webbold';
+  font-size:22px;
+}
+
+#company-admin-panel a {
+  text-decoration: underline;
+  color:#27b5d3;
+}

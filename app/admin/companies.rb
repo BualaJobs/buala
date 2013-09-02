@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 ActiveAdmin.register Company do
 
   menu :priority => 3
@@ -7,6 +9,9 @@ ActiveAdmin.register Company do
 	index do
     selectable_column
     column :name, :sortable => 'name'
+    column :admin_link do |company|
+      link_to "Link de administración", "#{company_url(company)}?token=#{company.admin_token}"
+    end
     default_actions
 	end
 
@@ -23,6 +28,9 @@ ActiveAdmin.register Company do
       row :website
       row :location
       row :description
+      row :token do |company|
+        link_to "Link de administración", "#{company_url(company)}?token=#{company.admin_token}"
+      end
     end
   end
 

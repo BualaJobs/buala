@@ -13,8 +13,8 @@ Buala::Application.routes.draw do
   	end
   end
 
-  resources :users, only: [:show]
-  
+  resources :companies, only: [:show]
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

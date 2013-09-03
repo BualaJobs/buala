@@ -3,6 +3,7 @@
   <table class="b-table">
     <thead>
       <th>Nombre completo</th>
+      <th>Fecha de postulación</th>
       <th class="text-centered">Email</th>
       <th class="text-centered">Universidad</th>
       <th class="text-centered">Carrera</th>
@@ -12,6 +13,7 @@
       <% advertisement.applications.each do |application| %>
         <tr>
           <td><%= application.name %></td>
+          <td><%= application.created_at.strftime('%d/%m/%Y - %H:%M') %></td>
           <td class="text-centered"><%= application.email %></td>
           <td class="text-centered"><%= application.university.name %></td>
           <td class="text-centered"><%= application.degree %></td>

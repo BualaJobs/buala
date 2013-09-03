@@ -11,7 +11,7 @@ class Advertisement < ActiveRecord::Base
   belongs_to :category_2, :class_name => 'Category'
   belongs_to :advertisement_type
   belongs_to :working_turn
-  has_many :applications
+  has_many :applications, order: 'created_at DESC'
 
   validates :title, :company, :category_1, :advertisement_type, :description, 
     :working_turn, :short_description, presence: true

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag "application", rel: 'favicon', type: 'image/ico', href: '/favicon.ico' %>
+  <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track" => true %>
+</head>
+<body>
+  <%= analytics_init if Rails.env.production? %>
+  <div id="admin-header">
+    <%= image_tag "/images/logo.jpg", class: 'logo left' %>
+    <h1 class="left"><strong>Dashboard:</strong> <%= @company.name %></h1>
+    <div class="clear"></div>
+  </div>
+  <div id="admin-content-wrapper">
+    <%= yield %>
+  </div>
+</body>
+</html>

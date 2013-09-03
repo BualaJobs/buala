@@ -2,6 +2,8 @@ class CompaniesController < ApplicationController
 
   before_filter :check_token
 
+  layout "admin"
+
   def show
   end
 

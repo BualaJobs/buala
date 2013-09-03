@@ -1,25 +1,79 @@
+#admin-header {
+  border-bottom: 6px solid #0092c3;
+}
+
+#admin-header .logo {
+  padding: 10px 0 5px 50px;
+}
+
+#admin-header h1 {
+  padding: 15px 0 0 30px;
+  color:#777;
+  font-family: 'titillium_webregular';
+  font-size:23px;
+}
+
+#admin-header h1 strong {
+  color:#27b5d3;
+  font-family: 'titillium_webbold';
+  font-size: 27px;
+}
+
+#admin-content-wrapper {
+  padding:0.8em;
+  min-width: 750px;
+}
+
+#admin-content-wrapper h2 {
+  color:#777;
+  font-family: 'titillium_webregular';
+  font-size:1.7em;
+}
+
+#admin-content-wrapper h2 strong {
+  color:#27b5d3;
+  font-family: 'titillium_webbold';
+  font-size:1.3em;
+}
+
 .b-table {
   color:#555;
   font-family: 'titillium_webregular';
-  font-size:16px;
+  font-size:1.2em;
   border: 1px solid #f3f3f3;
   margin-top:10px;
 }
 
+.b-table thead {
+  background:#27b5d3;
+}
+
 .b-table thead tr th {
   padding:5px;
-  text-align: center;
+  text-align: left;
   font-family: 'titillium_websemibold';
-  color:#999;
+  color:#fff;
+  font-size: 1.05em;
 }
 
 .b-table tbody tr td {
-  padding: 3px;
-  text-align:center;
-  font-size:14px;
+  padding: 8px 2px 8px 5px;
+  text-align:left;
   border-top: 1px solid #f3f3f3;
+  background: #fefefe;
 }
 
 .b-table {
   width:100%;
+}
+
+.b-table a {
+  text-decoration: underline;
+  color:#27b5d3;
+  font-family: 'titillium_webregular';
+  font-size:1.1em;
+}
+
+.b-table .text-centered {
+  text-align: center;
 }

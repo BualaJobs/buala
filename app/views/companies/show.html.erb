@@ -1,28 +1,23 @@
-<div id="company-admin-panel">
-  <div class="admin-wrapper">
-    <h1><strong>Panel de administración:</strong> <%= @company.name %></h1>
-    <% @company.advertisements.each do |advertisement| %>
-      <h2><strong>Aviso:</strong> <%= advertisement.title %></h2>
-      <table class="b-table">
-        <thead>
-          <th>Nombre completo</th>
-          <th>Email</th>
-          <th>Universidad</th>
-          <th>Carrera</th>
-          <th>Curriculum</th>
-        </thead>
-        <tbody>
-          <% advertisement.applications.each do |application| %>
-            <tr>
-              <td><%= application.name %></td>
-              <td><%= application.email %></td>
-              <td><%= application.university.name %></td>
-              <td><%= application.degree %></td>
-              <td><%= link_to "Descargar", application.resume_url %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
-  </div>
-</div>
+<% @company.advertisements.each do |advertisement| %>
+  <h2><strong>Aviso:</strong> <%= advertisement.title %></h2>
+  <table class="b-table">
+    <thead>
+      <th>Nombre completo</th>
+      <th class="text-centered">Email</th>
+      <th class="text-centered">Universidad</th>
+      <th class="text-centered">Carrera</th>
+      <th class="text-centered">Curriculum</th>
+    </thead>
+    <tbody>
+      <% advertisement.applications.each do |application| %>
+        <tr>
+          <td><%= application.name %></td>
+          <td class="text-centered"><%= application.email %></td>
+          <td class="text-centered"><%= application.university.name %></td>
+          <td class="text-centered"><%= application.degree %></td>
+          <td class="text-centered"><%= link_to "Descargar", application.resume_url %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

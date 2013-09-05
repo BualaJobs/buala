@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/alexdunae/validates_email_format_of.git
+  revision: 67a7ff82cad0c5a3bb03518a26b285f5a002d572
+  tag: 1.5.3
+  specs:
+    validates_email_format_of (1.5.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -308,3 +315,4 @@ DEPENDENCIES
   rspec-rails (~> 2.13.2)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
+  validates_email_format_of!

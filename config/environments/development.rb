@@ -37,4 +37,7 @@ Buala::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.buala = ActiveSupport::OrderedOptions.new
+  config.buala.resume_storage = {}
+
 end

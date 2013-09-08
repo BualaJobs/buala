@@ -9,7 +9,7 @@ class Application < ActiveRecord::Base
   belongs_to :university
   belongs_to :advertisement
 
-  has_attached_file :resume, storage: :dropbox, :dropbox_credentials => Rails.root.join('config/dropbox.yml')
+  has_attached_file :resume, Buala::Application.config.buala.resume_storage
 
   validates :name, :email, :university, :advertisement, :resume, :degree, presence: true
   validates_attachment :resume, presence: true, content_type: { content_type: ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/pdf'] },

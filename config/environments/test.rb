@@ -34,4 +34,8 @@ Buala::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.buala = ActiveSupport::OrderedOptions.new
+  config.buala.resume_storage = {}
+  
 end

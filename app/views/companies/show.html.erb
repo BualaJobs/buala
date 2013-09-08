@@ -22,7 +22,11 @@
             <% @company.advertisements.each do |advertisement| %>
               <tr>
                 <td><%= advertisement.title %></td>
-                <td><%= number_with_precision((advertisement.applications.count / total.to_f) * 100) %> %</td>
+                <% if total.to_f > 0 %>
+                  <td><%= number_with_precision((advertisement.applications.count / total.to_f) * 100) %></td>
+                <% else %>
+                  <td> - </td>
+                <% end %>
                 <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token) %></td>
               </tr>
             <% end %>
@@ -54,7 +58,11 @@
             <% @company.advertisements.each do |advertisement| %>
               <tr>
                 <td><%= advertisement.title %></td>
-                <td><%= number_with_precision((advertisement.last_week_applications.count / week_total.to_f) * 100) %> %</td>
+                <% if week_total.to_f > 0 %>
+                  <td><%= number_with_precision((advertisement.last_week_applications.count / week_total.to_f) * 100) %> %</td>
+                <% else %>
+                  <td> - </td>
+                <% end %>
                 <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token) %></td>
               </tr>
             <% end %>
@@ -83,11 +91,18 @@
             </tr>
           </thead>
           <tbody>
-            <% @company.top_universities(5).each do |top| %>
+            <% top_universities = @company.top_universities(5) %>
+            <% if top_universities.count > 0 %>
+              <% @company.top_universities(5).each do |top| %>
+                <tr>
+                  <td><%= top[0].name %></td>
+                  <td><%= top[1] %></td>
+                  <td><%= number_with_precision((top[1] / total.to_f) * 100) %> %</td>
+                </tr>
+              <% end %>
+            <% else %>
               <tr>
-                <td><%= top[0].name %></td>
-                <td><%= top[1] %></td>
-                <td><%= number_with_precision((top[1] / total.to_f) * 100) %> %</td>
+                <td colspan="3">No se han registrado postulaciones hasta el momento</td>
               </tr>
             <% end %>
           </tbody>

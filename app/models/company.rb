@@ -11,7 +11,7 @@ class Company < ActiveRecord::Base
 
   mount_uploader :company_logo, CompanyLogoUploader
 
-  validates :name, :description, :category, :company_type, :presence => true
+  validates :name, :description, :category, :company_type, presence: true
 
   acts_as_gmappable :check_process => false
 
@@ -21,6 +21,28 @@ class Company < ActiveRecord::Base
 
   def generate_token
     self.admin_token = SecureRandom.urlsafe_base64(30, false)
+  end
+
+  def total_applications 
+    acum = 0
+    advertisements.each {|advertisement| acum += advertisement.applications.count }
+    acum
+  end
+
+  def last_week_total_applications
+    acum = 0
+    advertisements.each {|advertisement| acum += advertisement.last_week_applications.count }
+    acum
+  end
+
+  def top_universities n
+    Application.joins(:advertisement).joins(:university)
+      .where('company_id = ?', self.id)
+      .select('university.*, count(*) as count_all')
+      .group(:university)
+      .order('count_all DESC')
+      .limit(n)
+      .count
   end
 
 end

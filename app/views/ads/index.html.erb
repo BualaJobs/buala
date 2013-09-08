@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        Mis Avisos
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Aviso</th>
+            <th>#Postulantes</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @company.advertisements.each do |advertisement| %>
+            <tr>
+              <td><%= advertisement.title %></td>
+              <td><%= advertisement.applications.count %></td>
+              <td><%= link_to "Ver postulantes", company_ad_path(@company, advertisement, token: @token), class: 'btn btn-info btn-sm' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

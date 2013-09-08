@@ -27,6 +27,10 @@ class Advertisement < ActiveRecord::Base
 
   friendly_id :title, use: :slugged
 
+  def last_week_applications
+    applications.where('created_at >= ?', DateTime.now - 1.weeks)
+  end
+
   def recommended
     Advertisement.published.where("id != ?", id).where(recommendable: true).sample(3)
   end
@@ -38,7 +42,6 @@ class Advertisement < ActiveRecord::Base
     end
   end
 
-  private
   def if_is_recommendable_it_should_be_published
     if recommendable && !published
       errors.add :recommendable, 'To be a recommendable advertisement, first it should be published'

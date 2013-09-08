@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= stylesheet_link_tag "application", rel: 'favicon', type: 'image/ico', href: '/favicon.ico' %>
   <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track" => true %>
 </head>
 <body>
   <%= analytics_init if Rails.env.production? %>
-  <div id="admin-header">
-    <%= image_tag "/images/logo.jpg", class: 'logo left' %>
-    <h1 class="left"><strong>Dashboard:</strong> <%= @company.name %></h1>
-    <div class="clear"></div>
+
+  <div class="navbar navbar-default navbar-buala" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <%= image_tag '/images/logo.jpg', class: 'logo pull-left' %>
+        <h3 class="pull-left"><%= @company.name %></h3>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Dashboard", company_path(@company, token: @token) %></li>
+          <li><%= link_to "Mis Avisos", company_ads_path(@company, token: @token) %></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div id="admin-content-wrapper">
-    <%= yield %>
+
+  <div class="container">
+      <%= yield %>
   </div>
+
 </body>
 </html>

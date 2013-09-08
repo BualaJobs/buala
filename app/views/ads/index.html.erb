@@ -13,11 +13,18 @@
           </tr>
         </thead>
         <tbody>
-          <% @company.advertisements.each do |advertisement| %>
+          <% @advertisements = @company.advertisements %>
+          <% if @advertisements.count > 0 %>
+            <% @company.advertisements.each do |advertisement| %>
+              <tr>
+                <td><%= advertisement.title %></td>
+                <td><%= advertisement.applications.count %></td>
+                <td><%= link_to "Ver postulantes", company_ad_path(@company, advertisement, token: @token), class: 'btn btn-info btn-sm' %></td>
+              </tr>
+            <% end %>
+          <% else %>
             <tr>
-              <td><%= advertisement.title %></td>
-              <td><%= advertisement.applications.count %></td>
-              <td><%= link_to "Ver postulantes", company_ad_path(@company, advertisement, token: @token), class: 'btn btn-info btn-sm' %></td>
+              <td colspan="3">No se han publicado avisos hasta el momento</td>
             </tr>
           <% end %>
         </tbody>

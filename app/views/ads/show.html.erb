@@ -16,14 +16,22 @@
           </tr>
         </thead>
         <tbody>
-          <% @advertisement.applications.each do |application| %>
+          <% applications = @advertisement.applications %>
+
+          <% if applications.count > 0 %>
+            <% @advertisement.applications.each do |application| %>
+              <tr>
+                <td><%= application.name %></td>
+                <td><%= application.created_at.strftime('%d/%m/%Y - %H:%M') %></td>
+                <td><%= application.email %></td>
+                <td><%= application.university.name %></td>
+                <td><%= application.degree %></td>
+                <td><%= link_to "Descargar", application.resume_url, class: 'btn btn-info btn-xs' %></td>
+              </tr>
+            <% end %>
+          <% else %>
             <tr>
-              <td><%= application.name %></td>
-              <td><%= application.created_at.strftime('%d/%m/%Y - %H:%M') %></td>
-              <td><%= application.email %></td>
-              <td><%= application.university.name %></td>
-              <td><%= application.degree %></td>
-              <td><%= link_to "Descargar", application.resume_url, class: 'btn btn-info btn-xs' %></td>
+              <td colspan="6" class="text-center">No se han registrado postulaciones hasta el momento</td>
             </tr>
           <% end %>
         </tbody>

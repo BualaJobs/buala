@@ -26,7 +26,8 @@
                 <td><%= application.email %></td>
                 <td><%= application.university.name %></td>
                 <td><%= application.degree %></td>
-                <td><%= link_to "Descargar", application.resume_url, class: 'btn btn-info btn-xs' %></td>
+                <td><span class="glyphicon glyphicon-cloud-download"></span> CV</td>
+                <!-- <td><%= link_to "Descargar", application.resume_url, class: 'btn btn-info btn-xs' %></td> -->
               </tr>
             <% end %>
           <% else %>

@@ -9,7 +9,9 @@ Buala::Application.routes.draw do
 
   resources :companies, only: [:show] do
     resources :ads, only: [:show, :index] do
-
+      member do
+        post "seen"
+      end
     end
   end
 

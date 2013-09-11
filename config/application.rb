@@ -62,7 +62,7 @@ module Buala
     config.assets.initialize_on_precompile = false
 
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-    config.assets.precompile += %w( admin.css .svg .eot .woff .ttf)
+    config.assets.precompile += %w( admin.css admin.js .svg .eot .woff .ttf)
 
   end
 end

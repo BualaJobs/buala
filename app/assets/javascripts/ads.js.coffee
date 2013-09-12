@@ -32,5 +32,7 @@ class AdsPanel
       _markAsSeen(this, true)
     $(rows).find('.mark-as-not-seen').click ->
       _markAsSeen(this, false)
-
+    $(rows).find('.download-resume').click ->
+      _markAsSeen(this, true)
+    
 @Buala.AdsPanel = new AdsPanel()

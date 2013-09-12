@@ -1,3 +1,32 @@
 // Place all the styles related to the Ads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.applications-admin-table .application-row .name {
+  color:#555;
+}
+
+.applications-admin-table .not-seen .name {
+  font-weight: bold;
+}
+
+.applications-admin-table .not-seen .mark-as-not-seen {
+  display: none;
+}
+
+.applications-admin-table .mark-as-seen {
+  display: none;
+}
+
+.applications-admin-table .not-seen .mark-as-seen {
+  display: block;
+}
+
+.applications-admin-table .application-row .studies {
+  font-size:12px;
+}
+
+.applications-admin-table .not-seen td {
+  background: #fff8d4 !important;
+}
+

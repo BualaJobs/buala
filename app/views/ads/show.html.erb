@@ -4,15 +4,13 @@
       <div class="panel-heading">
         <%= @advertisement.title %>
       </div>
-      <table class="table table-striped">
+      <table class="table table-striped applications-admin-table">
         <thead>
           <tr>
-            <th>Nombre completo</th>
+            <th>Datos del postulante</th>
             <th>Fecha de postulación</th>
-            <th>Email</th>
-            <th>Universidad</th>
-            <th>Carrera</th>
-            <th>Curriculum</th>
+            <th>Email de contacto</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -20,13 +18,24 @@
 
           <% if applications.count > 0 %>
             <% @advertisement.applications.each do |application| %>
-              <tr>
-                <td><%= application.name %></td>
+              <tr class="application-row <%= "not-seen" unless application.seen %>">
+                <td>
+                  <div class="name"><%= application.name %></div>
+                  <div class="studies"><%= "#{application.degree} - #{application.university.name}" %></div>
+                </td>
                 <td><%= application.created_at.strftime('%d/%m/%Y - %H:%M') %></td>
                 <td><%= application.email %></td>
-                <td><%= application.university.name %></td>
-                <td><%= application.degree %></td>
-                <td><%= link_to "Descargar", application.resume_url, class: 'btn btn-info btn-xs' %></td>
+                <td>
+                  <a href="<%= application.resume_url %>" class="btn btn-primary btn-sm pull-left">
+                    <i class="glyphicon glyphicon-cloud-download"></i> <strong>CV</strong>
+                  </a>
+                  <a href="#" data-application-id="<%= application.id %>" data-advertisement-id="<%= @advertisement.id %>" data-company-id="<%= @company.id %>" data-token="<%= @token %>" class="btn btn-success btn-sm pull-right mark-as-seen" title="Marcar como leído">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                  </a>
+                  <a href="#" data-application-id="<%= application.id %>" data-advertisement-id="<%= @advertisement.id %>" data-company-id="<%= @company.id %>" data-token="<%= @token %>" class="btn btn-warning btn-sm pull-right mark-as-not-seen" title="Marcar como no leído">
+                    <i class="glyphicon glyphicon-eye-close"></i>
+                  </a>
+                </td>
               </tr>
             <% end %>
           <% else %>

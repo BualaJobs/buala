@@ -23,16 +23,17 @@ class AdsPanel
         parent.removeClass('not-seen')
       else
         parent.addClass('not-seen')
-      
-
 
   _setSeenBtnsEvents = ->
     rows = $('.applications-admin-table .application-row')
     $(rows).find('.mark-as-seen').click ->
       _markAsSeen(this, true)
+      false
     $(rows).find('.mark-as-not-seen').click ->
       _markAsSeen(this, false)
+      false
     $(rows).find('.download-resume').click ->
       _markAsSeen(this, true)
+      false
     
 @Buala.AdsPanel = new AdsPanel()

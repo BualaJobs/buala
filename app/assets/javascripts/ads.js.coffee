@@ -34,6 +34,6 @@ class AdsPanel
       false
     $(rows).find('.download-resume').click ->
       _markAsSeen(this, true)
-      false
+      true
     
 @Buala.AdsPanel = new AdsPanel()

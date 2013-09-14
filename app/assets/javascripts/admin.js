@@ -2,4 +2,5 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-resource
-//= require applications
+//= require lodash
+//= require buala_admin

@@ -1,12 +1,15 @@
 <div class="row" ng-controller="ApplicationsController">
   <script>
-    var company_id = <%= @company.id %>
-    var ad_id = <%= @advertisement.id %>
+    var advertisement_id = <%= @advertisement.id %>
   </script>
   <div class="col-md-12">
     <div class="panel panel-info">
       <div class="panel-heading">
         <%= @advertisement.title %>
+        <div class="pull-right">
+          <span ng-show="not_seen_amount > 0">No vistas: <span class="badge not-seen">{{not_seen_amount}}</span></span>
+          <span>Postulaciones totales: <span class="badge total">{{applications.length}}</span></span>
+        </div>
       </div>
       <table class="table table-striped applications-admin-table">
         <thead>
@@ -24,13 +27,13 @@
               <div class="studies">{{application.degree}} - {{application.university}}</div>
             </td>
             <td>
-              {{application.created_at}}
+              {{application.created_at | date: 'dd/MM/yyyy - HH:mm'}}
             </td>
             <td>
               {{application.email}}
             </td>
             <td>
-              <a href="{{application.resume_url}}" target="_blank" class="btn btn-primary btn-sm pull-left" title="Descargar CV">
+              <a href="{{application.resume_url}}" target="_blank" class="btn btn-primary btn-sm pull-left" title="Descargar CV" ng-click="markAsSeen(application)">
                 <i class="glyphicon glyphicon-cloud-download"></i> <strong>CV</strong>
               </a>
               <div class="pull-right">

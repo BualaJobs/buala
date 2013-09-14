@@ -20,6 +20,7 @@ gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_e
 gem 'angularjs-rails'
 gem 'lodash-rails'
 gem 'active_model_serializers'
+gem 'versionist'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

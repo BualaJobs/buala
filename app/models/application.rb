@@ -4,7 +4,7 @@ class Application < ActiveRecord::Base
 
   attr_accessor :accept_terms_and_conditions
   attr_accessible :degree, :email, :name, :university, :university_id, :advertisement, :advertisement_id, 
-    :resume, :accept_terms_and_conditions
+    :resume, :accept_terms_and_conditions, :seen
 
   belongs_to :university
   belongs_to :advertisement

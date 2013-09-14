@@ -17,10 +17,12 @@ gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1'
 gem 'mandrill-api'
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git', tag: '1.5.3'
+gem 'angularjs-rails'
+gem 'lodash-rails'
+gem 'active_model_serializers'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
 

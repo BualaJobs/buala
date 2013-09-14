@@ -1,9 +1,5 @@
 Buala::Application.routes.draw do
 
-  get "ads/index"
-
-  get "ads/show"
-
   get "home/index"
   root to: "home#index"
 
@@ -11,6 +7,7 @@ Buala::Application.routes.draw do
     resources :ads, only: [:show, :index] do
       member do
         post "seen"
+        get "applications", format: :json
       end
     end
   end

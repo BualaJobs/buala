@@ -15,7 +15,7 @@ bAdmin.controller('ApplicationsController',
     var applications = Applications.query(function() {
       $scope.applications = applications;
       $scope.not_seen_amount = _.filter(applications, function(application) {
-        return application.seen == false;
+        return !application.seen;
       }).length;
     });
   }

@@ -1,8 +1,14 @@
 Buala::Application.routes.draw do
 
-  get "ads/index"
-
-  get "ads/show"
+  scope 'api' do
+    defaults format: :json do
+      api_version(:module => "V1", :path => {:value => "v1"}) do
+        resources :advertisements, only: [:show] do
+          resources :applications, except: [:delete]
+        end
+      end
+    end
+  end
 
   get "home/index"
   root to: "home#index"
@@ -11,6 +17,7 @@ Buala::Application.routes.draw do
     resources :ads, only: [:show, :index] do
       member do
         post "seen"
+        get "applications", format: :json
       end
     end
   end

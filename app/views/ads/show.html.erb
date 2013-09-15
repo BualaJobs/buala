@@ -1,8 +1,15 @@
-<div class="row">
+<div class="row" ng-controller="ApplicationsController">
+  <script>
+    var advertisement_id = <%= @advertisement.id %>
+  </script>
   <div class="col-md-12">
     <div class="panel panel-info">
       <div class="panel-heading">
         <%= @advertisement.title %>
+        <div class="pull-right">
+          <span ng-show="not_seen_amount > 0">No vistas: <span class="badge not-seen">{{not_seen_amount}}</span></span>
+          <span>Postulaciones totales: <span class="badge total">{{applications.length}}</span></span>
+        </div>
       </div>
       <table class="table table-striped applications-admin-table">
         <thead>
@@ -14,35 +21,36 @@
           </tr>
         </thead>
         <tbody>
-          <% applications = @advertisement.applications %>
-
-          <% if applications.count > 0 %>
-            <% @advertisement.applications.each do |application| %>
-              <tr class="application-row <%= "not-seen" unless application.seen %>">
-                <td>
-                  <div class="name"><%= application.name %></div>
-                  <div class="studies"><%= "#{application.degree} - #{application.university.name}" %></div>
-                </td>
-                <td><%= application.created_at.strftime('%d/%m/%Y - %H:%M') %></td>
-                <td><%= application.email %></td>
-                <td>
-                  <a href="<%= application.resume_url %>" target="_blank" class="btn btn-primary btn-sm pull-left download-resume" data-application-id="<%= application.id %>" data-advertisement-id="<%= @advertisement.id %>" data-company-id="<%= @company.id %>" data-token="<%= @token %>" title="Descargar CV">
-                    <i class="glyphicon glyphicon-cloud-download"></i> <strong>CV</strong>
-                  </a>
-                  <a href="#" data-application-id="<%= application.id %>" data-advertisement-id="<%= @advertisement.id %>" data-company-id="<%= @company.id %>" data-token="<%= @token %>" class="btn btn-success btn-sm pull-right mark-as-seen" title="Marcar como leído">
-                    <i class="glyphicon glyphicon-eye-open"></i>
-                  </a>
-                  <a href="#" data-application-id="<%= application.id %>" data-advertisement-id="<%= @advertisement.id %>" data-company-id="<%= @company.id %>" data-token="<%= @token %>" class="btn btn-warning btn-sm pull-right mark-as-not-seen" title="Marcar como no leído">
-                    <i class="glyphicon glyphicon-eye-close"></i>
-                  </a>
-                </td>
-              </tr>
-            <% end %>
-          <% else %>
-            <tr>
-              <td colspan="6" class="text-center">No se han registrado postulaciones hasta el momento</td>
-            </tr>
-          <% end %>
+          <tr ng-repeat="application in applications" ng-class="{'not-seen': !application.seen}">
+            <td>
+              <div class="name">{{application.name}}</div>
+              <div class="studies">{{application.degree}} - {{application.university}}</div>
+            </td>
+            <td>
+              {{application.created_at | date: 'dd/MM/yyyy - HH:mm'}}
+            </td>
+            <td>
+              {{application.email}}
+            </td>
+            <td>
+              <a href="{{application.resume_url}}" target="_blank" class="btn btn-primary btn-sm pull-left" title="Descargar CV" ng-click="markAsSeen(application)">
+                <i class="glyphicon glyphicon-cloud-download"></i> <strong>CV</strong>
+              </a>
+              <div class="pull-right">
+                <button ng-show="application.seen" class="btn btn-warning btn-sm" 
+                  ng-click="markAsNotSeen(application)">
+                  <i class="glyphicon glyphicon-eye-close"></i>
+                </button>
+                <button ng-hide="application.seen" class="btn btn-success btn-sm" 
+                  ng-click="markAsSeen(application)">
+                  <i class="glyphicon glyphicon-eye-open"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr ng-show="!applications.length">
+            <td colspan="4" class="text-center">No se han registrado postulaciones hasta el momento</td>
+          </tr>
         </tbody>
       </table>
     </div>

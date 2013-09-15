@@ -1,5 +1,15 @@
 class AdsController < AdminController
 
+  respond_to :json, :html
+
+  def applications
+    respond_with @advertisement.applications
+  end
+
+  def update_application
+    binding.pry
+  end
+
   def index
   end
 

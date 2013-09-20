@@ -78,6 +78,10 @@ Buala::Application.configure do
   GA.tracker = "UA-42920899-1"
 
   config.buala = ActiveSupport::OrderedOptions.new
-  config.buala.resume_storage = { storage: :dropbox, dropbox_credentials: Rails.root.join('config/dropbox.yml') }
+  config.buala.resume_storage = { 
+    storage: :dropbox, 
+    dropbox_credentials: Rails.root.join('config/dropbox.yml'),
+    path: ':id_:filename'
+  }
 
 end

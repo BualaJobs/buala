@@ -23,7 +23,7 @@ class Advertisement < ActiveRecord::Base
 
   scope :published, -> { where(published: true) }
 
-  scope :published_random_order, -> { where(published: true).order('random()')}
+  scope :published_order_by_creation, -> { where(published: true).order('created_at DESC')}
 
   friendly_id :title, use: :slugged
 

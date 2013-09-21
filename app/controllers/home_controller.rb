@@ -3,7 +3,7 @@
 class HomeController < ApplicationController
   
   def index
-  	@advertisements = Advertisement.published_random_order
+  	@advertisements = Advertisement.published_order_by_creation
   end
 
 end

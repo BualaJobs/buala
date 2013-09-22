@@ -19,16 +19,11 @@ class Application < ActiveRecord::Base
   validates_acceptance_of :accept_terms_and_conditions, accept: '1'
 
   def resume_url
-    # current_url = read_attribute(:resume_url)
-    # if !current_url || current_url.empty?
-    #   current_url = update_dropbox_url
-    # end
-    # current_url
-    ret = "#"
-    begin
-      ret = resume.url
+    current_url = read_attribute(:resume_url)
+    if !current_url || current_url.empty?
+      current_url = update_dropbox_url
     end
-    ret
+    current_url
   end
 
   def update_dropbox_url

@@ -38,6 +38,10 @@ Buala::Application.configure do
   config.assets.debug = true
 
   config.buala = ActiveSupport::OrderedOptions.new
-  config.buala.resume_storage = {}
+  config.buala.resume_storage = { 
+    storage: :dropbox, 
+    dropbox_credentials: Rails.root.join('config/dropbox.yml'),
+    path: lambda{|a| "development/#{a.instance.advertisement.company.id}/#{a.instance.advertisement.id}/:id_:filename"}
+  }
 
 end

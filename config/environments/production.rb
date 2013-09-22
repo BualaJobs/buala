@@ -81,7 +81,7 @@ Buala::Application.configure do
   config.buala.resume_storage = { 
     storage: :dropbox, 
     dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-    path: ':id_:filename'
+    path: lambda{|a| "production/#{a.instance.advertisement.company.id}/#{a.instance.advertisement.id}/:id_:filename"}
   }
 
 end

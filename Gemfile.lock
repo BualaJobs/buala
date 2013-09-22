@@ -5,6 +5,14 @@ GIT
   specs:
     validates_email_format_of (1.5.3)
 
+GIT
+  remote: git://github.com/jclusso/foundation-social-web-icons-rails.git
+  revision: a23b267e42178bd3bd5b5e9860c55c71bbfdb6ee
+  specs:
+    foundation-social-web-icons-rails (1.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -55,6 +63,9 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.5)
     angularjs-rails (1.0.8)
+    anjlab-bootstrap-rails (3.0.0.2)
+      railties (>= 3.0)
+      sass (>= 3.2)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
@@ -301,6 +312,7 @@ DEPENDENCIES
   active_model_serializers
   activeadmin
   angularjs-rails
+  anjlab-bootstrap-rails (>= 3.0.0.0)
   better_errors
   capybara
   carrierwave
@@ -312,6 +324,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (~> 3.2.0)
   formtastic
+  foundation-social-web-icons-rails!
   friendly_id
   gmaps4rails
   google-analytics-rails

@@ -1,64 +1,45 @@
 .advertisement-box {
-	background: #fff;
-	padding: 10px;
-	color:#555;
-	margin: 25px 0 30px 0;
-  	-webkit-border-radius: 10px;
-  	-webkit-border-top-right-radius: 0;
-	-webkit-border-top-left-radius: 0;
-	-moz-border-radius: 10px;
-	-moz-border-radius-topleft: 0;
-	-moz-border-radius-topright: 0;
-	border-radius: 10px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
-	font-family: 'titillium_webregular';
-	border-top: 7px solid #27b5d3;
-	-webkit-box-shadow: -2px 1px 12px rgba(0,0,0,.14);
-	-moz-box-shadow: -2px 1px 12px rgba(0,0,0,.14);
-	box-shadow: -2px 1px 12px rgba(0,0,0,.14);
+  background: #fff;
+  padding: 10px;
+  color:#555;
+  margin: 25px 0 30px 0;
+    -webkit-border-radius: 10px;
+    -webkit-border-top-right-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius: 10px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-family: 'titillium_webregular';
+  border-top: 7px solid #27b5d3;
+  -webkit-box-shadow: -2px 1px 12px rgba(0,0,0,.14);
+  -moz-box-shadow: -2px 1px 12px rgba(0,0,0,.14);
+  box-shadow: -2px 1px 12px rgba(0,0,0,.14);
 }
 
-.advertisement-box .box-left {
-	width: 150px;
-	height: 150px;
-	text-align: center;
-	line-height: 150px;
+.advertisement-box .company-logo {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
 }
 
-.advertisement-box .box-left img {
-	vertical-align: middle;
-	max-width: 150px;
-	max-height: 150px;
+.advertisement-box h1, .advertisement-box h1 a {
+  font-family: 'titillium_websemibold';
+  font-size: 24px;
+  color:#27b5d3;
+  margin:0;
 }
 
-.advertisement-box .box-right {
-	width: 760px;
-	min-height: 150px;
+.advertisement-box h2 {
+  font-family: 'titillium_websemibold';
+  font-size: 16px;
+  color:#777;
+  margin:0;
 }
 
-.advertisement-box .box-right h1, .advertisement-box .box-right h1 a {
-	font-family: 'titillium_websemibold';
-	font-size: 24px;
-	color:#27b5d3;
-}
-
-.advertisement-box .box-right h2 {
-	font-family: 'titillium_websemibold';
-	font-size: 16px;
-	color:#777;
-}
-
-.advertisement-box .box-right p {
-	width: 585px;
-	font-size:15px;
-	padding:6px 0;
-}
-
-.advertisement-box .box-right a {
-	margin-top:5px;
-}
-
-img.home_banner {
-	margin-top:5px;
+.advertisement-box .btn-container {
+  line-height: 150px;
 }

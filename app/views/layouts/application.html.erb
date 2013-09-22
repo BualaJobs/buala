@@ -12,104 +12,58 @@
 </head>
 <body>
   <%= analytics_init if Rails.env.production? %>
-  <div class="wrapper">
-
-    <div id="header">
-      <div class="container">
-        <h1 id="logo">
-          <%= link_to root_path do %>
-            <img src="/images/logo.jpg" width="133" height="53" alt="">
-          <% end %>
-        </h1>
-        <%
-        # <p class="search">
-        #   <span>
-        #     <input name="text" type="text" class="searchinput">
-        #   </span>
-        #   <input name="search btn" type="button" class="searchbtn">
-        # </p>
-        # <span class="reg-login">
-        #   <a href="#" class="registered">REGISTRATE</a>
-        #   <a href="#" class="login">INGRESAR</a>
-        # </span>
-        # <span class="empanduni">
-        #   <a href="#" class="btn1">
-        #     <img src="/images/icon2.png" width="24" height="34" alt="">
-        #   </a>
-        #   <a href="#" class="btn2 active">
-        #     <img src="/images/icon1.png" width="32" height="28" alt="">
-        #   </a>
-        # </span>
-        %>
-      </div>                
-    </div>
-
-    <div class="main_content">
-      <div class="container">
-        <%= yield %>
+  
+  <!-- NAVBAR -->
+  <div class="navbar navbar-default navbar-buala" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to root_path do %>
+          <img src="/images/logo.jpg" width="133" height="53" alt="Bualá! Jobs" />
+        <% end %>
       </div>
     </div>
+  </div>
 
-    <div id="footer">
-      <div class="container">
-        <ul>
-          <li>
-            <div class="column1">
-              <span class="image1"><img src="/images/thumb1.png" width="71" height="75" alt=""></span>
-              <h3>Estudiantes</h3>
-              <p>¡Consultas bienvenidas!</p>
-              <%
-              # <ul>
-              #   <li><a href="#">Iniciar sesión</a></li>
-              #   <li><a href="#">Registro</a></li>
-              #   <li><a href="#">Buscar</a></li>
-              # </ul>
-              %>
-              <p><a href="mailto:estudiantes@bualajobs.com">estudiantes@bualajobs.com</a></p>
-            </div>
-          </li>
-          <li class="second">
-            <div class="column1">
-              <span class="image1 image2"><img src="/images/thumb2.png" width="49" height="73" alt=""></span>
-              <h3>Empresas</h3>
-              <p>¿Buscas estudiantes? Contáctanos.</p>
-              <%
-              # <ul>
-              #   <li><a href="#">Por que Bualá</a></li>
-              #   <li><a href="#">Precios</a></li>
-              #   <li><a href="#">Contactenos</a></li>
-              # </ul>
-              %>
-              <p><a href="mailto:empresas@bualajobs.com">empresas@bualajobs.com</a></p>
-            </div>
-          </li>
-          <li>
-            <div class="column1 column2">
-              <span class="image1 image3"><img src="/images/thumb3.png" width="82" height="71" alt=""></span>
-              <h3>Universidades</h3>
-              <p>¡Conoce los beneficios de Bualá!</p>
-              <%
-              # <ul>
-              #   <li><a href="#">Por que Bualá</a></li>
-              #   <li><a href="#">Contactenos</a></li>
-              # </ul>
-              %>
-              <p><a href="mailto:universidades@bualajobs.com">universidades@bualajobs.com</a></p>
-            </div>
-          </li>
-        </ul>
-        <div class="social">
-          <ul>
-            <li><a href="http://facebook.com/bualajobs" class="facebook" target="_blank"></a></li>
-            <li><a href="https://twitter.com/bualajobs" class="facebook twitter" target="_blank"></a></li>
-            <!-- <li><a href="#" class="facebook gplus"></a></li>
-            <li><a href="#" class="facebook last"></a></li> -->
-          </ul>
+  <!-- CONTENT -->
+  <div class="full-container body-container">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="full-container footer-saw">
+  </div>
+  <div class="full-container footer-container">
+    <div class="container">
+      <div class="row contact hidden-xs hidden-sm">
+        <div class="contact-thumb col-md-4">
+          <img src="/images/thumb1.png" width="71" height="75" alt="Estudiantes" />
+          <h3>Estudiantes</h3>
+          <p>¡Consultas bienvenidas!</p>
+          <p><a href="mailto:estudiantes@bualajobs.com">estudiantes@bualajobs.com</a></p>
+        </div>
+        <div class="contact-thumb col-md-4">
+          <img src="/images/thumb2.png" width="49" height="73" alt="Empresas" />
+          <h3>Empresas</h3>
+          <p>¿Buscas estudiantes? Contáctanos.</p>
+          <p><a href="mailto:empresas@bualajobs.com">empresas@bualajobs.com</a></p>
+        </div>
+        <div class="contact-thumb col-md-4">
+          <img src="/images/thumb3.png" width="82" height="71" alt="Universidades" />
+          <h3>Universidades</h3>
+          <p>¡Conocé los beneficios de Bualá!</p>
+          <p><a href="mailto:universidades@bualajobs.com">universidades@bualajobs.com</a></p>
         </div>
       </div>
-      <p class="footerblock"><span>Bualá Jobs Copyright &copy; 2013</span></p>
+      <div class="social">
+          <a href="http://facebook.com/bualajobs" class="fc-webicon facebook" target="_blank">Bualá! en Facebook</a>
+          <a href="https://twitter.com/bualajobs" target="_blank" class="fc-webicon twitter" href="#">Bualá! en Twitter</a>
+      </div>
     </div>
-
+    <div class="copyright-container">
+      Bualá! Jobs Copyright &copy; 2013
+    </div>
   </div>
   <%= yield :scripts %>
 </body>

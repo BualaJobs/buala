@@ -1,57 +1,44 @@
 <ul class="badges">
-
-  <li>
-    <img src="/images/badges/advertisement-type.png" alt="">
-    <strong><%= advertisement.advertisement_type.name %></strong>
+  <li class="active">
+    <%= fa_icon 'rocket' %>
+    <div class="badge-description">
+      <%= advertisement.advertisement_type.name %>
+    </div>
   </li>
-
-  <% if advertisement.is_paid %>
-  <li>
-    <img src="/images/badges/ispaid.png" alt="">
-    <strong>Remunerada</strong>
+  <li class="<%= "active" if @advertisement.is_paid %>">
+    <%= fa_icon 'money' %>
+    <div class="badge-description">
+      <%= "Remunerada" if advertisement.is_paid %>
+      <%= "No remunerada" unless advertisement.is_paid %>
+    </div>
   </li>
-  <% else %>
-  <li>
-    <img src="/images/badges/isnotpaid.png" alt="">
-    <strong>No remunerada</strong>
+  <li class="active">
+    <%= fa_icon 'building' %>
+    <div class="badge-description">
+      <%= advertisement.company.company_type.name %>
+    </div>
   </li>
-  <% end %>
-
-  <li>
-    <img src="/images/badges/company-type.png" alt="">
-    <strong><%= advertisement.company.company_type.name %></strong>
+  <li class="active">
+    <%= fa_icon 'calendar' %>
+    <div class="badge-description">
+      <% if advertisement.start_date && Date.today + 1.months < advertisement.start_date %>
+        Contratación: <%= (l advertisement.start_date, format: '%B, %Y').humanize %>
+      <% else %>
+        Contratación Inmediata
+      <% end %>
+    </div>
   </li>
-
-  <li>
-    <img src="/images/badges/contract.png" alt="">
-    <strong>
-    <% if advertisement.start_date && Date.today + 1.months < advertisement.start_date %>
-      Contratación: <%= (l advertisement.start_date, format: '%B, %Y').humanize %>
-    <% else %>
-      Contratación Inmediata
-    <% end %>
-    </strong>
+  <li class="active">
+    <%= fa_icon 'time' %>
+    <div class="badge-description">
+      <%= advertisement.working_turn.name %>
+    </div>
   </li>
-
-  <%
-  # <li>
-  #   <a href="#">
-  #     <span><img src="/images/badge-4.gif" width="14" height="18" alt=""></span>
-  #     <strong>Ong</strong>
-  #   </a>
-  # </li>
-  %>
-
-  <li>
-    <img src="/images/badges/time.png" alt="">
-    <strong><%= advertisement.working_turn.name %></strong>
+  <li class="active">
+    <%= fa_icon 'group' %>
+    <div class="badge-description">
+      <%= advertisement.vacancies %> vacantes
+    </div>
   </li>
-
-  <% if advertisement.vacancies > 0 %>
-  <li>
-    <img src="/images/badges/vacancy.png" alt="">
-    <strong><%= advertisement.vacancies %> vacantes</strong>
-  </li>
-  <% end %>
-      
 </ul>
+<div class="clearfix"></div>

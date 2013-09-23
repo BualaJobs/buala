@@ -57,7 +57,7 @@
 }
 
 @import "twitter/bootstrap";
-@import 'foundation-social-web-icons';
+@import "font-awesome";
 
 .navbar-buala {
   margin:0;
@@ -108,6 +108,17 @@
 .footer-container .social {
   text-align: center;
   padding:10px 0;
+  font-size:40px;
+}
+
+.footer-container .social a {
+  color:#1abc9c;
+  text-decoration: none;
+}
+
+.footer-container .social a:hover, .footer-container .social a:active {
+  color:#fff;
+  text-decoration: none;
 }
 
 .copyright-container {

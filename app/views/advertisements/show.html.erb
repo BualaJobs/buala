@@ -1,6 +1,7 @@
-<div class="banner">
-  <%= render partial: 'advertisements/advertisement_header', locals: { advertisement: @advertisement, is_application: false } %>
-  <div class="map">
+<%= render partial:'advertisements/advertisement_header', locals: {advertisement: @advertisement, is_application: false} %>
+
+<div class="row">
+  <div class="col-lg-12 col-md-12 map-container">
     <%= gmaps({
       "map_options" => {"auto_zoom" => false, "zoom" => 15 },
       "markers" => {"data" => @json }
@@ -8,49 +9,39 @@
   </div>
 </div>
 
-<div class="contentblock">
-  <div class="columnleft flt_Lt">
-    <strong class="categories">
-      Categorías: 
-      <a href="#" class="link1 link2"><%= @advertisement.category_1.name %></a>
-      <% if @advertisement.category_2 %>
-      <a href="#" class="link1 link2"><%= @advertisement.category_2.name %></a>
+<div class="row">
+  <div class="advertisement-info">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+      
+      <h2>Categorías</h2>
+      <div class="categories">
+        <span class="label label-info"><%= @advertisement.category_1.name %></span>
+        <% if @advertisement.category_2 %>
+          <span class="label label-info"><%= @advertisement.category_2.name %></span>
+        <% end %>
+      </div>
+      
+      <!-- BADGES -->
+      <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
+
+      <!-- ADVERTISEMENT DESCRIPTION -->
+      <h2>Descripción del puesto</h2>
+      <div class="safe-html">
+        <p><%= @advertisement.description.html_safe %></p>
+      </div>
+
+      <% unless @advertisement.requirements.blank? %>
+        <h2>Requisitos</h2>
+        <div class="safe-html">
+          <%= @advertisement.requirements.html_safe %>
+        </div>
       <% end %>
-    </strong>
-    <span class="mappin"><%= @advertisement.company.location %></span>
-    <div class="map">
-    <%= gmaps({
-      "map_options" => {"auto_zoom" => false, "zoom" => 15 },
-      "markers" => {"data" => @json }
-    }) %>
-  </div>
 
-
-    <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
-
-    <h2>Descripción del puesto</h2>
-    <div class="safe-html">
-      <p><%= @advertisement.description.html_safe %></p>
+      <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'btn btn-primary btn-buala btn-lg col-md-12 col-lg-12 col-sm-12 col-xs-12 btn-apply-bottom'} %>
+    
     </div>
-    <% unless @advertisement.requirements.blank? %>
-    <h2>Requisitos</h2>
-    <div class="safe-html">
-      <p><%= @advertisement.requirements.html_safe %></p>
+    <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+      PROP
     </div>
-    <% end %>
-
-    <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'success bottom-apply'} %>
   </div>
-  
-  <div class="columnright flt_Rt">
-    <h2>Otras Ofertas</h2>
-    <ul>
-      <% @advertisement.recommended.each do |recommended| %>
-      <li>
-        <%= render partial: 'advertisements/recommended', locals: { advertisement: recommended } %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-
 </div>

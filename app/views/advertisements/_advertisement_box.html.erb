@@ -1,32 +1,20 @@
-<div class="row advertisement-box">
-  <div class="col-md-2 col-lg-2 hidden-sm hidden-xs company-logo">
-    <%= image_tag advertisement.company.company_logo_url, alt: advertisement.company.name %>
+<div class="advertisement-box">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 hidden-sm hidden-xs company-logo">
+      <%= image_tag advertisement.company.company_logo_url, alt: advertisement.company.name %>
+    </div>
+    <div class="col-md-8 col-lg-8 col-sm-9 col-xs-7">
+      <h1><%= link_to advertisement.title, advertisement_path(advertisement) %></h1>
+      <h2><%= advertisement.company.name %></h2>
+      <p>
+        <%= advertisement.short_description %>
+      </p>
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-5 centered btn-container">
+      <%= link_to "Más detalles", advertisement_path(advertisement), class: 'btn btn-primary btn-lg btn-buala' %>
+    </div>
   </div>
-  <div class="col-md-8 col-lg-8 col-sm-9 col-xs-7">
-    <h1><%= link_to advertisement.title, advertisement_path(advertisement) %></h1>
-    <h2><%= advertisement.company.name %></h2>
-    <p class="hidden-xs">
-      <%= advertisement.short_description %>
-    </p>
-  </div>
-  <div class="col-md-2 col-lg-2 col-sm-3 col-xs-5 centered btn-container">
-    <%= link_to "Más detalles", advertisement_path(advertisement), class: 'btn btn-primary btn-lg btn-buala' %>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 location"><%= fa_icon 'map-marker' %> <%= advertisement.company.location %></div>
   </div>
 </div>
-
-
-<!-- <div class="advertisement-box">
-  <div class="box-left left">
-    <%= image_tag advertisement.company.company_logo_url, alt: advertisement.company.name %>
-  </div>
-  <div class="box-right right">
-    <h1><%= link_to advertisement.title, advertisement_path(advertisement) %></h1>
-    <h2><%= advertisement.company.name %></h2>
-    <p class="left">
-      <%= advertisement.short_description %>
-    </p>
-    <%= link_to "Más detalles", advertisement_path(advertisement), class: 'success right' %>
-  </div>
-  <div class="clear"></div>
-  <div class="location"><%= advertisement.company.location %></div>
-</div> -->

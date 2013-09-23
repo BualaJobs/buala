@@ -23,12 +23,12 @@ gem 'lodash-rails'
 gem 'active_model_serializers'
 gem 'versionist'
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
+gem "font-awesome-rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
 end
 
 group :development, :test do

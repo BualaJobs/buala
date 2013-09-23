@@ -1,88 +1,81 @@
-.banner {
-  padding-top: 8px;
-}
-.bnrtop {
-  width: 943px;
-  min-height: 88px;
+.advertisement-header {
   background: #fff;
-  padding: 18px 0 0;
   border-bottom: 1px solid #2cbed9;
+  padding:24px 0;
 }
-.bnrtop h1 {
+
+.advertisement-header h1, .advertisement-header h2 {
+  padding:0;
+  margin:0;
+}
+
+.advertisement-header h1 {
   font-family: 'titillium_webbold';
-  font-size: 27px;
-  color: #424242;
-  line-height: 32px;
-  font-weight: 400;
-  width: 500px;
-  float: left;
-  margin: 0 0 0 10px;
+  font-size:27px;
+  line-height:32px;
+  color:#424242;
 }
-.bnrtop img {
-  float:left;
-  padding-left: 10px;
-  margin-top:5px;
-}
-.bnrtop h1 strong {
-  display: block; 
+
+.advertisement-header h2 {
   font-family: 'titillium_websemibold';
-  font-size: 24px;
-  color: #424242;
-  line-height: 25px;
-  padding-top: 5px;
+  font-size:24px;
+  line-height:25px;
+  padding-top:2px;
+  color:#424242;
 }
-.bnrtop h1 strong a {
-  text-decoration: underline;
+
+.map-container {
+  padding:0;
+}
+
+.advertisement-info .categories {
+  font-size: 18px;
+}
+
+.advertisement-info h2 {
+  color:#4b4b4b;
   font-family: 'titillium_websemibold';
-  color: #3791bf;
+  font-size:24px;
+  margin:0;
+  padding:20px 0 5px 0;
 }
 
-a.header-apply {
-  float:right;
-  margin:11px 12px 0 0;
-  position: relative;
-}
-a.bottom-apply {
-  margin-top:20px;
-  display: block;
-}
-.map {
-  width: 943px;
-  height: 300px;
-  display: block;
-  background: #fff;
-}
-.contentblock {
-  clear: both;
-  overflow: hidden; 
-  padding: 0 0 42px 0;
-}
+/* BADGES */
 
-#application-section {
-    background: #fff;
-    margin:0;
-    padding:25px 150px 100px 35px;
-}
-
-#application-section li.boolean label[for="application_accept_terms_and_conditions"] {
-  width:300px;
-}
-
-#thanks-section {
-  background: #fff;
-  font-size:22px;
-  color:#555;
+.advertisement-info .badges {
+  margin-top:10px;
+  font-size: 25px;
+  text-transform: uppercase;
   text-align: center;
-  padding: 35px 0;
-  line-height: 40px;
 }
 
-#thanks-section .bualatips {
-  padding-top: 25px;
-  font-size:14px;
+.badges li {
+  float:left;
+  margin:5px 5px 0 0;
+  padding:3px;
+  width: 90px;
+  height: 90px;
+  border:1px solid #4b4b4b;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color:#4b4b4b;
 }
 
-#thanks-section a {
-  color: #3791bf;
-  text-decoration: underline;
+.badges li i {
+  line-height:50px;
+}
+
+.badges li.active {
+  color:#27b5d3;
+  border-color:#27b5d3; 
+}
+
+.badges li .badge-description {
+  font-size:10px;
+  line-height:10px;
+}
+
+.btn-buala.btn-apply-bottom {
+  margin:25px 0;
 }

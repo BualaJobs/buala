@@ -1,47 +1,101 @@
-<%= render partial:'advertisements/advertisement_header', locals: {advertisement: @advertisement, is_application: false} %>
+<div ng-controller="AdvertisementController">
 
-<div class="row">
-  <div class="col-lg-12 col-md-12 map-container">
-    <%= gmaps({
-      "map_options" => {"auto_zoom" => false, "zoom" => 15 },
-      "markers" => {"data" => @json }
-    }) %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="advertisement-info">
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-      
-      <h2>Categorías</h2>
-      <div class="categories">
-        <span class="label label-info"><%= @advertisement.category_1.name %></span>
-        <% if @advertisement.category_2 %>
-          <span class="label label-info"><%= @advertisement.category_2.name %></span>
-        <% end %>
-      </div>
-      
-      <!-- BADGES -->
-      <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
-
-      <!-- ADVERTISEMENT DESCRIPTION -->
-      <h2>Descripción del puesto</h2>
-      <div class="safe-html">
-        <p><%= @advertisement.description.html_safe %></p>
-      </div>
-
-      <% unless @advertisement.requirements.blank? %>
-        <h2>Requisitos</h2>
-        <div class="safe-html">
-          <%= @advertisement.requirements.html_safe %>
-        </div>
-      <% end %>
-
-      <%= link_to "¡Postularme!", (apply_advertisement_path @advertisement), {class: 'btn btn-primary btn-buala btn-lg col-md-12 col-lg-12 col-sm-12 col-xs-12 btn-apply-bottom'} %>
-    
+  <div class="row advertisement-header">
+    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs centered">
+      <%= image_tag @advertisement.company.company_logo.url , alt: @advertisement.company.name %>
     </div>
-    <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
-      PROP
+    <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8">
+      <h1><%= @advertisement.title %></h1>
+      <h2>en <%= link_to @advertisement.company.name, @advertisement.company.website %></h2>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+      <button class="btn btn-primary btn-buala btn-lg pull-right" ng-click="openApplicationModal()" >¡Postularme!</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 map-container">
+      <%= gmaps({
+        "map_options" => {"auto_zoom" => false, "zoom" => 15, "scrollwheel" => false },
+        "markers" => {"data" => @json }
+      }) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="advertisement-info">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <h2>Categorías</h2>
+        <div class="categories">
+          <span class="label label-info"><%= @advertisement.category_1.name %></span>
+          <% if @advertisement.category_2 %>
+            <span class="label label-info"><%= @advertisement.category_2.name %></span>
+          <% end %>
+        </div>
+        
+        <!-- BADGES -->
+        <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
+
+        <!-- ADVERTISEMENT DESCRIPTION -->
+        <h2>Descripción del puesto</h2>
+        <div class="safe-html">
+          <p><%= @advertisement.description.html_safe %></p>
+        </div>
+
+        <% unless @advertisement.requirements.blank? %>
+          <h2>Requisitos</h2>
+          <div class="safe-html">
+            <%= @advertisement.requirements.html_safe %>
+          </div>
+        <% end %>
+
+        <button class="btn btn-primary btn-buala btn-lg col-md-12 col-lg-12 col-sm-12 col-xs-12 btn-apply-bottom" ng-click="openApplicationModal()">¡Postularme!</button>
+
+      </div>
+      <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+        PROP
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="applicationModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 class="modal-title">Formulario de Postulación</h3>
+        </div>
+        <form role="form">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" ng-model="name" name="name" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" ng-model="email" name="email" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="university">Universidad</label>
+              <select name="university" class="form-control" ng-model="university" required>
+                <%= options_from_collection_for_select(University.ordered, 'id', 'name') %>
+              </select> 
+            </div>
+            <div class="form-group">
+              <label for="degree">Carrera</label>
+              <input type="text" name="degree" class="form-control" ng-model="degree" required />
+            </div>
+            <div class="form-group">
+              <label for="resume">Cargá tu CV</label>
+              <input type="file" name="resume" ng-model="resume" required />
+              <p class="help-block">Se aceptan solo archivos *.doc y *.pdf, con un tamaño menor a 2048kb</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-buala-no-font">¡Finalizar Postulación!</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

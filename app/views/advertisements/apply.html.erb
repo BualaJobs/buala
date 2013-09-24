@@ -1,6 +1,5 @@
-<div class="banner">
-  <%= render partial: 'advertisements/advertisement_header', locals: { advertisement: @advertisement, is_application: true } %>
-</div>
+<%= render partial: 'advertisements/advertisement_header', locals: { advertisement: @advertisement, is_application: true } %>
+
 <div id="application-section">
   <div class="form">
     <%= semantic_form_for @application, url: apply_advertisement_path(@advertisement) do |f| %>

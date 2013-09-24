@@ -2,7 +2,6 @@
  *= require reset
  *= require formtastic
  *= require gmaps4rails
- *= require template
  *= require_self
  *= require advertisements
  *= require advertisement_box
@@ -129,11 +128,14 @@
 }
 
 .btn-buala {
-  background: #1cb095;
-  border:#1cb095;
   font-family: 'titillium_webbold';
 }
 
-.btn-buala:hover, .btn-buala:active {
+.btn-buala-no-font, .btn-buala {
+  background: #1cb095;
+  border:#1cb095;
+}
+
+.btn-buala:hover, .btn-buala:active, .btn-buala-no-font:hover, .btn-buala-no-font:active {
   background: #0d826d;
 }

@@ -105,4 +105,4 @@ Degree.create name: 'Ingeniería Eléctrica', university: itba
 WorkingTurn.create name: 'Turno mañana'
 WorkingTurn.create name: 'Turno tarde'
 WorkingTurn.create name: 'Turno noche'
-WorkingTurn.create name: 'Horario flexible'
+WorkingTurn.create name: 'Jornada completa'

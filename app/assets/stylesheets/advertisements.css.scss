@@ -31,6 +31,7 @@
 
 .advertisement-info .categories {
   font-size: 18px;
+  margin-top: 18px;
 }
 
 .advertisement-info h2 {
@@ -52,15 +53,26 @@
 
 .badges li {
   float:left;
-  margin:5px 5px 0 0;
+  margin:5px 10px 0 0;
   padding:3px;
   width: 90px;
   height: 90px;
-  border:1px solid #4b4b4b;
+  border:1px solid #5bc0de;
+  border-bottom-width: 3px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  color:#4b4b4b;
+  -moz-box-shadow:    0 1px 2px 1px #ccc;
+  -webkit-box-shadow: 0 1px 2px 1px #ccc;
+  box-shadow:         0 1px 2px 1px #ccc;
+  color:#5bc0de;
+  background: #edf9fd;
+  cursor:pointer;
+}
+
+.badges li:hover {
+  background: #e0f6fd;
+  font-weight: bold;
 }
 
 .badges li i {
@@ -79,4 +91,9 @@
 
 .btn-buala.btn-apply-bottom {
   margin:25px 0;
+}
+
+.badge-tooltip {
+  text-align: left;
+  text-transform: none;
 }

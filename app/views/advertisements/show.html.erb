@@ -1,4 +1,4 @@
-<div ng-controller="AdvertisementController">
+<div ng-controller="AdvertisementController" id="advertisement-detail">
 
   <div class="row advertisement-header">
     <div class="col-lg-2 col-md-2 hidden-sm hidden-xs centered">
@@ -25,19 +25,21 @@
   <div class="row">
     <div class="advertisement-info">
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-        <h2>Categorías</h2>
-        <div class="categories">
-          <span class="label label-info"><%= @advertisement.category_1.name %></span>
-          <% if @advertisement.category_2 %>
-            <span class="label label-info"><%= @advertisement.category_2.name %></span>
-          <% end %>
-        </div>
         
         <!-- BADGES -->
         <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
 
         <!-- ADVERTISEMENT DESCRIPTION -->
-        <h2>Descripción del puesto</h2>
+        <div>
+          <h2 class="pull-left">Descripción del puesto</h2>
+          <div class="categories pull-right">
+            <span class="label label-info"><%= @advertisement.category_1.name %></span>
+            <% if @advertisement.category_2 %>
+              <span class="label label-info"><%= @advertisement.category_2.name %></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="clearfix"></div>
         <div class="safe-html">
           <p><%= @advertisement.description.html_safe %></p>
         </div>

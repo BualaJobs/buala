@@ -15,3 +15,14 @@ buala.controller('AdvertisementController', ['$scope', '$resource', function($sc
   });
 
 }]);
+
+$(function() {
+
+  console.log("Hola");
+
+  $('#advertisement-detail ul.badges li').tooltip({
+    placement: "bottom",
+    html: true
+  });
+
+});

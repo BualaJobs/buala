@@ -1,8 +1,8 @@
 <div class="row advertisement-header">
-  <div class="col-lg-2 col-md-2 hidden-sm hidden-xs centered">
+  <div class="col-lg-3 col-md-3 hidden-sm hidden-xs centered">
     <%= image_tag advertisement.company.company_logo.url , alt: advertisement.company.name %>
   </div>
-  <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8">
+  <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8">
     <h1><%= advertisement.title %></h1>
     <h2>en <%= link_to advertisement.company.name, advertisement.company.website %></h2>
   </div>

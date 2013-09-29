@@ -58,7 +58,7 @@
         <% @advertisement.recommended.each do |recommended| %>
           <div class="row recommended">
             <div class="col-lg-4 col-md-4">
-              <%= cl_image_tag(recommended.company.company_logo, width: 70, height: 70, crop: :lpad) %>
+              <%= cl_image_tag(recommended.company.company_logo, width: 95, height: 85, crop: :lpad) %>
             </div>
             <div class="col-lg-8 col-md-8">
               <h1><%= recommended.title %></h1>

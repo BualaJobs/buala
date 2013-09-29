@@ -1,14 +1,14 @@
 <div ng-controller="AdvertisementController" id="advertisement-detail">
 
   <div class="row advertisement-header">
-    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs centered">
-      <%= image_tag @advertisement.company.company_logo.url , alt: @advertisement.company.name %>
+    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 centered">
+      <%= image_tag @advertisement.company.company_logo.url , alt: @advertisement.company.name, class: "pull-left hidden-xs" %>
+      <div class="pull-left">
+        <h1><%= @advertisement.title %></h1>
+        <h2>en <%= link_to @advertisement.company.name, @advertisement.company.website %></h2>
+      </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8">
-      <h1><%= @advertisement.title %></h1>
-      <h2>en <%= link_to @advertisement.company.name, @advertisement.company.website %></h2>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+    <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
       <button class="btn btn-primary btn-buala btn-lg pull-right" ng-click="openApplicationModal()" >¡Postularme!</button>
     </div>
   </div>

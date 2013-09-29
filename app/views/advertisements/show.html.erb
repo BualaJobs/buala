@@ -28,6 +28,9 @@
         
         <!-- BADGES -->
         <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
+        <div class="location">
+          <%= fa_icon 'map-marker' %> <%= @advertisement.company.location %>
+        </div>
 
         <!-- ADVERTISEMENT DESCRIPTION -->
         <div>

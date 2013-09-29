@@ -208,3 +208,22 @@
   background:#0092c2;
   color:#d1e9f1;
 }
+
+.advertisement-info .location {
+  font-family: 'titillium_webregular';
+  font-size: 16px;
+  line-height:22px;
+  padding:10px;
+  margin-top:14px;
+  background: #f9f9f9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border:1px solid #f0f0f0;
+  color:#555;
+}
+
+.advertisement-info .location i {
+  color:#1abc9c;
+  font-size:22px;
+}

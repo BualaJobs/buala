@@ -18,7 +18,7 @@
       <%= advertisement.company.company_type.name %>
     </div>
   </li>
-  <li>
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Contratación inmediata</strong></div><div><strong>Contratación fija</strong></div></div>">
     <%= fa_icon 'calendar' %>
     <div class="badge-description">
       <% if advertisement.start_date && Date.today + 1.months < advertisement.start_date %>
@@ -28,13 +28,13 @@
       <% end %>
     </div>
   </li>
-  <li>
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Turno mañana</strong></div><div><strong>Turno tarde</strong></div><div><strong>Turno noche</strong></div><div><strong>Horario flexible</strong></div><div><strong>Jornada completa</strong></div></div>">
     <%= fa_icon 'time' %>
     <div class="badge-description">
       <%= advertisement.working_turn.name %>
     </div>
   </li>
-  <li>
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'>Vacantes disponibles para el puesto</div>">
     <%= fa_icon 'group' %>
     <div class="badge-description">
       <%= advertisement.vacancies %> vacantes

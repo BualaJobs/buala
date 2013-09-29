@@ -97,3 +97,50 @@
   text-align: left;
   text-transform: none;
 }
+
+.safe-html {
+  font-family: 'titillium_webregular';
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.safe-html h1, .safe-html h2, .safe-html h3 {
+  font-family: 'titillium_websemibold';
+  margin:0;
+  padding:0;
+  color:#555;
+}
+
+.safe-html h1 {
+  padding:5px 0 3px 0;
+  font-size: 22px;
+}
+
+.safe-html h2 {
+  padding:4px 0 2px 0;
+  font-size: 20px;
+}
+
+.safe-html h3 {
+  padding:3px 0 1px 0;
+  font-size: 18px;
+}
+
+.safe-html ul, .safe-html ol {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+.safe-html li {
+  margin-left: 20px;
+  padding: 2px 0;
+}
+
+.safe-html ul li {
+  list-style-type: square;
+}
+
+.safe-html ol li {
+  list-style-type: decimal;
+}

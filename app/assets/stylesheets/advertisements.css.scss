@@ -1,7 +1,7 @@
 .advertisement-header {
   background: #fff;
   border-bottom: 1px solid #2cbed9;
-  padding:24px 0;
+  padding:20px 0;
 }
 
 .advertisement-header h1, .advertisement-header h2 {
@@ -12,16 +12,20 @@
 .advertisement-header h1 {
   font-family: 'titillium_webbold';
   font-size:27px;
-  line-height:32px;
+  line-height:27px;
   color:#424242;
 }
 
 .advertisement-header h2 {
   font-family: 'titillium_websemibold';
   font-size:24px;
-  line-height:25px;
+  line-height:24px;
   padding-top:2px;
   color:#424242;
+}
+
+.advertisement-header .advertisement-title {
+  padding-left:10px;
 }
 
 .map-container {

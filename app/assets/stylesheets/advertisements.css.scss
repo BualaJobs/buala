@@ -144,3 +144,58 @@
 .safe-html ol li {
   list-style-type: decimal;
 }
+
+.recommended {
+  margin: 15px 0 0 0;
+  padding:10px 5px 5px 5px;
+  border-top:4px solid #27b5d3;
+  -webkit-border-radius: 4px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius: 4px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.14);
+  -moz-box-shadow: 0 1px 6px rgba(0,0,0,.14);
+  box-shadow: 0 1px 6px rgba(0,0,0,.14);
+  background: #fff;
+}
+
+.recommended-wrapper {
+  margin:1px 0 0 0;
+  padding:0;
+}
+
+.recommended h1, .recommended h2 {
+  font-family: 'titillium_websemibold';
+  margin:0;
+  padding:0;
+}
+
+.recommended h1 {
+  font-size: 18px;
+  color:#27b5d3;
+}
+
+.recommended h2 {
+  font-size: 16px;
+}
+
+.recommended .col-lg-8, .recommended .col-md-8 {
+  padding:0;
+  margin:0;
+}
+
+.recommended .btn-buala {
+  margin-top:10px;
+  background:#d1e9f1;
+  color:#0092c2;
+}
+
+.recommended .btn-buala:hover {
+  background:#0092c2;
+  color:#d1e9f1;
+}

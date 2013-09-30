@@ -1,24 +1,24 @@
 <ul class="badges">
-  <li class="col-lg-2" data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Pasantía</strong></div><div><strong>Part-time 4hs</strong></div><div><strong>Part-time 5hs</strong></div><div><strong>Part-time 6hs</strong></div><div><strong>Full Time</strong></div></div>">
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Pasantía</strong></div><div><strong>Part-time 4hs</strong></div><div><strong>Part-time 5hs</strong></div><div><strong>Part-time 6hs</strong></div><div><strong>Full Time</strong></div></div>">
     <%= fa_icon 'suitcase' %>
     <div class="badge-description">
       <%= advertisement.advertisement_type.name %>
     </div>
   </li>
-  <li class="col-lg-2" data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Remunerada:</strong> con sueldo</div><div><strong>No remunerada:</strong> sin sueldo</div></div>">
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Remunerada:</strong> con sueldo</div><div><strong>No remunerada:</strong> sin sueldo</div></div>">
     <%= fa_icon 'money' %>
     <div class="badge-description">
       <%= "Remunerada" if advertisement.is_paid %>
       <%= "No remunerada" unless advertisement.is_paid %>
     </div>
   </li>
-  <li class="col-lg-2" data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Empresa:</strong> +100 empleados</div><div><strong>Startup:</strong> 0-100 empleados</div><div><strong>ONG:</strong> sin fines de lucro</div></div>">
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Empresa:</strong> +100 empleados</div><div><strong>Startup:</strong> 0-100 empleados</div><div><strong>ONG:</strong> sin fines de lucro</div></div>">
     <%= fa_icon 'building' %>
     <div class="badge-description">
       <%= advertisement.company.company_type.name %>
     </div>
   </li>
-  <li class="col-lg-2" data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Contratación inmediata</strong></div><div><strong>Contratación fija</strong></div></div>">
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Contratación inmediata</strong></div><div><strong>Contratación fija</strong></div></div>">
     <%= fa_icon 'calendar' %>
     <div class="badge-description">
       <% if advertisement.start_date && Date.today + 1.months < advertisement.start_date %>
@@ -28,13 +28,13 @@
       <% end %>
     </div>
   </li>
-  <li class="col-lg-2" data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Turno mañana</strong></div><div><strong>Turno tarde</strong></div><div><strong>Turno noche</strong></div><div><strong>Horario flexible</strong></div><div><strong>Jornada completa</strong></div></div>">
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'><div><strong>Turno mañana</strong></div><div><strong>Turno tarde</strong></div><div><strong>Turno noche</strong></div><div><strong>Horario flexible</strong></div><div><strong>Jornada completa</strong></div></div>">
     <%= fa_icon 'time' %>
     <div class="badge-description">
       <%= advertisement.working_turn.name %>
     </div>
   </li>
-  <li class="col-lg-2" data-toggle="tooltip" data-original-title="<div class='badge-tooltip'>Vacantes disponibles para el puesto</div>">
+  <li data-toggle="tooltip" data-original-title="<div class='badge-tooltip'>Vacantes disponibles para el puesto</div>">
     <%= fa_icon 'group' %>
     <div class="badge-description">
       <%= advertisement.vacancies %> vacantes
@@ -42,3 +42,4 @@
   </li>
 </ul>
 <div class="clearfix"></div>
+<div id="tooltip-container"></div>

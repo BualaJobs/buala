@@ -81,42 +81,49 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h3 class="modal-title"><%= fa_icon "paperclip", class:"buala-icon" %> Formulario de Postulación</h3>
         </div>
-        <form role="form">
+        <form role="form" name="application" ng-submit="submitApplication()" novalidate>
           <div class="modal-body">
             <div class="form-group row">
-              <label for="name" class="col-lg-12">Nombre completo</label>
+              <label for="name" class="col-lg-12 control-label">Nombre completo</label>
               <div class="col-lg-8">
-                <input type="text" ng-model="name" name="name" class="form-control" required />
+                <input type="text" name="name" ng-model="currentApplication.name" class="form-control" required />
               </div>
             </div>
             <div class="form-group row">
-              <label for="email" class="col-lg-12">Email</label>
+              <label for="email" class="col-lg-12 control-label">Email</label>
               <div class="col-lg-10">
-                <input type="text" ng-model="email" name="email" class="form-control" required />
+                <input type="text" name="email" ng-model="currentApplication.email" class="form-control" required />
               </div>
             </div>
             <div class="form-group row">
-              <label for="university" class="col-lg-12">Universidad</label>
+              <label for="university" class="col-lg-12 control-label">Universidad</label>
               <div class="col-lg-8">
-                <select name="university" class="form-control" ng-model="university" required>
+                <select name="university" ng-model="currentApplication.university" class="form-control" required>
                   <%= options_from_collection_for_select(University.ordered, 'id', 'name') %>
                 </select> 
               </div>
             </div>
             <div class="form-group row">
-              <label for="degree" class="col-lg-12">Carrera</label>
+              <label for="degree" class="col-lg-12 control-label">Carrera</label>
               <div class="col-lg-10">
-                <input type="text" name="degree" class="form-control" ng-model="degree" required />
+                <input type="text" name="degree" ng-model="currentApplication.degree" class="form-control" required />
               </div>
             </div>
-            <div class="form-group">
-              <label for="resume">Cargá tu CV</label>
-              <input type="file" name="resume" ng-model="resume" required />
-              <p class="help-block">Se aceptan solo archivos *.doc y *.pdf, con un tamaño menor a 2048kb</p>
+            <div class="form-group row">
+              <label for="resume" class="col-lg-12 control-label">Cargá tu CV</label>
+              <div class="col-lg-12">
+                <input type="file" name="resume" ng-model="currentApplication.resume" required />
+                <p class="help-block">Se aceptan solo archivos *.doc y *.pdf, con un tamaño menor a 2048kb</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-lg-12">
+                <input type="checkbox" name="accept_terms_and_conditions" ng-model="currentApplication.accept_terms_and_conditions" required /> Acepto los <a href="https://docs.google.com/file/d/0Byia_sX-BnvkZnhaSnhaWXJrR1k" target="_blank">Términos y Condiciones de Bualá! Jobs</a>
+              </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-buala btn-lg">¡Finalizar Postulación!</button>
+            <button type="submit" class="btn btn-primary btn-buala btn-lg">¡Finalizar Postulación!</button>
           </div>
         </form>
       </div>

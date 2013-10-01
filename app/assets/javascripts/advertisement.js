@@ -1,24 +1,25 @@
 buala.controller('AdvertisementController', ['$scope', '$resource', function($scope, $resource) {
 
   $scope.openApplicationModal = function() {
-    $scope.apply = {};
+    $scope.currentApplication = {};
   };
 
-  $scope.closeApplicationModal = function() {
-    $scope.apply = null;
-  }
-
-  $scope.$watch('apply', function() {
-    if($scope.apply) {
-      $('#applicationModal').modal();
+  $scope.$watch('currentApplication', function() {
+    var applicationModal = $('#applicationModal');
+    if($scope.currentApplication) {
+      applicationModal.modal('show');
+    } else {
+      applicationModal.modal('hide');
     }
   });
+
+  $scope.submitApplication = function() {
+    console.log($scope.application);
+  }
 
 }]);
 
 $(function() {
-
-  console.log("Hola");
 
   $('#advertisement-detail ul.badges li').tooltip({
     placement: "bottom",

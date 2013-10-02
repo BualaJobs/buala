@@ -35,7 +35,11 @@ class Application < ActiveRecord::Base
 
   def self.update_dropbox_urls
     Application.all.each do |application|
-      application.update_dropbox_url
+      begin
+        application.update_dropbox_url
+      rescue
+        puts "Failed resume URL generation for #{application.id}"
+      end
     end
   end
 

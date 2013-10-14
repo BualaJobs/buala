@@ -93,31 +93,66 @@
 .footer-container {
   padding: 20px 0 0 0;
   background:#244155;
-}
 
-.footer-container .contact {
-  margin:10px 0;
-}
+  .contact {
+    margin:10px 0;
 
-.footer-container .contact .contact-thumb {
-  text-align: center;
-  color:#1abc9c;
-}
+    .contact-thumb {
+      text-align: center;
+      color:#1abc9c;
 
-.footer-container .social {
-  text-align: center;
-  padding:10px 0;
-  font-size:40px;
-}
+      h3 {
+        color:inherit;
+        margin:4px 0 4px 0;
+      }
 
-.footer-container .social a {
-  color:#1abc9c;
-  text-decoration: none;
-}
+      .well {
+        background: #1d2936;
+        border-color: #1d2936;
+      }
 
-.footer-container .social a:hover, .footer-container .social a:active {
-  color:#fff;
-  text-decoration: none;
+      .img {
+        width: 15%;
+        float: left;
+        line-height: 80px;
+
+        img {
+          width:100%;
+          height: auto;
+        }
+      }
+
+      .info {
+        float: left;
+        width: 85%;
+
+        a, a:hover, a:active {
+          line-height: 30px;
+          color:#37d0ec;
+        }
+
+        .wrapper {
+          padding-left:5px;
+        }
+      }
+    }
+  }
+
+  .social {
+    text-align: center;
+    padding:0 0 10px 0;
+    font-size:40px;
+    
+    a {
+      color:#1abc9c;
+      text-decoration: none;
+      
+      &:hover, &:active {
+        color:#fff;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .copyright-container {
@@ -146,4 +181,9 @@
 
 .buala-icon {
   color:#1abc9c;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'titillium_websemibold';
+  color: #27b5d3;
 }

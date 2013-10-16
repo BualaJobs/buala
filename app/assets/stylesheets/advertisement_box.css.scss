@@ -17,49 +17,57 @@
   -webkit-box-shadow: -2px 1px 12px rgba(0,0,0,.14);
   -moz-box-shadow: -2px 1px 12px rgba(0,0,0,.14);
   box-shadow: -2px 1px 12px rgba(0,0,0,.14);
+
+  h1, h2 {
+    font-family: 'titillium_websemibold';
+  }
+
+  h1, h1 a {
+    font-size: 28px;
+    color:#27b5d3;
+    margin:0;
+  }
+
+  h2 {
+    font-size: 22px;
+    color:#777;
+    margin:0;
+  }
+
+  p {
+    padding:7px 0;
+  }
+  
+  .company-logo {
+    padding:0 0 0 8px;
+    text-align: center;
+  }
+
+  .company-logo img {
+    width:100%;
+    max-width: 150px;
+    height: auto;
+  }
+  
+  .btn-container {
+    line-height: 150px;
+  }
+  
+  .location {
+    line-height:16px;
+    
+    i {
+      color:#1abc9c;
+      font-size:16px;
+      padding: 0 3px;
+    }
+  }
+  
+  .show-adv-mobile {
+    margin-top:15px;
+  }
 }
 
-.advertisement-box p {
-  padding:7px 0;
-}
 
-.advertisement-box .company-logo {
-  padding:0 0 0 8px;
-  text-align: center;
-}
 
-.advertisement-box .company-logo img {
-  width:100%;
-  max-width: 150px;
-  height: auto;
-}
 
-.advertisement-box h1, .advertisement-box h1 a {
-  font-size: 28px;
-  color:#27b5d3;
-  margin:0;
-}
-
-.advertisement-box h2 {
-  font-size: 22px;
-  color:#777;
-  margin:0;
-}
-
-.advertisement-box .btn-container {
-  line-height: 150px;
-}
-
-.advertisement-box .location {
-  line-height:16px;
-}
-
-.advertisement-box .location i {
-  color:#1abc9c;
-  font-size:16px;
-  padding: 0 3px;
-}
-
-.advertisement-box .show-adv-mobile {
-  margin-top:15px;
-}

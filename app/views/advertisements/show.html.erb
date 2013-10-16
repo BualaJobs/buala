@@ -1,5 +1,7 @@
-<div ng-controller="AdvertisementController" id="advertisement-detail">
 
+<% content_for :ng_controller do "AdvertisementController" end %>
+
+<% content_for :top_body do %>
   <div class="row advertisement-header">
     <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 centered">
       <%= image_tag @advertisement.company.company_logo.url , alt: @advertisement.company.name, class: "pull-left hidden-xs hidden-sm" %>
@@ -21,6 +23,9 @@
       }) %>
     </div>
   </div>
+<% end %>
+
+<div id="advertisement-detail">
 
   <div class="row">
     <div class="advertisement-info">

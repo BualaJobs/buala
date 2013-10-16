@@ -1,3 +1,76 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.signup-banner {
+  color:#fff;
+  height:388px;
+
+  h1 {
+    font-family: 'titillium_webregular';
+    color:#fff;
+  }
+
+  .totally-free {
+    font-family: 'titillium_webregular';
+    font-size: 12px;
+  }
+
+  .btn-buala {
+    font-size: 28px;
+  }
+
+}
+
+.service-explanation {
+
+  height: 160px;
+
+  h2 {
+    color:#fff;
+    font-size:22px;
+    text-align: center;
+  }
+
+  .animation-img {
+    position: absolute;
+
+    &.resume {
+      top: 15px;
+      left: 90px;
+    }
+
+    &.computer {
+      top: 40px;
+      left: 75px;
+    }
+
+    &.lens {
+      top:80px;
+      left:180px;
+    }
+
+    &.graphs {
+      top:30px;
+      left:55px;
+    }
+
+    &.suitcase {
+      top:30px;
+      left:90px;
+    }
+
+    &.check {
+      top:10px;
+      left:160px;
+    }
+
+  }
+
+}
+
+.service-explanation-text {
+
+  h2 {
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+  }
+
+}

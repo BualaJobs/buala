@@ -18,14 +18,19 @@
     <div class="container">
       <div class="navbar-header">
         <%= link_to root_path do %>
-          <img src="/images/logo.jpg" width="133" height="53" alt="Bualá! Jobs" />
+          <img src="/images/logo.png" alt="Bualá! Jobs" class="logo" />
         <% end %>
       </div>
     </div>
   </div>
 
   <!-- CONTENT -->
-  <div class="full-container body-container">
+  <div class="full-container body-container" ng-controller="<%= yield(:ng_controller) %>">
+    <div class="top-body">
+      <div class="container">
+        <%= yield(:top_body) %>
+      </div>
+    </div>
     <div class="container">
       <%= yield %>
     </div>

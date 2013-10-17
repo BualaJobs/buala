@@ -28,12 +28,21 @@
     text-align: center;
   }
 
+  .dashed-line {
+    border-top:1px dashed #fff;
+    width:600px;
+    z-index:10;
+    top:100px;
+    margin:0 auto;
+  }
+
   .animation-img {
     position: absolute;
+    z-index: 20;
 
     &.resume {
       top: 15px;
-      left: 90px;
+      left: 110px;
     }
 
     &.computer {
@@ -59,6 +68,26 @@
     &.check {
       top:10px;
       left:160px;
+    }
+
+  }
+
+  .mini-resumes {
+
+    background: #000;
+    width:600px;
+    margin: 72px auto;
+    text-align: left;
+
+    .mini-resume {
+      z-index: 10;
+      display: inline;
+      position:absolute;
+
+      &.move {
+        margin-left: 300px;
+      }
+
     }
 
   }

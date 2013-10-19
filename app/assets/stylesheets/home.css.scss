@@ -1,3 +1,41 @@
+// Move to left animation
+@-webkit-keyframes move-to-left {
+  from   { margin-left: 0; }
+  to { margin-left: 100%; }
+}
+@-moz-keyframes move-to-left {
+  from   { margin-left: 0; }
+  to { margin-left: 100%; }
+}
+@-o-keyframes move-to-left {
+  from   { margin-left: 0; }
+  to { margin-left: 100%; }
+}
+@keyframes move-to-left {
+  from   { margin-left: 0; }
+  to { margin-left: 100%; }
+}
+
+// Move to right animation
+@-webkit-keyframes move-to-right {
+  from   { margin-left: 100%; }
+  to { margin-left: 0%; }
+}
+@-moz-keyframes move-to-right {
+  from   { margin-left: 100%; }
+  to { margin-left: 0%; }
+}
+@-o-keyframes move-to-right {
+  from   { margin-left: 100%; }
+  to { margin-left: 0%; }
+}
+@keyframes move-to-right {
+  from   { margin-left: 100%; }
+  to { margin-left: 0%; }
+}
+
+
+
 .signup-banner {
   color:#fff;
   height:388px;
@@ -5,11 +43,6 @@
   h1 {
     font-family: 'titillium_webregular';
     color:#fff;
-  }
-
-  .totally-free {
-    font-family: 'titillium_webregular';
-    font-size: 12px;
   }
 
   .btn-buala {
@@ -68,26 +101,46 @@
     &.check {
       top:10px;
       left:160px;
+      width:70px;
     }
 
   }
 
-  .mini-resumes {
+  .mini-resumes, .mini-suitcases {
+    margin-top:70px;
 
-    background: #000;
-    width:600px;
-    margin: 72px auto;
-    text-align: left;
-
-    .mini-resume {
+    .mini-resume, .mini-suitcase {
       z-index: 10;
-      display: inline;
       position:absolute;
-
-      &.move {
-        margin-left: 300px;
+      
+      &.move-1 {
+        animation-delay: 0s;
+        -webkit-animation-delay:0s;      
       }
 
+      &.move-2 {
+        animation-delay: 0.5s;
+        -webkit-animation-delay:0.5s;
+      }
+
+      &.move-3 {
+        animation-delay: 1s;
+        -webkit-animation-delay:1s;
+      }
+    }
+
+    .mini-resume {
+      -webkit-animation: move-to-left 1.5s infinite;
+      -moz-animation:    move-to-left 1.5s infinite;
+      -o-animation:      move-to-left 1.5s infinite;
+      animation:         move-to-left 1.5s infinite;
+    }
+
+    .mini-suitcase {
+      -webkit-animation: move-to-right 1.5s infinite;
+      -moz-animation:    move-to-right 1.5s infinite;
+      -o-animation:      move-to-right 1.5s infinite;
+      animation:         move-to-right 1.5s infinite;
     }
 
   }

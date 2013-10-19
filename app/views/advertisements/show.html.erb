@@ -25,112 +25,57 @@
   </div>
 <% end %>
 
-<div id="advertisement-detail">
-
-  <div class="row">
-    <div class="advertisement-info">
-      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-        
-        <!-- BADGES -->
-        <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
-        <div class="location">
-          <%= fa_icon 'map-marker' %> <%= @advertisement.company.location %>
-        </div>
-
-        <!-- ADVERTISEMENT DESCRIPTION -->
-        <div>
-          <h2 class="pull-left">Descripción del puesto</h2>
-          <div class="categories pull-right">
-            <span class="label label-info"><%= @advertisement.category_1.name %></span>
-            <% if @advertisement.category_2 %>
-              <span class="label label-info"><%= @advertisement.category_2.name %></span>
-            <% end %>
+<div class="container">
+  <div id="advertisement-detail">
+    <div class="row">
+      <div class="advertisement-info">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          
+          <!-- BADGES -->
+          <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
+          <div class="location">
+            <%= fa_icon 'map-marker' %> <%= @advertisement.company.location %>
           </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="safe-html">
-          <p><%= @advertisement.description.html_safe %></p>
-        </div>
 
-        <% unless @advertisement.requirements.blank? %>
-          <h2>Requisitos</h2>
+          <!-- ADVERTISEMENT DESCRIPTION -->
+          <div>
+            <h2 class="pull-left">Descripción del puesto</h2>
+            <div class="categories pull-right">
+              <span class="label label-info"><%= @advertisement.category_1.name %></span>
+              <% if @advertisement.category_2 %>
+                <span class="label label-info"><%= @advertisement.category_2.name %></span>
+              <% end %>
+            </div>
+          </div>
+          <div class="clearfix"></div>
           <div class="safe-html">
-            <%= @advertisement.requirements.html_safe %>
+            <p><%= @advertisement.description.html_safe %></p>
           </div>
-        <% end %>
 
-        <button class="btn btn-primary btn-buala btn-lg col-md-12 col-lg-12 col-sm-12 col-xs-12 btn-apply-bottom" ng-click="openApplicationModal()">¡Postularme!</button>
-
-      </div>
-      <div class="col-lg-4 col-md-4 hidden-sm hidden-xs recommended-wrapper">
-        <% @advertisement.recommended.each do |recommended| %>
-          <div class="row recommended">
-            <div class="col-lg-4 col-md-4">
-              <%= cl_image_tag(recommended.company.company_logo, width: 95, height: 85, crop: :lpad) %>
+          <% unless @advertisement.requirements.blank? %>
+            <h2>Requisitos</h2>
+            <div class="safe-html">
+              <%= @advertisement.requirements.html_safe %>
             </div>
-            <div class="col-lg-8 col-md-8">
-              <h1><%= recommended.title %></h1>
-              <h2>en <%= recommended.company.name %></h2>
-              <%= link_to "Ver aviso", advertisement_path(recommended), class: "btn btn-primary btn-buala btn-sm full-width" %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+          <% end %>
 
-  <div class="modal fade" id="applicationModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h3 class="modal-title"><%= fa_icon "paperclip", class:"buala-icon" %> Formulario de Postulación</h3>
+          <button class="btn btn-primary btn-buala btn-lg col-md-12 col-lg-12 col-sm-12 col-xs-12 btn-apply-bottom" ng-click="openApplicationModal()">¡Postularme!</button>
+
         </div>
-        <form role="form" name="application" ng-submit="submitApplication()" novalidate>
-          <div class="modal-body">
-            <div class="form-group row">
-              <label for="name" class="col-lg-12 control-label">Nombre completo</label>
-              <div class="col-lg-8">
-                <input type="text" name="name" ng-model="currentApplication.name" class="form-control" required />
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs recommended-wrapper">
+          <% @advertisement.recommended.each do |recommended| %>
+            <div class="row recommended">
+              <div class="col-lg-4 col-md-4">
+                <%= cl_image_tag(recommended.company.company_logo, width: 95, height: 85, crop: :lpad) %>
+              </div>
+              <div class="col-lg-8 col-md-8">
+                <h1><%= recommended.title %></h1>
+                <h2>en <%= recommended.company.name %></h2>
+                <%= link_to "Ver aviso", advertisement_path(recommended), class: "btn btn-primary btn-buala btn-sm full-width" %>
               </div>
             </div>
-            <div class="form-group row">
-              <label for="email" class="col-lg-12 control-label">Email</label>
-              <div class="col-lg-10">
-                <input type="text" name="email" ng-model="currentApplication.email" class="form-control" required />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="university" class="col-lg-12 control-label">Universidad</label>
-              <div class="col-lg-8">
-                <select name="university" ng-model="currentApplication.university" class="form-control" required>
-                  <%= options_from_collection_for_select(University.ordered, 'id', 'name') %>
-                </select> 
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="degree" class="col-lg-12 control-label">Carrera</label>
-              <div class="col-lg-10">
-                <input type="text" name="degree" ng-model="currentApplication.degree" class="form-control" required />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="resume" class="col-lg-12 control-label">Cargá tu CV</label>
-              <div class="col-lg-12">
-                <input type="file" name="resume" ng-model="currentApplication.resume" required />
-                <p class="help-block">Se aceptan solo archivos *.doc y *.pdf, con un tamaño menor a 2048kb</p>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-lg-12">
-                <input type="checkbox" name="accept_terms_and_conditions" ng-model="currentApplication.accept_terms_and_conditions" required /> Acepto los <a href="https://docs.google.com/file/d/0Byia_sX-BnvkZnhaSnhaWXJrR1k" target="_blank">Términos y Condiciones de Bualá! Jobs</a>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary btn-buala btn-lg">¡Finalizar Postulación!</button>
-          </div>
-        </form>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

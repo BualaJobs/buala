@@ -19,11 +19,16 @@
     <div class="row text-center">
       <div class="col-md-12 dashed-line"></div>
     </div>
-    <div class="row text-center">
-      <div class="mini-resumes">
-        <img class="mini-resume" src="/images/mini-resume.png" />
-        <img class="mini-resume" src="/images/mini-resume.png" />
-        <img class="mini-resume" src="/images/mini-resume.png" />
+    <div class="row">
+      <div class="mini-resumes col-md-3 col-md-offset-2">
+        <img class="mini-resume move-1" src="/images/mini-resume.png" />
+        <img class="mini-resume move-2" src="/images/mini-resume.png" />
+        <img class="mini-resume move-3" src="/images/mini-resume.png" />
+      </div>
+      <div class="mini-suitcases col-md-3 col-md-offset-1">
+        <img class="mini-suitcase move-1" src="/images/mini-suitcase.png" />
+        <img class="mini-suitcase move-2" src="/images/mini-suitcase.png" />
+        <img class="mini-suitcase move-3" src="/images/mini-suitcase.png" />
       </div>
     </div>
   </div>
@@ -36,16 +41,18 @@
   <div class="signup-container text-right">
     <button class="btn btn-buala btn-outstand btn-lg">
       Registrate ahora!
-      <div class="totally-free">(Es y siempre será gratis)</div>
     </button>
   </div>
 </div>
 <% end %>
 
-<h2>Últimos avisos</h2>
-<% @advertisements.each do |advertisement| %>
- <%= render partial: 'advertisements/advertisement_box', locals: {advertisement: advertisement} %>
-<% end %>
+<div class="container">
+  <h2>Últimos avisos</h2>
+  <% @advertisements.each do |advertisement| %>
+   <%= render partial: 'advertisements/advertisement_box', locals: {advertisement: advertisement} %>
+  <% end %>
+</div>
+
 
 <% content_for(:pre_footer) do %>
 <div class="row contact hidden-xs hidden-sm">

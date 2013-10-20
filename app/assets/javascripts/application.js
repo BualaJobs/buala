@@ -8,6 +8,5 @@
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/tooltip
 //= require advertisement
-//= require home
 
 var buala = angular.module('Buala', ['ngResource']);

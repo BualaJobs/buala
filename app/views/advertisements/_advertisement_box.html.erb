@@ -3,23 +3,20 @@
     <div class="col-md-2 col-lg-2 col-sm-2 hidden-xs company-logo">
       <%= cl_image_tag(advertisement.company.company_logo, :width => 150, :height => 150, :crop => :lpad) %>
     </div>
-    <div class="col-md-8 col-lg-8 col-sm-8 col-xs-12">
+    <div class="col-md-10 col-lg-10 col-sm-10 col-xs-12">
       <h1><%= link_to advertisement.title, advertisement_path(advertisement) %></h1>
       <h2><%= advertisement.company.name %></h2>
       <p>
         <%= advertisement.short_description %>
       </p>
     </div>
-    <div class="col-md-2 col-lg-2 col-sm-2 hidden-xs text-right btn-container">
-      <%= link_to "Ver aviso", advertisement_path(advertisement), class: 'btn btn-primary btn-lg btn-buala' %>
-    </div>
   </div>
-  <div class="row">
-    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 location"><%= fa_icon 'map-marker' %> <%= advertisement.company.location %></div>
-  </div>
-  <div class="row visible-xs">
-    <div class="col-xs-12">
-      <%= link_to "Ver aviso", advertisement_path(advertisement), class: 'btn btn-primary btn-lg btn-buala full-width show-adv-mobile' %>
+  <div class="row bottom-row">
+    <div class="pull-left location">
+      <%= fa_icon 'map-marker' %> <%= advertisement.company.location %>
     </div>
+    <%= link_to advertisement_path(advertisement), class: 'btn-show-advertisement pull-right' do %>
+      <%= fa_icon 'expand-alt' %> Más detalles
+    <% end %>
   </div>
 </div>

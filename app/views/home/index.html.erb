@@ -47,11 +47,13 @@
 </div>
 <% end %>
 
-<div class="container">
-  <h2>Últimos avisos</h2>
-  <% @advertisements.each do |advertisement| %>
-   <%= render partial: 'advertisements/advertisement_box', locals: {advertisement: advertisement} %>
-  <% end %>
+<div class="last-advertisements-wrapper">
+  <div class="container">
+    <h1><%= fa_icon 'time' %> Últimos avisos</h1>
+    <% @advertisements.each do |advertisement| %>
+     <%= render partial: 'advertisements/advertisement_box', locals: {advertisement: advertisement} %>
+    <% end %>
+  </div>
 </div>
 
 

@@ -91,17 +91,6 @@ University.create name: 'UDESA'
 University.create name: 'UBA'
 University.create name: 'Otra'
 
-Degree.create name: 'Licenciatura En Administración Y Sistemas', university: itba
-Degree.create name: 'Ingeniería Industrial', university: itba
-Degree.create name: 'Ingeniería Informática', university: itba
-Degree.create name: 'Ingeniería Mecánica', university: itba
-Degree.create name: 'Ingeniería Electrónica', university: itba
-Degree.create name: 'Ingeniería Química', university: itba
-Degree.create name: 'Ingeniería en Petróleo', university: itba
-Degree.create name: 'Ingeniería Naval', university: itba
-Degree.create name: 'Bioingeniería', university: itba
-Degree.create name: 'Ingeniería Eléctrica', university: itba
-
 WorkingTurn.create name: 'Turno mañana'
 WorkingTurn.create name: 'Turno tarde'
 WorkingTurn.create name: 'Turno noche'

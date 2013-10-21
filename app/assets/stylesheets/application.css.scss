@@ -199,12 +199,25 @@
 }
 
 .btn-outstand {
-  background:#ffac29;
-  border:#ffac29;
+  background:#fa70b8;
+  padding:8px 22px;
+  border: 0px;
+  border-bottom: 5px solid #f011e7;
+  color:#fff;
+  font-family: 'titillium_websemibold';
+  font-size:28px;
+  -webkit-box-shadow: 0px 0px 5px rgba(120, 120, 120, 0.5);
+  -moz-box-shadow:    0px 0px 5px rgba(120, 120, 120, 0.5);
+  box-shadow:         0px 0px 5px rgba(120, 120, 120, 0.5);
 
   &:hover, &:active {
-    background: #f3a221;
-    color:#fff;
+    background: #F32892;
+    border-bottom: 5px solid #FF57AF;
+  }
+
+  .btn-recommendation {
+    font-size:12px;
+    font-family: 'titillium_webregular';
   }
 }
 

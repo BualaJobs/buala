@@ -1,27 +1,27 @@
 
 
 <% content_for :top_body do %>
-  <div class="row advertisement-header">
-    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 centered">
-      <%= image_tag @advertisement.company.company_logo.url , alt: @advertisement.company.name, class: "pull-left hidden-xs hidden-sm" %>
-      <div class="pull-left advertisement-title">
-        <h1><%= @advertisement.title %></h1>
-        <h2>en <%= link_to @advertisement.company.name, @advertisement.company.website %></h2>
+  <div class="container">
+    <div class="row advertisement-header">
+      <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 centered">
+        <%= image_tag @advertisement.company.company_logo.url , alt: @advertisement.company.name, class: "pull-left hidden-xs hidden-sm" %>
+        <div class="pull-left advertisement-title">
+          <h1><%= @advertisement.title %></h1>
+          <h2>en <%= link_to @advertisement.company.name, @advertisement.company.website %></h2>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
-      <button class="btn btn-primary btn-buala btn-lg pull-right" ng-click="openApplicationModal()" >¡Postularme!</button>
+      <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
+        <button class="btn btn-primary btn-buala btn-lg pull-right" ng-click="openApplicationModal()" >¡Postularme!</button>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-12 col-md-12 map-container">
+    <div class="map-container">
       <%= gmaps({
         "map_options" => {"auto_zoom" => false, "zoom" => 15, raw: "{scrollwheel: false}" },
         "markers" => {"data" => @json }
       }) %>
     </div>
-  </div>
 <% end %>
 
 <div class="container">

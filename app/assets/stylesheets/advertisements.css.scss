@@ -1,6 +1,10 @@
+.advertisement-header-wrapper {
+  background: #fff;
+  border-top: 1px solid #2cbed9;
+}
+
 .advertisement-header {
   background: #fff;
-  border-bottom: 2px solid #2cbed9;
   padding:25px 0;
 }
 
@@ -33,6 +37,11 @@
   background:#f6f6f6;
 }
 
+.advertisement-detail-wrapper {
+  background: #3be376;
+  border-top: 8px solid #00D54B;
+}
+
 .advertisement-info .categories {
   font-size: 18px;
   margin-top: 18px;
@@ -62,17 +71,12 @@
   width: 15%;
   min-width: 90px;
   height: 90px;
-  border:1px solid #5bc0de;
-  border-bottom-width: 3px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow:    0 1px 2px 1px #ccc;
-  -webkit-box-shadow: 0 1px 2px 1px #ccc;
-  box-shadow:         0 1px 2px 1px #ccc;
-  color:#5bc0de;
-  background: #edf9fd;
   cursor:pointer;
+  color:#007C37;
+  background: #81FF86;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
 .badges li:last-child {
@@ -80,7 +84,7 @@
 }
 
 .badges li:hover {
-  background: #e0f6fd;
+  background: #CAFFCC;
   font-weight: bold;
 }
 
@@ -96,6 +100,15 @@
 .badges li .badge-description {
   font-size:10px;
   line-height:10px;
+}
+
+.advertisement-description-wrapper {
+  background: #fff;
+  padding: 10px 20px 0 20px;
+  margin: 20px 0;
+  -webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow:    0px 0px 10px rgba(50, 50, 50, 0.4);
+  box-shadow:         0px 0px 10px rgba(50, 50, 50, 0.4);
 }
 
 .btn-buala.btn-apply-bottom {
@@ -157,25 +170,20 @@
 .recommended {
   margin: 15px 0 0 0;
   padding:10px 5px 5px 5px;
-  border-top:4px solid #27b5d3;
-  -webkit-border-radius: 4px;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius: 4px;
-  -moz-border-radius-topleft: 0;
-  -moz-border-radius-topright: 0;
-  border-radius: 4px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.14);
-  -moz-box-shadow: 0 1px 6px rgba(0,0,0,.14);
-  box-shadow: 0 1px 6px rgba(0,0,0,.14);
+  -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.4);
+  box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.4);
   background: #fff;
 }
 
 .recommended-wrapper {
   margin:1px 0 0 0;
   padding:0;
+
+  h2 {
+    color: #fff;
+  }
+
 }
 
 .recommended h1, .recommended h2 {
@@ -191,6 +199,7 @@
 
 .recommended h2 {
   font-size: 16px;
+  color:#4b4b4b;
 }
 
 .recommended .col-lg-8, .recommended .col-md-8,
@@ -220,12 +229,11 @@
   line-height:22px;
   padding:10px;
   margin-top:14px;
-  background: #f9f9f9;
+  color:#007C37;
+  background: #CAFDCC;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  border:1px solid #f0f0f0;
-  color:#555;
 }
 
 .advertisement-info .location i {

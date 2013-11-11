@@ -18,9 +18,13 @@
       <% end %>
     </strong>
     <span class="mappin"><%= @advertisement.company.location %></span>
-    <%
-    # <span class="date">Finaliza en 6 días</span>
-    %>
+    <div class="map">
+    <%= gmaps({
+      "map_options" => {"auto_zoom" => false, "zoom" => 15 },
+      "markers" => {"data" => @json }
+    }) %>
+  </div>
+
 
     <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
 

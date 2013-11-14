@@ -1,11 +1,11 @@
 .map_container {
   padding: 0;
   margin:0;
-  width: 943px;
+  width: inherit;
 }
 
 .gmaps4rails_map {
-  width: 943px;
+  width: inherit;
   height: 300px;
 }
 

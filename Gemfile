@@ -22,6 +22,8 @@ gem 'angularjs-rails'
 gem 'lodash-rails'
 gem 'active_model_serializers'
 gem 'versionist'
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
+gem "font-awesome-rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

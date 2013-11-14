@@ -1,4 +1,108 @@
-<%= image_tag "home_banner.png", class: 'home_banner' %>
-<% @advertisements.each do |advertisement| %>
- <%= render partial: 'advertisements/advertisement_box', locals: {advertisement: advertisement} %>
+<%= content_for :top_body do %>
+<div class="signup-banner container">
+  <h1 class="text-center">Comenzá a recibir avisos laborales de tu interés!</h1>
+  <div class="service-explanation hidden-xs hidden-sm">
+    <div class="row">
+      <div class="col-md-4 step">
+        <img src="/images/resume.png" alt="Currículum" class="animation-img resume" />
+      </div>
+      <div class="col-md-4 step">
+        <img src="/images/computer.png" alt="Búsqueda de las mejores ofertas" class="animation-img computer" />
+        <img src="/images/graphs.png" alt="Métricas" class="animation-img graphs" />
+        <img src="/images/lens.png" alt="Lupa" class="animation-img lens" />
+      </div>
+      <div class="col-md-4 step">
+        <img src="/images/suitcase.png" alt="Preparate" class="animation-img suitcase" />
+        <img src="/images/check.png" alt="Trabajo ideal" class="animation-img check" />
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12 dashed-line"></div>
+    </div>
+    <div class="row">
+      <div class="mini-resumes col-md-3 col-md-offset-2">
+        <img class="mini-resume move-1" src="/images/mini-resume.png" />
+        <img class="mini-resume move-2" src="/images/mini-resume.png" />
+        <img class="mini-resume move-3" src="/images/mini-resume.png" />
+      </div>
+      <div class="mini-suitcases col-md-3 col-md-offset-1">
+        <img class="mini-suitcase move-1" src="/images/mini-suitcase.png" />
+        <img class="mini-suitcase move-2" src="/images/mini-suitcase.png" />
+        <img class="mini-suitcase move-3" src="/images/mini-suitcase.png" />
+      </div>
+    </div>
+  </div>
+  <div class="service-explanation-text hidden-xs hidden-sm">
+    <div class="col-md-4"><h2>Danos a conocer tus fortalezas</h2></div>
+    <div class="col-md-4"><h2>Analizamos y te acercamos las mejores propuestas</h2></div>
+    <div class="col-md-4"><h2>Comienza tu trabajo ideal</h2></div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="signup-container text-center">
+    <button class="btn-pink btn-sign-up">
+      Registrate ahora!
+      <div class="btn-recommendation">Crea tu cuenta! Es rápido y fácil.</div>
+    </button>
+  </div>
+</div>
+<% end %>
+
+<div class="last-advertisements-wrapper">
+  <div class="container">
+    <h1><%= fa_icon 'time' %> Últimos avisos</h1>
+    <% @advertisements.each do |advertisement| %>
+     <%= render partial: 'advertisements/advertisement_box', locals: {advertisement: advertisement} %>
+    <% end %>
+  </div>
+</div>
+
+
+<% content_for(:pre_footer) do %>
+<div class="row contact hidden-xs hidden-sm">
+  <div class="contact-thumb col-md-4">
+    <div class="well">
+      <div class="img">
+        <img src="/images/thumb1.png" alt="Estudiantes"/>
+      </div>
+      <div class="info">
+        <div class="text-center pull-left wrapper">
+          <h3>Estudiantes</h3>
+          <div>¡Consultas bienvenidas!</div>
+          <div><a href="mailto:estudiantes@bualajobs.com">estudiantes@bualajobs.com</a></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="contact-thumb col-md-4">
+    <div class="well">
+      <div class="img">
+        <img src="/images/thumb2.png" alt="Empresas" />
+      </div>
+      <div class="info">
+        <div class="text-center pull-left wrapper">
+          <h3>Empresas</h3>
+          <div>¿Buscas estudiantes?</div>
+          <div><a href="mailto:empresas@bualajobs.com">empresas@bualajobs.com</a></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="contact-thumb col-md-4">
+    <div class="well">
+      <div class="img">
+        <img src="/images/thumb3.png" alt="Universidades" />
+      </div>
+      <div class="info">
+        <div class="text-center pull-left wrapper">
+          <h3>Universidades</h3>
+          <div>¡Conocé nuestros beneficios!</div>
+          <div><a href="mailto:universidades@bualajobs.com">universidades@bualajobs.com</a></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
 <% end %>

@@ -1,0 +1,37 @@
+<script type="text/javascript">
+  $(function() {
+    $('.modal').modal({
+      fadeDuration: 500
+    });
+
+    window.fbAsyncInit = function() {                                            
+      FB.Event.subscribe('edge.create', function(response) {                      
+        $.modal.close();
+      });                                                                        
+     
+      FB.Event.subscribe('edge.remove', function(response) {                      
+        $.modal.close();                                                  
+      });                                                                        
+    };
+
+  });
+</script>
+
+<div class="modal fade">
+  <h1 style="color:#000; text-align: center;">Necesitamos tu ayuda!</h1>
+  <p style="text-align: center; font-size: 18px; padding: 2px 0">Ayudanos a competir en un concurso global!</p>
+  <div style="text-align: center; padding-bottom: 10px;">
+    <img src="/images/seedstarsworld.png" style="width:300px;" />
+  </div>
+  <p style="text-align: center;">
+    Seedstars enviará a los 5 startups más votados a Suiza! <br /> 
+    Demostremos el tamaño de la comunidad Bualá!
+  </p>
+  <div id="fb-root"></div>
+
+  <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fscontent-a-cdg.xx.fbcdn.net%2Fhphotos-frc1%2F578103_544720715614556_1750111395_n.png&amp;width&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=595837177101038" fscrolling="no" frameborder="0" style="display:block; margin: 0 auto; border:none; overflow:hidden; width:150px; height:65px; margin: 40px 0 30px 170px;" allowtransparency="true"></iframe>
+
+  <div class="text-align: right">
+    <a href="#" rel="modal:close" style="color:#00A;">Continuar al sitio</a>
+  </div>
+</div>

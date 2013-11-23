@@ -39,10 +39,10 @@
   </div>
   <div class="clearfix"></div>
   <div class="signup-container text-center">
-    <button class="btn-pink btn-sign-up">
+    <%= link_to new_user_registration_path, class: "btn-pink btn-sign-up"  do %>
       Registrate ahora!
       <div class="btn-recommendation">Crea tu cuenta! Es rápido y fácil.</div>
-    </button>
+    <% end %>
   </div>
 </div>
 <% end %>

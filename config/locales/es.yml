@@ -126,6 +126,7 @@ es:
         one: longitud errónea (debe ser de 1 caracter)
         other: longitud errónea (debe ser de %{count} caracteres)
       in_between: Archivo inválido
+      not_saved: Se han producido errores
     template:
       body: ! 'Revise que los siguientes campos sean válidos:'
       header:
@@ -204,3 +205,9 @@ es:
   activerecord:
     errors:
       <<: *errors
+  devise:
+    failure:
+      user:
+        not_found_in_database: Usuario o contraseña inválidos
+        invalid: Usuario o contraseña inválidos
+        

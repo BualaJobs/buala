@@ -1,5 +1,7 @@
 Buala::Application.routes.draw do
 
+  devise_for :users
+
   scope 'api' do
     defaults format: :json do
       api_version(:module => "V1", :path => {:value => "v1"}) do

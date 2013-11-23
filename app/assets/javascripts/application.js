@@ -7,6 +7,7 @@
 //= require_self
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/tooltip
+//= require twitter/bootstrap/dropdown
 //= require advertisement
 
 var buala = angular.module('Buala', ['ngResource']);

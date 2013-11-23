@@ -1,50 +1,52 @@
-<%= content_for :top_body do %>
-<div class="signup-banner container">
-  <h1 class="text-center">Comenzá a recibir avisos laborales de tu interés!</h1>
-  <div class="service-explanation hidden-xs hidden-sm">
-    <div class="row">
-      <div class="col-md-4 step">
-        <img src="/images/resume.png" alt="Currículum" class="animation-img resume" />
+<% unless user_signed_in? %>
+  <%= content_for :top_body do %>
+  <div class="signup-banner container">
+    <h1 class="text-center">Comenzá a recibir avisos laborales de tu interés!</h1>
+    <div class="service-explanation hidden-xs hidden-sm">
+      <div class="row">
+        <div class="col-md-4 step">
+          <img src="/images/resume.png" alt="Currículum" class="animation-img resume" />
+        </div>
+        <div class="col-md-4 step">
+          <img src="/images/computer.png" alt="Búsqueda de las mejores ofertas" class="animation-img computer" />
+          <img src="/images/graphs.png" alt="Métricas" class="animation-img graphs" />
+          <img src="/images/lens.png" alt="Lupa" class="animation-img lens" />
+        </div>
+        <div class="col-md-4 step">
+          <img src="/images/suitcase.png" alt="Preparate" class="animation-img suitcase" />
+          <img src="/images/check.png" alt="Trabajo ideal" class="animation-img check" />
+        </div>
       </div>
-      <div class="col-md-4 step">
-        <img src="/images/computer.png" alt="Búsqueda de las mejores ofertas" class="animation-img computer" />
-        <img src="/images/graphs.png" alt="Métricas" class="animation-img graphs" />
-        <img src="/images/lens.png" alt="Lupa" class="animation-img lens" />
+      <div class="row text-center">
+        <div class="col-md-12 dashed-line"></div>
       </div>
-      <div class="col-md-4 step">
-        <img src="/images/suitcase.png" alt="Preparate" class="animation-img suitcase" />
-        <img src="/images/check.png" alt="Trabajo ideal" class="animation-img check" />
+      <div class="row">
+        <div class="mini-resumes col-md-3 col-md-offset-2">
+          <img class="mini-resume move-1" src="/images/mini-resume.png" />
+          <img class="mini-resume move-2" src="/images/mini-resume.png" />
+          <img class="mini-resume move-3" src="/images/mini-resume.png" />
+        </div>
+        <div class="mini-suitcases col-md-3 col-md-offset-1">
+          <img class="mini-suitcase move-1" src="/images/mini-suitcase.png" />
+          <img class="mini-suitcase move-2" src="/images/mini-suitcase.png" />
+          <img class="mini-suitcase move-3" src="/images/mini-suitcase.png" />
+        </div>
       </div>
     </div>
-    <div class="row text-center">
-      <div class="col-md-12 dashed-line"></div>
+    <div class="service-explanation-text hidden-xs hidden-sm">
+      <div class="col-md-4"><h2>Danos a conocer tus fortalezas</h2></div>
+      <div class="col-md-4"><h2>Analizamos y te acercamos las mejores propuestas</h2></div>
+      <div class="col-md-4"><h2>Comienza tu trabajo ideal</h2></div>
     </div>
-    <div class="row">
-      <div class="mini-resumes col-md-3 col-md-offset-2">
-        <img class="mini-resume move-1" src="/images/mini-resume.png" />
-        <img class="mini-resume move-2" src="/images/mini-resume.png" />
-        <img class="mini-resume move-3" src="/images/mini-resume.png" />
-      </div>
-      <div class="mini-suitcases col-md-3 col-md-offset-1">
-        <img class="mini-suitcase move-1" src="/images/mini-suitcase.png" />
-        <img class="mini-suitcase move-2" src="/images/mini-suitcase.png" />
-        <img class="mini-suitcase move-3" src="/images/mini-suitcase.png" />
-      </div>
+    <div class="clearfix"></div>
+    <div class="signup-container text-center">
+      <%= link_to new_user_registration_path, class: "btn-pink btn-sign-up"  do %>
+        Registrate ahora!
+        <div class="btn-recommendation">Crea tu cuenta! Es rápido y fácil.</div>
+      <% end %>
     </div>
   </div>
-  <div class="service-explanation-text hidden-xs hidden-sm">
-    <div class="col-md-4"><h2>Danos a conocer tus fortalezas</h2></div>
-    <div class="col-md-4"><h2>Analizamos y te acercamos las mejores propuestas</h2></div>
-    <div class="col-md-4"><h2>Comienza tu trabajo ideal</h2></div>
-  </div>
-  <div class="clearfix"></div>
-  <div class="signup-container text-center">
-    <%= link_to new_user_registration_path, class: "btn-pink btn-sign-up"  do %>
-      Registrate ahora!
-      <div class="btn-recommendation">Crea tu cuenta! Es rápido y fácil.</div>
-    <% end %>
-  </div>
-</div>
+  <% end %>
 <% end %>
 
 <div class="last-advertisements-wrapper">

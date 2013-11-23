@@ -77,7 +77,29 @@
   }
 
   .navbar-nav {
-    padding-top: 10px;
+
+    li {
+      a {
+        line-height: 42px;
+      
+        &:hover {
+          background: #ECF8FF;
+        }
+      }
+    }
+
+    .open {
+      a {
+        &:focus {
+          background: #ECF8FF;
+        }
+      }
+    }
+
+  }
+
+  .navbar-text {
+    line-height: 39px;
   }
 
   &.stick {
@@ -262,4 +284,22 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 3px solid #ffd589;
     color:#fff;
   }
+}
+
+.auth-btns {
+  font-family: "titillium_webregular";
+
+  a {
+    font-size: 16px;
+    color: #2FA8CF !important;
+  }
+
+  .auth-link-wrapper a {
+    text-transform: uppercase;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
 }

@@ -9,7 +9,12 @@
 
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
-        <div class="text-center error"><%= flash[:alert] %></div>
+        <% if flash[:notice] %>
+          <div class="text-center notice"><%= flash[:notice] %></div>
+        <% end %>
+        <% if flash[:alert] %>
+          <div class="text-center error"><%= flash[:alert] %></div>
+        <% end %>
 
         <div class="form-group">
           <%= f.label :email %>

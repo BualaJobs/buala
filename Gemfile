@@ -14,6 +14,7 @@ gem 'friendly_id'
 gem 'active_admin_editor'
 gem 'gmaps4rails'
 gem 'formtastic'
+gem 'formtastic-bootstrap', :git => 'git@github.com:nickl-/formtastic-bootstrap3.git', tag: 'v2.0.0'
 gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1'
 gem 'mandrill-api'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails', '~> 3.2.0'
   gem 'better_errors'
+  gem 'letter_opener'
 end
 
 gem 'jquery-rails', '2.3.0'

@@ -5,6 +5,15 @@ GIT
   specs:
     validates_email_format_of (1.5.3)
 
+GIT
+  remote: git@github.com:nickl-/formtastic-bootstrap3.git
+  revision: 9b483c83f5d131a20a8b2ab78710ff056373b3fb
+  tag: v2.0.0
+  specs:
+    formtastic-bootstrap (2.0.0)
+      formtastic (~> 2.2)
+      formtastic-bootstrap
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -169,6 +178,8 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.3.0)
       addressable (~> 2.3)
+    letter_opener (1.1.2)
+      launchy (~> 2.2)
     libv8 (3.16.14.3)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
@@ -319,6 +330,7 @@ DEPENDENCIES
   factory_girl_rails (~> 3.2.0)
   font-awesome-rails
   formtastic
+  formtastic-bootstrap!
   friendly_id
   gmaps4rails
   google-analytics-rails
@@ -327,6 +339,7 @@ DEPENDENCIES
   guard-rspec
   inherited_resources
   jquery-rails (= 2.3.0)
+  letter_opener
   lodash-rails
   mandrill-api
   meta-tags

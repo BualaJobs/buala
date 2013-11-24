@@ -8,6 +8,7 @@
  *= require advertisement_box
  *= require companies
  *= require auth
+ *= require formtastic-bootstrap
  */
 @charset "utf-8";
 /* CSS Document */
@@ -295,7 +296,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .auth-link-wrapper a {
-    text-transform: uppercase;
   }
 
   i {

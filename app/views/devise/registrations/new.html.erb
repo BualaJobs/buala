@@ -11,7 +11,7 @@
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :role => "form") do |f| %>
 
         <div class="form-group <%= !resource.errors[:email].empty? ? 'has-error' : '' %>">
-          <%= f.label :fullname, "Nombre completo", class: 'control-label' %>
+          <%= f.label :fullname, "Nombre completo", autofocus: true, class: 'control-label' %>
           <%= f.text_field :fullname, :autofocus => true, class: 'form-control' %>
           <% unless resource.errors[:fullname].empty? %>
             <div class="help-block text-right"><%= resource.errors[:fullname].first %></div>
@@ -20,7 +20,7 @@
 
         <div class="form-group <%= !resource.errors[:email].empty? ? 'has-error' : '' %>">
           <%= f.label :email, "Email", class: 'control-label' %>
-          <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+          <%= f.email_field :email, class: 'form-control' %>
           <% unless resource.errors[:email].empty? %>
             <div class="help-block text-right"><%= resource.errors[:email].first %></div>
           <% end %>

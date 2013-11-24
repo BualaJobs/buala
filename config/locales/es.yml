@@ -209,6 +209,7 @@ es:
     passwords:
       user:
         send_instructions: Enviamos instrucciones a tu email
+        no_token: Link no autorizado
     failure:
       user:
         not_found_in_database: Usuario o contraseña inválidos

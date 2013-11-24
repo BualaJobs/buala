@@ -1,0 +1,15 @@
+<%= content_for :top_body do %>
+  <div class="container">
+    <h2>
+      <%= fa_icon :user %>
+      Mi perfil
+    </h2>
+    <%= semantic_form_for @user do |f| %>
+
+    <div class="form-group">
+      <%= f.input :fullname %>
+    </div>
+
+    <% end %>
+  </div>
+<% end %>

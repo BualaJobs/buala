@@ -32,9 +32,15 @@
             <% end %>
             <ul class="dropdown-menu" role="menu">
               <li>
+                <%= link_to me_users_path do %>
+                  <%= fa_icon :user %>
+                  Mi perfil
+                <% end %>
+              </li>
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <%= fa_icon :signout %>
-                  Logout
+                  Cerrar sesión
                 <% end %> 
               </li>
             </ul>
@@ -58,26 +64,28 @@
   </div>
 
   <!-- CONTENT -->
-  <div class="full-container body-container" ng-controller="<%= yield(:ng_controller) %>">
-    <div class="top-body">
-      <%= yield(:top_body) %>
-    </div>
-    <%= yield %>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="full-container footer-container">
-    <div class="container">
-      <%= yield(:pre_footer) %>
-      <div class="social">
-        <a href="http://facebook.com/bualajobs" target="_blank"><%= fa_icon 'facebook-sign' %></a>
-        <a href="https://twitter.com/bualajobs" target="_blank"><%= fa_icon 'twitter-sign' %></a>
-        <a href="http://www.linkedin.com/company/bual-jobs" target="_blank"><%= fa_icon 'linkedin-sign' %></a>
+  <div class="adjustable" ng-controller="<%= yield(:ng_controller) %>">
+      <div class="top-body">
+        <%= yield(:top_body) %>
       </div>
-    </div>
-    <div class="copyright-container">
-      Bualá! Jobs Copyright &copy; 2013
-    </div>
+      <%= yield %>
+
+    <!-- FOOTER -->
+    <% unless user_signed_in? %>
+      <div class="full-container footer-container">
+        <div class="container">
+          <%= yield(:pre_footer) %>
+          <div class="social">
+            <a href="http://facebook.com/bualajobs" target="_blank"><%= fa_icon 'facebook-sign' %></a>
+            <a href="https://twitter.com/bualajobs" target="_blank"><%= fa_icon 'twitter-sign' %></a>
+            <a href="http://www.linkedin.com/company/bual-jobs" target="_blank"><%= fa_icon 'linkedin-sign' %></a>
+          </div>
+        </div>
+        <div class="copyright-container">
+          Bualá! Jobs Copyright &copy; 2013
+        </div>
+      </div>
+    <% end %>
   </div>
   <%= yield :scripts %>
 </body>

@@ -5,15 +5,6 @@ GIT
   specs:
     validates_email_format_of (1.5.3)
 
-GIT
-  remote: git@github.com:nickl-/formtastic-bootstrap3.git
-  revision: 9b483c83f5d131a20a8b2ab78710ff056373b3fb
-  tag: v2.0.0
-  specs:
-    formtastic-bootstrap (2.0.0)
-      formtastic (~> 2.2)
-      formtastic-bootstrap
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -70,6 +61,10 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
+    aws-sdk (1.28.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     aws_cf_signer (0.1.1)
     bcrypt-ruby (3.1.1)
     better_errors (0.9.0)
@@ -300,6 +295,7 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     versionist (1.2.1)
       rails (>= 3)
       yard (~> 0.7)
@@ -318,6 +314,7 @@ DEPENDENCIES
   activeadmin
   angularjs-rails
   anjlab-bootstrap-rails (>= 3.0.0.0)
+  aws-sdk (~> 1.28.1)
   better_errors
   capybara
   carrierwave
@@ -330,7 +327,6 @@ DEPENDENCIES
   factory_girl_rails (~> 3.2.0)
   font-awesome-rails
   formtastic
-  formtastic-bootstrap!
   friendly_id
   gmaps4rails
   google-analytics-rails

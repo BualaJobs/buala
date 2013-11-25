@@ -2,9 +2,10 @@ Buala::Application.routes.draw do
 
   devise_for :users
 
-  resources :users do
+  resources :users, only: [] do
     collection do
       get 'me'
+      put 'me', to: 'users#update'
     end
   end
 

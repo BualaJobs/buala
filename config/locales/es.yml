@@ -214,4 +214,7 @@ es:
       user:
         not_found_in_database: Usuario o contraseña inválidos
         invalid: Usuario o contraseña inválidos
-        
+  buala:
+    users:
+      profile:
+        saved_successfully: Tu perfil se actualizó exitosamente

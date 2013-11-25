@@ -1,15 +1,63 @@
-<%= content_for :top_body do %>
+<div class="green-full-container">
   <div class="container">
-    <h2>
-      <%= fa_icon :user %>
-      Mi perfil
-    </h2>
-    <%= semantic_form_for @user do |f| %>
-
-    <div class="form-group">
-      <%= f.input :fullname %>
+    <div class="col-md-3">
+      <ul class="nav nav-buala text-center nav-stacked">
+        <li class="active">
+          <%= link_to me_users_path do %>
+            <%= fa_icon :user %>
+            Mi perfil
+          <% end %>
+        </li>
+        <li>
+          <a href="#">
+            <%= fa_icon :envelope %>
+            Notificaciones
+          </a>
+        </li>  
+        <li>
+          <%= link_to edit_user_password_path do %>
+            <%= fa_icon :edit %>
+            Cambiar contraseña
+          <% end %>
+        </li>
+      </ul>
     </div>
-
-    <% end %>
+    <div class="col-md-9">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, :class => "flash #{key}") %>
+      <% end %>
+      <h2 class="dashed-underline">
+        <%= @user.fullname %>
+        <span class="title-underline">#PerfilBualá</span>
+      </h2>
+      <%= form_for @user, url: me_users_path, method: :put do |f| %>
+        <div class="form-group">
+          <%= f.label :fullname, 'Nombre completo', class: 'control-label' %>
+          <%= f.text_field :fullname, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :university_id, 'Universidad', class: 'control-label' %>
+          <%= f.collection_select :university_id, University.ordered, :id, :name, {include_blank: true}, { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :degree, 'Carrera', class: 'control-label' %>
+          <%= f.text_field :degree, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :resume, 'Curriculum', class: 'control-label' %>
+          <div>
+            <span class="btn btn-info btn-lg btn-file">
+              Cargar CV... <%= f.file_field :resume %> 
+            </span>
+            <span class="file-info">
+              <%= @user.resume.original_filename unless @user.resume.blank? %>
+            </span>
+          </div>
+        </div>
+        <div>
+          <%= f.submit 'Guardar perfil', class: 'btn-pink pull-right' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

@@ -8,14 +8,14 @@
             Mi perfil
           <% end %>
         </li>
-        <li>
+        <!-- <li>
           <a href="#">
             <%= fa_icon :envelope %>
             Notificaciones
           </a>
-        </li>  
+        </li>  --> 
         <li>
-          <%= link_to edit_user_password_path do %>
+          <%= link_to new_user_password_path do %>
             <%= fa_icon :edit %>
             Cambiar contraseña
           <% end %>
@@ -23,13 +23,13 @@
       </ul>
     </div>
     <div class="col-md-9">
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, :class => "flash #{key}") %>
-      <% end %>
       <h2 class="dashed-underline">
         <%= @user.fullname %>
         <span class="title-underline">#PerfilBualá</span>
       </h2>
+      <% if flash[:success] %>
+        <div class="text-center"><%= flash[:success] %></div>
+      <% end %>
       <%= form_for @user, url: me_users_path, method: :put do |f| %>
         <div class="form-group">
           <%= f.label :fullname, 'Nombre completo', class: 'control-label' %>
@@ -46,12 +46,16 @@
         <div class="form-group">
           <%= f.label :resume, 'Curriculum', class: 'control-label' %>
           <div>
-            <span class="btn btn-info btn-lg btn-file">
-              Cargar CV... <%= f.file_field :resume %> 
+            <span class="btn btn-lg btn-file">
+              <%= fa_icon :paperclip %>
+              <%= @user.resume.blank? ? 'Cargar CV' : 'Cargar nuevo CV' %> <%= f.file_field :resume %> 
             </span>
             <span class="file-info">
               <%= @user.resume.original_filename unless @user.resume.blank? %>
             </span>
+            <div class="help-block">
+              Se aceptan archivos *.doc y *.pdf, con un tamaño máximo de 2 Mb.
+            </div>
           </div>
         </div>
         <div>

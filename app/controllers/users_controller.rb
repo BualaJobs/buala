@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user.attributes = params[:user]
     @user.save!
+    flash.now[:success] = I18n.t 'buala.users.profile.saved_successfully'
     render 'users/me'
   end
 

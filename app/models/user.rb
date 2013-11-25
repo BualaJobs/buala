@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :resume, Buala::Application.config.buala.s3_resume_storage
 
-  validates_attachment :resume, presence: true, 
+  validates_attachment :resume, 
     content_type: { 
       content_type: [
         'application/msword', 

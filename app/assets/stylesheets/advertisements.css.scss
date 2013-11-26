@@ -121,9 +121,17 @@
     padding:20px 20px 40px;
   }
 
+  .btn-apply-top {
+    line-height: 65px;
+    font-size: 25px;
+    -webkit-box-shadow: 0px 5px 17px rgba(100, 100, 100, 0.16);
+    -moz-box-shadow:    0px 5px 17px rgba(100, 100, 100, 0.16);
+    box-shadow:         0px 5px 17px rgba(100, 100, 100, 0.16);
+  }
+
   .btn-apply-bottom {
     line-height: 65px;
-    font-size:25px;
+    font-size: 25px;
     -webkit-box-shadow: 0px -5px 17px rgba(100, 100, 100, 0.16);
     -moz-box-shadow:    0px -5px 17px rgba(100, 100, 100, 0.16);
     box-shadow:         0px -5px 17px rgba(100, 100, 100, 0.16);
@@ -245,7 +253,7 @@
   padding:10px;
   margin-top:14px;
   color:#007C37;
-  background: #CAFDCC;
+  background: #81FF86;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;

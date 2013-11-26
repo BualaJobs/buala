@@ -326,9 +326,25 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
+  .flash-success {
+    color: #00B13E;
+    background: #74FFA5;
+    padding: 8px;
+    margin-bottom: 12px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
   .form-group {
     .control-label {
       color: #24802B;
+    }
+  }
+
+  .has-error {
+    .control-label, .help-block {
+      color: #b94a48;
     }
   }
 

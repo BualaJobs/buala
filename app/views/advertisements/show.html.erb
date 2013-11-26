@@ -36,8 +36,13 @@
             <!-- BADGES -->
             <%= render partial: 'advertisements/badges', locals: { advertisement: @advertisement } %>
 
-              <!-- ADVERTISEMENT DESCRIPTION -->
+            <!-- ADVERTISEMENT DESCRIPTION -->
             <div class="advertisement-description-wrapper">
+              <button class="btn-orange btn-apply-top col-md-12">
+                <%= fa_icon :bell %>
+                ¡Postularme!
+              </button> 
+              
               <div class="advertisement-description">
                 <div>
                   <h2 class="pull-left">Descripción del puesto</h2>
@@ -66,9 +71,8 @@
                 ¡Postularme!
               </button>
             </div>
-
           </div>
-          
+
           <div class="col-lg-4 col-md-4 hidden-sm hidden-xs right-column">
             <h2>Oportunidades similares</h2>
             <% @advertisement.recommended.each do |recommended| %>

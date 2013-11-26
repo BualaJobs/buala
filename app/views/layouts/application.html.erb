@@ -68,7 +68,7 @@
       <div class="top-body">
         <%= yield(:top_body) %>
       </div>
-      <%= yield %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
 
     <!-- FOOTER -->
     <% unless user_signed_in? %>

@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
     },
     size: { in: 0..2048.kilobytes }
 
-  validates :fullname, presence: true
+  validates :fullname, presence: true, length: {maximum: 25}
+  validates :degree, length: {maximum: 25}
 
 end

@@ -1,0 +1,41 @@
+<%= form_for @user, url: me_users_path, method: :put do |f| %>
+  <div class="form-group <%= !@user.errors[:fullname].empty? ? 'has-error' : '' %>">
+    <%= f.label :fullname, 'Nombre completo', class: 'control-label' %>
+    <%= f.text_field :fullname, class: 'form-control' %>
+    <% unless @user.errors[:fullname].empty? %>
+      <div class="help-block text-right"><%= @user.errors[:fullname].first %></div>
+    <% end %>
+  </div>
+  <div class="form-group <%= !@user.errors[:university_id].empty? ? 'has-error' : '' %>">
+    <%= f.label :university_id, 'Universidad', class: 'control-label' %>
+    <%= f.collection_select :university_id, University.ordered, :id, :name, {include_blank: true}, { class: 'form-control'} %>
+    <% unless @user.errors[:university_id].empty? %>
+      <div class="help-block text-right"><%= @user.errors[:university_id].first %></div>
+    <% end %>
+  </div>
+  <div class="form-group <%= !@user.errors[:degree].empty? ? 'has-error' : '' %>">
+    <%= f.label :degree, 'Carrera', class: 'control-label' %>
+    <%= f.text_field :degree, class: 'form-control' %>
+    <% unless @user.errors[:degree].empty? %>
+      <div class="help-block text-right"><%= @user.errors[:degree].first %></div>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :resume, 'Curriculum', class: 'control-label' %>
+    <div>
+      <span class="btn btn-lg btn-file">
+        <%= fa_icon :paperclip %>
+        <%= @user.resume.blank? ? 'Cargar CV' : 'Cargar nuevo CV' %> <%= f.file_field :resume %> 
+      </span>
+      <span class="file-info">
+        <%= @user.resume.original_filename unless @user.resume.blank? %>
+      </span>
+      <div class="help-block">
+        Se aceptan archivos *.doc y *.pdf, con un tamaño máximo de 2 Mb.
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= f.submit 'Guardar perfil', class: 'btn-pink pull-right' %>
+  </div>
+<% end %>

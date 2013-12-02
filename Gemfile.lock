@@ -61,6 +61,10 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
+    aws-sdk (1.28.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     aws_cf_signer (0.1.1)
     bcrypt-ruby (3.1.1)
     better_errors (0.9.0)
@@ -169,6 +173,8 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.3.0)
       addressable (~> 2.3)
+    letter_opener (1.1.2)
+      launchy (~> 2.2)
     libv8 (3.16.14.3)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
@@ -289,6 +295,7 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     versionist (1.2.1)
       rails (>= 3)
       yard (~> 0.7)
@@ -307,6 +314,7 @@ DEPENDENCIES
   activeadmin
   angularjs-rails
   anjlab-bootstrap-rails (>= 3.0.0.0)
+  aws-sdk (~> 1.28.1)
   better_errors
   capybara
   carrierwave
@@ -327,6 +335,7 @@ DEPENDENCIES
   guard-rspec
   inherited_resources
   jquery-rails (= 2.3.0)
+  letter_opener
   lodash-rails
   mandrill-api
   meta-tags

@@ -1,0 +1,33 @@
+<% content_for(:content) do %>
+  <div class="green-full-container">
+    <div class="container">
+      <div class="col-md-3">
+        <ul class="nav nav-buala text-center nav-stacked">
+          <li class="<%= 'active' if (current_page?(me_users_path) or (controller.controller_name.to_s == 'users' and controller.action_name.to_s == 'update')) %>">
+            <%= link_to me_users_path do %>
+              <%= fa_icon :user %>
+              Mi perfil
+            <% end %>
+          </li>
+          <li class="<%= 'active' if (current_page?(edit_user_registration_path) or (controller.controller_name.to_s == 'registrations' and controller.action_name.to_s == 'update')) %>">
+            <%= link_to edit_user_registration_path do %>
+              <%= fa_icon :edit %>
+              Cambiar contraseña
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <h2 class="dashed-underline">
+          <%= @user.fullname.empty? ? 'Mi perfil' : truncate(@user.fullname, length: 25) %>
+          <span class="title-underline">#PerfilBualá</span>
+        </h2>
+        <% if flash[:success] %>
+          <div class="text-center flash-success"><%= flash[:success] %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render file: 'layouts/application' %>

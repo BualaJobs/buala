@@ -15,6 +15,7 @@ gem 'active_admin_editor'
 gem 'gmaps4rails'
 gem 'formtastic'
 gem 'paperclip', '~> 3.0'
+gem "aws-sdk", '~> 1.28.1'
 gem 'paperclip-dropbox', '>= 1'
 gem 'mandrill-api'
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git', tag: '1.5.3'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails', '~> 3.2.0'
   gem 'better_errors'
+  gem 'letter_opener'
 end
 
 gem 'jquery-rails', '2.3.0'

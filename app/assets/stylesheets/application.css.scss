@@ -7,6 +7,7 @@
  *= require advertisements
  *= require advertisement_box
  *= require companies
+ *= require auth
  */
 @charset "utf-8";
 /* CSS Document */
@@ -73,6 +74,32 @@
 
   .navbar-header {
     padding: 15px 0 17px 10px;
+  }
+
+  .navbar-nav {
+
+    li {
+      a {
+        line-height: 42px;
+      
+        &:hover {
+          background: #ECF8FF;
+        }
+      }
+    }
+
+    .open {
+      a {
+        &:focus {
+          background: #ECF8FF;
+        }
+      }
+    }
+
+  }
+
+  .navbar-text {
+    line-height: 39px;
   }
 
   &.stick {
@@ -199,6 +226,7 @@
 }
 
 .btn-pink {
+  display: inline-block;
   background:#fa70b8;
   padding:8px 22px;
   border: 0px;
@@ -209,6 +237,7 @@
   -webkit-box-shadow: 0px 0px 5px rgba(120, 120, 120, 0.5);
   -moz-box-shadow:    0px 0px 5px rgba(120, 120, 120, 0.5);
   box-shadow:         0px 0px 5px rgba(120, 120, 120, 0.5);
+  cursor: pointer;
 
   transition: background 0.2s linear, border-color 0.2s linear;
   -webkit-transition: background 0.2s linear, border-color 0.2s linear;
@@ -216,7 +245,9 @@
   -o-transition: background 0.2s linear, border-color 0.2s linear;
 
   &:hover, &:active {
+    text-decoration: none;
     background: #F32892;
+    color:#fff;
     border-bottom: 5px solid #FF57AF;
   }
 
@@ -252,5 +283,139 @@ h1, h2, h3, h4, h5, h6 {
     background: #ff9003;
     border-bottom: 3px solid #ffd589;
     color:#fff;
+  }
+}
+
+.auth-btns {
+  font-family: "titillium_webregular";
+
+  a {
+    font-size: 16px;
+    color: #2FA8CF !important;
+  }
+
+  .auth-link-wrapper a {
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+}
+
+.green-full-container {
+  background:#3be376;
+  border-top: 8px solid #00D54B;
+  height: 100%;
+
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+
+    &.dashed-underline {
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #fff;
+    }
+
+    .title-underline {
+      text-transform: uppercase;
+      font-size:12px;
+      color: #24802B;
+      position: relative;
+      bottom: -5px;
+      font-weight: bold;
+    }
+  }
+
+  .flash-success {
+    color: #00B13E;
+    background: #74FFA5;
+    padding: 8px;
+    margin-bottom: 12px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .form-group {
+    .control-label {
+      color: #24802B;
+    }
+  }
+
+  .has-error {
+    .control-label, .help-block {
+      color: #b94a48;
+    }
+  }
+
+  .file-info {
+    color: #fff;
+    padding-left:5px;
+  }
+
+  .help-block {
+    color: #fff;
+  }
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: #39b3d7;
+    border-bottom: 4px solid #269abc;
+    border-radius: 0;
+    cursor: pointer;
+
+    transition: background 0.2s linear, border-color 0.2s linear;
+    -webkit-transition: background 0.2s linear, border-color 0.2s linear;
+    -moz-transition: background 0.2s linear, border-color 0.2s linear;
+    -o-transition: background 0.2s linear, border-color 0.2s linear;
+
+    &:hover {
+      background: #269abc;
+      border-bottom: 4px solid #39b3d7;
+      color: #fff;
+    }
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
+
+
+
+.nav-buala {
+  margin-top: 18px;
+
+  li {
+
+    &.active {
+      background: #0CBB4A;
+      border-left: 5px solid #7BFD86;
+    }
+
+
+    background: #00d54b;
+    margin-bottom: 10px;
+
+    a {
+      color: #fff;
+      
+      &:hover {
+        background: #27CF63;
+      }
+    }
   }
 }

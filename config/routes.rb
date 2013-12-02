@@ -1,5 +1,14 @@
 Buala::Application.routes.draw do
 
+  devise_for :users, controllers: {registrations: :registrations}
+
+  resources :users, only: [] do
+    collection do
+      get 'me'
+      put 'me', to: 'users#update'
+    end
+  end
+
   scope 'api' do
     defaults format: :json do
       api_version(:module => "V1", :path => {:value => "v1"}) do
@@ -10,14 +19,14 @@ Buala::Application.routes.draw do
     end
   end
 
-  get "home/index"
-  root to: "home#index"
+  get 'home/index'
+  root to: 'home#index'
 
   resources :companies, only: [:show] do
     resources :ads, only: [:show, :index] do
       member do
-        post "seen"
-        get "applications", format: :json
+        post 'seen'
+        get 'applications', format: :json
       end
     end
   end

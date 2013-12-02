@@ -1,16 +1,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./gmaps4rails
-//= require angular
-//= require angular-resource
 //= require lodash
+//= require angular/angular
+//= require restangular/dist/restangular.min
 //= require_self
+//= require_tree ./directives
+//= require_tree ./controllers
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/tooltip
 //= require twitter/bootstrap/dropdown
-//= require advertisement
 
-var buala = angular.module('Buala', ['ngResource']);
+var buala = angular.module('Buala', ['restangular']);
 
 +function ($) {"use strict"
 

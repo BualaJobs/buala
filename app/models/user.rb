@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   validates :fullname, presence: true, length: {maximum: 25}
   validates :degree, length: {maximum: 25}
 
+  def ready_for_application
+    !(self.degree.blank? or self.university.blank? or self.resume.blank?)
+  end
+
 end

@@ -1,0 +1,59 @@
+.modal-header {
+  background: #ff9003;
+  text-align: center;
+  
+  h3 {
+    color: #fff;
+  }
+}
+
+.modal-body {
+  padding: 5px 12px;
+  margin: 0;
+}
+
+.modal-footer {
+  margin:0;
+  padding: 12px;
+  border-top: 0;
+}
+
+.profile-wrapper {
+  background: #f8f8f8;
+  padding: 10px;
+}
+
+.applyBox {
+
+  .profile-ready {
+    color: #f00;
+  }
+
+  .clarification {
+    font-size: 12px;
+    color: #bbb;
+  }
+
+  h3 {
+    padding: 10px 0 5px 0;
+    margin:0
+  }
+
+  ul {
+
+    &.userProfile {
+
+      li {
+        color: #9C9C9C;
+        padding: 2px 5px 0 5px;
+
+        span {
+          font-weight: bold;
+          color: #11B7DA;
+        }
+        
+      }
+    }
+  }
+
+}

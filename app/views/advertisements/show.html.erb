@@ -25,7 +25,10 @@
 <script type="text/javascript">
   var user = {
     fullname: "<%= current_user.fullname %>",
-    university: "<%= current_user.university.name %>",
+    university: {
+      id: <%= current_user.university.id %>,
+      name: "<%= current_user.university.name %>"
+    },
     degree: "<%= current_user.degree %>",
     readyForApplication: <%= current_user.ready_for_application %>,
     resume: {
@@ -40,9 +43,6 @@
   <modal title="¡Postularme!" applying="applying">
     <div class="modal-body">
       <apply-box user="user" />
-    </div>
-    <div class="modal-footer">
-      <button class="btn-pink">¡Postularme!</button>
     </div>
   </modal>
   <div class="container">

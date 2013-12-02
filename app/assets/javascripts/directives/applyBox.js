@@ -6,9 +6,13 @@ buala.directive('applyBox', [function () {"use strict";
     scope: {
       user: '='
     },
-    controller: function () {
+    controller: ['$scope', function ($scope) {
 
-    },
+      $scope.edit = function () {
+        $scope.editing = true;
+      }
+
+    }],
     templateUrl: '/directives/applyBox'
   }
 

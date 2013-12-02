@@ -1,0 +1,49 @@
+<div class="applyBox">
+  <h3>
+    Tu perfil
+  </h3>
+  <p class="clarification">Los siguientes datos serán utilizados durante la postulación:</p>
+  <div class="profile-wrapper" ng-hide="editing">
+    <button class="pull-right btn btn-info btn-sm" ng-click="edit()">
+      <i class="icon-edit"></i>
+      Editar perfil
+    </button>
+    <ul class="userProfile pull-left">
+      <li><span>Nombre completo: </span> {{user.fullname}}</li>
+      <li><span>Universidad:</span> {{user.university.name}}</li>
+      <li><span>Carrera:</span> {{user.degree}}</li>
+      <li>
+        <span>Curriculum:</span> 
+        <i class="icon-paperclip"></i>
+        {{user.resume.filename}}
+      </li>
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+  <div class="edit-profile-wrapper" ng-show="editing">
+    <form novalidate>
+      <div class="form-group">
+        <label class="control-label">Nombre completo</label>
+        <input class="form-control" type="text" ng-model="user.fullname" />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Universidad</label>
+        <select ng-model="user.university.id" class="form-control">
+          <%= options_from_collection_for_select(University.ordered, :id, :name) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Carrera</label>
+        <input class="form-control" type="text" ng-model="user.degree" />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Curriculum</label>
+      </div>
+    </form>
+  </div>
+  <div class="actions">
+    <button class="btn-pink" ng-hide="editing">¡Postularme!</button>
+    <button class="btn-pink" ng-show="editing">Guardar cambios</button>
+  </div>
+</div>
+

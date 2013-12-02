@@ -12,6 +12,10 @@ buala.directive('applyBox', [function () {"use strict";
         $scope.editing = true;
       }
 
+      $scope.cancelEdition = function () {
+        $scope.editing = false;
+      };
+
     }],
     templateUrl: '/directives/applyBox'
   }

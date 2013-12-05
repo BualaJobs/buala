@@ -19,8 +19,11 @@
 }
 
 .profile-wrapper {
-  background: #f8f8f8;
+  background: #E7F7FD;
   padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .applyBox {
@@ -35,13 +38,14 @@
   }
 
   .clarification {
-    font-size: 12px;
-    color: #bbb;
+    font-size: 15px;
+    color: #06DA0E;
   }
 
   h3 {
     padding: 10px 0 5px 0;
-    margin:0
+    margin:0;
+    font-size: 26px;
   }
 
   ul {
@@ -49,8 +53,9 @@
     &.userProfile {
 
       li {
-        color: #9C9C9C;
+        color: #888;
         padding: 2px 5px 0 5px;
+        font-size: 15px;
 
         span {
           font-weight: bold;
@@ -58,6 +63,28 @@
         }
         
       }
+    }
+  }
+
+  .profile-not-ready, .user-not-logged-in {
+    .message {
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      color: #059FF7;
+      padding: 10px 0;
+    }
+
+    .clarification {
+      display: block;
+      color: #555;
+      font-size: 15px;
+      text-align: center;
+      padding: 10px 40px 25px 40px;
+    }
+
+    .btn-container {
+      padding: 30px 0 35px 0;
     }
   }
 

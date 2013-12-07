@@ -1,5 +1,6 @@
 <div class="applyBox">
-  <div ng-show="user && user.readyForApplication">
+
+  <div ng-show="user && !advertisement.has_applied && user.readyForApplication">
     <h3>
       <%= fa_icon :user %>
       Tu perfil
@@ -19,12 +20,11 @@
       <div class="clearfix"></div>
     </div>
     <div class="actions">
-      <button class="btn-pink" ng-hide="editing">¡Postularme!</button>
-      <button class="btn btn-danger" ng-show="editing" ng-click="cancelEdition()">Cancelar</button>
-      <button class="btn-pink" ng-show="editing">Guardar cambios</button>
+      <button class="btn-pink" ng-click="apply()">¡Postularme!</button>
     </div>
   </div>
-  <div class="profile-not-ready" ng-show="user && !user.readyForApplication">
+  
+  <div class="profile-not-ready" ng-show="user && !advertisement.has_applied && !user.readyForApplication">
     <span class="message">Hey, tu perfil no está listo para que te postules!</span>
     <div class="text-center btn-container">
       <%= link_to me_users_path, class: 'btn-pink' do %>
@@ -36,6 +36,7 @@
       podemos mostrarle esta información a la empresa.  
     </span>
   </div>
+  
   <div class="user-not-logged-in" ng-hide="user">
     <span class="message">Hey, no sos usuario todavía?</span>
     <div class="text-center btn-container">
@@ -46,5 +47,14 @@
     <span class="clarification">
       Ya sos usuario? Entonces <%= link_to "Inicia sesión", new_user_session_path %>. <br />
     </span>
+  </div>
+  
+  <div class="after-application" ng-show="user && advertisement.has_applied">
+    <span class="message">Muchas gracias por postularte!</span>
+    <div class="text-center btn-container">
+      <%= link_to root_path, class: 'btn-pink' do %>
+        Seguir mirando otros puestos!
+      <% end %>
+    </div>
   </div>
 </div>

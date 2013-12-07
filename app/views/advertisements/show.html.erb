@@ -36,13 +36,17 @@
       filename: "<%= current_user.resume.original_filename %>"
     }
   };
+  var advertisement = {
+    id: <%= @advertisement.id %>,
+    has_applied: <%= current_user.has_applied(@advertisement) %>
+  };
 </script>
 <% end %>
 
 <div class="advertisement-detail-wrapper" ng-controller="AdvertisementController">
   <modal title="¡Postularme!" applying="applying">
     <div class="modal-body">
-      <apply-box user="user" />
+      <apply-box user="user" advertisement="advertisement" />
     </div>
   </modal>
   <div class="container">
@@ -59,9 +63,12 @@
 
             <!-- ADVERTISEMENT DESCRIPTION -->
             <div class="advertisement-description-wrapper">
-              <button class="btn-orange btn-apply-top col-md-12" ng-click="apply()">
+              <button class="btn-orange btn-apply-top col-md-12" ng-click="apply()" ng-hide="advertisement.has_applied">
                 ¡Postularme!
-              </button> 
+              </button>
+              <div ng-show="advertisement.has_applied" class="already-applied top">
+                Bien, ya te postulaste a este puesto!
+              </div>
               
               <div class="advertisement-description">
                 <div>
@@ -86,9 +93,12 @@
                 <% end %>
               </div>
 
-              <button class="btn-orange btn-apply-bottom col-md-12 col-lg-12 col-sm-12 col-xs-12" ng-click="apply()">
+              <button class="btn-orange btn-apply-bottom col-md-12 col-lg-12 col-sm-12 col-xs-12" ng-click="apply()" ng-hide="advertisement.has_applied">
                 ¡Postularme!
               </button>
+              <div ng-show="advertisement.has_applied" class="already-applied bottom">
+                Bien! Ya te postulaste a este puesto.
+              </div>
             </div>
           </div>
 

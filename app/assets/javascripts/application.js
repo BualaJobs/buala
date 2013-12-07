@@ -3,15 +3,19 @@
 //= require_tree ./gmaps4rails
 //= require lodash
 //= require angular/angular
-//= require restangular/dist/restangular.min
+//= require angular-resource/angular-resource
 //= require_self
+//= require_tree ./services
 //= require_tree ./directives
 //= require_tree ./controllers
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/tooltip
 //= require twitter/bootstrap/dropdown
 
-var buala = angular.module('Buala', ['restangular']);
+var buala = angular.module('Buala', ['ngResource'])
+  .config(['$httpProvider', function ($httpProvider) {
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+  }]);
 
 +function ($) {"use strict"
 

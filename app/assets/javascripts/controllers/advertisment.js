@@ -1,6 +1,7 @@
-buala.controller('AdvertisementController', ['$scope', 'Restangular', function($scope, Restangular) {
+buala.controller('AdvertisementController', ['$scope', function($scope) {
 
   $scope.user = window.user;
+  $scope.advertisement = window.advertisement;
 
   $scope.apply = function () {
     $scope.applying = true;

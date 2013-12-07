@@ -4,12 +4,12 @@ class AdvertisementsController < ApplicationController
 
   respond_to :html
   before_filter :set_advertisement
+  before_filter :authenticate_user!, only: [:apply]
 
   def show
     if request.path != advertisement_path(@advertisement)
       redirect_to @advertisement, status: :moved_permanently
     else
-
       @json = @advertisement.company.to_gmaps4rails do |advertisement, marker|
         marker.title @advertisement.company.name
       end
@@ -17,19 +17,12 @@ class AdvertisementsController < ApplicationController
   end
 
   def apply
-    if request.post?
-      @application = Application.create request.params[:application]
-      if @application.valid?
-        UserMailer.after_application_email(@application).deliver
-        redirect_to thanks_advertisement_path(@advertisement)
-        return
-      end
+    begin
+      Postulation.create! user: current_user, advertisement: @advertisement
+      render nothing: true, status: :created
+    rescue ActiveRecord::RecordInvalid
+      render nothing: true, status: :bad_request
     end
-    @application ||= Application.new advertisement: @advertisement
-    @application.accept_terms_and_conditions = '0'
-  end
-
-  def thanks
   end
 
   private

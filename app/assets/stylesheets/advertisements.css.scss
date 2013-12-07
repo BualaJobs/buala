@@ -264,3 +264,26 @@
   }
 
 }
+
+.already-applied {
+  font-family: 'titillium_webregular';
+  font-size: 25px;
+  text-align: center;
+  line-height: 65px;
+  background: #f5f5f5;
+  border-bottom: 3px solid #DDD;
+  color: #C2BFBF;
+  cursor: default;
+
+  &.bottom {
+    -webkit-box-shadow: 0px -5px 17px rgba(100, 100, 100, 0.05);
+    -moz-box-shadow: 0px -5px 17px rgba(100, 100, 100, 0.05);
+    box-shadow: 0px -5px 17px rgba(100, 100, 100, 0.05);
+  }
+
+  &.top {
+    -webkit-box-shadow: 0px 5px 17px rgba(100, 100, 100, 0.05);
+    -moz-box-shadow: 0px 5px 17px rgba(100, 100, 100, 0.05);
+    box-shadow: 0px 5px 17px rgba(100, 100, 100, 0.05);
+  }
+}

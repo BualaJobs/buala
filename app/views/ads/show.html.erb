@@ -23,7 +23,7 @@
         <tbody>
           <tr ng-repeat="application in applications" ng-class="{'not-seen': !application.seen}">
             <td>
-              <div class="name">{{application.name}}</div>
+              <div class="name">{{application.fullname}}</div>
               <div class="studies">{{application.degree}} - {{application.university}}</div>
             </td>
             <td>
@@ -33,7 +33,7 @@
               {{application.email}}
             </td>
             <td>
-              <a href="{{application.resume_url}}" target="_blank" class="btn btn-primary btn-sm pull-left" title="Descargar CV" ng-click="markAsSeen(application)">
+              <a href="{{application.resume}}" target="_blank" class="btn btn-primary btn-sm pull-left" title="Descargar CV" ng-click="markAsSeen(application)">
                 <i class="glyphicon glyphicon-cloud-download"></i> <strong>CV</strong>
               </a>
               <div class="pull-right">

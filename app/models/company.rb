@@ -29,20 +29,34 @@ class Company < ActiveRecord::Base
     acum
   end
 
+  def total_postulations
+    acum = 0
+    advertisements.each {|advertisement| acum += advertisement.postulants.count }
+    acum
+  end
+
   def last_week_total_applications
     acum = 0
     advertisements.each {|advertisement| acum += advertisement.last_week_applications.count }
     acum
   end
 
+  def last_week_total_postulations
+    acum = 0
+    advertisements.each {|advertisement| acum += advertisement.last_week_postulations.count }
+    acum
+  end
+
   def top_universities n
-    Application.joins(:advertisement).joins(:university)
-      .where('company_id = ?', self.id)
-      .select('university.*, count(*) as count_all')
-      .group(:university)
-      .order('count_all DESC')
-      .limit(n)
-      .count
+    Postulation
+    .joins('INNER JOIN advertisements ON advertisements.id = postulations.advertisement_id')
+    .joins('INNER JOIN users ON users.id = postulations.user_id')
+    .joins('INNER JOIN universities ON users.university_id = universities.id')
+    .where('advertisements.company_id = ?', self.id)
+    .group('universities.name')
+    .order('count_all DESC')
+    .limit(n)
+    .count
   end
 
 end

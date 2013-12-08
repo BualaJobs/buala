@@ -1,5 +1,8 @@
 Buala::Application.routes.draw do
 
+  resources :full_postulations
+
+
   get "directives/applyBox"
   get "directives/modal"
 
@@ -15,9 +18,10 @@ Buala::Application.routes.draw do
   scope 'api' do
     defaults format: :json do
       api_version(:module => "V1", :path => {:value => "v1"}) do
-        resources :advertisements, only: [:show] do
-          resources :applications, except: [:delete]
-        end
+      resources :advertisements, only: [:show] do
+        resources :applications, except: [:delete]
+        resources :postulations, except: [:delete]
+      end
       end
     end
   end

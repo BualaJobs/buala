@@ -13,4 +13,8 @@ class FullPostulationSerializer < ActiveModel::Serializer
     object.seen == "t"
   end
 
+  def resume
+    url_for controller: 'V1/postulations', action: 'resume', id: object.id
+  end
+
 end

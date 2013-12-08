@@ -15,6 +15,11 @@ class V1::PostulationsController < V1::BaseController
     render nothing: true, status: :accepted
   end
 
+  def resume
+    p = Postulation.find(params[:id])
+    redirect_to p.user.resume.expiring_url(60)
+  end
+
   protected
   def begin_of_association_chain
     @advertisement

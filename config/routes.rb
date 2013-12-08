@@ -20,7 +20,11 @@ Buala::Application.routes.draw do
       api_version(:module => "V1", :path => {:value => "v1"}) do
       resources :advertisements, only: [:show] do
         resources :applications, except: [:delete]
-        resources :postulations, except: [:delete]
+        resources :postulations, except: [:delete] do
+          member do
+            get :resume
+          end
+        end
       end
       end
     end

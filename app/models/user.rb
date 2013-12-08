@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   has_attached_file :resume, Buala::Application.config.buala.s3_resume_storage
 
+  has_many :postulations
+
   validates_attachment :resume, 
     content_type: { 
       content_type: [
@@ -24,5 +26,13 @@ class User < ActiveRecord::Base
 
   validates :fullname, presence: true, length: {maximum: 25}
   validates :degree, length: {maximum: 25}
+
+  def ready_for_application
+    !(self.degree.blank? or self.university.blank? or self.resume.blank?)
+  end
+
+  def has_applied advertisement
+    !!self.postulations.where(advertisement_id: advertisement.id).first
+  end
 
 end

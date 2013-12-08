@@ -1,0 +1,91 @@
+.modal-header {
+  background: #ff9003;
+  text-align: center;
+  
+  h3 {
+    color: #fff;
+  }
+}
+
+.modal-body {
+  padding: 5px 12px;
+  margin: 0;
+}
+
+.modal-footer {
+  margin:0;
+  padding: 12px;
+  border-top: 0;
+}
+
+.profile-wrapper {
+  background: #E7F7FD;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.applyBox {
+
+  .actions {
+    text-align: right;
+    padding: 10px 0 5px 0;
+  }
+
+  .profile-ready {
+    color: #f00;
+  }
+
+  .clarification {
+    font-size: 15px;
+    color: #06DA0E;
+  }
+
+  h3 {
+    padding: 10px 0 5px 0;
+    margin:0;
+    font-size: 26px;
+  }
+
+  ul {
+
+    &.userProfile {
+
+      li {
+        color: #888;
+        padding: 2px 5px 0 5px;
+        font-size: 15px;
+
+        span {
+          font-weight: bold;
+          color: #11B7DA;
+        }
+        
+      }
+    }
+  }
+
+  .profile-not-ready, .user-not-logged-in, .after-application {
+    .message {
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      color: #059FF7;
+      padding: 10px 0;
+    }
+
+    .clarification {
+      display: block;
+      color: #555;
+      font-size: 15px;
+      text-align: center;
+      padding: 10px 40px 25px 40px;
+    }
+
+    .btn-container {
+      padding: 30px 0 35px 0;
+    }
+  }
+
+}

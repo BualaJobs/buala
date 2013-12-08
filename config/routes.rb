@@ -1,5 +1,8 @@
 Buala::Application.routes.draw do
 
+  get "directives/applyBox"
+  get "directives/modal"
+
   devise_for :users, controllers: {registrations: :registrations}
 
   resources :users, only: [] do

@@ -4,7 +4,7 @@ bAdmin.controller('ApplicationsController',
   ['$scope', '$resource', '$window', function($scope, $resource, $window) {
 
   var Applications = $resource(
-    '/api/v1/advertisements/:advertisement_id/applications/:application_id',
+    '/api/v1/advertisements/:advertisement_id/postulations/:application_id',
     {advertisement_id: advertisement_id, application_id: '@id'},
     {
       update: {method: 'PUT'}

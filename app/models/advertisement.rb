@@ -21,6 +21,9 @@ class Advertisement < ActiveRecord::Base
   validates_length_of :short_description, :maximum => 250
   validate :if_is_recommendable_it_should_be_published
 
+  has_many :postulations
+  has_many :postulants, through: :postulations, source: :user
+
   scope :published, -> { where(published: true) }
 
   scope :published_order_by_creation, -> { where(published: true).order('created_at DESC')}
@@ -33,6 +36,10 @@ class Advertisement < ActiveRecord::Base
 
   def recommended
     Advertisement.published.where("id != ?", id).where(recommendable: true).sample(3)
+  end
+
+  def full_postulations
+    Postulation.where(advertisement_id: self.id).join(:users)
   end
 
   private

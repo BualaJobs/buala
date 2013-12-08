@@ -203,6 +203,7 @@ GEM
     multi_test (0.0.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    oj (2.3.0)
     orm_adapter (0.4.0)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
@@ -222,6 +223,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.1)
       pry (>= 0.9.10)
+    rabl (0.9.3)
+      activesupport (>= 2.3.14)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -339,10 +342,12 @@ DEPENDENCIES
   lodash-rails
   mandrill-api
   meta-tags
+  oj
   paperclip (~> 3.0)
   paperclip-dropbox (>= 1)
   pg
   pry-rails (~> 0.3.0)
+  rabl
   rails (= 3.2.13)
   rspec-mocks
   rspec-rails (~> 2.13.2)

@@ -34,6 +34,10 @@ class Advertisement < ActiveRecord::Base
     applications.where('created_at >= ?', DateTime.now - 1.weeks)
   end
 
+  def last_week_postulations
+    postulations.where('created_at >= ?', DateTime.now - 1.weeks)
+  end
+
   def recommended
     Advertisement.published.where("id != ?", id).where(recommendable: true).sample(3)
   end

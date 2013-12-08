@@ -4,7 +4,7 @@
     <div class="panel dashboard-widget">
       <h2>Postulaciones totales</h2>
       <div class="result">
-        <%= total = @company.total_applications %>
+        <%= total = @company.total_postulations %>
       </div>
       <div>
         <% if total == 1 %>
@@ -22,12 +22,8 @@
             <% @company.advertisements.each do |advertisement| %>
               <tr>
                 <td><%= advertisement.title %></td>
-                <% if total.to_f > 0 %>
-                  <td><%= number_with_precision((advertisement.applications.count / total.to_f) * 100) %></td>
-                <% else %>
-                  <td> - </td>
-                <% end %>
-                <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token) %></td>
+                <td><%= advertisement.postulations.count %></td>
+                <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token), class: 'btn btn-info btn-sm pull-right' %></td>
               </tr>
             <% end %>
           </tbody>
@@ -40,7 +36,7 @@
     <div class="panel dashboard-widget">
       <h2>Postulaciones en la última semana</h2>
       <div class="result">
-        <%= week_total = @company.last_week_total_applications %>
+        <%= week_total = @company.last_week_total_postulations %>
       </div>
       <div>
         <% if week_total == 1 %>
@@ -58,12 +54,8 @@
             <% @company.advertisements.each do |advertisement| %>
               <tr>
                 <td><%= advertisement.title %></td>
-                <% if week_total.to_f > 0 %>
-                  <td><%= number_with_precision((advertisement.last_week_applications.count / week_total.to_f) * 100) %> %</td>
-                <% else %>
-                  <td> - </td>
-                <% end %>
-                <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token) %></td>
+                <td><%= advertisement.last_week_postulations.count %></td>
+                <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token), class: 'btn btn-info btn-sm pull-right' %></td>
               </tr>
             <% end %>
           </tbody>
@@ -77,11 +69,8 @@
 <div class="row">
   <div class="col-md-12">
     <div class="panel dashboard-widget">
-      <h2>Universidades</h2>
+      <h2>Top 5 de Universidades</h2>
       <div class="panel panel-info inner-panel">
-        <div class="panel-heading">
-          Top 5
-        </div>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -95,7 +84,7 @@
             <% if top_universities.count > 0 %>
               <% @company.top_universities(5).each do |top| %>
                 <tr>
-                  <td><%= top[0].name %></td>
+                  <td><%= top[0] %></td>
                   <td><%= top[1] %></td>
                   <td><%= number_with_precision((top[1] / total.to_f) * 100) %> %</td>
                 </tr>

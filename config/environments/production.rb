@@ -75,7 +75,7 @@ Buala::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  GA.tracker = "UA-42920899-1"
+  GA.tracker = ENV['GA_TRACKING_ID']
 
   config.buala = ActiveSupport::OrderedOptions.new
   config.buala.resume_storage = { 

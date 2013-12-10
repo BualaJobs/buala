@@ -27,9 +27,9 @@
   <div class="profile-not-ready" ng-show="user && !advertisement.has_applied && !user.readyForApplication">
     <span class="message">Hey, tu perfil no está listo para que te postules!</span>
     <div class="text-center btn-container">
-      <%= link_to me_users_path, class: 'btn-pink' do %>
+      <a ng-href="/users/me?pu={{currentLocation | escape }}" class="btn-pink">
         <%= fa_icon :user %> Completar mi perfil
-      <% end %>
+      </a>
     </div>
     <span class="clarification">
       Para poder iniciar la postulación, necesitamos que tu perfil esté completo, así

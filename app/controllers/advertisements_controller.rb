@@ -5,6 +5,7 @@ class AdvertisementsController < ApplicationController
   respond_to :html
   before_filter :set_advertisement
   before_filter :authenticate_user!, only: [:apply]
+  after_filter :store_location
 
   def show
     if request.path != advertisement_path(@advertisement)

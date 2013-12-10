@@ -1,4 +1,4 @@
-buala.directive('applyBox', ['UserService', function (UserService) {
+buala.directive('applyBox', ['UserService', '$window', function (UserService, $window) {
   "use strict";
 
   return {
@@ -9,6 +9,8 @@ buala.directive('applyBox', ['UserService', function (UserService) {
       advertisement: '='
     },
     controller: ['$scope', function ($scope) {
+
+      $scope.currentLocation = $window.location.href;
 
       $scope.apply = function () {
         UserService.apply($scope.advertisement)

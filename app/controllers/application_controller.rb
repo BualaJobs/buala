@@ -25,7 +25,14 @@ class ApplicationController < ActionController::Base
       url: root_url,
       image: "#{root_url}images/buala_box.png"
     }
+  end
 
+  def store_location
+    session[:previous_url] = request.fullpath unless request.fullpath =~ /\/users/
+  end
+
+  def after_sign_in_path_for(resource)
+    session[:previous_url] || root_path
   end
 
 end

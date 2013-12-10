@@ -17,11 +17,16 @@ class UsersController < ApplicationController
     if @user.save
       flash.now[:success] = I18n.t 'buala.users.profile.saved_successfully'
     end
-    render 'users/me'
+    if params[:previous_url]
+      redirect_to params[:previous_url]
+    else
+      render 'users/me' 
+    end
   end
 
   def me
     @user = current_user
+    @previous_url = params[:pu] if params[:pu]
   end
 
   def set_user

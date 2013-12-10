@@ -5,7 +5,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 centered">
           <div class="pull-left advertisement-title">
             <h1><%= @advertisement.title %></h1>
-            <h2>en <%= link_to @advertisement.company.name, @advertisement.company.website %></h2>
+            <h2>en <%= link_to @advertisement.company.name, @advertisement.company.website, target: '_blank' %></h2>
           </div>
           <%= image_tag @advertisement.company.company_logo.url , alt: @advertisement.company.name, class: "pull-right hidden-xs" %>
         </div>
@@ -25,16 +25,18 @@
 <script type="text/javascript">
   var user = {
     fullname: "<%= current_user.fullname %>",
-    university: {
-      id: <%= current_user.university.id %>,
-      name: "<%= current_user.university.name %>"
-    },
-    degree: "<%= current_user.degree %>",
     readyForApplication: <%= current_user.ready_for_application %>,
-    resume: {
-      url: "<%= current_user.resume.url %>",
-      filename: "<%= current_user.resume.original_filename %>"
-    }
+    <% if current_user.ready_for_application %>
+      university: {
+        id: <%= current_user.university.id %>,
+        name: "<%= current_user.university.name %>"
+      },
+      degree: "<%= current_user.degree %>",
+      resume: {
+        url: "<%= current_user.resume.url %>",
+        filename: "<%= current_user.resume.original_filename %>"
+      }
+    <% end %>
   };
   var advertisement = {
     id: <%= @advertisement.id %>,

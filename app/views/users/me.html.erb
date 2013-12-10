@@ -1,4 +1,5 @@
 <%= form_for @user, url: me_users_path, method: :put do |f| %>
+  <%= hidden_field_tag(:previous_url, @previous_url) if @previous_url %>
   <div class="form-group <%= !@user.errors[:fullname].empty? ? 'has-error' : '' %>">
     <%= f.label :fullname, 'Nombre completo', class: 'control-label' %>
     <%= f.text_field :fullname, class: 'form-control' %>

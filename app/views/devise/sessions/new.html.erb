@@ -35,7 +35,8 @@
             <%= link_to "Olvidaste tu contraseña?", new_user_password_path %>
           </div>
           <div class="pull-right">
-            <%= f.submit "Iniciar sesión", class: 'btn-pink' %>
+            <%= f.submit "Iniciar sesión", class: 'btn-pink', 
+              onClick: "ga('send', 'event', 'Auth', 'SignIn')" %>
           </div>
           <div class="clearfix"></div>
         </div>

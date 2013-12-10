@@ -43,7 +43,8 @@
         </div>
 
         <div class="auth-btns">
-          <div class="pull-right"><%= f.submit "Crear cuenta!", class: 'btn-pink' %></div>
+          <div class="pull-right"><%= f.submit "Crear cuenta!", class: 'btn-pink', 
+            onClick: "ga('send', 'event', 'Auth', 'SignUp');" %></div>
           <div class="clearfix"></div>
         </div>
 

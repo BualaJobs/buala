@@ -213,13 +213,13 @@
 
   .recommended {
 
+    display: block;
     margin: 15px 0 0 0;
     padding: 5px;
     -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.4);
     -moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.4);
     box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.4);
     background: #fff;
-    cursor: pointer;
 
     h1, h2 {
       margin:0;
@@ -241,6 +241,11 @@
     .description {
       font-size: 12px;
       color: #666;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: #EDFAFF;
     }
   }
 

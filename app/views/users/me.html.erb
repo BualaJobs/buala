@@ -20,7 +20,7 @@
       <div class="help-block text-right"><%= @user.errors[:degree].first %></div>
     <% end %>
   </div>
-  <div class="form-group">
+  <div class="form-group <%= !@user.errors[:resume].empty? ? 'has-error' : '' %>">
     <%= f.label :resume, 'Curriculum', class: 'control-label' %>
     <div>
       <span class="btn btn-lg btn-file">

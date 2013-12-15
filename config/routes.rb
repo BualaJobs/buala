@@ -11,6 +11,10 @@ Buala::Application.routes.draw do
     collection do
       get 'me'
       put 'me', to: 'users#update'
+      get 'test_migration_email'
+      # This actions are used for migrating old users to devise users
+      get 'migrate', to: 'users#migrate'
+      put 'migrate', to: 'users#define_password'
     end
   end
 

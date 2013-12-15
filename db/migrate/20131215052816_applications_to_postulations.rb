@@ -3,7 +3,7 @@ class ApplicationsToPostulations < ActiveRecord::Migration
     Application.all.each do |application|
       user = User.where(email: application.email).first
       unless user
-        user = User.new email: application.email
+        user = User.new email: application.email, migrated: true, migration_token: SecureRandom.urlsafe_base64 
         user.fullname = application.name
         user.university_id = application.university_id
         user.degree = application.degree

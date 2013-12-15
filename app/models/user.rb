@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   attr_accessible :email, :fullname, :password, :password_confirmation, 
-    :remember_me, :university, :university_id, :degree, :resume
+    :remember_me, :university, :university_id, :degree, :resume, :migrated,
+    :migration_token
 
   belongs_to :university
 
@@ -33,6 +34,10 @@ class User < ActiveRecord::Base
 
   def has_applied advertisement
     !!self.postulations.where(advertisement_id: advertisement.id).first
+  end
+
+  def check_migration_token token
+    self.migration_token == token
   end
 
 end

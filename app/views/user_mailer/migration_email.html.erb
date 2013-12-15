@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="font-family: Arial, Helvetica, sans-serif; color: #787878;">
+      <div style="border-bottom: 3px solid #0093c3; padding: 25px 0; margin-bottom: 15px;">
+        <img style="margin-left: 20px;" src="<%= root_url %>/images/logo.png" alt="Bualá Jobs!" />
+      </div>
+      <div style="padding: 10px 20px;">
+        Hola, <%= @user.fullname %>! <br /><br />
+
+        Hemos notado que utilizaste nuestro servicio durante los meses pasados, y te estamos
+        totalmente agradecidos! <br /><br />
+
+        Te queríamos comentar que Bualá! está cambiando y mejorando constantemente, estuvimos trabajando mucho durante estos meses para hoy poder estar lanzando una interfaz renovada. Esta nueva cara de Bualá también viene
+        con nuevas funcionalidades. <br /><br />
+
+        <span style="font-weight: bold; color:#504F4F;">
+          Ahora en Bualá! agregamos la opción de registrarte como usuario, y poder tener tu perfil actualizado.
+          Así al momento de postularte para un puesto, no tengas que llenar ningún formulario.
+        </span> <br /><br />
+
+        Como ya registramos postulaciones a tu nombre, te hemos creado un usuario y te hemos asignado los datos
+        que habías cargado, lo único que te falta para poder usarlo es activarlo, eligiendo una contraseña. Esto podés 
+        hacerlo a través del siguiente botón: <br /><br />
+
+        <div style="text-align: center; font-family: Verdana, sans-serif;">
+          <%= link_to "Activar mi cuenta", migrate_users_url(id: @user.id, token: @user.migration_token), style:
+          'display: inline-block; background: #fa70b8; padding: 12px 22px; border: 0px; border-bottom: 5px solid #f011e7; color: #fff; font-size: 28px; font-weight: bold; text-decoration: none;' %>
+        </div>
+
+        <br /><br />
+        Muchas gracias!<br />
+        El equipo de Bualá Jobs!
+
+        <br /><br />
+        <span style="font-size: 10px;">Recordá que cualquier problema o duda que tengas podés contactarnos
+          a <a href="mailto:estudiantes@bualajobs.com">estudiantes@bualajobs.com</a></span>
+
+      </div>
+    </div>
+  </body>
+</html>

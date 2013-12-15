@@ -10,9 +10,13 @@ namespace :migration do
       Application.where("id >= ? and id < ?", from, to).each do |application|
         user = User.where(email: application.email).first
         if user
-          user.resume = URI.parse(application.resume.url)
-          user.save(validate: false)
-          puts "Resume migrated (#{user.email})"
+          begin
+            user.resume = URI.parse(application.resume.url)
+            user.save(validate: false)
+            puts "Resume migrated (#{user.email})"
+          rescue
+            puts "Failed migrating resume (#{user.email})"
+          end
         end
       end
     else

@@ -4,8 +4,8 @@ namespace :migration do
   desc "Transfers old resumes to S3"
 
   task :dropbox_to_s3 => :environment do
-    from = ENV['from']
-    to = ENV['to']
+    from = ENV['from'].to_i
+    to = ENV['to'].to_i
     if to && from && from < to
       Application.where("id >= ? and id < ?", from, to).each do |application|
         user = User.where(email: application.email).first

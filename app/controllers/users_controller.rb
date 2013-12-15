@@ -46,6 +46,7 @@ class UsersController < ApplicationController
   def define_password
     if @user.update_attributes(params[:user])
       sign_in @user, bypass: true
+      flash[:notice] = 'Tu cuenta se activado correctamente!'
       redirect_to root_url
     else
       render :migrate

@@ -73,6 +73,11 @@
           </li>
         <% end %>
       </ul>
+      <div class="navbar navbar-right flash-messages">
+        <% if flash[:notice] %>
+          <span class="label label-success"><%= flash[:notice] %></span>
+        <% end %>
+      </div>
     </div>
   </div>
 

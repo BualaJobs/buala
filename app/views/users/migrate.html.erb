@@ -1,0 +1,32 @@
+<div class="container" style="padding-bottom: 150px;">
+  <h2 style="color: #fff;">
+    Activar cuenta: <span style="color:#2B9E07; font-size: 22px;"><%= @user.fullname %></span>
+  </h2>
+  <h4><span class="label label-info">Para activar tu cuenta, solo tenés que asignarle una contraseña!</span></h4>
+  <%= form_for @user, url: migrate_users_path(id: @user.id, token: @user.migration_token), method: :put, class: 'col-md-9' do |f| %>
+    <%= hidden_field_tag(:token, params[:token]) if params[:token] %>
+    <%= hidden_field_tag(:id, params[:id]) if params[:id] %>
+    <div class="form-group" style="margin-top:15px;">
+      <label>Email</label>
+      <div><%= @user.email %></div>
+    </div>
+    <div class="form-group <%= !@user.errors[:password].empty? ? 'has-error' : '' %>">
+      <%= f.label :password, 'Nueva contraseña', class: 'control-label' %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <% unless @user.errors[:password].empty? %>
+        <div class="help-block text-right"><%= @user.errors[:password].first %></div>
+      <% end %>
+    </div>
+    <div class="form-group <%= !@user.errors[:password_confirmation].empty? ? 'has-error' : '' %>">
+      <%= f.label :password_confirmation, 'Confirmación de nueva contraseña', class: 'control-label' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <% unless @user.errors[:password_confirmation].empty? %>
+        <div class="help-block text-right"><%= @user.errors[:password_confirmation].first %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= f.submit 'Activar cuenta', class: 'btn-pink pull-right',
+        onClick: "ga('send', 'event', 'Profile', 'Migrate')" %>
+    </div>
+  <% end %>
+</div>

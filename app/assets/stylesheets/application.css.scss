@@ -61,6 +61,10 @@
 @import "twitter/bootstrap";
 @import "font-awesome";
 
+body {
+  background: #3be376;
+}
+
 .navbar-buala {
   margin:0;
   border:0;
@@ -420,5 +424,20 @@ h1, h2, h3, h4, h5, h6 {
         background: #27CF63;
       }
     }
+  }
+}
+
+.flash-messages {
+  .label {
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 10px;
+
+    &.label-success {
+      background: #BDFFBD;
+      color: #24C424;
+    }
+
   }
 }

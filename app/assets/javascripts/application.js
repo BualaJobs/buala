@@ -23,19 +23,6 @@ buala.filter('escape', function() {
 
 +function ($) {"use strict"
 
-  var stickFooter = function () {
-    var documentHeight = $(document).height();
-    var navbarHeight = $('.navbar-buala').outerHeight();
-
-    var minimumHeightRequired = documentHeight - navbarHeight;
-
-    var adjustableSectionHeight = $('.adjustable').outerHeight();
-
-    if (minimumHeightRequired > adjustableSectionHeight) {
-      $('.adjustable').height(minimumHeightRequired);
-    }
-  };
-
   var initializeFileBtns = function () {
     $(document)
     .on('change', '.btn-file :file', function() {
@@ -51,7 +38,6 @@ buala.filter('escape', function() {
   };
 
   $(function () {
-    stickFooter();
     initializeFileBtns();
   });
 

@@ -214,6 +214,10 @@ es:
       user:
         not_found_in_database: Usuario o contraseña inválidos
         invalid: Usuario o contraseña inválidos
+    sessions:
+      user:
+        signed_out: Sesión cerrada. Te esperamos devuelta pronto!
+        signed_in: Que bueno tenerte devuelta!
   buala:
     users:
       profile:

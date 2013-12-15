@@ -3,10 +3,50 @@ ActiveAdmin.register_page "Dashboard" do
   menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
   content :title => proc{ I18n.t("active_admin.dashboard") } do
-    div :class => "blank_slate_container", :id => "dashboard_default_message" do
-      span :class => "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+
+    columns do
+      column do 
+        panel "Statistics" do
+          
+          users_total = User.all.count
+          applications_total = Postulation.all.count
+          users_not_applied = User.joins("LEFT OUTER JOIN postulations ON users.id = postulations.user_id").where("postulations.user_id IS null").count
+          advertisements_total = Advertisement.all.count
+          advertisements_without_applications = Advertisement.joins("LEFT OUTER JOIN postulations ON advertisements.id = postulations.advertisement_id").where("postulations.advertisement_id IS null").count
+
+          ul do
+            li do
+              h4 do
+                strong "Total applications: " 
+                span "#{applications_total}."
+              end
+            end
+            li do
+              h4 do
+                strong "Total users: "
+                span "#{users_total}."
+              end
+            end
+            li do
+              h4 do
+                strong "Total advertisements: "
+                span "#{advertisements_total}."
+              end
+            end
+            li do
+              h4 do
+                strong "Users who've not applied: "
+                span "#{users_not_applied} - #{((users_not_applied * 1.0/users_total) * 100).round(2)} %."
+              end
+            end
+            li do
+              h4 do
+                strong "Advertisements without applications: "
+                span "#{advertisements_without_applications} - #{((advertisements_without_applications * 1.0/advertisements_total) * 100).round(2)} %."
+              end
+            end
+          end
+        end
       end
     end
 

@@ -2,7 +2,6 @@ Buala::Application.routes.draw do
 
   resources :full_postulations
 
-
   get "directives/applyBox"
   get "directives/modal"
 

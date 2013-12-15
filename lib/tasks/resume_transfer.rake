@@ -21,8 +21,8 @@ namespace :migration do
   end
 
   task :send_emails => :environment do
-    from = ENV['from']
-    to = ENV['to']
+    from = ENV['from'].to_i
+    to = ENV['to'].to_i
     if to && from && from < to
       User.where("id >= ? and id < ? and migrated = true", from, to).each do |user|
         UserMailer.migration_email(user).deliver

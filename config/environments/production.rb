@@ -86,6 +86,7 @@ Buala::Application.configure do
     path: lambda{|a| "production/#{a.instance.advertisement.company.id}/#{a.instance.advertisement.id}/:id_:filename"}
   }
 
+  # Amazon S3 config for resume storage
   config.buala.s3_resume_storage = {
     storage: :s3, 
     s3_credentials: {

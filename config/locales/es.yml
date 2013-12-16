@@ -210,6 +210,7 @@ es:
       user:
         send_instructions: Enviamos instrucciones a tu email
         no_token: Link no autorizado
+        updated: Tu password ha sido cambiada exitosamente.
     failure:
       user:
         not_found_in_database: Usuario o contraseña inválidos
@@ -218,6 +219,14 @@ es:
       user:
         signed_out: Sesión cerrada. Te esperamos devuelta pronto!
         signed_in: Que bueno tenerte devuelta!
+    registrations:
+      destroyed: Chau! Esperamos que vuelvas pronto!
+      signed_up: Bienvenido! Tu cuenta ha sido creada satisfactoriamente
+      signed_up_but_inactive: Tu cuenta ha sido creada satisfactoriamente. Pero está inactiva.
+      signed_up_but_locked: Tu cuenta ha sido creada satisfactoriamente. Pero está bloqueada.
+      signed_up_but_unconfirmed: Te hemos enviado un email de confirmación. Revisa tu correo.
+      update_needs_confirmation: Tu cuenta ha sido actualizada, pero necesita confirmación, revisa tu correro
+      updated: Tu cuenta ha sido actualizada correctamente
   buala:
     users:
       profile:

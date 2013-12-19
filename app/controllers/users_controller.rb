@@ -48,6 +48,9 @@ class UsersController < ApplicationController
       sign_in @user, bypass: true
       flash[:notice] = 'Tu cuenta se activado correctamente!'
       redirect_to root_url
+    elsif @user.errors[:password].empty?
+      @user.attributes = params[:user]
+      @user.save(validate: false)
     else
       render :migrate
     end

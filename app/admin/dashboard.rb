@@ -13,6 +13,8 @@ ActiveAdmin.register_page "Dashboard" do
           users_not_applied = User.joins("LEFT OUTER JOIN postulations ON users.id = postulations.user_id").where("postulations.user_id IS null").count
           advertisements_total = Advertisement.all.count
           advertisements_without_applications = Advertisement.joins("LEFT OUTER JOIN postulations ON advertisements.id = postulations.advertisement_id").where("postulations.advertisement_id IS null").count
+          migrated_users = User.where(migrated: true).count
+          migrated_users_registered = users_total - User.where("migrated = true and COALESCE(encrypted_password, '') = ''").count
 
           ul do
             li do
@@ -43,6 +45,12 @@ ActiveAdmin.register_page "Dashboard" do
               h4 do
                 strong "Advertisements without applications: "
                 span "#{advertisements_without_applications} - #{((advertisements_without_applications * 1.0/advertisements_total) * 100).round(2)} %."
+              end
+            end
+            li do
+              h4 do
+                strong "Migrated users: "
+                span "#{migrated_users_registered} - #{((migrated_users_registered * 1.0/migrated_users) * 100).round(2)} %."
               end
             end
           end

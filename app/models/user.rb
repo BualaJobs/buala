@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     size: { in: 0..2048.kilobytes }
 
   validates :fullname, presence: true, length: {maximum: 25}
-  validates :degree, length: {maximum: 25}
+  validates :degree, length: {maximum: 100}
 
   def ready_for_application
     !(self.degree.blank? or self.university.blank? or self.resume.blank?)

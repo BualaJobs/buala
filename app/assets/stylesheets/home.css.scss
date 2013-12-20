@@ -228,9 +228,64 @@
 
 }
 
-.service-explanation {
+.signup-banner {
 
-  height: 160px;
+  .service-explanation {
+    height: 160px;
+  }
+
+  &:hover {
+
+    background: #6EDAEE;
+
+    .animation-img {
+      &.lens {
+        -webkit-animation: move-along-a-circle 1.5s infinite linear;
+        -moz-animation:    move-along-a-circle 1.5s infinite linear;
+        -o-animation:      move-along-a-circle 1.5s infinite linear;
+        animation:         move-along-a-circle 1.5s infinite linear;
+      }
+
+      &.graphs {
+        -webkit-animation: shake 2s infinite linear;
+        -moz-animation:    shake 2s infinite linear;
+        -o-animation:      shake 2s infinite linear;
+        animation:         shake 2s infinite linear;
+      }
+    }
+
+    .mini-resumes, .mini-suitcases {
+      .mini-resume, .mini-suitcase {
+        &.move-1 {
+        animation-delay: 0s;
+        -webkit-animation-delay:0s;      
+        }
+
+        &.move-2 {
+          animation-delay: 0.5s;
+          -webkit-animation-delay:0.5s;
+        }
+
+        &.move-3 {
+          animation-delay: 1s;
+          -webkit-animation-delay:1s;
+        }
+      }
+      .mini-resume {
+        -webkit-animation: move-to-left 1.5s infinite;
+        -moz-animation:    move-to-left 1.5s infinite;
+        -o-animation:      move-to-left 1.5s infinite;
+        animation:         move-to-left 1.5s infinite;
+      }
+
+      .mini-suitcase {
+        -webkit-animation: move-to-right 1.5s infinite;
+        -moz-animation:    move-to-right 1.5s infinite;
+        -o-animation:      move-to-right 1.5s infinite;
+        animation:         move-to-right 1.5s infinite;
+      }
+    }
+  }
 
   h2 {
     color:#fff;
@@ -263,19 +318,11 @@
     &.lens {
       top:80px;
       left:180px;
-      -webkit-animation: move-along-a-circle 1.5s infinite linear;
-      -moz-animation:    move-along-a-circle 1.5s infinite linear;
-      -o-animation:      move-along-a-circle 1.5s infinite linear;
-      animation:         move-along-a-circle 1.5s infinite linear;
     }
 
     &.graphs {
       top:30px;
       left:55px;
-      -webkit-animation: shake 2s infinite linear;
-      -moz-animation:    shake 2s infinite linear;
-      -o-animation:      shake 2s infinite linear;
-      animation:         shake 2s infinite linear;
     }
 
     &.suitcase {
@@ -297,37 +344,7 @@
     .mini-resume, .mini-suitcase {
       z-index: 10;
       position:absolute;
-      
-      &.move-1 {
-        animation-delay: 0s;
-        -webkit-animation-delay:0s;      
-      }
-
-      &.move-2 {
-        animation-delay: 0.5s;
-        -webkit-animation-delay:0.5s;
-      }
-
-      &.move-3 {
-        animation-delay: 1s;
-        -webkit-animation-delay:1s;
-      }
     }
-
-    .mini-resume {
-      -webkit-animation: move-to-left 1.5s infinite;
-      -moz-animation:    move-to-left 1.5s infinite;
-      -o-animation:      move-to-left 1.5s infinite;
-      animation:         move-to-left 1.5s infinite;
-    }
-
-    .mini-suitcase {
-      -webkit-animation: move-to-right 1.5s infinite;
-      -moz-animation:    move-to-right 1.5s infinite;
-      -o-animation:      move-to-right 1.5s infinite;
-      animation:         move-to-right 1.5s infinite;
-    }
-
   }
 
 }

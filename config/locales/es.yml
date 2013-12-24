@@ -219,6 +219,8 @@ es:
       user:
         signed_out: Sesión cerrada. Te esperamos devuelta pronto!
         signed_in: Que bueno tenerte devuelta!
+      admin_user:
+        signed_in: Logueado como administrador satisfactoriamente
     registrations:
       destroyed: Chau! Esperamos que vuelvas pronto!
       signed_up: Bienvenido! Tu cuenta ha sido creada satisfactoriamente

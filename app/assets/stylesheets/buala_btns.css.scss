@@ -1,0 +1,135 @@
+.btn-buala {
+  font-family: 'titillium_webbold';
+
+  .btn-recommendation {
+    font-family: 'titillium_webregular';
+    font-size: 12px;
+  }
+}
+
+.btn-buala-no-font, .btn-buala {
+  background: #1cb095;
+  border:#1cb095;
+  color:#fff;
+
+  &:hover, &:active {
+    background: #0d826d;
+  }
+}
+
+.buala-icon {
+  color:#1abc9c;
+}
+
+.btn-pink {
+  display: inline-block;
+  background:#fa70b8;
+  padding:8px 22px;
+  border: 0px;
+  border-bottom: 5px solid #f011e7;
+  color:#fff;
+  font-family: 'titillium_websemibold';
+  font-size:28px;
+  -webkit-box-shadow: 0px 0px 5px rgba(120, 120, 120, 0.5);
+  -moz-box-shadow:    0px 0px 5px rgba(120, 120, 120, 0.5);
+  box-shadow:         0px 0px 5px rgba(120, 120, 120, 0.5);
+  cursor: pointer;
+
+  transition: background 0.2s linear, border-color 0.2s linear;
+  -webkit-transition: background 0.2s linear, border-color 0.2s linear;
+  -moz-transition: background 0.2s linear, border-color 0.2s linear;
+  -o-transition: background 0.2s linear, border-color 0.2s linear;
+
+  &:hover, &:active {
+    text-decoration: none;
+    background: #F32892;
+    color:#fff;
+    border-bottom: 5px solid #FF57AF;
+  }
+
+  .btn-recommendation {
+    font-size:12px;
+    font-family: 'titillium_webregular';
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'titillium_webregular';
+  color: #27b5d3;
+}
+
+.btn-orange {
+  background: #ffac29;
+  line-height: 40px;
+  padding:0 20px;
+  display: inline-block;
+  color:#fff;
+  border:0px;
+  border-bottom: 3px solid #ee8f00;
+  font-family: 'titillium_webregular';
+  font-size: 16px;
+  
+  transition: background 0.2s linear, border-color 0.2s linear;
+  -webkit-transition: background 0.2s linear, border-color 0.2s linear;
+  -moz-transition: background 0.2s linear, border-color 0.2s linear;
+  -o-transition: background 0.2s linear, border-color 0.2s linear;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    background: #ff9003;
+    border-bottom: 3px solid #ffd589;
+    color:#fff;
+  }
+}
+
+.auth-btns {
+  font-family: "titillium_webregular";
+
+  a {
+    font-size: 16px;
+    color: #2FA8CF !important;
+  }
+
+  .auth-link-wrapper a {
+  }
+
+  i {
+    font-size: 18px;
+  }
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: #39b3d7;
+    border-bottom: 4px solid #269abc;
+    border-radius: 0;
+    cursor: pointer;
+
+    transition: background 0.2s linear, border-color 0.2s linear;
+    -webkit-transition: background 0.2s linear, border-color 0.2s linear;
+    -moz-transition: background 0.2s linear, border-color 0.2s linear;
+    -o-transition: background 0.2s linear, border-color 0.2s linear;
+
+    &:hover {
+      background: #269abc;
+      border-bottom: 4px solid #39b3d7;
+      color: #fff;
+    }
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}

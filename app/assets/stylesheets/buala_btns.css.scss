@@ -23,10 +23,10 @@
 
 .btn-pink {
   display: inline-block;
-  background:#fa70b8;
+  background:$pink;
   padding:8px 22px;
   border: 0px;
-  border-bottom: 5px solid #f011e7;
+  border-bottom: 5px solid $darkpink;
   color:#fff;
   font-family: 'titillium_websemibold';
   font-size:28px;
@@ -42,9 +42,9 @@
 
   &:hover, &:active {
     text-decoration: none;
-    background: #F32892;
+    background: $darkpink;
     color:#fff;
-    border-bottom: 5px solid #FF57AF;
+    border-bottom: 5px solid $pink;
   }
 
   .btn-recommendation {
@@ -59,13 +59,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-orange {
-  background: #ffac29;
+  background: $orange;
   line-height: 40px;
   padding:0 20px;
   display: inline-block;
   color:#fff;
   border:0px;
-  border-bottom: 3px solid #ee8f00;
+  border-bottom: 3px solid $darkorange;
   font-family: 'titillium_webregular';
   font-size: 16px;
   
@@ -76,8 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 
   &:hover, &:active, &:focus {
     text-decoration: none;
-    background: #ff9003;
-    border-bottom: 3px solid #ffd589;
+    background: $darkorange;
+    border-bottom: 3px solid $orange;
     color:#fff;
   }
 }

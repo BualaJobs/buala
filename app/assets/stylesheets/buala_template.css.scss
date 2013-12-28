@@ -1,5 +1,5 @@
 body {
-  background: #3be376;
+  background: $green;
 }
 
 .container {
@@ -18,8 +18,8 @@ body {
 
 .footer-container {
   padding: 20px 0 0 0;
-  background:#244155;
-  border-top:3px solid #1d2936;
+  background: $purple;
+  border-top:3px solid $darkpurple;
 
   .contact {
     margin:10px 0;
@@ -34,8 +34,9 @@ body {
       }
 
       .well {
-        background: #1d2936;
-        border-color: #1d2936;
+        background: $darkpurple;
+        border: 3px solid $lightpurple;
+        border-radius: 0;
       }
 
       .img {
@@ -94,8 +95,8 @@ body {
 }
 
 .green-full-container {
-  background:#3be376;
-  border-top: 8px solid #00D54B;
+  background:$green;
+  border-top: 8px solid $darkgreen;
   height: 100%;
 
   h1,h2,h3,h4,h5,h6 {

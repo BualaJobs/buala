@@ -9,8 +9,9 @@
   <div class="navbar navbar-default navbar-buala" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <%= image_tag '/images/logo.jpg', class: 'logo pull-left' %>
-        <h3 class="pull-left"><%= @company.name %></h3>
+        <%= link_to root_path do %>
+          <img src="/images/logo.png" alt="Bualá! Jobs" class="logo" />
+        <% end %>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">

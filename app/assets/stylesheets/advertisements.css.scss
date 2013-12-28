@@ -1,6 +1,6 @@
 .advertisement-header-wrapper {
-  background: #3be376;
-  border-top: 8px solid #00D54B;
+  background: $green;
+  border-top: 8px solid $darkgreen;
 }
 
 .advertisement-header {
@@ -42,12 +42,12 @@
 .map-container {
   padding:0;
   background:#f6f6f6;
-  border-top: 2px solid #0093c3;
+  border-top: 2px solid $darkblue;
 }
 
 .advertisement-detail-wrapper {
-  background: #3be376;
-  border-top: 8px solid #00D54B;
+  background: $green;
+  border-top: 8px solid $darkgreen;
 }
 
 .advertisement-info .categories {

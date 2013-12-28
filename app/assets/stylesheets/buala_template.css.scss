@@ -1,0 +1,167 @@
+body {
+  background: $green;
+}
+
+.container {
+  max-width: 950px;
+}
+
+.full-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-body {
+  background: $lightblue;
+  border-bottom:3px solid $darkblue;
+}
+
+.footer-container {
+  padding: 20px 0 0 0;
+  background: $purple;
+  border-top:3px solid $darkpurple;
+
+  .contact {
+    margin:10px 0;
+
+    .contact-thumb {
+      text-align: center;
+      color:#1abc9c;
+
+      h3 {
+        color:inherit;
+        margin:4px 0 4px 0;
+      }
+
+      .well {
+        background: $darkpurple;
+        border: 3px solid $lightpurple;
+        border-radius: 0;
+      }
+
+      .img {
+        width: 15%;
+        float: left;
+        line-height: 80px;
+
+        img {
+          width:100%;
+          height: auto;
+        }
+      }
+
+      .info {
+        float: left;
+        width: 85%;
+
+        a, a:hover, a:active {
+          line-height: 30px;
+          color:#37d0ec;
+        }
+
+        .wrapper {
+          padding-left:5px;
+        }
+      }
+    }
+  }
+
+  .social {
+    text-align: center;
+    padding:0 0 10px 0;
+    font-size:40px;
+    
+    a {
+      color:#1abc9c;
+      text-decoration: none;
+      
+      &:hover, &:active {
+        color:#fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.copyright-container {
+  background: #1d2936;
+  text-align: center;
+  line-height: 100px;
+  color:#fff;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.green-full-container {
+  background:$green;
+  border-top: 8px solid $darkgreen;
+  height: 100%;
+
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+
+    &.dashed-underline {
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #fff;
+    }
+
+    .title-underline {
+      text-transform: uppercase;
+      font-size:12px;
+      color: #24802B;
+      position: relative;
+      bottom: -5px;
+      font-weight: bold;
+    }
+  }
+
+  .flash-success {
+    color: #00B13E;
+    background: #74FFA5;
+    padding: 8px;
+    margin-bottom: 12px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .form-group {
+    .control-label {
+      color: #24802B;
+    }
+  }
+
+  .has-error {
+    .control-label, .help-block {
+      color: #b94a48;
+    }
+  }
+
+  .file-info {
+    color: #fff;
+    padding-left:5px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .help-block {
+    color: #fff;
+  }
+}
+
+.flash-messages {
+  .label {
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 10px;
+
+    &.label-success {
+      background: #BDFFBD;
+      color: #24C424;
+    }
+
+  }
+}

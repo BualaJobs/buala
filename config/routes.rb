@@ -20,6 +20,7 @@ Buala::Application.routes.draw do
   scope 'api' do
     defaults format: :json do
       api_version(:module => "V1", :path => {:value => "v1"}) do
+    resources :companies
       resources :advertisements, only: [:show] do
         resources :applications, except: [:delete]
         resources :postulations, except: [:delete] do

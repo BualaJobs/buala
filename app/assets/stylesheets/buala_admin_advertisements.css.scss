@@ -1,0 +1,82 @@
+.admin-panel {
+  .admin-advertisements {
+    h1 {
+      color: #fff;
+      margin:0;
+      padding: 16px 0 14px 0;
+    }
+
+    .advertisement-box {
+      @include buala-well-with(10px, 15px);
+
+      h2 {
+        margin:0;
+        padding:0 0 5px 0;
+        @include buala-semibold-font;
+        font-size: 25px;
+      }
+
+      .applicants {
+        height:120px;
+        
+        &.number-box {
+          text-align: center;
+          background: $superlightorange;
+          padding: 25px 20px;
+
+          .number {
+            color: $orange;
+            font-size: 50px;
+            line-height: 50px;
+          }
+
+          .title {
+            text-transform: uppercase;
+            color: $orange;
+            display: block;
+          }
+        }
+      }
+      
+      .performance {
+        height: 120px;
+        color: $lightblue;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding:0;
+        padding-left: 10px;
+        
+        .bprogress, .chart {
+          margin:0;
+          padding:0;
+        }
+
+        .chart {
+          height: 85px;
+          width: 100%;
+        }
+
+        .bprogress {
+          height: 30px;
+          line-height: 28px;
+          border: 1px solid $lightgray;
+
+          .bar-progress, .bar-left {
+            float: left;
+            text-align: center;
+          }
+
+          .bar-progress {
+            color: $white;
+            background: $green;
+          }
+
+          .bar-left {
+            background: $white;
+            color: $lightgray;
+          }
+        }
+      }
+    }
+  }
+}

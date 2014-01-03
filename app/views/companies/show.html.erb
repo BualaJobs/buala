@@ -1,127 +1,27 @@
-<div class="row">
-
-  <div class="col-md-6">
-    <div class="panel dashboard-widget">
-      <h2>Postulaciones totales</h2>
-      <div class="result">
-        <%= total = @company.total_postulations %>
-      </div>
-      <div>
-        <% if total == 1 %>
-          Postulación
-        <% else %>
-          Postulaciones
-        <% end %>
-      </div>
-      <div class="panel panel-info inner-panel">
-        <div class="panel-heading">
-          Estadísticas
-        </div>
-        <table class="table table-striped">
-          <tbody>
-            <% @company.advertisements.each do |advertisement| %>
-              <tr>
-                <td><%= advertisement.title %></td>
-                <td><%= advertisement.postulations.count %></td>
-                <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token), class: 'btn btn-info btn-sm pull-right' %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+<div class="row admin-advertisements" ng-controller="AdminCompanyController">
+  <h1>
+    <%= fa_icon 'th-large' %>
+    Mis avisos
+  </h1>
+  <div class="advertisement-box" ng-repeat="advertisement in company.advertisements">
+    <h2>{{advertisement.title}}</h2>
+    <div class="applicants number-box col-md-2">
+      <span class="number">{{advertisement.applications_amount}}</span>
+      <span class="title" ng-show="advertisement.applications_amount != 1">
+        Postulantes
+      </span>
+      <span class="title" ng-hide="advertisement.applications_amount != 1">
+        Postulante
+      </span>
+    </div>
+    <div class="performance col-md-10">
+      <canvas class="chart"></canvas>
+      <div class="bprogress">
+        <span class="bar-progress" style="width: 85%;">22 días</span>
+        <span class="bar-left" style="width: 15%;">8 días</span>
+        <div class="clearfix"></div>
       </div>
     </div>
+    <div class="clearfix"></div>
   </div>
-
-  <div class="col-md-6">
-    <div class="panel dashboard-widget">
-      <h2>Postulaciones en la última semana</h2>
-      <div class="result">
-        <%= week_total = @company.last_week_total_postulations %>
-      </div>
-      <div>
-        <% if week_total == 1 %>
-          Postulación
-        <% else %>
-          Postulaciones
-        <% end %>
-      </div>
-      <div class="panel panel-info inner-panel">
-        <div class="panel-heading">
-          Estadísticas
-        </div>
-        <table class="table table-striped">
-          <tbody>
-            <% @company.advertisements.each do |advertisement| %>
-              <tr>
-                <td><%= advertisement.title %></td>
-                <td><%= advertisement.last_week_postulations.count %></td>
-                <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token), class: 'btn btn-info btn-sm pull-right' %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel dashboard-widget">
-      <h2>Top 5 de Universidades</h2>
-      <div class="panel panel-info inner-panel">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Universidad</th>
-              <th>#Postulantes</th>
-              <th>Porcentaje</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% top_universities = @company.top_universities(5) %>
-            <% if top_universities.count > 0 %>
-              <% @company.top_universities(5).each do |top| %>
-                <tr>
-                  <td><%= top[0] %></td>
-                  <td><%= top[1] %></td>
-                  <td><%= number_with_precision((top[1] / total.to_f) * 100) %> %</td>
-                </tr>
-              <% end %>
-            <% else %>
-              <tr>
-                <td colspan="3">No se han registrado postulaciones hasta el momento</td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <!-- <div class="col-md-6">
-    <div class="panel dashboard-widget coming-soon-widget">
-      <h2>Cantidad de visitas</h2>
-      <div class="result">
-        253
-      </div>
-      <div>Visitas</div>
-      <div class="panel panel-info inner-panel">
-        <div class="panel-heading">
-          Estadísticas
-        </div>
-        <table class="table table-striped">
-          <tbody>
-            <% @company.advertisements.each do |advertisement| %>
-              <tr>
-                <td><%= advertisement.title %></td>
-                <td><%= number_with_precision((advertisement.applications.count / total.to_f) * 100) %> %</td>
-                <td><%= link_to "Ver aviso", company_ad_path(@company, advertisement, token: @token) %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div> -->
 </div>

@@ -46,6 +46,10 @@ class Advertisement < ActiveRecord::Base
     Postulation.where(advertisement_id: self.id).join(:users)
   end
 
+  def postulations_group_by_date
+    self.postulations.group("date(created_at)").count
+  end
+
   private
   def different_categories
     if category_1 && category_2 && category_1 == category_2

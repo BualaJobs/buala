@@ -6,23 +6,28 @@
 </head>
 <body ng-app="bAdmin">
 
+  <!-- NAVBAR -->
   <div class="navbar navbar-default navbar-buala" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <%= link_to root_path do %>
           <img src="/images/logo.png" alt="Bualá! Jobs" class="logo" />
+          <span class="admin-subscript">Admin Panel</span>
         <% end %>
       </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Dashboard", company_path(@company, token: @token) %></li>
-          <li><%= link_to "Mis Avisos", company_ads_path(@company, token: @token) %></li>
-        </ul>
+      <div class="navbar navbar-left navbar-company-logo">
+        <span class="plus-icon"><%= fa_icon :plus %></span>
+        <%= image_tag @company.company_logo.url , alt: @company.name, class: 'company-logo' %>
+      </div>
+      <div class="navbar navbar-right flash-messages">
+        <% if flash[:notice] %>
+          <span class="label label-success"><%= flash[:notice] %></span>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container admin-panel">
       <%= yield %>
   </div>
 

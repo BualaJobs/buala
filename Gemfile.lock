@@ -55,9 +55,6 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.5)
     angularjs-rails (1.0.8)
-    anjlab-bootstrap-rails (3.0.0.2)
-      railties (>= 3.0)
-      sass (>= 3.2)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
@@ -70,6 +67,8 @@ GEM
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap-sass (3.0.3.0)
+      sass (~> 3.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -84,7 +83,6 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
-    chunky_png (1.2.9)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cloudinary (1.0.62)
@@ -100,12 +98,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    compass (0.12.2)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-    compass-rails (1.1.2)
-      compass (>= 0.12.2)
     cucumber (1.3.5)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
@@ -148,7 +140,6 @@ GEM
     formtastic (2.2.1)
       actionpack (>= 3.0)
     friendly_id (4.0.9)
-    fssm (0.2.10)
     gherkin (2.12.0)
       multi_json (~> 1.3)
     gmaps4rails (1.5.6)
@@ -330,14 +321,14 @@ DEPENDENCIES
   active_model_serializers
   activeadmin
   angularjs-rails
-  anjlab-bootstrap-rails (>= 3.0.0.0)
   aws-sdk (~> 1.28.1)
   better_errors
+  bootstrap-sass (~> 3.0.3.0)
+  bourbon (~> 3.1.8)
   capybara
   carrierwave
   cloudinary
   coffee-rails (~> 3.2.1)
-  compass-rails (~> 1.1.2)
   cucumber-rails
   cucumber-websteps
   database_cleaner

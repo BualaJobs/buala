@@ -5,32 +5,32 @@
 #company-admin-panel .admin-wrapper {
   background: #fff;
   padding:10px;
-  font-family: 'titillium_webregular';
+  @include buala-regular-font;
   min-height: 450px;
 }
 
 #company-admin-panel h1 {
   color:#777;
-  font-family: 'titillium_webregular';
+  @include buala-regular-font;
   font-size:23px;
 }
 
 #company-admin-panel h1 strong {
   color:#27b5d3;
-  font-family: 'titillium_webbold';
+  @include buala-regular-font;
   font-size: 27px;
 }
 
 #company-admin-panel h2 {
   color:#777;
-  font-family: 'titillium_webregular';
+  @include buala-regular-font;
   font-size:18px;
   border-top:1px solid #f3f3f3;
 }
 
 #company-admin-panel h2 strong {
   color:#27b5d3;
-  font-family: 'titillium_webbold';
+  @include buala-bold-font;
   font-size:22px;
 }
 

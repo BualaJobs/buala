@@ -1,6 +1,12 @@
-/*
- *= require bootstrap
- *= require admin-template
- *= require ads
- *= require_self
- */
+@charset "utf-8";
+
+@import "bootstrap";
+@import "titillium_font";
+@import "font-awesome";
+@import "bourbon";
+@import "buala_palette";
+@import "buala_template";
+@import "buala_btns";
+@import "buala_navbar";
+@import "buala_admin_template";
+@import "buala_admin_advertisements";

@@ -1,0 +1,32 @@
+.navbar-buala {
+
+  a {
+    .admin-subscript {
+      font-size: 9px;
+      text-transform: uppercase;
+      display: block;
+      text-align: right;
+      height: 0px;
+      color: $darkblue;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .navbar-company-logo {
+    padding-top: 15px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    
+    .plus-icon {
+      color: $orange;
+    }
+
+  }
+
+  .company-logo {
+    height: 40px;
+  }
+}

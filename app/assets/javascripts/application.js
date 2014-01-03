@@ -8,9 +8,9 @@
 //= require_tree ./services
 //= require_tree ./directives
 //= require_tree ./controllers
-//= require twitter/bootstrap/modal
-//= require twitter/bootstrap/tooltip
-//= require twitter/bootstrap/dropdown
+//= require bootstrap/modal
+//= require bootstrap/tooltip
+//= require bootstrap/dropdown
 
 var buala = angular.module('Buala', ['ngResource'])
   .config(['$httpProvider', function ($httpProvider) {

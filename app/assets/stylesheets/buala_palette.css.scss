@@ -1,3 +1,6 @@
+$white: #fff;
+$black: #000;
+
 $lightblue: #2dbed9;
 $darkblue: darken($lightblue, 10%);
 $superlightblue: lighten($lightblue, 40%);
@@ -15,5 +18,40 @@ $lightpurple: lighten($purple, 15%);
 
 $pink: #fa70b8;
 $darkpink: darken($pink, 10%);
+$lightorange: lighten($orange, 15%);
+$superlightorange: lighten($orange, 35%);
 
 $mediumgray: #555;
+$lightgray: lighten($mediumgray, 40%);
+$superlightgray: lighten($mediumgray, 60%);
+
+$shadowgray: rgba(50, 50, 50, 0.4);
+
+@mixin buala-shadow {
+  -webkit-box-shadow: 0px 0px 10px $shadowgray;
+  -moz-box-shadow:    0px 0px 10px $shadowgray;
+  box-shadow:         0px 0px 10px $shadowgray;
+}
+
+@mixin buala-regular-font {
+  font-family: 'titillium_webregular';
+}
+
+@mixin buala-semibold-font {
+  font-family: 'titillium_websemibold';
+}
+
+@mixin buala-bold-font {
+  font-family: 'titillium_webbold';
+}
+
+@mixin buala-well {
+  background: $white;
+  @include buala-shadow;
+}
+
+@mixin buala-well-with($padding, $margin-bottom) {
+  @include buala-well;
+  padding: $padding;
+  margin-bottom: $margin-bottom;
+}

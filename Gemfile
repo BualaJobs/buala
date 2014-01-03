@@ -22,7 +22,6 @@ gem 'angularjs-rails'
 gem 'lodash-rails'
 gem 'active_model_serializers'
 gem 'versionist'
-gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 gem "font-awesome-rails"
 gem 'rabl'
 gem 'oj'
@@ -31,7 +30,8 @@ gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'compass-rails', '~> 1.1.2'
+  gem 'bootstrap-sass', '~> 3.0.3.0'
+  gem 'bourbon', '~> 3.1.8'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end

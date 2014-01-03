@@ -1,8 +1,8 @@
 .btn-buala {
-  font-family: 'titillium_webbold';
+  @include buala-bold-font;
 
   .btn-recommendation {
-    font-family: 'titillium_webregular';
+    @include buala-regular-font;
     font-size: 12px;
   }
 }
@@ -10,7 +10,7 @@
 .btn-buala-no-font, .btn-buala {
   background: #1cb095;
   border:#1cb095;
-  color:#fff;
+  color:$white;
 
   &:hover, &:active {
     background: #0d826d;
@@ -27,34 +27,28 @@
   padding:8px 22px;
   border: 0px;
   border-bottom: 5px solid $darkpink;
-  color:#fff;
-  font-family: 'titillium_websemibold';
+  color:$white;
   font-size:28px;
-  -webkit-box-shadow: 0px 0px 5px rgba(120, 120, 120, 0.5);
-  -moz-box-shadow:    0px 0px 5px rgba(120, 120, 120, 0.5);
-  box-shadow:         0px 0px 5px rgba(120, 120, 120, 0.5);
   cursor: pointer;
-
-  transition: background 0.2s linear, border-color 0.2s linear;
-  -webkit-transition: background 0.2s linear, border-color 0.2s linear;
-  -moz-transition: background 0.2s linear, border-color 0.2s linear;
-  -o-transition: background 0.2s linear, border-color 0.2s linear;
+  @include buala-semibold-font;
+  @include box-shadow (0px 0px 5px rgba(120, 120, 120, 0.5));
+  @include transition (background 0.2s linear, border-color 0.2s linear);
 
   &:hover, &:active {
     text-decoration: none;
     background: $darkpink;
-    color:#fff;
+    color:$white;
     border-bottom: 5px solid $pink;
   }
 
   .btn-recommendation {
     font-size:12px;
-    font-family: 'titillium_webregular';
+    @include buala-regular-font;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'titillium_webregular';
+  @include buala-regular-font;
   color: #27b5d3;
 }
 
@@ -63,22 +57,18 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 40px;
   padding:0 20px;
   display: inline-block;
-  color:#fff;
+  color:$white;
   border:0px;
   border-bottom: 3px solid $darkorange;
-  font-family: 'titillium_webregular';
   font-size: 16px;
-  
-  transition: background 0.2s linear, border-color 0.2s linear;
-  -webkit-transition: background 0.2s linear, border-color 0.2s linear;
-  -moz-transition: background 0.2s linear, border-color 0.2s linear;
-  -o-transition: background 0.2s linear, border-color 0.2s linear;
+  @include buala-regular-font;
+  @include transition (background 0.2s linear, border-color 0.2s linear);
 
   &:hover, &:active, &:focus {
     text-decoration: none;
     background: $darkorange;
     border-bottom: 3px solid $orange;
-    color:#fff;
+    color:$white;
   }
 }
 
@@ -101,21 +91,17 @@ h1, h2, h3, h4, h5, h6 {
 .btn-file {
     position: relative;
     overflow: hidden;
-    color: #fff;
+    color: $white;
     background: #39b3d7;
     border-bottom: 4px solid #269abc;
     border-radius: 0;
     cursor: pointer;
-
-    transition: background 0.2s linear, border-color 0.2s linear;
-    -webkit-transition: background 0.2s linear, border-color 0.2s linear;
-    -moz-transition: background 0.2s linear, border-color 0.2s linear;
-    -o-transition: background 0.2s linear, border-color 0.2s linear;
+    @include transition (background 0.2s linear, border-color 0.2s linear);
 
     &:hover {
       background: #269abc;
       border-bottom: 4px solid #39b3d7;
-      color: #fff;
+      color: $white;
     }
 }
 

@@ -97,9 +97,11 @@
 
   <!-- CONTENT -->
   <div class="adjustable">
-      <div class="top-body">
-        <%= yield(:top_body) %>
-      </div>
+      <% if content_for?(:top_body) %>
+        <div class="top-body">
+          <%= yield(:top_body) %>
+        </div>
+      <% end %>
       <%= content_for?(:content) ? yield(:content) : yield %>
 
     <!-- FOOTER -->

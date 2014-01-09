@@ -4,17 +4,20 @@ ActiveAdmin.register Advertisement do
 
 	filter :title
 	filter :description
+  filter :company
 
 	index do
 		selectable_column
 		column :title, :sortable => 'title'
 		column :company
 		column :advertisement_type
+    column :publication_date
+    column :expiration_date
 		column :published do |advertisement|
-			if advertisement.published 
+			if !advertisement.published 
 				status_tag("Published", :ok)
 			else
-				status_tag("Not published", :error)
+				status_tag("Awaiting acceptance", :warning)
 			end
 		end
 		default_actions

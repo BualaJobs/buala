@@ -6,11 +6,7 @@ BualaAdmin.controller('AdminCompanyController', ['$scope', '$resource', '$window
       {company_id: '@id'}
     );
 
-    $scope.company = Company.get({company_id: $window.company_id}, function () {
-      console.log($scope.advertisements);
-    });
-
-
-
+    $scope.company = Company.get({company_id: $window.company_id});
+    
   }
 ]);

@@ -3,31 +3,30 @@
     h1 {
       color: #fff;
       margin:0;
-      padding: 16px 0 14px 0;
+      padding: 20px 0 20px 0;
     }
 
     .advertisement-box {
-      @include buala-well-with(10px, 15px);
+      @include buala-well-with(10px, 35px);
 
       h2 {
         margin:0;
-        padding:0 0 5px 0;
+        padding:2px 0 10px 0;
         @include buala-semibold-font;
         font-size: 25px;
       }
 
-      .applicants {
+      .left-column {
         height:120px;
         
         &.number-box {
           text-align: center;
-          background: $superlightorange;
-          padding: 25px 20px;
+          padding: 10px 0px;
 
           .number {
             color: $orange;
-            font-size: 50px;
-            line-height: 50px;
+            font-size: 75px;
+            line-height: 75px;
           }
 
           .title {
@@ -36,15 +35,26 @@
             display: block;
           }
         }
+
+        .progress {
+          margin: 14px 0;
+        }
+
+        .btn-pink {
+          width: 100%;
+          font-size:20px;
+          height: 48px;
+          @include buala-regular-font;
+        }
+
       }
       
       .performance {
-        height: 120px;
+        height: 200px;
         color: $lightblue;
         font-size: 12px;
         text-transform: uppercase;
         padding:0;
-        padding-left: 10px;
         
         .bprogress, .chart {
           margin:0;
@@ -52,29 +62,8 @@
         }
 
         .chart {
-          height: 85px;
+          height: 200px;
           width: 100%;
-        }
-
-        .bprogress {
-          height: 30px;
-          line-height: 28px;
-          border: 1px solid $lightgray;
-
-          .bar-progress, .bar-left {
-            float: left;
-            text-align: center;
-          }
-
-          .bar-progress {
-            color: $white;
-            background: $green;
-          }
-
-          .bar-left {
-            background: $white;
-            color: $lightgray;
-          }
         }
       }
     }

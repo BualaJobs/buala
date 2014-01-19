@@ -1,8 +1,12 @@
 <div class="row admin-advertisements" ng-controller="AdminCompanyController">
-  <h1>
-    <%= fa_icon 'th-large' %>
-    Mis avisos
-  </h1>
+  <div class="header">
+    <h1 class="pull-left">
+      <%= fa_icon 'th-large' %>
+      Mis avisos
+    </h1>
+    <new-advertisement class="pull-right"></new-advertisement>
+    <div class="clearfix"></div>
+  </div>
   <div class="advertisement-box" ng-repeat="advertisement in company.advertisements">
     <h2>{{advertisement.title}}</h2>
     <div class="left-column number-box col-md-3">
@@ -14,7 +18,10 @@
         Postulante
       </span>
       <advertisement-progress-bar advertisement="advertisement"></advertisement-progress-bar>
-      <button class="btn-pink">Administrar</button>
+      <button class="btn-lightblue btn-normal btn-normal-font btn-full-width">
+        <%= fa_icon 'group' %>
+        Ver postulantes
+      </button>
     </div>
     <div class="performance col-md-9">
       <applicants-per-day-line-chart advertisement="advertisement"></applicants-per-day-line-chart>

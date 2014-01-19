@@ -1,3 +1,43 @@
+@mixin btn-buala($backgroundColor) {
+  display: inline-block;
+  background:$backgroundColor;
+  padding:8px 22px;
+  border: 0px;
+  border-bottom: 5px solid darken($backgroundColor, 10%);
+  color:$white;
+  font-size:28px;
+  cursor: pointer;
+  @include buala-semibold-font;
+  @include box-shadow (0px 0px 5px rgba(120, 120, 120, 0.5));
+  @include transition (background 0.2s linear, border-color 0.2s linear);
+
+  &.btn-small {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  &.btn-normal {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px 18px;
+  }
+
+  &.btn-normal-font {
+    @include buala-regular-font;
+  }
+
+  &.btn-full-width {
+    width: 100%;
+  }
+
+  &:hover, &:active {
+    text-decoration: none;
+    background: darken($backgroundColor, 10%);
+    color:$white;
+    border-bottom: 5px solid $backgroundColor;
+  }
+}
+
 .btn-buala {
   @include buala-bold-font;
 
@@ -22,24 +62,7 @@
 }
 
 .btn-pink {
-  display: inline-block;
-  background:$pink;
-  padding:8px 22px;
-  border: 0px;
-  border-bottom: 5px solid $darkpink;
-  color:$white;
-  font-size:28px;
-  cursor: pointer;
-  @include buala-semibold-font;
-  @include box-shadow (0px 0px 5px rgba(120, 120, 120, 0.5));
-  @include transition (background 0.2s linear, border-color 0.2s linear);
-
-  &:hover, &:active {
-    text-decoration: none;
-    background: $darkpink;
-    color:$white;
-    border-bottom: 5px solid $pink;
-  }
+  @include btn-buala($pink);
 
   .btn-recommendation {
     font-size:12px;
@@ -53,23 +76,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-orange {
-  background: $orange;
-  line-height: 40px;
-  padding:0 20px;
-  display: inline-block;
-  color:$white;
-  border:0px;
-  border-bottom: 3px solid $darkorange;
-  font-size: 16px;
-  @include buala-regular-font;
-  @include transition (background 0.2s linear, border-color 0.2s linear);
+  @include btn-buala($orange);
+}
 
-  &:hover, &:active, &:focus {
-    text-decoration: none;
-    background: $darkorange;
-    border-bottom: 3px solid $orange;
-    color:$white;
-  }
+.btn-lightblue {
+  @include btn-buala($lightblue);
+}
+
+.btn-lightred {
+  @include btn-buala($lightred);
 }
 
 .auth-btns {

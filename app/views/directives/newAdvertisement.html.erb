@@ -1,0 +1,41 @@
+<div>
+  <button class="btn-pink btn-normal btn-normal-font" ng-click="newAdvertisement()"><%= fa_icon 'plus' %> Crear aviso</button>
+  <div class="modal fade new-advertisement-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 class="modal-title">Nuevo aviso</h3>
+          <ol class="steps">
+            <li>Información del aviso</li>
+            <li class="current">Detalles de la publicación</li>
+            <li>Opciones de difusión</li>
+          </ol>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre del puesto"></input>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-lightred btn-normal-font btn-small pull-left">
+            Cancelar
+          </button>
+          <button class="btn-lightblue btn-normal-font btn-normal">
+            <%= fa_icon 'arrow-left' %>
+            Anterior
+          </button>
+          <button class="btn-lightblue btn-normal-font btn-normal">
+            Siguiente
+            <%= fa_icon 'arrow-right' %>
+          </button>
+          <button class="btn-pink btn-normal-font btn-normal">
+            Crear aviso!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

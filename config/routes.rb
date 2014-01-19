@@ -4,6 +4,7 @@ Buala::Application.routes.draw do
 
   get "directives/applyBox"
   get "directives/modal"
+  get "directives/newAdvertisement"
 
   devise_for :users, controllers: {registrations: :registrations}
 

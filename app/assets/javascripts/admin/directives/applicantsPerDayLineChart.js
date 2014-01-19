@@ -20,12 +20,20 @@ BualaAdmin.directive('applicantsPerDayLineChart', function () {
       var labels = [];
       var data = [];
 
+      if (totalDays > 20) {
+        startDate = today.subtract("days", 20);
+        totalDays = 20;
+      };
+
       var dayAmount;
       for (var i = 0; i < totalDays; i++) {
         dayAmount = $scope.advertisement.applications_data[startDate.add("days", 1).format("YYYY-MM-DD")];
         data[i] = (typeof dayAmount === "undefined") ? 0 : dayAmount;
         labels[i] = "";
       }
+
+      labels[0] = startDate.format("DD-MMM");
+      labels[totalDays - 1] = "Hoy";
 
       var el = $($element.get(0));
       el.attr("width", el.outerWidth()).attr("height", el.outerHeight());
@@ -38,6 +46,7 @@ BualaAdmin.directive('applicantsPerDayLineChart', function () {
             strokeColor: "#00F054",
             pointColor: "#00F054",
             pointStrokeColor: "#2CC562",
+            pointDotRadius: 1,
             data: data
           }
         ]

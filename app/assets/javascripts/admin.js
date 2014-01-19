@@ -4,10 +4,10 @@
 //= require angular-resource
 //= require lodash
 //= require momentjs/moment
+//= require bootstrap/modal
 //= require_self
-//= require controllers/adminCompanyController
-//= require directives/applicantsPerDayLineChart
-//= require directives/advertisementProgressBar
+//= require_tree ./admin/controllers
+//= require_tree ./admin/directives
 //= require chartjs/Chart
 
 var BualaAdmin = angular.module('BualaAdmin', ['ngResource']);

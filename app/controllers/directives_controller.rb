@@ -8,4 +8,7 @@ class DirectivesController < ApplicationController
   def modal
   end
 
+  def newAdvertisement
+  end
+
 end

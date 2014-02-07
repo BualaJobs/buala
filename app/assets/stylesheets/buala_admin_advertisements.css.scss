@@ -1,3 +1,23 @@
+form {
+  .letter-counter {
+    color: $lightblue;
+    font-weight: bold;
+
+    &.warn {
+      color: $orange;
+    }
+  }
+
+  label {
+    &.mandatory {
+      &:after {
+        content: "*";
+        color: $orange;
+      }
+    }
+  }
+}
+
 .admin-panel {
   .admin-advertisements {
     .header {
@@ -74,12 +94,39 @@
   }
 
   .modal.new-advertisement-modal {
+    .modal-content {
+      @include border-radius(0px);
+    }
+
     .modal-dialog {
+      padding: 15px 0;
       width: 880px;
     }
 
     .modal-header {
       text-align: center;
+
+      h1 {
+        @include buala-semibold-font;
+        color: $lightblue;
+        font-size: 24px;
+        padding: 0;
+      }
+
+    }
+
+    .btn-red {
+      vertical-align: bottom;
+    }
+
+    .cost {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 40px;
+
+      .value {
+        font-weight: normal;
+      }
     }
 
     ol.steps {
@@ -90,7 +137,7 @@
       li {
         list-style: none;
         float: left;
-        width: 33%;
+        width: 25%;
         text-align: center;
         font-weight: bold;
         color: $lightgray;

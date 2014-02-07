@@ -8,12 +8,30 @@ BualaAdmin.directive('newAdvertisement', function () {
     },
     controller: ['$scope', function ($scope) {
 
-      $scope.newAdvertisement = function () {
-        $scope.advertisement = {};
+      $scope.limits = {
+        firstStep: 1,
+        lastStep: 4
       };
 
-      //Development:
-      $scope.advertisement = {};
+      $scope.newAdvertisement = function () {
+        $scope.advertisement = {};
+        $scope.step = $scope.limits.firstStep;
+      };
+
+      $scope.nextStep = function () {
+        if ($scope.step < $scope.limits.lastStep) {
+          $scope.step++;
+        }
+      }
+
+      $scope.previousStep = function () {
+        if ($scope.step > $scope.limits.firstStep) {
+          $scope.step--;
+        }
+      }
+
+      //For development!!
+      $scope.newAdvertisement();
 
     }],
     link: function ($scope, $element) {

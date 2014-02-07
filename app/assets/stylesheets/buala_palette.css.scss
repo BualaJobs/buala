@@ -27,7 +27,7 @@ $superlightgray: lighten($mediumgray, 60%);
 
 $shadowgray: rgba(50, 50, 50, 0.4);
 
-$lightred: #df3d3d;
+$red: #df3d3d;
 
 @mixin buala-shadow {
   -webkit-box-shadow: 0px 0px 10px $shadowgray;

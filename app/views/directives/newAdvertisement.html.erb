@@ -5,34 +5,76 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h3 class="modal-title">Nuevo aviso</h3>
+          <h1 class="modal-title">Nuevo Aviso</h1>
           <ol class="steps">
-            <li>Información del aviso</li>
-            <li class="current">Detalles de la publicación</li>
-            <li>Opciones de difusión</li>
+            <li ng-class="{current: step == 1}">Información del aviso</li>
+            <li ng-class="{current: step == 2}">Detalles de la publicación</li>
+            <li ng-class="{current: step == 3}">Opciones de difusión</li>
+            <li ng-class="{current: step == 4}">Opciones de pago</li>
           </ol>
         </div>
         <div class="modal-body">
-          <form role="form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nombre del puesto"></input>
-            </div>
-          </form>
+          
+          <div class="step-1" ng-show="step == 1">
+            <form role="form">
+              <text-input-with-size-control class="row" label="Nombre del puesto" placeholder="Ingrese el título que desea darle al aviso" name="title" advertisement="advertisement" max-size="45" mandatory={{true}}></text-input-with-size-control>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label class="mandatory">Categoría principal</label>
+                  <% all_categories = Category.all %>
+                  <%= select_tag "category_1", options_from_collection_for_select(all_categories, :id, :name), prompt: "Seleccione una categoría", class: "form-control" %>
+                </div>
+                <div class="col-md-6">
+                  <label>Categoría secundaria</label>
+                  <%= select_tag "category_2", options_from_collection_for_select(all_categories, :id, :name), prompt: "Seleccione una categoría", class: "form-control" %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <label>Descripción</label>
+                  <textarea class="form-control" rows="4" placeholder="Describa las características del puesto, las ventajas y beneficios de obtener el puesto, y el perfil de aplicante que se busca."></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <label>Requisitos</label>
+                  <textarea class="form-control" rows="4" placeholder="Describa los requisitos obligatorios y deseables que busca en el perfil del aplicante."></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="step-2" ng-show="step == 2">
+            <form role="form">
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <label>Descripción corta</label>
+                  <textarea class="form-control" rows="2"></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label>Cantidad de vacantes</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div> 
+            </form>
+          </div>
         </div>
         <div class="modal-footer">
-          <button class="btn-lightred btn-normal-font btn-small pull-left">
-            Cancelar
-          </button>
-          <button class="btn-lightblue btn-normal-font btn-normal">
+          <div class="pull-left cost">
+            Costo de la publicación: <span class="value">$0.00</span>
+          </div>
+          <button class="btn-lightblue btn-normal-font btn-normal" ng-show="step > limits.firstStep" ng-click="previousStep()">
             <%= fa_icon 'arrow-left' %>
             Anterior
           </button>
-          <button class="btn-lightblue btn-normal-font btn-normal">
+          <button class="btn-lightblue btn-normal-font btn-normal" ng-show="step < limits.lastStep" ng-click="nextStep()">
             Siguiente
             <%= fa_icon 'arrow-right' %>
           </button>
-          <button class="btn-pink btn-normal-font btn-normal">
-            Crear aviso!
+          <button class="btn-pink btn-normal-font btn-normal" ng-show="step == limits.lastStep">
+            Listo, crear aviso!
           </button>
         </div>
       </div>

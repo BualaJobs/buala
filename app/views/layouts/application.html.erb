@@ -34,6 +34,14 @@
           <img src="/images/logo.png" alt="Bualá! Jobs" class="logo" />
         <% end %>
       </div>
+      <ul class="nav navbar-nav navbar-left auth-btns">
+        <li>
+          <a href="http://blog.bualajobs.com" target="_blank">
+            <%= fa_icon :comments %>
+            Blog
+          </a>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right auth-btns">
         <% if user_signed_in? %>
           <li>

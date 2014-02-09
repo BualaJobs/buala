@@ -41,6 +41,12 @@
             Blog
           </a>
         </li>
+        <li>
+          <%= link_to :empresas do %>
+            <%= fa_icon :building %>
+            Empresas
+          <% end %>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right auth-btns">
         <% if user_signed_in? %>

@@ -86,6 +86,8 @@ Buala::Application.configure do
     path: lambda{|a| "production/#{a.instance.advertisement.company.id}/#{a.instance.advertisement.id}/:id_:filename"}
   }
 
+  config.buala.business_contact_email = ENV['BUSINESS_CONTACT_EMAIL']
+
   # Amazon S3 config for resume storage
   config.buala.s3_resume_storage = {
     storage: :s3, 

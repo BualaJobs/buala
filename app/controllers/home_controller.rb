@@ -9,4 +9,13 @@ class HomeController < ApplicationController
   def business
   end
 
+  def business_contact
+    if params[:name] && params[:email]
+      InternalMailer.company_contact({name: params[:name], company: params[:company], email: params[:email]})
+      render status: :ok, nothing: true
+    else
+      render status: :bad_request, nothing: true
+    end
+  end
+
 end

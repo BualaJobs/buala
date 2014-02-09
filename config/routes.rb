@@ -33,9 +33,10 @@ Buala::Application.routes.draw do
   end
 
   get 'home/index'
-  get 'empresas', to: 'home#business'
-  
   root to: 'home#index'
+  
+  get 'empresas', to: 'home#business'
+  post 'empresas', to: 'home#business_contact'
 
   resources :companies, only: [:show] do
     resources :ads, only: [:show, :index] do

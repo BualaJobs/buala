@@ -44,6 +44,8 @@ Buala::Application.configure do
     path: lambda{|a| "development/#{a.instance.advertisement.company.id}/#{a.instance.advertisement.id}/:id_:filename"}
   }
 
+  config.buala.business_contact_email = 'paul@bualajobs.com'
+
   config.buala.s3_resume_storage = {
     
   }

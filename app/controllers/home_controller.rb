@@ -6,4 +6,7 @@ class HomeController < ApplicationController
   	@advertisements = Advertisement.published_order_by_creation
   end
 
+  def business
+  end
+
 end

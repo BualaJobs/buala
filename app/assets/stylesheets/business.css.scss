@@ -1,0 +1,105 @@
+
+.banner-business {
+  h1 {
+    color: #fff;
+    text-align: center;
+  }
+
+  .mac-container {
+    padding: 20px 0 30px 0;
+    text-align: center;
+    
+    .screenshot {
+      position:relative;
+    }
+
+    .screenshot-1 {
+      margin-top: -15px;
+      margin-left: -335px;
+
+    }
+
+    .screenshot-2 {
+      margin-top: -15px;
+      margin-left: -269px;
+    }
+  }
+
+  form {
+
+    h2 {
+      margin: 0 0 15px 0;
+      text-align: center;
+    }
+
+    background: #fff;
+    padding: 20px 20px 10px 20px;
+    margin-bottom: 30px;
+
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+  }
+}
+
+.business {
+
+  ul.characteristics {
+    background: #fff;
+    margin: 20px 0 45px 0;
+
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+
+    li {
+      padding: 15px 15px 5px 15px;
+
+      &:after {
+        content: "";
+        width: 100%;
+        border-top: 1px dashed #ccc;
+      }
+
+      &:last-child {
+        &:after {
+          border-top: 0px;
+        }
+      }
+
+      .col-md-6 {
+        text-align: center;
+      }
+
+      h2 {
+        padding-top: 25px;
+        font-size: 35px;
+        text-align: left;
+      }
+
+      p {
+        color: #777;
+        font-size: 16px;
+        text-align: left;
+      }
+
+      &.easy-and-simple {
+        h2 {
+          color: #f18a29;
+        }
+      }
+
+      &.graduates {
+        h2 {
+          color: #a38ee3;
+        }
+      }
+
+      &.docs {
+        h2 {
+          color: #45beda;
+        }
+      }
+    }
+  }
+}

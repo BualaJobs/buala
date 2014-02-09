@@ -18,8 +18,15 @@
     padding-left: 30px;
 
     li {
+      margin-left:6px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+
       a {
         background: $supersuperlightblue;
+        transition: background 0.2s linear;
       }
       
       &:hover {

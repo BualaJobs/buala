@@ -152,10 +152,13 @@ body {
 }
 
 .flash-messages {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+
   .label {
-    font-size: 13px;
+    font-size: 12px;
     display: inline-block;
-    margin-top: 20px;
     padding: 8px 10px;
 
     &.label-success {

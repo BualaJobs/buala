@@ -11,17 +11,19 @@
     
     .screenshot {
       position:relative;
+      @include opacity(0);
     }
 
     .screenshot-1 {
       margin-top: -15px;
       margin-left: -335px;
-
+      @include transition(opacity 1s ease-in-out);
     }
 
     .screenshot-2 {
       margin-top: -15px;
       margin-left: -269px;
+      @include transition(opacity 1s ease-in-out);
     }
   }
 

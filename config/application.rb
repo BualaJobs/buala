@@ -77,5 +77,9 @@ module Buala
       ]
     end)
 
+    config.after_initialize do
+        I18n.reload!
+    end
+
   end
 end

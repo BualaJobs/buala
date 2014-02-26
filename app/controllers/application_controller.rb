@@ -4,9 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_default_tags
+  before_filter :set_spanish_language
 
   rescue_from ActiveRecord::RecordNotFound do |exception|
     render status: :not_found, text: 'Resource not found'
+  end
+
+  def set_admin_locale
+    puts "Setting admin language!"
+    I18n.locale = :en
   end
 
   private
@@ -33,6 +39,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     session[:previous_url] || root_path
+  end
+
+  def set_spanish_language
+    I18n.locale = 'es'
   end
 
 end

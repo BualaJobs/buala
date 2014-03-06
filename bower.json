@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "angular": "~1.2.3",
-    "angular-resource": "~1.2.4"
+    "angular-resource": "~1.2.4",
+    "modernizr": "~2.7.2"
   }
 }

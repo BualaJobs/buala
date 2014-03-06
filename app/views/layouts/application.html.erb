@@ -31,24 +31,24 @@
     <div class="container">
       <div class="navbar-header">
         <%= link_to root_path do %>
-          <img src="/images/logo.png" alt="Bualá! Jobs" class="logo" />
+          <%= image_tag("logo.svg") %>
         <% end %>
       </div>
-      <ul class="nav navbar-nav navbar-left auth-btns">
+      <ul class="nav navbar-nav navbar-left header-btns big-icons">
         <li>
           <a href="http://blog.bualajobs.com" target="_blank">
             <%= fa_icon :comments %>
-            Blog
+            <span>BLOG</span>
           </a>
         </li>
         <li>
           <%= link_to :empresas do %>
             <%= fa_icon :building %>
-            Empresas
+            <span>EMPRESAS</span>
           <% end %>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right auth-btns">
+      <ul class="nav navbar-nav navbar-right header-btns">
         <% if user_signed_in? %>
           <li>
             <p class="navbar-text">Hola, <%= current_user.fullname %>!</p>

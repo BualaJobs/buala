@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require_tree ./gmaps4rails
 //= require lodash
+//= require modernizr/modernizr
 //= require angular/angular
 //= require angular-resource/angular-resource
 //= require_self
@@ -37,8 +38,15 @@ buala.filter('escape', function() {
     });
   };
 
+  var retinaImages = function () {
+    if (!Modernizr.svg) {
+      $('img[src*="svg"]').attr('src').replace('.svg', '.png');
+    }
+  };
+
   $(function () {
     initializeFileBtns();
+    retinaImages();
   });
 
 }(window.jQuery);

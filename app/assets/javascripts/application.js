@@ -46,6 +46,7 @@ buala.filter('escape', function() {
 
   $(function () {
     initializeFileBtns();
+    retinaImages();
   });
 
 }(window.jQuery);

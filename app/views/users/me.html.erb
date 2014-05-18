@@ -1,5 +1,32 @@
+<div class="profile-title">
+  <div class="profile-img">
+    <div class="edit-image-message">
+      <div>
+        <%= fa_icon 'folder-open' %>
+      </div>
+      Subir foto
+    </div>
+    <img src="https://pbs.twimg.com/profile_images/455166475234340864/Uib9HKsf.jpeg">
+  </div>
+  <h2>
+    <%= @user.fullname %>
+    <p>Bualero desde 20/01/2012</p>
+    <ul class="profile-badges">
+      <li class="text-success">
+        <%= fa_icon :check %>
+        Ya estas listo para postularte!
+      </li>
+      <li class="text-warning">
+        <%= fa_icon :exclamation %>
+        Completa tu perfil para empezar a postularte!
+      </li>
+    </ul>
+  </h2>
+</div>
+
 <%= form_for @user, url: me_users_path, method: :put do |f| %>
   <%= hidden_field_tag(:previous_url, @previous_url) if @previous_url %>
+
   <div class="form-group <%= !@user.errors[:fullname].empty? ? 'has-error' : '' %>">
     <%= f.label :fullname, 'Nombre completo', class: 'control-label' %>
     <%= f.text_field :fullname, class: 'form-control' %>
@@ -39,5 +66,6 @@
   <div>
     <%= f.submit 'Guardar perfil', class: 'btn-pink pull-right',
       onClick: "ga('send', 'event', 'Profile', 'Edit')" %>
+    <div class="clearfix"></div>
   </div>
 <% end %>

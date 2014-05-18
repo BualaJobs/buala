@@ -30,8 +30,8 @@ gem 'unicorn'
 gem 'newrelic_rpm'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'compass-rails', '~> 1.1.2'
+  gem 'sass-rails',   '3.1.7'
+  gem 'compass-rails', '1.1.7'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'bourbon', '3.1.8'

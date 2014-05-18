@@ -28,6 +28,11 @@
 
 .applyBox {
 
+  .error-message {
+    display: inline-block;
+    float: left;
+  }
+
   .actions {
     text-align: right;
     padding: 10px 0 5px 0;

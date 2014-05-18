@@ -24,7 +24,14 @@
       </ul>
     </div>
     <div class="actions">
-      <button class="btn-pink" ng-click="apply()">¡Postularme!</button>
+      <div ng-show="applyError" class="text-danger error-message">
+        <strong>Ocurrió un error!</strong>
+        Intentalo nuevamente.
+      </div>
+      <button class="btn-pink btn-loader" ng-class="{'loading': applying}" ng-click="apply()">
+        <%= fa_icon :refresh %>
+        ¡Postularme!
+      </button>
     </div>
   </div>
   

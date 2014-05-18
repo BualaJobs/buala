@@ -12,11 +12,22 @@ buala.directive('applyBox', ['UserService', '$window', function (UserService, $w
 
       $scope.currentLocation = $window.location.href;
 
+      $scope.applying = false;
+
       $scope.apply = function () {
+        $scope.applying = true;
+        $scope.applyError = false;
         UserService.apply($scope.advertisement)
-        .then(function () {
-          $scope.advertisement.has_applied = true;
-        })
+        .then(
+          function () {
+            $scope.applying = false;
+            $scope.advertisement.has_applied = true;
+          },
+          function () {
+            $scope.applying = false;
+            $scope.applyError = true;
+          }
+        );
       };
 
     }],

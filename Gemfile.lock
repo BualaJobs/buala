@@ -333,6 +333,7 @@ DEPENDENCIES
   anjlab-bootstrap-rails (>= 3.0.0.0)
   aws-sdk (~> 1.28.1)
   better_errors
+  bourbon (= 3.1.8)
   capybara
   carrierwave
   cloudinary

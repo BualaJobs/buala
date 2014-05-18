@@ -53,6 +53,28 @@
   }
 }
 
+@include keyframes(rotating) {
+  from {
+    @include rotate(0deg);
+  }
+  to {
+    @include rotate(360deg);
+  }
+}
+
+.btn-loader {
+  i {
+    display: none;
+    @include animation(rotating 2s linear infinite);
+  }
+  &.loading {
+    i {
+      display: inline-block;
+      @include animation(rotating 2s linear infinite);
+    }
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'titillium_webregular';
   color: #27b5d3;

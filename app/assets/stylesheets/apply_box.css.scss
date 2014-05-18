@@ -33,8 +33,25 @@
     padding: 10px 0 5px 0;
   }
 
-  .profile-ready {
-    color: #f00;
+  .profile-info {
+    padding:15px;
+    border-radius: 10px;
+    @include box-shadow(inset 0px 0px 20px rgba(1,1,1,0.2));
+
+    li {
+      margin-top: 5px;
+
+      strong {
+        color: $gray;
+      }
+    }
+
+    .buala-profile-title {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 0;
+      color: $darkblue;
+    }
   }
 
   .clarification {
@@ -66,12 +83,12 @@
     }
   }
 
-  .profile-not-ready, .user-not-logged-in, .after-application {
+  .profile-not-ready, .user-not-logged-in, .after-application, .profile-ready {
     .message {
       display: block;
       text-align: center;
       font-size: 24px;
-      color: #059FF7;
+      color: $lightblue;
       padding: 10px 0;
     }
 

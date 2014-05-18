@@ -1,23 +1,27 @@
 <div class="applyBox">
 
-  <div ng-show="user && !advertisement.has_applied && user.readyForApplication">
-    <h3>
-      <%= fa_icon :user %>
-      Tu perfil
-    </h3>
-    <p class="clarification">Los siguientes datos serán utilizados durante la postulación:</p>
-    <div class="profile-wrapper">
-      <ul class="userProfile pull-left">
-        <li><span>Nombre completo: </span> {{user.fullname}}</li>
-        <li><span>Universidad:</span> {{user.university.name}}</li>
-        <li><span>Carrera:</span> {{user.degree}}</li>
+  <div class="profile-ready" ng-show="user && !advertisement.has_applied && user.readyForApplication">
+    <span class="message">Ya estas listo para postularte!</span>
+    <div class="profile-info">
+      <div class="buala-profile-title">#TuPerfilBualá</div>
+      <ul>
         <li>
-          <span>Curriculum:</span> 
-          <i class="icon-paperclip"></i>
-          {{user.resume.filename}}
+          <strong>Nombre completo</strong> {{ user.fullname }}
+        </li>
+        <li>
+          <strong>Universidad</strong> {{ user.university.name }}
+        </li>
+        <li>
+          <strong>Carrera</strong> {{ user.degree }}
+        </li>
+        <li>
+          <strong>Curriculum Vitae</strong>
+          <a ng-href="{{ user.resume.url }}">
+            <i class="icon-paperclip"></i>
+            {{user.resume.filename}}
+          </a>
         </li>
       </ul>
-      <div class="clearfix"></div>
     </div>
     <div class="actions">
       <button class="btn-pink" ng-click="apply()">¡Postularme!</button>

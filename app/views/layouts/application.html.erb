@@ -36,17 +36,25 @@
       </div>
       <ul class="nav navbar-nav navbar-left header-btns big-icons">
         <li>
+          <%= link_to :root do %>
+            <%= fa_icon :search %>
+            <span>TRABAJOS</span>
+          <% end %>
+        </li>
+        <li>
           <a href="http://blog.bualajobs.com" target="_blank">
             <%= fa_icon :comments %>
             <span>BLOG</span>
           </a>
         </li>
-        <li>
-          <%= link_to :empresas do %>
-            <%= fa_icon :building %>
-            <span>EMPRESAS</span>
-          <% end %>
-        </li>
+        <% unless signed_in? %>
+          <li>
+            <%= link_to :empresas do %>
+              <%= fa_icon :building %>
+              <span>EMPRESAS</span>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right header-btns">
         <% if user_signed_in? %>

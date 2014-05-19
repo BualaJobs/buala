@@ -122,21 +122,24 @@ body {
     margin: 18px 0 18px 0;
     padding: 0;
     color: $gray;
+    border-top-left-radius: 100px;
     @include box-shadow(0 0 5px 0 rgba($gray, 0.5));
 
     form {
-      padding: 20px;
+      padding: 20px 20px 20px 0;
     }
 
     .profile-title {
       padding: 0px 20px;
       background: $lightgray;
-      border-bottom: 1px solid darken($lightgray, 5%);
+      border: 1px solid darken($lightgray, 5%);
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
 
       h2 {
         display: inline-block;
         color: $mediumgray;
-        margin: 0 0 0 15px;
+        margin: 0 0 0 40px;
         vertical-align: middle;
 
         p {
@@ -163,9 +166,9 @@ body {
         width: 150px;
         height: 150px;
         margin: 20px 0;
-        -webkit-box-shadow: $lightblue 0 0 0 5px, $darkblue  0 0 0 8px, rgba($gray, 0.3) 0 0 2px 10px;
-        -moz-box-shadow: $lightblue 0 0 0 5px, $darkblue  0 0 0 8px, rgba($gray, 0.3) 0 0 2px 10px;
-        box-shadow: $lightblue 0 0 0 5px, $darkblue  0 0 0 8px, rgba($gray, 0.3) 0 0 2px 10px;
+        -webkit-box-shadow: $lightblue 0 0 0 4px, $darkblue  0 0 0 8px;
+        -moz-box-shadow: $lightblue 0 0 0 4px, $darkblue  0 0 0 8px;
+        box-shadow: $lightblue 0 0 0 4px, $darkblue  0 0 0 8px;
         z-index: 5;
         cursor: pointer;
 

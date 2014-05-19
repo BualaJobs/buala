@@ -1,27 +1,65 @@
 <% content_for(:content) do %>
   <div class="green-full-container">
     <div class="container">
-      <div class="col-md-3">
-        <ul class="nav nav-buala text-center nav-stacked">
-          <li class="<%= 'active' if (current_page?(me_users_path) or (controller.controller_name.to_s == 'users' and controller.action_name.to_s == 'update')) %>">
-            <%= link_to me_users_path do %>
-              <%= fa_icon :user %>
-              Mi perfil
+
+      <div class="col-md-12 profile-container">
+        <div class="profile-title col-sm-12">
+          <div class="profile-img">
+            <div class="edit-image-message">
+              <div>
+                <%= fa_icon 'folder-open' %>
+              </div>
+              Subir foto
+            </div>
+            <img src="https://pbs.twimg.com/profile_images/455166475234340864/Uib9HKsf.jpeg">
+          </div>
+          <h2>
+            <%= @user.fullname %>
+            <p>Bualero desde 20/01/2012</p>
+            <ul class="profile-badges">
+              <li class="text-success">
+                <%= fa_icon :check %>
+                Ya estas listo para postularte!
+              </li>
+              <li class="text-warning">
+                <%= fa_icon :exclamation %>
+                Completa tu perfil para empezar a postularte!
+              </li>
+            </ul>
+          </h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <ul class="nav nav-buala text-center nav-stacked">
+              <li class="<%= 'active' if (current_page?(me_users_path) or (controller.controller_name.to_s == 'users' and controller.action_name.to_s == 'update')) %>">
+                <%= link_to me_users_path do %>
+                  <%= fa_icon :user %>
+                  Mi perfil
+                <% end %>
+              </li>
+              <li>
+                <a href="#">
+                  <%= fa_icon 'folder-open' %>
+                  Mis postulaciones
+                </a>
+              </li>
+              <li class="<%= 'active' if (current_page?(edit_user_registration_path) or (controller.controller_name.to_s == 'registrations' and controller.action_name.to_s == 'update')) %>">
+                <%= link_to edit_user_registration_path do %>
+                  <%= fa_icon :cogs %>
+                  Cambiar contraseña
+                <% end %>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-9">
+            <% if flash[:success] %>
+              <div class="text-center flash-success"><%= flash[:success] %></div>
             <% end %>
-          </li>
-          <li class="<%= 'active' if (current_page?(edit_user_registration_path) or (controller.controller_name.to_s == 'registrations' and controller.action_name.to_s == 'update')) %>">
-            <%= link_to edit_user_registration_path do %>
-              <%= fa_icon :edit %>
-              Cambiar contraseña
-            <% end %>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-9 profile-container">
-        <% if flash[:success] %>
-          <div class="text-center flash-success"><%= flash[:success] %></div>
-        <% end %>
-        <%= yield %>
+            <%= yield %>          
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

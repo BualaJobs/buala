@@ -75,12 +75,12 @@
       i {
         display: block;
         text-align: center;
-        font-size: 28px;
+        font-size: 22px;
       }
 
       a {
-        padding-top: 12px !important;
-        padding-bottom: 9px !important;
+        padding-top: 15px !important;
+        padding-bottom: 12px !important;
         line-height: 20px !important;
 
         span {
@@ -97,20 +97,35 @@
 
   li {
 
-    &.active {
-      background: #0CBB4A;
-      border-left: 5px solid #7BFD86;
+    &:first-child {
+      border-top-right-radius: 10px;
     }
 
+    &:last-child {
+      border-bottom-right-radius: 10px;
+    }
 
-    background: #00d54b;
-    margin-bottom: 10px;
+    &.active {
+      background: $lightblue;
+      border-left: 5px solid $darkblue;
+    }
+
+    background: $lightblue;
+    margin-bottom: 2px;
 
     a {
       color: #fff;
       
       &:hover {
-        background: #27CF63;
+        &:first-child {
+          border-top-right-radius: 10px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 10px;
+        }
+
+        background: darken($lightblue, 3%);
       }
     }
   }

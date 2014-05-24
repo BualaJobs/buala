@@ -47,35 +47,10 @@ ActiveAdmin.register_page "Dashboard" do
                 span "#{advertisements_without_applications} - #{((advertisements_without_applications * 1.0/advertisements_total) * 100).round(2)} %."
               end
             end
-            li do
-              h4 do
-                strong "Migrated users: "
-                span "#{migrated_users_registered} - #{((migrated_users_registered * 1.0/migrated_users) * 100).round(2)} %."
-              end
-            end
           end
         end
       end
     end
 
-    # Here is an example of a simple dashboard with columns and panels.
-    #
-    # columns do
-    #   column do
-    #     panel "Recent Posts" do
-    #       ul do
-    #         Post.recent(5).map do |post|
-    #           li link_to(post.title, admin_post_path(post))
-    #         end
-    #       end
-    #     end
-    #   end
-
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
-  end # content
+  end
 end

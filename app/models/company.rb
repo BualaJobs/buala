@@ -3,7 +3,7 @@ class Company < ActiveRecord::Base
   before_save :generate_token
 
   attr_accessible :description, :location, :name, :website, :category, :category_id, :company_type, 
-    :company_type_id, :company_logo, :admin_token
+    :company_type_id, :company_logo, :admin_token, :email
 
   belongs_to :category
   belongs_to :company_type

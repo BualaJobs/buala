@@ -11,7 +11,8 @@ class Company < ActiveRecord::Base
 
   mount_uploader :company_logo, CompanyLogoUploader
 
-  validates :name, :description, :category, :company_type, presence: true
+  validates :name, :description, :category, :company_type, :email, presence: true
+  validates_email_format_of :email
 
   acts_as_gmappable :check_process => false
 

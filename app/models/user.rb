@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   belongs_to :university
 
-  has_attached_file :resume, Buala::Application.config.buala.s3_resume_storage
+  has_attached_file :resume, Buala::Application.config.buala.resume_storage
 
   has_many :postulations
 

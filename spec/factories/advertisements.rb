@@ -65,10 +65,10 @@ FactoryGirl.define do
   factory :advertisement do
     title "Test advertisement"
     description "Test description"
+    short_description "This is the short description"
     company
     published true
     association :category_1, factory: :category
-    association :category_2, factory: :category
     association :advertisement_type, factory: :advertisement_type
     is_paid true
     working_turn

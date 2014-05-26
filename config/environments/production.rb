@@ -79,17 +79,11 @@ Buala::Application.configure do
   config.buala = ActiveSupport::OrderedOptions.new
   
   config.buala.ga_tracking_id = ENV['GA_TRACKING_ID']
-  
-  config.buala.resume_storage = { 
-    storage: :dropbox, 
-    dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-    path: lambda{|a| "production/#{a.instance.advertisement.company.id}/#{a.instance.advertisement.id}/:id_:filename"}
-  }
 
   config.buala.business_contact_email = ENV['BUSINESS_CONTACT_EMAIL']
 
   # Amazon S3 config for resume storage
-  config.buala.s3_resume_storage = {
+  config.buala.resume_storage = {
     storage: :s3, 
     s3_credentials: {
       bucket: ENV['S3_BUCKET_NAME'],

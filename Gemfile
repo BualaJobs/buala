@@ -26,8 +26,13 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 gem "font-awesome-rails"
 gem 'rabl'
 gem 'oj'
-gem 'unicorn'
-gem 'newrelic_rpm'
+gem 'jquery-rails', '2.3.0'
+gem 'rake'
+
+group :production do
+  gem 'unicorn'
+  gem 'newrelic_rpm'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -50,5 +55,3 @@ group :development, :test do
   gem 'letter_opener'
   gem 'shoulda-matchers'
 end
-
-gem 'jquery-rails', '2.3.0'

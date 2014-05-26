@@ -343,6 +343,7 @@ DEPENDENCIES
   pry-rails (~> 0.3.0)
   rabl
   rails (= 3.2.13)
+  rake
   rspec-mocks
   rspec-rails (~> 2.13.2)
   sass-rails (~> 3.2.3)

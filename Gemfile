@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 3.2.0'
   gem 'better_errors'
   gem 'letter_opener'
+  gem 'shoulda-matchers'
 end
 
 gem 'jquery-rails', '2.3.0'

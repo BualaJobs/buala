@@ -37,5 +37,7 @@ Buala::Application.configure do
 
   config.buala = ActiveSupport::OrderedOptions.new
   config.buala.resume_storage = {}
+
+  config.buala.ga_tracking_id = ''
   
 end

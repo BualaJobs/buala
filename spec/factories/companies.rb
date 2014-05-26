@@ -21,8 +21,11 @@ FactoryGirl.define do
 
   factory :company do
     name { generate(:company_name) }
+    email { generate(:email) }
     website "http://www.testcompany.com"
-    location "Test Location, Test Country"
+    location "Buenos Aires, Argentina"
+    latitude 0
+    longitude 0
     description "Test description"
     category
     company_type

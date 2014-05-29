@@ -2,8 +2,8 @@
   <div class="container banner-business" ng-controller="BusinessController">
     <h1>¡Empezá hoy a contratar estudiantes!</h1>
     <div class="row">
-      <div class="col-md-6">
-          <form class="form col-md-8 col-md-offset-2" novalidate role="form" name="contactForm" ng-submit="send()">
+      <div class="col-md-6 st-scroll" id="contact-form">
+          <form class="form col-md-8 col-md-offset-2" novalidate role="form"  name="contactForm" ng-submit="send()">
           <h3>¿Te interesa publicar con nosotros? Dejanos tus datos</h3>
           <div ng-hide="contactSent">
             <div class="form-group" ng-class="{'has-error': contactForm.name.$dirty && contactForm.name.$invalid}">
@@ -47,7 +47,6 @@
       <%= fa_icon :certificate %>
       Clientes
     </h1>
-
     <div class="row text-center">
       <div class="col-md-2"><%= image_tag 'ford.png' %></div>
       <div class="col-md-2"><%= image_tag 'visa.png' %></div>
@@ -107,15 +106,23 @@
         </div>
         <div class="col-md-6">
           <h2>
-            <%= fa_icon :leaf %>
-            Bualá HR
+            <%= fa_icon :fire %>
+            Justo lo que necesitas!
           </h2>
           <p>
-            Empezá a administrar tus recursos humanos en un solo lugar. Gestioná los aplicantes a los puestos ofrecidos por tu empresa, y agregá inteligencia a tus procesos de selección.
+            Es fácil, cargás los datos de tu pasantía, aviso part-time, full-time o tu programa de jóvenes profesionales y nosotros los difundimos. Vos concentrate en las entrevistas.
           </p>
-          <h3><label class="label label-success label-lg pull-left">Próximamente...</label></h3>
+          
         </div>
+      </li>
+      <li class="docs row">
+        
+          <div class="col-md-12 text-center">
+            <a class="btn-pink btn-clients" href="#contact-form">¡QUIERO PUBLICAR UN AVISO EN BUALÁ!</a>
+          </div>
+         
       </li>
     </ul>
   </div>
+  
 </div>

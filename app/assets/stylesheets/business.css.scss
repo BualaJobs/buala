@@ -5,10 +5,13 @@
     text-align: center;
   }
 
+  .banner-dashboard{
+    text-align: right; 
+  }
   .mac-container {
     padding: 20px 0 30px 0;
     text-align: center;
-    
+
     .screenshot {
       position:relative;
       @include opacity(0);

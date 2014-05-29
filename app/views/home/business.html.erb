@@ -1,34 +1,42 @@
 <%= content_for :top_body do %>
   <div class="container banner-business" ng-controller="BusinessController">
     <h1>¡Empezá hoy a contratar estudiantes!</h1>
-    <div class="mac-container">
-      <%= image_tag 'macbook.png' %>
-      <%= image_tag 'macbook_ad.png', class: 'screenshot screenshot-1' %>
-      <%= image_tag 'macbook_dashboard.png', class: 'screenshot screenshot-2' %>
+    <div class="row">
+      <div class="col-md-6">
+          <form class="form col-md-8 col-md-offset-2" novalidate role="form" name="contactForm" ng-submit="send()">
+          <h3>¿Te interesa publicar con nosotros? Dejanos tus datos</h3>
+          <div ng-hide="contactSent">
+            <div class="form-group" ng-class="{'has-error': contactForm.name.$dirty && contactForm.name.$invalid}">
+              <label class="control-label">Tu Nombre</label>
+              <input type="text" class="form-control" ng-model="contact.name" name="name" required>
+              <span class="help-block" ng-show="contactForm.name.$dirty && contactForm.name.$invalid">Este es un campo requerido</span>      
+            </div>
+            <div class="form-group">
+              <label class="control-label">Empresa</label>
+              <input type="text" class="form-control" ng-model="contact.company" name="company">        
+            </div>
+            <div class="form-group" ng-class="{'has-error': contactForm.email.$dirty && contactForm.email.$invalid}">
+              <label class="control-label">Email</label>
+              <input type="email" class="form-control" ng-model="contact.email" name="email" required> 
+              <span class="help-block" ng-show="contactForm.email.$dirty && contactForm.email.$invalid">Email inválido</span>        
+            </div>
+            <button type="submit" class="btn-pink pull-right">Enviar!</button>
+          </div>
+          <div ng-show="contactSent" class="text-center">
+            Gracias por tu interés! Nos contactaremos a la brevedad.
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="mac-container">
+          <%= image_tag 'macbook.png' %>
+          <%= image_tag 'macbook_ad.png', class: 'screenshot screenshot-1' %>
+          <%= image_tag 'macbook_dashboard.png', class: 'screenshot screenshot-2' %>
+        </div>
+      </div>
     </div>
-    <form class="form col-md-8 col-md-offset-2" novalidate role="form" name="contactForm" ng-submit="send()">
-      <h2>¿Te interesa? ¡Nos contactamos!</h2>
-      <div ng-hide="contactSent">
-        <div class="form-group" ng-class="{'has-error': contactForm.name.$dirty && contactForm.name.$invalid}">
-          <label class="control-label">Tu Nombre</label>
-          <input type="text" class="form-control" ng-model="contact.name" name="name" required>
-          <span class="help-block" ng-show="contactForm.name.$dirty && contactForm.name.$invalid">Este es un campo requerido</span>      
-        </div>
-        <div class="form-group">
-          <label class="control-label">Empresa</label>
-          <input type="text" class="form-control" ng-model="contact.company" name="company">        
-        </div>
-        <div class="form-group" ng-class="{'has-error': contactForm.email.$dirty && contactForm.email.$invalid}">
-          <label class="control-label">Email</label>
-          <input type="email" class="form-control" ng-model="contact.email" name="email" required> 
-          <span class="help-block" ng-show="contactForm.email.$dirty && contactForm.email.$invalid">Email inválido</span>        
-        </div>
-        <button type="submit" class="btn-pink pull-right">Enviar!</button>
-      </div>
-      <div ng-show="contactSent" class="text-center">
-        Gracias por tu interés! Nos contactaremos a la brevedad.
-      </div>
-    </form>
+    
+    
   </div>
 <% end %>
 

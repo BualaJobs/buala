@@ -6,7 +6,8 @@
   }
 
   .banner-dashboard{
-    text-align: right; 
+    padding-top: 40px;
+
   }
   .mac-container {
     padding: 20px 0 30px 0;
@@ -30,11 +31,7 @@
     }
   }
 
-  .col-md-6 {
-    display:table-cell;
-    vertical-align:middle;
-    float:none;
-  }
+  
 
   form {
 
@@ -63,7 +60,7 @@
     color: #fff; 
   }
 
-  .col-md-2{
+  img{
     padding-bottom: 10px;
   }
 }
